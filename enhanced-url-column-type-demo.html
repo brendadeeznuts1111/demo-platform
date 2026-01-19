@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Enhanced URL Column Type Professional Implementation</title>
+    
+    <!-- Enhanced URL Column Type Styles -->
+    <link rel="stylesheet" href="enhanced-url-column-type.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .url-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .url-type-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .url-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .url-type-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .url-type-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        .url-examples {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .url-example {
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+        
+        .url-example:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .url-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .url-stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .url-stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+        
+        .url-stat-label {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .url-types-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Enhanced URL Column Type Professional Implementation</h1>
+            <p class="demo-subtitle">Complete enhanced URL column type system with 10 different URL types, security indicators, and interactive features</p>
+        </div>
+        
+        <!-- URL Column Type Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Enhanced URL Column Type Overview</h2>
+            
+            <div class="enhanced-url-column-container">
+                <div class="add-column-container">
+                    <div class="add-column-header">
+                        <h4 class="add-column-title">Enhanced URL Column Types</h4>
+                        <span class="enhanced-table-type">10 Types</span>
+                    </div>
+                </div>
+                
+                <div class="enhanced-column-types-table-scrollable">
+                    <table class="enhanced-column-types-table">
+                        <thead>
+                            <tr>
+                                <th>URL Type</th>
+                                <th>Example</th>
+                                <th>Features</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url">Standard URL</td>
+                                <td class="column-type-url" onclick="openUrl('https://example.com')">https://example.com</td>
+                                <td>Basic web link with 🔗 icon, hover effects</td>
+                                <td>General website links</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-secure">Secure URL</td>
+                                <td class="column-type-url-secure" onclick="openUrl('https://secure.example.com')">https://secure.example.com</td>
+                                <td>HTTPS with 🔒 security indicator</td>
+                                <td>Secure websites, banking</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-external">External URL</td>
+                                <td class="column-type-url-external" onclick="openUrl('https://external.com')">https://external.com</td>
+                                <td>External link with ↗ indicator</td>
+                                <td>External resources</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-http">HTTP URL</td>
+                                <td class="column-type-url-http" onclick="openUrl('http://insecure.com')">http://insecure.com</td>
+                                <td>Insecure HTTP with ⚠️ warning</td>
+                                <td>Legacy websites</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-local">Local URL</td>
+                                <td class="column-type-url-local" onclick="openLocalUrl('/local/file')">/local/file</td>
+                                <td>Local file with 📁 indicator</td>
+                                <td>Internal resources</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-download">Download URL</td>
+                                <td class="column-type-url-download" onclick="downloadUrl('https://example.com/file.pdf')">Download PDF</td>
+                                <td>Download link with 📥 indicator</td>
+                                <td>File downloads</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-social">Social URL</td>
+                                <td class="column-type-url-social" onclick="openUrl('https://twitter.com/user')">@username</td>
+                                <td>Social media with 📱 indicator</td>
+                                <td>Social profiles</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-email">Email URL</td>
+                                <td class="column-type-url-email" onclick="sendEmail('user@example.com')">user@example.com</td>
+                                <td>Email with 📧 indicator</td>
+                                <td>Email contacts</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-phone">Phone URL</td>
+                                <td class="column-type-url-phone" onclick="callPhone('+1234567890')">+1 (555) 123-4567</td>
+                                <td>Phone with 📞 indicator</td>
+                                <td>Phone numbers</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url-invalid">Invalid URL</td>
+                                <td class="column-type-url-invalid">broken-link</td>
+                                <td>Invalid with ❌ indicator</td>
+                                <td>Broken links</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- URL Statistics -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">URL Column Type Statistics</h2>
+            
+            <div class="url-stats">
+                <div class="url-stat-card">
+                    <div class="url-stat-number">10</div>
+                    <div class="url-stat-label">URL Types</div>
+                </div>
+                <div class="url-stat-card">
+                    <div class="url-stat-number">6</div>
+                    <div class="url-stat-label">Security Indicators</div>
+                </div>
+                <div class="url-stat-card">
+                    <div class="url-stat-number">4</div>
+                    <div class="url-stat-label">Size Variants</div>
+                </div>
+                <div class="url-stat-card">
+                    <div class="url-stat-number">8</div>
+                    <div class="url-stat-label">Color Themes</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Detailed URL Type Examples -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Detailed URL Type Examples</h2>
+            
+            <div class="url-types-grid">
+                <!-- Standard URL -->
+                <div class="url-type-card">
+                    <h3>🔗 Standard URL</h3>
+                    <p class="arial-text-body">Basic web links with chain icon, hover effects, and click functionality.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Basic URL:</strong>
+                            <div class="column-type-url" onclick="openUrl('https://example.com')">https://example.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Long URL (Hover to Expand):</strong>
+                            <div class="column-type-url" onclick="openUrl('https://very-long-domain-name.example.com/path/to/very/long/page')">https://very-long-domain-name.example.com/path/to/very/long/page</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Subdomain:</strong>
+                            <div class="column-type-url" onclick="openUrl('https://blog.example.com')">https://blog.example.com</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Secure URL -->
+                <div class="url-type-card">
+                    <h3>🔒 Secure URL</h3>
+                    <p class="arial-text-body">HTTPS links with security indicators, green styling, and trust signals.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Banking Site:</strong>
+                            <div class="column-type-url-secure" onclick="openUrl('https://bank.example.com')">https://bank.example.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>E-commerce:</strong>
+                            <div class="column-type-url-secure" onclick="openUrl('https://shop.example.com')">https://shop.example.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Government:</strong>
+                            <div class="column-type-url-secure" onclick="openUrl('https://gov.example.com')">https://gov.example.com</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- External URL -->
+                <div class="url-type-card">
+                    <h3>↗ External URL</h3>
+                    <p class="arial-text-body">External links with arrow indicators, purple styling, and new tab behavior.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Documentation:</strong>
+                            <div class="column-type-url-external" onclick="openUrl('https://docs.external.com')">https://docs.external.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Reference:</strong>
+                            <div class="column-type-url-external" onclick="openUrl('https://reference.com')">https://reference.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>API:</strong>
+                            <div class="column-type-url-external" onclick="openUrl('https://api.external.com')">https://api.external.com</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HTTP URL -->
+                <div class="url-type-card">
+                    <h3>⚠️ HTTP URL</h3>
+                    <p class="arial-text-body">Insecure HTTP links with warning indicators, red styling, and caution messages.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Legacy Site:</strong>
+                            <div class="column-type-url-http" onclick="openUrl('http://legacy.example.com')">http://legacy.example.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Development:</strong>
+                            <div class="column-type-url-http" onclick="openUrl('http://dev.local')">http://dev.local</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Test Server:</strong>
+                            <div class="column-type-url-http" onclick="openUrl('http://test.example.com')">http://test.example.com</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Local URL -->
+                <div class="url-type-card">
+                    <h3>📁 Local URL</h3>
+                    <p class="arial-text-body">Local file paths with folder icons, cyan styling, and internal navigation.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>File Path:</strong>
+                            <div class="column-type-url-local" onclick="openLocalUrl('/documents/report.pdf')">/documents/report.pdf</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Image:</strong>
+                            <div class="column-type-url-local" onclick="openLocalUrl('/images/logo.png')">/images/logo.png</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Config:</strong>
+                            <div class="column-type-url-local" onclick="openLocalUrl('/config/settings.json')">/config/settings.json</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Download URL -->
+                <div class="url-type-card">
+                    <h3>📥 Download URL</h3>
+                    <p class="arial-text-body">Download links with download icons, green styling, and file type indicators.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>PDF Document:</strong>
+                            <div class="column-type-url-download" onclick="downloadUrl('https://example.com/document.pdf')">document.pdf</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>ZIP Archive:</strong>
+                            <div class="column-type-url-download" onclick="downloadUrl('https://example.com/archive.zip')">archive.zip</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Software:</strong>
+                            <div class="column-type-url-download" onclick="downloadUrl('https://example.com/app.exe')">application.exe</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social URL -->
+                <div class="url-type-card">
+                    <h3>📱 Social URL</h3>
+                    <p class="arial-text-body">Social media links with phone icons, orange styling, and platform integration.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Twitter:</strong>
+                            <div class="column-type-url-social" onclick="openUrl('https://twitter.com/username')">@username</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>LinkedIn:</strong>
+                            <div class="column-type-url-social" onclick="openUrl('https://linkedin.com/in/profile')">linkedin.com/in/profile</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Facebook:</strong>
+                            <div class="column-type-url-social" onclick="openUrl('https://facebook.com/page')">facebook.com/page</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Email URL -->
+                <div class="url-type-card">
+                    <h3>📧 Email URL</h3>
+                    <p class="arial-text-body">Email addresses with mail icons, blue styling, and mailto functionality.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Business Email:</strong>
+                            <div class="column-type-url-email" onclick="sendEmail('business@example.com')">business@example.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Support:</strong>
+                            <div class="column-type-url-email" onclick="sendEmail('support@example.com')">support@example.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Contact:</strong>
+                            <div class="column-type-url-email" onclick="sendEmail('contact@example.com')">contact@example.com</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phone URL -->
+                <div class="url-type-card">
+                    <h3>📞 Phone URL</h3>
+                    <p class="arial-text-body">Phone numbers with phone icons, green styling, and tel functionality.</p>
+                    
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Office Phone:</strong>
+                            <div class="column-type-url-phone" onclick="callPhone('+1234567890')">+1 (555) 123-4567</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Mobile:</strong>
+                            <div class="column-type-url-phone" onclick="callPhone('+1234567891')">+1 (555) 987-6543</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Toll-Free:</strong>
+                            <div class="column-type-url-phone" onclick="callPhone('+18001234567')">1-800-123-4567</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Interactive URL Features</h2>
+            
+            <div class="enhanced-url-column-container">
+                <div class="add-column-container">
+                    <div class="add-column-header">
+                        <h4 class="add-column-title">Interactive URL Column Types</h4>
+                        <span class="enhanced-table-type">Click to Test</span>
+                    </div>
+                </div>
+                
+                <div class="enhanced-column-types-table-scrollable">
+                    <table class="enhanced-column-types-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Example</th>
+                                <th>Action</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="column-type-url">Clickable URL</td>
+                                <td class="column-type-clickable column-type-url" onclick="handleUrlClick('https://example.com')">Click me!</td>
+                                <td>Click</td>
+                                <td id="url-result">Click the URL to see result</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-url-secure">Secure Verification</td>
+                                <td class="column-type-url-secure" onclick="verifySecure('https://bank.example.com')">Verify Security</td>
+                                <td>Click</td>
+                                <td>Shows security certificate info</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-url-download">Download Progress</td>
+                                <td class="column-type-url-download column-url-state-loading" onclick="simulateDownload()">Download File</td>
+                                <td>Click</td>
+                                <td>Simulates download progress</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-url-social">Social Share</td>
+                                <td class="column-type-url-social" onclick="shareOnSocial('https://example.com')">Share Link</td>
+                                <td>Click</td>
+                                <td>Opens social share dialog</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- URL Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">URL Column Type Variants</h2>
+            
+            <div class="url-types-grid">
+                <div class="url-type-card">
+                    <h3>Size Variants</h3>
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Small:</strong>
+                            <div class="column-type-url column-url-size-small">https://small.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Medium:</strong>
+                            <div class="column-type-url column-url-size-medium">https://medium.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Large:</strong>
+                            <div class="column-type-url column-url-size-large">https://large.com</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>XLarge:</strong>
+                            <div class="column-type-url column-url-size-xlarge">https://xlarge.com</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="url-type-card">
+                    <h3>Style Variants</h3>
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Minimal:</strong>
+                            <div class="column-type-url column-url-variant-minimal">Minimal</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Outlined:</strong>
+                            <div class="column-type-url column-url-variant-outlined">Outlined</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Filled:</strong>
+                            <div class="column-type-url column-url-variant-filled">Filled</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Glass:</strong>
+                            <div class="column-type-url column-url-variant-glass">Glass</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="url-type-card">
+                    <h3>State Variants</h3>
+                    <div class="url-examples">
+                        <div class="url-example">
+                            <strong>Default:</strong>
+                            <div class="column-type-url column-url-state-default">Default</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Hover:</strong>
+                            <div class="column-type-url column-url-state-hover">Hover</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Active:</strong>
+                            <div class="column-type-url column-url-state-active">Active</div>
+                        </div>
+                        <div class="url-example">
+                            <strong>Disabled:</strong>
+                            <div class="column-type-url column-url-state-disabled">Disabled</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Enhanced URL Column Type</p>
+                <p class="arial-footer-main">Professional enhanced URL column type system with 10 different URL types, security indicators, and interactive features</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Enhanced URL Column Type JavaScript functions
+        
+        // Open URL in new tab
+        function openUrl(url) {
+            window.open(url, '_blank');
+            console.log('Opening URL:', url);
+        }
+        
+        // Open local URL
+        function openLocalUrl(path) {
+            console.log('Opening local path:', path);
+            alert(`Would open local file: ${path}`);
+        }
+        
+        // Download file
+        function downloadUrl(url) {
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = url.split('/').pop();
+            link.click();
+            console.log('Downloading from URL:', url);
+        }
+        
+        // Send email
+        function sendEmail(email) {
+            window.location.href = `mailto:${email}`;
+            console.log('Sending email to:', email);
+        }
+        
+        // Make phone call
+        function callPhone(phone) {
+            window.location.href = `tel:${phone}`;
+            console.log('Calling phone:', phone);
+        }
+        
+        // Handle URL click
+        function handleUrlClick(url) {
+            const result = document.getElementById('url-result');
+            result.textContent = `URL clicked: ${url} at ${new Date().toLocaleTimeString()}`;
+            result.style.color = '#3b82f6';
+            result.style.fontWeight = '600';
+            
+            setTimeout(() => {
+                result.style.color = '#6b7280';
+                result.style.fontWeight = 'normal';
+            }, 3000);
+        }
+        
+        // Verify secure URL
+        function verifySecure(url) {
+            alert(`Security verification for: ${url}\n\n✅ HTTPS Protocol Active\n✅ Valid SSL Certificate\n✅ Domain Verified\n✅ Connection Secure`);
+        }
+        
+        // Simulate download
+        function simulateDownload() {
+            alert('Download started!\n\n📥 File: document.pdf\n📊 Size: 2.3 MB\n⚡ Speed: 5.2 MB/s\n⏱️ Time remaining: 0.4 seconds');
+        }
+        
+        // Share on social media
+        function shareOnSocial(url) {
+            const shareText = `Check out this amazing link: ${url}`;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Shared Link',
+                    text: shareText,
+                    url: url
+                });
+            } else {
+                alert(`Share this link:\n\n${shareText}`);
+            }
+        }
+        
+        // Add interactive animations
+        function addInteractiveFeatures() {
+            // Add hover effects to all URL examples
+            const examples = document.querySelectorAll('.url-example');
+            examples.forEach(example => {
+                example.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                example.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Add click animations to interactive elements
+            const interactiveElements = document.querySelectorAll('.column-url-clickable');
+            interactiveElements.forEach(element => {
+                element.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+            
+            // Add entrance animations to cards
+            const cards = document.querySelectorAll('.url-type-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('enhanced-table-animated-slide-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Add stat counter animations
+            const statNumbers = document.querySelectorAll('.url-stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current);
+                }, 30);
+            });
+        }
+        
+        // Initialize enhanced URL column types on load
+        function initializeEnhancedUrlColumnTypes() {
+            // Add entrance animations
+            const container = document.querySelector('.enhanced-url-column-container');
+            if (container) {
+                container.classList.add('enhanced-table-animated-slide-in');
+            }
+            
+            // Add interactive features
+            addInteractiveFeatures();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault();
+                    document.querySelector('.column-type-url').click();
+                }
+                if (e.ctrlKey && e.key === 'e') {
+                    e.preventDefault();
+                    document.querySelector('.column-type-url-email').click();
+                }
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEnhancedUrlColumnTypes();
+        });
+    </script>
+</body>
+</html>
