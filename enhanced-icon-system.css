@@ -728,6 +728,993 @@ body.dark-mode img.icon-bg-primary {
   }
 }
 
+/* ===== ENHANCED ICON NAMING STRATEGIES ===== */
+
+/* Semantic Naming Convention - Icons with Descriptive Names */
+img.icon[name="lightning-bolt"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="checkmark-success"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="warning-alert"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="error-cross"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="information-circle"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="settings-gear"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="navigation-arrow"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="home-house"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="user-profile"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="lock-security"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="unlock-access"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="email-message"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="phone-call"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="location-pin"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="calendar-date"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="clock-time"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="search-find"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="filter-sort"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="download-save"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="upload-share"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="edit-modify"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="delete-remove"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="add-create"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="minus-reduce"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="heart-favorite"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="star-rating"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="thumbs-up-like"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="thumbs-down-dislike"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="eye-view"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="eye-hide"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="volume-sound"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="volume-mute"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="camera-photo"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="video-play"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="music-audio"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="document-file"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="folder-directory"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="link-hyperlink"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="chain-connect"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="refresh-reload"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="sync-update"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="print-output"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="copy-duplicate"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="paste-insert"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="cut-snippet"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="clipboard-copy"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="scancode-qr"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="barcode-scan"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="tag-label"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="bookmark-save"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="flag-mark"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="bell-notification"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="rss-feed"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="wifi-network"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="bluetooth-connect"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="cloud-storage"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="database-server"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="server-host"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="globe-world"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="map-location"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="chart-graph"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="analytics-data"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="dashboard-layout"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="grid-view"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="list-view"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="menu-hamburger"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="menu-dots"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="menu-kebab"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="menu-meatball"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="close-x"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="expand-fullscreen"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="collapse-minimize"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="zoom-in"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="zoom-out"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="fit-screen"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="move-drag"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="resize-handle"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="rotate-left"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="rotate-right"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="flip-horizontal"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="flip-vertical"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="align-left"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="align-center"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="align-right"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="align-justify"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="text-bold"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="text-italic"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="text-underline"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="text-strikethrough"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="text-heading"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="text-paragraph"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="text-quote"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="text-code"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="image-picture"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="gallery-photos"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="slideshow-presentation"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="layers-stack"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="shapes-geometry"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="tools-wrench"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="build-construct"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="package-box"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="gift-present"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="shopping-cart"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="credit-card"] {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+img.icon[name="money-cash"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="bank-atm"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="wallet-payment"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="receipt-invoice"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="calculator-math"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="chart-line"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="chart-bar"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="chart-pie"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="chart-area"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="timeline-progress"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="milestone-achievement"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="trophy-award"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="medal-badge"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="ribbon-prize"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="certificate-credential"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="graduation-cap"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="book-education"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="library-knowledge"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="microscope-science"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="test-tube-lab"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="atom-physics"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="dna-biology"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="heartbeat-health"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="hospital-medical"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="pill-medicine"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="stethoscope-doctor"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="thermometer-temperature"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="mask-protection"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="shield-defense"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="security-guard"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="key-access"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="fingerprint-biometric"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="face-id"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="password-lock"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="two-factor-auth"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="vpn-connection"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="firewall-protection"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="antivirus-scan"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="bug-error"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="debug-code"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="console-terminal"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="api-integration"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="web-service"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="cloud-sync"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="backup-restore"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="export-download"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="import-upload"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="migration-transfer"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="deployment-release"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="version-control"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="git-branch"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="git-commit"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="git-merge"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="git-pull-request"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="git-fork"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="git-tag"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="git-issue"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="git-repository"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="docker-container"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="kubernetes-cluster"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="terraform-infrastructure"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="ansible-automation"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="jenkins-build"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="github-code"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="gitlab-cicd"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="bitbucket-repo"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="slack-communication"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="teams-collaboration"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="zoom-meeting"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="skype-call"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="discord-chat"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="telegram-message"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="whatsapp-chat"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="facebook-social"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="twitter-social"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="linkedin-professional"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="instagram-photo"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="youtube-video"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="tiktok-short"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="pinterest-pin"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="reddit-forum"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="medium-blog"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="wordpress-cms"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="shopify-ecommerce"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="stripe-payment"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="paypal-checkout"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="venmo-transfer"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="cashapp-money"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="zelle-payment"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="apple-service"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="google-service"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="microsoft-service"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="amazon-service"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="netflix-streaming"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="spotify-music"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="apple-music"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="youtube-music"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="soundcloud-audio"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="podcast-broadcast"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="twitch-stream"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="mixer-live"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="dailymotion-video"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="vimeo-video"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="dropbox-storage"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="google-drive"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="onedrive-cloud"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="icloud-sync"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="box-enterprise"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="slack-productivity"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="notion-notes"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="evernote-organize"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="trello-kanban"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="asana-tasks"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="monday-projects"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="clickup-productivity"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="jira-issues"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="confluence-wiki"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="figma-design"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="sketch-prototype"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="adobe-creative"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="canva-design"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="invision-prototype"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="zeplin-handoff"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="principle-animation"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="after-effects-motion"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="premiere-video"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="final-cut-pro"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="logic-pro-audio"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="garageband-music"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="ableton-live"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="fl-studio"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="pro-tools"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="cubase-daw"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="reaper-audio"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="studio-one"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
+img.icon[name="reason-daw"] {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+img.icon[name="bitwig-studio"] {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="tracktion-daw"] {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon[name="mixcraft-daw"] {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon[name="acid-pro"] {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(1251%) hue-rotate(187deg) brightness(96%) contrast(89%);
+}
+
+img.icon[name="samplitude-daw"] {
+  filter: brightness(0) saturate(100%) invert(39%) sepia(13%) saturate(1634%) hue-rotate(188deg) brightness(95%) contrast(87%);
+}
+
+img.icon[name="sonar-daw"] {
+  filter: brightness(0) saturate(100%) invert(58%) sepia(13%) saturate(358%) hue-rotate(194deg) brightness(94%) contrast(86%);
+}
+
 /* ===== ENHANCED ICON COMPLETION ===== */
 
 /*
