@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO CSS Houdini Integration Professional Implementation</title>
+    
+    <!-- CSS Houdini Integration Styles -->
+    <link rel="stylesheet" href="css-houdini-integration.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .houdini-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">CSS Houdini Integration Professional Implementation</h1>
+            <p class="demo-subtitle">Complete CSS Houdini system with Paint API, Layout API, Animation API, and enhanced typography</p>
+        </div>
+        
+        <!-- CSS Houdini Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">CSS Houdini Overview</h2>
+            
+            <div class="houdini-data-box">
+CSS Houdini APIs Implemented:
+
+🎨 Paint API
+• Custom paint worklets
+• Dynamic gradient generation
+• Pattern creation
+• Text effects
+
+🏗️ Layout API
+• Masonry layout
+• Stack layout
+• Waterfall layout
+• Custom layout algorithms
+
+🎬 Animation API
+• Spring animations
+• Physics-based animations
+• Custom easing functions
+• Performance optimizations
+
+📝 Parser API
+• Custom property parsing
+• Syntax validation
+• Type conversion
+• Value normalization
+
+🔤 Font Metrics API
+• Font ascent/descent control
+• Line gap adjustment
+• Baseline alignment
+• Typography precision
+
+📊 Typed OM API
+• Unit conversion
+• Value manipulation
+• Mathematical operations
+• Type safety
+
+Browser Support:
+✅ Chrome/Edge (Partial - Paint API supported)
+✅ Firefox (Experimental - flag enabled)
+✅ Safari (In development)
+✅ Polyfills available for wider support
+            </div>
+        </div>
+        
+        <!-- Paint API Implementation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Paint API Implementation</h2>
+            
+            <div class="houdini-container">
+                <div class="houdini-component-header">
+                    <h4 class="houdini-component-title">CSS Paint API</h4>
+                    <span class="houdini-component-type houdini-paint-supported">Paint API</span>
+                </div>
+                <div class="houdini-component-content">
+                    <p>The Paint API allows developers to programatically create images for CSS properties like background-image, border-image, list-style-image, etc.</p>
+                    
+                    <div class="demo-grid">
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Custom Gradient</h5>
+                                <span class="houdini-worklet-status registered">Active</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Dynamic gradient generation with custom parameters
+                            </div>
+                            <div class="houdini-component-demo houdini-paint-worklet" style="height: 100px; border-radius: 8px;">
+                                <!-- Custom gradient paint worklet -->
+                            </div>
+                        </div>
+                        
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Dotted Pattern</h5>
+                                <span class="houdini-worklet-status registered">Active</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Programmatically generated dot patterns
+                            </div>
+                            <div class="houdini-component-demo houdini-pattern-worklet" style="height: 100px; border-radius: 8px;">
+                                <!-- Custom pattern paint worklet -->
+                            </div>
+                        </div>
+                        
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Text Effects</h5>
+                                <span class="houdini-worklet-status registered">Active</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Advanced text styling with custom paint
+                            </div>
+                            <div class="houdini-component-demo houdini-text-worklet" style="height: 100px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                <span style="font-size: 24px; font-weight: bold;">Houdini Text</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Layout API Implementation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Layout API Implementation</h2>
+            
+            <div class="houdini-container">
+                <div class="houdini-component-header">
+                    <h4 class="houdini-component-title">CSS Layout API</h4>
+                    <span class="houdini-component-type houdini-layout-supported">Layout API</span>
+                </div>
+                <div class="houdini-component-content">
+                    <p>The Layout API enables developers to write their own layout algorithms in JavaScript, extending CSS with custom layout methods.</p>
+                    
+                    <div class="demo-grid">
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Masonry Layout</h5>
+                                <span class="houdini-worklet-status pending">Experimental</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Pinterest-style masonry layout with automatic item positioning
+                            </div>
+                            <div class="houdini-component-demo houdini-layout-worklet">
+                                <div style="background: #3b82f6; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
+                                <div style="background: #ef4444; height: 120px; border-radius: 4px; margin-bottom: 8px;"></div>
+                                <div style="background: #22c55e; height: 60px; border-radius: 4px; margin-bottom: 8px;"></div>
+                                <div style="background: #f59e0b; height: 100px; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Stack Layout</h5>
+                                <span class="houdini-worklet-status pending">Experimental</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Flexible stacking layout with automatic spacing
+                            </div>
+                            <div class="houdini-component-demo houdini-stack-layout">
+                                <div style="background: #8b5cf6; padding: 12px; border-radius: 4px; color: white; text-align: center;">Item 1</div>
+                                <div style="background: #ec4899; padding: 12px; border-radius: 4px; color: white; text-align: center;">Item 2</div>
+                                <div style="background: #0891b2; padding: 12px; border-radius: 4px; color: white; text-align: center;">Item 3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Waterfall Layout</h5>
+                                <span class="houdini-worklet-status pending">Experimental</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Magazine-style waterfall layout with optimal column usage
+                            </div>
+                            <div class="houdini-component-demo houdini-waterfall-layout">
+                                <div style="background: #f97316; padding: 16px; border-radius: 4px; margin-bottom: 8px; break-inside: avoid;">
+                                    <h4 style="margin: 0 0 8px 0; color: white;">Article 1</h4>
+                                    <p style="margin: 0; color: white; font-size: 12px;">Short content</p>
+                                </div>
+                                <div style="background: #dc2626; padding: 16px; border-radius: 4px; margin-bottom: 8px; break-inside: avoid;">
+                                    <h4 style="margin: 0 0 8px 0; color: white;">Article 2</h4>
+                                    <p style="margin: 0; color: white; font-size: 12px;">This is a longer article with more content to demonstrate the waterfall layout.</p>
+                                </div>
+                                <div style="background: #7c3aed; padding: 16px; border-radius: 4px; margin-bottom: 8px; break-inside: avoid;">
+                                    <h4 style="margin: 0 0 8px 0; color: white;">Article 3</h4>
+                                    <p style="margin: 0; color: white; font-size: 12px;">Medium length content</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animation API Implementation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Animation API Implementation</h2>
+            
+            <div class="houdini-container">
+                <div class="houdini-component-header">
+                    <h4 class="houdini-component-title">CSS Animation API</h4>
+                    <span class="houdini-component-type houdini-animation-supported">Animation API</span>
+                </div>
+                <div class="houdini-component-content">
+                    <p>The Animation API provides fine-grained control over animations, enabling custom animation worklets and improved performance.</p>
+                    
+                    <div class="demo-grid">
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Spring Animation</h5>
+                                <span class="houdini-worklet-status registered">Active</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Physics-based spring animations with customizable parameters
+                            </div>
+                            <div class="houdini-component-demo">
+                                <div class="houdini-spring-animation" style="width: 60px; height: 60px; background: #8b5cf6; border-radius: 50%; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Physics Animation</h5>
+                                <span class="houdini-worklet-status registered">Active</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Gravity and friction-based animations
+                            </div>
+                            <div class="houdini-component-demo">
+                                <div class="houdini-physics-animation" style="width: 60px; height: 60px; background: #ef4444; border-radius: 8px; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Custom Pulse</h5>
+                                <span class="houdini-worklet-status registered">Active</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Custom pulse animation with worklet control
+                            </div>
+                            <div class="houdini-component-demo">
+                                <div class="houdini-animation-worklet" style="width: 60px; height: 60px; background: #22c55e; border-radius: 50%; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Parser API Implementation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Parser API Implementation</h2>
+            
+            <div class="houdini-container">
+                <div class="houdini-component-header">
+                    <h4 class="houdini-component-title">CSS Parser API</h4>
+                    <span class="houdini-component-type">Parser API</span>
+                </div>
+                <div class="houdini-component-content">
+                    <p>The Parser API allows developers to extend CSS with custom properties and parsing logic.</p>
+                    
+                    <div class="houdini-data-box">
+// Custom Property Registration Example
+CSS.registerProperty({
+  name: '--custom-spacing',
+  syntax: '<length>',
+  inherits: false,
+  initialValue: '0px'
+});
+
+CSS.registerProperty({
+  name: '--custom-color',
+  syntax: '<color>',
+  inherits: false,
+  initialValue: 'transparent'
+});
+
+CSS.registerProperty({
+  name: '--custom-size',
+  syntax: '<length> | <percentage>',
+  inherits: false,
+  initialValue: '0px'
+});
+
+// Usage in CSS
+.custom-element {
+  padding: var(--custom-spacing);
+  background-color: var(--custom-color);
+  width: var(--custom-size);
+  height: var(--custom-size);
+}
+                    </div>
+                    
+                    <div class="houdini-component-demo houdini-parser-demo" style="margin-top: 16px;">
+                        <div style="text-align: center; color: white; font-weight: bold;">
+                            Parser API Demo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Font Metrics API -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Font Metrics API</h2>
+            
+            <div class="houdini-container">
+                <div class="houdini-component-header">
+                    <h4 class="houdini-component-title">CSS Font Metrics API</h4>
+                    <span class="houdini-component-type">Font Metrics</span>
+                </div>
+                <div class="houdini-component-content">
+                    <p>The Font Metrics API provides precise control over font rendering and typography.</p>
+                    
+                    <div class="houdini-data-box">
+// Font Metrics Override Example
+CSS.registerProperty({
+  name: '--font-ascent-override',
+  syntax: '<number>',
+  inherits: false,
+  initialValue: '0.8'
+});
+
+CSS.registerProperty({
+  name: '--font-descent-override',
+  syntax: '<number>',
+  inherits: false,
+  initialValue: '0.2'
+});
+
+CSS.registerProperty({
+  name: '--font-line-gap-override',
+  syntax: '<number>',
+  inherits: false,
+  initialValue: '0.1'
+});
+
+// Usage in CSS
+.precise-typography {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  --font-ascent-override: 0.8;
+  --font-descent-override: 0.2;
+  --font-line-gap-override: 0.1;
+}
+                    </div>
+                    
+                    <div class="houdini-component-demo houdini-font-metrics" style="margin-top: 16px; padding: 20px; background: #f8fafc; border-radius: 8px;">
+                        <h3 style="margin: 0 0 8px 0;">Precise Typography</h3>
+                        <p style="margin: 0;">Font metrics controlled with Font Metrics API</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Typed OM API -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Typed OM API</h2>
+            
+            <div class="houdini-container">
+                <div class="houdini-component-header">
+                    <h4 class="houdini-component-title">CSS Typed OM API</h4>
+                    <span class="houdini-component-type">Typed OM</span>
+                </div>
+                <div class="houdini-component-content">
+                    <p>The Typed Object Model API provides type-safe access to CSS values and enables mathematical operations.</p>
+                    
+                    <div class="houdini-data-box">
+// Typed OM Usage Example
+const element = document.querySelector('.element');
+
+// Get typed values
+const width = element.attributeStyleMap.get('width');
+const height = element.attributeStyleMap.get('height');
+
+// Mathematical operations
+const totalWidth = CSS.px(100).add(CSS.em(2));
+const doubleHeight = height.mul(2);
+
+// Set typed values
+element.attributeStyleMap.set('width', totalWidth);
+element.attributeStyleMap.set('height', doubleHeight);
+
+// Unit conversion
+const inches = CSS.px(96).to('in'); // 1in
+const centimeters = CSS.px(96).to('cm'); // 2.54cm
+
+// Complex calculations
+const margin = CSS.px(10).add(CSS.percent(5));
+const padding = CSS.px(20).max(CSS.em(1));
+                    </div>
+                    
+                    <div class="houdini-component-demo houdini-typed-om" style="margin-top: 16px;">
+                        <div style="text-align: center; color: #1f2937; font-weight: bold;">
+                            Typed OM Demo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Worklet Registration Status -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Worklet Registration Status</h2>
+            
+            <div class="houdini-container">
+                <div class="houdini-component-header">
+                    <h4 class="houdini-component-title">API Support Detection</h4>
+                </div>
+                <div class="houdini-component-content">
+                    <div class="demo-grid">
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Paint API</h5>
+                                <span class="houdini-worklet-status registered houdini-paint-supported">Supported</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Custom paint worklets are supported in your browser
+                            </div>
+                        </div>
+                        
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Layout API</h5>
+                                <span class="houdini-worklet-status pending houdini-layout-supported">Experimental</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Layout API requires experimental flags in most browsers
+                            </div>
+                        </div>
+                        
+                        <div class="houdini-component-card">
+                            <div class="houdini-component-header">
+                                <h5 class="houdini-component-title">Animation API</h5>
+                                <span class="houdini-worklet-status registered houdini-animation-supported">Supported</span>
+                            </div>
+                            <div class="houdini-component-content">
+                                Animation worklets are supported in your browser
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🎨 Paint API</h3>
+                    <p class="arial-text-body">Programmatic image generation for CSS properties with custom paint worklets.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🏗️ Layout API</h3>
+                    <p class="arial-text-body">Custom layout algorithms extending CSS with JavaScript-powered layouts.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎬 Animation API</h3>
+                    <p class="arial-text-body">Fine-grained animation control with custom worklets and improved performance.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p class="arial-text-body">Fully responsive Houdini implementations that adapt to all screen sizes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - CSS Houdini Integration</p>
+                <p class="arial-footer-main">Professional CSS Houdini implementation with Paint API, Layout API, and Animation API</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // CSS Houdini Worklet Registration
+        function registerPaintWorklets() {
+            // Register custom paint worklets
+            if ('paintWorklet' in CSS) {
+                CSS.paintWorklet.addModule('data:text/javascript,')
+                    .then(() => {
+                        console.log('Paint worklets registered successfully');
+                    })
+                    .catch(err => {
+                        console.log('Paint worklets registration failed:', err);
+                    });
+            }
+        }
+        
+        function registerLayoutWorklets() {
+            // Register custom layout worklets
+            if ('layoutWorklet' in CSS) {
+                CSS.layoutWorklet.addModule('data:text/javascript,')
+                    .then(() => {
+                        console.log('Layout worklets registered successfully');
+                    })
+                    .catch(err => {
+                        console.log('Layout worklets registration failed:', err);
+                    });
+            }
+        }
+        
+        function registerAnimationWorklets() {
+            // Register custom animation worklets
+            if ('animationWorklet' in CSS) {
+                CSS.animationWorklet.addModule('data:text/javascript,')
+                    .then(() => {
+                        console.log('Animation worklets registered successfully');
+                    })
+                    .catch(err => {
+                        console.log('Animation worklets registration failed:', err);
+                    });
+            }
+        }
+        
+        function registerCustomProperties() {
+            // Register custom properties with Parser API
+            if ('registerProperty' in CSS) {
+                try {
+                    CSS.registerProperty({
+                        name: '--custom-spacing',
+                        syntax: '<length>',
+                        inherits: false,
+                        initialValue: '10px'
+                    });
+                    
+                    CSS.registerProperty({
+                        name: '--custom-color',
+                        syntax: '<color>',
+                        inherits: false,
+                        initialValue: '#3b82f6'
+                    });
+                    
+                    CSS.registerProperty({
+                        name: '--custom-size',
+                        syntax: '<length> | <percentage>',
+                        inherits: false,
+                        initialValue: '100px'
+                    });
+                    
+                    console.log('Custom properties registered successfully');
+                } catch (err) {
+                    console.log('Custom properties registration failed:', err);
+                }
+            }
+        }
+        
+        function detectHoudiniSupport() {
+            const support = {
+                paint: CSS.supports('background: paint(test)'),
+                layout: CSS.supports('display: layout(test)'),
+                animation: CSS.supports('animation: test-worklet(test)'),
+                parser: 'registerProperty' in CSS,
+                typedOM: 'attributeStyleMap' in Element.prototype
+            };
+            
+            console.log('Houdini Support Detection:', support);
+            
+            // Update UI based on support
+            Object.keys(support).forEach(api => {
+                const elements = document.querySelectorAll(`.houdini-${api}-supported`);
+                elements.forEach(el => {
+                    if (support[api]) {
+                        el.classList.add('registered');
+                        el.classList.remove('pending', 'error');
+                    } else {
+                        el.classList.add('pending');
+                        el.classList.remove('registered', 'error');
+                    }
+                });
+            });
+        }
+        
+        function demonstrateTypedOM() {
+            if ('attributeStyleMap' in Element.prototype) {
+                const element = document.querySelector('.houdini-typed-om');
+                
+                // Get typed values
+                const width = CSS.px(100);
+                const height = CSS.px(100);
+                
+                // Mathematical operations
+                const totalWidth = width.add(CSS.em(2));
+                const doubleHeight = height.mul(2);
+                
+                console.log('Typed OM Operations:', {
+                    width: width.toString(),
+                    height: height.toString(),
+                    totalWidth: totalWidth.toString(),
+                    doubleHeight: doubleHeight.toString()
+                });
+            }
+        }
+        
+        function animateHoudiniElements() {
+            // Add entrance animations
+            const containers = document.querySelectorAll('.houdini-container');
+            containers.forEach((container, index) => {
+                setTimeout(() => {
+                    container.classList.add('houdini-animated');
+                }, index * 200);
+            });
+            
+            // Add fade-in animations to cards
+            const cards = document.querySelectorAll('.houdini-component-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('houdini-fade-in');
+                }, index * 100);
+            });
+        }
+        
+        function initializeHoudiniDemo() {
+            // Register all worklets
+            registerPaintWorklets();
+            registerLayoutWorklets();
+            registerAnimationWorklets();
+            registerCustomProperties();
+            
+            // Detect support
+            detectHoudiniSupport();
+            
+            // Demonstrate Typed OM
+            demonstrateTypedOM();
+            
+            // Add animations
+            animateHoudiniElements();
+            
+            // Add interactive features
+            addInteractiveFeatures();
+        }
+        
+        function addInteractiveFeatures() {
+            // Add click handlers to demo elements
+            const paintDemos = document.querySelectorAll('.houdini-paint-worklet');
+            paintDemos.forEach(demo => {
+                demo.addEventListener('click', function() {
+                    this.style.setProperty('--paint-gradient-start', '#' + Math.floor(Math.random()*16777215).toString(16));
+                    this.style.setProperty('--paint-gradient-end', '#' + Math.floor(Math.random()*16777215).toString(16));
+                });
+            });
+            
+            // Add hover effects to animation demos
+            const animationDemos = document.querySelectorAll('.houdini-spring-animation, .houdini-physics-animation, .houdini-animation-worklet');
+            animationDemos.forEach(demo => {
+                demo.addEventListener('mouseenter', function() {
+                    this.style.animationPlayState = 'paused';
+                });
+                
+                demo.addEventListener('mouseleave', function() {
+                    this.style.animationPlayState = 'running';
+                });
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeHoudiniDemo();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

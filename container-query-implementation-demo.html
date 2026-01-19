@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Container Query Implementation Professional Implementation</title>
+    
+    <!-- Container Query Implementation Styles -->
+    <link rel="stylesheet" href="container-query-implementation.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .container-query-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Container Query Implementation Professional Implementation</h1>
+            <p class="demo-subtitle">Complete container query system with Size-based, Style-based, Layout-based, Responsive, Adaptive, and Performance-optimized queries</p>
+        </div>
+        
+        <!-- Container Query Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Container Query Implementation Overview</h2>
+            
+            <div class="container-query-data-box">
+Container Query Implementation:
+
+📏 Size-based Container Queries
+• Min-width: 200px to 1000px breakpoints
+• Responsive font sizing and padding
+• Adaptive layout adjustments
+• Performance optimized transitions
+
+🎨 Style-based Container Queries
+• Dynamic background gradients
+• Adaptive border radius and shadows
+• Responsive visual hierarchy
+• Context-aware styling
+
+🏗️ Layout-based Container Queries
+• Flex direction changes (column → row)
+• Grid system adaptations
+• Navigation layout optimization
+• Sidebar layout transitions
+
+📱 Responsive Container Components
+• Card-based responsive design
+• Typography scaling
+• Grid system with column changes
+• Navigation and layout adaptations
+
+🔄 Adaptive Typography
+• Font size scaling from 12px to 20px
+• Line height and weight adjustments
+• Context-aware text rendering
+• Reading optimization
+
+⚡ Performance Optimization
+• GPU acceleration for larger containers
+• Hardware-accelerated transforms
+• Memory-efficient transitions
+• Containment for paint optimization
+
+Browser Support:
+✅ Chrome/Edge (Full support - container queries enabled)
+✅ Firefox (Full support - container queries enabled)
+✅ Safari (Full support - container queries enabled)
+✅ Progressive enhancement with fallbacks
+✅ Performance optimized implementations
+✅ Accessibility considerations included
+            </div>
+        </div>
+        
+        <!-- Size-based Container Queries -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Size-based Container Queries</h2>
+            
+            <div class="container-query-container">
+                <div class="container-query-header">
+                    <h4 class="container-query-title">Size-based Responsive Design</h4>
+                    <span class="container-query-type">Size Queries</span>
+                </div>
+                <div class="container-query-content">
+                    <p>Container queries that respond to the width of their parent container, enabling truly responsive components.</p>
+                    
+                    <div class="container-resizer responsive-container">
+                        <div class="container-size-responsive container-query-demo-item">
+                            <div class="container-query-preview-text">
+                                Resize this container to see the text size and padding change based on container width.
+                            </div>
+                            <div class="container-query-preview-label">
+                                Container Width: <span id="containerWidth">400px</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container-query-controls">
+                        <button class="container-query-control size" onclick="setContainerWidth(200)">200px</button>
+                        <button class="container-query-control size" onclick="setContainerWidth(400)">400px</button>
+                        <button class="container-query-control size" onclick="setContainerWidth(600)">600px</button>
+                        <button class="container-query-control size" onclick="setContainerWidth(800)">800px</button>
+                        <button class="container-query-control size" onclick="setContainerWidth(1000)">1000px</button>
+                        <button class="container-query-control" onclick="animateContainerWidth()">Animate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Style-based Container Queries -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Style-based Container Queries</h2>
+            
+            <div class="container-query-container">
+                <div class="container-query-header">
+                    <h4 class="container-query-title">Style-based Adaptations</h4>
+                    <span class="container-query-type">Style Queries</span>
+                </div>
+                <div class="container-query-content">
+                    <p>Dynamic styling that adapts based on container size with gradients, shadows, and visual effects.</p>
+                    
+                    <div class="container-resizer responsive-container">
+                        <div class="container-style-card container-query-demo-item">
+                            <div class="container-query-preview-text">
+                                This card changes its background gradient, border radius, and shadow based on container width.
+                            </div>
+                            <div class="container-query-preview-label">
+                                Style Level: <span id="styleLevel">Basic</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container-query-controls">
+                        <button class="container-query-control style" onclick="setStyleWidth(300)">Basic Style</button>
+                        <button class="container-query-control style" onclick="setStyleWidth(500)">Enhanced Style</button>
+                        <button class="container-query-control style" onclick="setStyleWidth(700)">Advanced Style</button>
+                        <button class="container-query-control" onclick="animateStyleWidth()">Animate Style</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Layout-based Container Queries -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Layout-based Container Queries</h2>
+            
+            <div class="container-query-container">
+                <div class="container-query-header">
+                    <h4 class="container-query-title">Layout-based Adaptations</h4>
+                    <span class="container-query-type">Layout Queries</span>
+                </div>
+                <div class="container-query-content">
+                    <p>Layout systems that adapt their structure based on container size, from column to row and beyond.</p>
+                    
+                    <div class="container-resizer responsive-container">
+                        <div class="container-layout-flex">
+                            <div class="container-query-demo-item">
+                                <div class="container-query-preview-text">Item 1</div>
+                            </div>
+                            <div class="container-query-demo-item">
+                                <div class="container-query-preview-text">Item 2</div>
+                            </div>
+                            <div class="container-query-demo-item">
+                                <div class="container-query-preview-text">Item 3</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container-query-controls">
+                        <button class="container-query-control layout" onclick="setLayoutWidth(250)">Column Layout</button>
+                        <button class="container-query-control layout" onclick="setLayoutWidth(450)">Row Layout</button>
+                        <button class="container-query-control layout" onclick="setLayoutWidth(650)">Wrap Layout</button>
+                        <button class="container-query-control layout" onclick="setLayoutWidth(850)">No Wrap</button>
+                        <button class="container-query-control" onclick="animateLayoutWidth()">Animate Layout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Responsive Container Components -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Responsive Container Components</h2>
+            
+            <div class="container-query-container">
+                <div class="container-query-header">
+                    <h4 class="container-query-title">Responsive Card System</h4>
+                    <span class="container-query-type">Responsive Components</span>
+                </div>
+                <div class="container-query-content">
+                    <p>Card components that adapt their typography and spacing based on container size.</p>
+                    
+                    <div class="container-resizer responsive-container">
+                        <div class="responsive-card container-query-demo-item">
+                            <h3 style="margin: 0 0 10px 0; color: #1f2937;">Responsive Card</h3>
+                            <p style="margin: 0; color: #6b7280; font-size: 14px;">
+                                This card adapts its font size, padding, and heading size based on the container width.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="container-query-controls">
+                        <button class="container-query-control responsive" onclick="setResponsiveWidth(200)">Mobile</button>
+                        <button class="container-query-control responsive" onclick="setResponsiveWidth(400)">Tablet</button>
+                        <button class="container-query-control responsive" onclick="setResponsiveWidth(600)">Desktop</button>
+                        <button class="container-query-control responsive" onclick="setResponsiveWidth(800)">Large</button>
+                        <button class="container-query-control" onclick="animateResponsiveWidth()">Animate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Adaptive Typography -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Adaptive Typography</h2>
+            
+            <div class="container-query-container">
+                <div class="container-query-header">
+                    <h4 class="container-query-title">Container-based Typography</h4>
+                    <span class="container-query-type">Adaptive Text</span>
+                </div>
+                <div class="container-query-content">
+                    <p>Typography that scales based on container size for optimal reading experience.</p>
+                    
+                    <div class="container-resizer adaptive-typography-container">
+                        <div class="adaptive-text container-query-demo-item">
+                            <div class="container-query-preview-text">
+                                The quick brown fox jumps over the lazy dog. This text adapts its size, line height, and font weight based on the container width for optimal readability.
+                            </div>
+                            <div class="container-query-preview-label">
+                                Typography Scale: <span id="typographyScale">Small</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container-query-controls">
+                        <button class="container-query-control adaptive" onclick="setTypographyWidth(200)">Caption</button>
+                        <button class="container-query-control adaptive" onclick="setTypographyWidth(350)">Text</button>
+                        <button class="container-query-control adaptive" onclick="setTypographyWidth(500)">Body</button>
+                        <button class="container-query-control adaptive" onclick="setTypographyWidth(650)">Subheading</button>
+                        <button class="container-query-control adaptive" onclick="setTypographyWidth(800)">Heading</button>
+                        <button class="container-query-control" onclick="animateTypographyWidth()">Animate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Container Grid System -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Container Grid System</h2>
+            
+            <div class="container-query-container">
+                <div class="container-query-header">
+                    <h4 class="container-query-title">Responsive Grid Layout</h4>
+                    <span class="container-query-type">Grid System</span>
+                </div>
+                <div class="container-query-content">
+                    <p>Grid system that adapts column count and spacing based on container size.</p>
+                    
+                    <div class="container-resizer container-grid-system">
+                        <div class="container-grid">
+                            <div class="container-query-demo-item">
+                                <div class="container-query-preview-text">Grid 1</div>
+                            </div>
+                            <div class="container-query-demo-item">
+                                <div class="container-query-preview-text">Grid 2</div>
+                            </div>
+                            <div class="container-query-demo-item">
+                                <div class="container-query-preview-text">Grid 3</div>
+                            </div>
+                            <div class="container-query-demo-item">
+                                <div class="container-query-preview-text">Grid 4</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container-query-controls">
+                        <button class="container-query-control" onclick="setGridWidth(250)">1 Column</button>
+                        <button class="container-query-control" onclick="setGridWidth(450)">2 Columns</button>
+                        <button class="container-query-control" onclick="setGridWidth(650)">3 Columns</button>
+                        <button class="container-query-control" onclick="setGridWidth(850)">4 Columns</button>
+                        <button class="container-query-control" onclick="animateGridWidth()">Animate Grid</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Container Navigation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Container Navigation</h2>
+            
+            <div class="container-query-container">
+                <div class="container-query-header">
+                    <h4 class="container-query-title">Adaptive Navigation</h4>
+                    <span class="container-query-type">Navigation Layout</span>
+                </div>
+                <div class="container-query-content">
+                    <p>Navigation that adapts from vertical to horizontal layout based on container size.</p>
+                    
+                    <div class="container-resizer container-navigation">
+                        <div class="container-nav">
+                            <div class="container-query-demo-item" style="flex: 1; text-align: center;">
+                                <div class="container-query-preview-text">Home</div>
+                            </div>
+                            <div class="container-query-demo-item" style="flex: 1; text-align: center;">
+                                <div class="container-query-preview-text">About</div>
+                            </div>
+                            <div class="container-query-demo-item" style="flex: 1; text-align: center;">
+                                <div class="container-query-preview-text">Services</div>
+                            </div>
+                            <div class="container-query-demo-item" style="flex: 1; text-align: center;">
+                                <div class="container-query-preview-text">Contact</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container-query-controls">
+                        <button class="container-query-control" onclick="setNavigationWidth(300)">Vertical</button>
+                        <button class="container-query-control" onclick="setNavigationWidth(500)">Horizontal</button>
+                        <button class="container-query-control" onclick="setNavigationWidth(700)">Spaced</button>
+                        <button class="container-query-control" onclick="animateNavigationWidth()">Animate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>📏 Size-based Queries</h3>
+                    <p class="arial-text-body">Container queries that respond to width with responsive font sizing and adaptive layouts.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎨 Style-based Queries</h3>
+                    <p class="arial-text-body">Dynamic styling with gradients, shadows, and visual effects based on container size.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🏗️ Layout-based Queries</h3>
+                    <p class="arial-text-body">Layout systems that adapt structure from column to row based on container dimensions.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📱 Responsive Components</h3>
+                    <p class="arial-text-body">Truly responsive components that adapt based on their container rather than viewport.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Container Query Implementation</p>
+                <p class="arial-footer-main">Professional container query system with Size-based, Style-based, Layout-based, and Responsive adaptations</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Container Query Implementation JavaScript functions
+        let animationIntervals = {};
+        
+        // Size-based Container Functions
+        function setContainerWidth(width) {
+            const resizer = document.querySelector('.container-resizer');
+            resizer.style.width = width + 'px';
+            updateContainerWidth(width);
+        }
+        
+        function updateContainerWidth(width) {
+            const widthSpan = document.getElementById('containerWidth');
+            if (widthSpan) {
+                widthSpan.textContent = width + 'px';
+            }
+        }
+        
+        function animateContainerWidth() {
+            if (animationIntervals.containerWidth) {
+                clearInterval(animationIntervals.containerWidth);
+                animationIntervals.containerWidth = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWidth = 200;
+            
+            animationIntervals.containerWidth = setInterval(() => {
+                currentWidth += direction * 50;
+                
+                if (currentWidth >= 1000) {
+                    currentWidth = 1000;
+                    direction = -1;
+                } else if (currentWidth <= 200) {
+                    currentWidth = 200;
+                    direction = 1;
+                }
+                
+                setContainerWidth(currentWidth);
+            }, 100);
+        }
+        
+        // Style-based Container Functions
+        function setStyleWidth(width) {
+            const resizer = document.querySelectorAll('.container-resizer')[1];
+            resizer.style.width = width + 'px';
+            updateStyleLevel(width);
+        }
+        
+        function updateStyleLevel(width) {
+            const styleSpan = document.getElementById('styleLevel');
+            if (styleSpan) {
+                if (width < 400) {
+                    styleSpan.textContent = 'Basic';
+                } else if (width < 600) {
+                    styleSpan.textContent = 'Enhanced';
+                } else {
+                    styleSpan.textContent = 'Advanced';
+                }
+            }
+        }
+        
+        function animateStyleWidth() {
+            if (animationIntervals.styleWidth) {
+                clearInterval(animationIntervals.styleWidth);
+                animationIntervals.styleWidth = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWidth = 300;
+            
+            animationIntervals.styleWidth = setInterval(() => {
+                currentWidth += direction * 50;
+                
+                if (currentWidth >= 700) {
+                    currentWidth = 700;
+                    direction = -1;
+                } else if (currentWidth <= 300) {
+                    currentWidth = 300;
+                    direction = 1;
+                }
+                
+                setStyleWidth(currentWidth);
+            }, 100);
+        }
+        
+        // Layout-based Container Functions
+        function setLayoutWidth(width) {
+            const resizer = document.querySelectorAll('.container-resizer')[2];
+            resizer.style.width = width + 'px';
+        }
+        
+        function animateLayoutWidth() {
+            if (animationIntervals.layoutWidth) {
+                clearInterval(animationIntervals.layoutWidth);
+                animationIntervals.layoutWidth = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWidth = 250;
+            
+            animationIntervals.layoutWidth = setInterval(() => {
+                currentWidth += direction * 50;
+                
+                if (currentWidth >= 850) {
+                    currentWidth = 850;
+                    direction = -1;
+                } else if (currentWidth <= 250) {
+                    currentWidth = 250;
+                    direction = 1;
+                }
+                
+                setLayoutWidth(currentWidth);
+            }, 100);
+        }
+        
+        // Responsive Container Functions
+        function setResponsiveWidth(width) {
+            const resizer = document.querySelectorAll('.container-resizer')[3];
+            resizer.style.width = width + 'px';
+        }
+        
+        function animateResponsiveWidth() {
+            if (animationIntervals.responsiveWidth) {
+                clearInterval(animationIntervals.responsiveWidth);
+                animationIntervals.responsiveWidth = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWidth = 200;
+            
+            animationIntervals.responsiveWidth = setInterval(() => {
+                currentWidth += direction * 50;
+                
+                if (currentWidth >= 800) {
+                    currentWidth = 800;
+                    direction = -1;
+                } else if (currentWidth <= 200) {
+                    currentWidth = 200;
+                    direction = 1;
+                }
+                
+                setResponsiveWidth(currentWidth);
+            }, 100);
+        }
+        
+        // Adaptive Typography Functions
+        function setTypographyWidth(width) {
+            const resizer = document.querySelectorAll('.container-resizer')[4];
+            resizer.style.width = width + 'px';
+            updateTypographyScale(width);
+        }
+        
+        function updateTypographyScale(width) {
+            const scaleSpan = document.getElementById('typographyScale');
+            if (scaleSpan) {
+                if (width < 300) {
+                    scaleSpan.textContent = 'Caption';
+                } else if (width < 450) {
+                    scaleSpan.textContent = 'Text';
+                } else if (width < 600) {
+                    scaleSpan.textContent = 'Body';
+                } else if (width < 750) {
+                    scaleSpan.textContent = 'Subheading';
+                } else {
+                    scaleSpan.textContent = 'Heading';
+                }
+            }
+        }
+        
+        function animateTypographyWidth() {
+            if (animationIntervals.typographyWidth) {
+                clearInterval(animationIntervals.typographyWidth);
+                animationIntervals.typographyWidth = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWidth = 200;
+            
+            animationIntervals.typographyWidth = setInterval(() => {
+                currentWidth += direction * 50;
+                
+                if (currentWidth >= 800) {
+                    currentWidth = 800;
+                    direction = -1;
+                } else if (currentWidth <= 200) {
+                    currentWidth = 200;
+                    direction = 1;
+                }
+                
+                setTypographyWidth(currentWidth);
+            }, 100);
+        }
+        
+        // Grid System Functions
+        function setGridWidth(width) {
+            const resizer = document.querySelectorAll('.container-resizer')[5];
+            resizer.style.width = width + 'px';
+        }
+        
+        function animateGridWidth() {
+            if (animationIntervals.gridWidth) {
+                clearInterval(animationIntervals.gridWidth);
+                animationIntervals.gridWidth = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWidth = 250;
+            
+            animationIntervals.gridWidth = setInterval(() => {
+                currentWidth += direction * 50;
+                
+                if (currentWidth >= 850) {
+                    currentWidth = 850;
+                    direction = -1;
+                } else if (currentWidth <= 250) {
+                    currentWidth = 250;
+                    direction = 1;
+                }
+                
+                setGridWidth(currentWidth);
+            }, 100);
+        }
+        
+        // Navigation Functions
+        function setNavigationWidth(width) {
+            const resizer = document.querySelectorAll('.container-resizer')[6];
+            resizer.style.width = width + 'px';
+        }
+        
+        function animateNavigationWidth() {
+            if (animationIntervals.navigationWidth) {
+                clearInterval(animationIntervals.navigationWidth);
+                animationIntervals.navigationWidth = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWidth = 300;
+            
+            animationIntervals.navigationWidth = setInterval(() => {
+                currentWidth += direction * 50;
+                
+                if (currentWidth >= 700) {
+                    currentWidth = 700;
+                    direction = -1;
+                } else if (currentWidth <= 300) {
+                    currentWidth = 300;
+                    direction = 1;
+                }
+                
+                setNavigationWidth(currentWidth);
+            }, 100);
+        }
+        
+        // Initialize container queries on load
+        function initializeContainerQueries() {
+            // Set initial widths
+            setContainerWidth(400);
+            setStyleWidth(500);
+            setLayoutWidth(450);
+            setResponsiveWidth(400);
+            setTypographyWidth(500);
+            setGridWidth(450);
+            setNavigationWidth(500);
+            
+            // Add entrance animations
+            const containers = document.querySelectorAll('.container-query-container');
+            containers.forEach((container, index) => {
+                setTimeout(() => {
+                    container.classList.add('container-query-animated');
+                }, index * 200);
+            });
+            
+            // Add interactive features
+            addInteractiveFeatures();
+        }
+        
+        function addInteractiveFeatures() {
+            // Add click handlers to demo items
+            const demoItems = document.querySelectorAll('.container-query-demo-item');
+            
+            demoItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+                
+                // Add hover enhancement
+                item.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '';
+                });
+            });
+            
+            // Add resize handlers for manual resizing
+            const resizers = document.querySelectorAll('.container-resizer');
+            resizers.forEach(resizer => {
+                resizer.addEventListener('input', function() {
+                    const width = this.offsetWidth;
+                    // Update display based on which resizer this is
+                    const index = Array.from(resizers).indexOf(this);
+                    switch(index) {
+                        case 0:
+                            updateContainerWidth(width);
+                            break;
+                        case 1:
+                            updateStyleLevel(width);
+                            break;
+                        case 4:
+                            updateTypographyScale(width);
+                            break;
+                    }
+                });
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeContainerQueries();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

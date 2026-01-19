@@ -1,0 +1,947 @@
+/* @DEMO Advanced Animation System Professional Implementation */
+
+/* ===== ADVANCED ANIMATION SYSTEM BASE STYLES ===== */
+
+/* Root Level Animation Variables */
+:root {
+  /* Advanced Animation Variables */
+  --advanced-animation-duration: 0.8s;
+  --advanced-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --advanced-animation-border-color: #e2e8f0;
+  --advanced-animation-hover-border: #3b82f6;
+  --advanced-animation-active-border: #2563eb;
+  
+  /* Animation Type Variables */
+  --advanced-animation-spring-color: #8b5cf6;
+  --advanced-animation-physics-color: #22c55e;
+  --advanced-animation-easing-color: #f59e0b;
+  --advanced-animation-keyframe-color: #ef4444;
+  --advanced-animation-interaction-color: #0891b2;
+  --advanced-animation-performance-color: #ec4899;
+  
+  /* Enhanced Typography for Advanced Animation */
+  --advanced-animation-font-family: Arial, Helvetica, sans-serif;
+  --advanced-animation-font-style: normal;
+  --advanced-animation-font-variant: normal;
+  --advanced-animation-font-weight: normal;
+  --advanced-animation-font-size: 14px;
+  --advanced-animation-line-height: 1.6;
+  --advanced-animation-color: #000000;
+  
+  /* Container Variables */
+  --advanced-animation-bg: #ffffff;
+  --advanced-animation-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --advanced-animation-radius: 12px;
+  --advanced-animation-padding: 20px;
+}
+
+/* ===== ADVANCED ANIMATION SYSTEM CONTAINER ===== */
+
+.advanced-animation-container {
+  font-family: var(--advanced-animation-font-family);
+  font-style: var(--advanced-animation-font-style);
+  font-variant: var(--advanced-animation-font-variant);
+  font-weight: var(--advanced-animation-font-weight);
+  font-size: var(--advanced-animation-font-size);
+  line-height: var(--advanced-animation-line-height);
+  color: var(--advanced-animation-color);
+  background: var(--advanced-animation-bg);
+  border-radius: var(--advanced-animation-radius);
+  box-shadow: var(--advanced-animation-shadow);
+  border: 2px solid var(--advanced-animation-border-color);
+  padding: var(--advanced-animation-padding);
+  margin: 20px 0;
+  transition: all var(--advanced-animation-duration) var(--advanced-animation-easing);
+}
+
+.advanced-animation-container:hover {
+  border-color: var(--advanced-animation-hover-border);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ===== SPRING ANIMATIONS ===== */
+
+.spring-animation {
+  --spring-stiffness: 100;
+  --spring-damping: 10;
+  --spring-mass: 1;
+  --spring-velocity: 0;
+  
+  /* Spring animation using cubic-bezier approximation */
+  animation: springBounce 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+@keyframes springBounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  20% {
+    transform: translateY(-30px) scale(1.1);
+  }
+  40% {
+    transform: translateY(0) scale(0.95);
+  }
+  60% {
+    transform: translateY(-15px) scale(1.05);
+  }
+  80% {
+    transform: translateY(0) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.spring-animation-gentle {
+  animation: springGentle 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+@keyframes springGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.spring-animation-stiff {
+  animation: springStiff 1s cubic-bezier(0.95, 0.05, 0.795, 0.035) infinite;
+}
+
+@keyframes springStiff {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-40px) scale(1.2);
+  }
+  50% {
+    transform: translateY(0) scale(0.9);
+  }
+  75% {
+    transform: translateY(-20px) scale(1.1);
+  }
+}
+
+/* ===== PHYSICS ANIMATIONS ===== */
+
+.physics-animation {
+  --physics-gravity: 9.8;
+  --physics-friction: 0.1;
+  --physics-bounce: 0.7;
+  --physics-air-resistance: 0.02;
+  
+  /* Physics-based gravity animation */
+  animation: physicsDrop 3s ease-in infinite;
+}
+
+@keyframes physicsDrop {
+  0% {
+    transform: translateY(-200px);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  25% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  40% {
+    transform: translateY(-60px);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  55% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  65% {
+    transform: translateY(-25px);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  75% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  82% {
+    transform: translateY(-10px);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  88% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  92% {
+    transform: translateY(-5px);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  96% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.physics-animation-pendulum {
+  animation: physicsPendulum 2s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+@keyframes physicsPendulum {
+  0% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+.physics-animation-projectile {
+  animation: physicsProjectile 2s ease-out infinite;
+}
+
+@keyframes physicsProjectile {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(100px, -50px);
+  }
+  50% {
+    transform: translate(200px, -100px);
+  }
+  75% {
+    transform: translate(300px, -50px);
+  }
+  100% {
+    transform: translate(400px, 0);
+  }
+}
+
+/* ===== CUSTOM EASING FUNCTIONS ===== */
+
+.easing-animation-ease-in-quad {
+  animation: easeInQuad 2s ease-in-quad infinite;
+}
+
+@keyframes easeInQuad {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.easing-animation-ease-out-quad {
+  animation: easeOutQuad 2s ease-out-quad infinite;
+}
+
+@keyframes easeOutQuad {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.easing-animation-ease-in-out-quad {
+  animation: easeInOutQuad 2s ease-in-out-quad infinite;
+}
+
+@keyframes easeInOutQuad {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.easing-animation-ease-in-cubic {
+  animation: easeInCubic 2s ease-in-cubic infinite;
+}
+
+@keyframes easeInCubic {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.easing-animation-ease-out-cubic {
+  animation: easeOutCubic 2s ease-out-cubic infinite;
+}
+
+@keyframes easeOutCubic {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.easing-animation-ease-in-out-cubic {
+  animation: easeInOutCubic 2s ease-in-out-cubic infinite;
+}
+
+@keyframes easeInOutCubic {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.easing-animation-ease-in-quart {
+  animation: easeInQuart 2s ease-in-quart infinite;
+}
+
+@keyframes easeInQuart {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.easing-animation-ease-out-quart {
+  animation: easeOutQuart 2s ease-out-quart infinite;
+}
+
+@keyframes easeOutQuart {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+.easing-animation-ease-in-out-quart {
+  animation: easeInOutQuart 2s ease-in-out-quart infinite;
+}
+
+@keyframes easeInOutQuart {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
+
+/* ===== ADVANCED KEYFRAME ANIMATIONS ===== */
+
+.keyframe-animation-morph {
+  animation: morphShape 3s ease-in-out infinite;
+}
+
+@keyframes morphShape {
+  0%, 100% {
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    border-radius: 20%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    border-radius: 10%;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    transform: rotate(180deg) scale(0.9);
+  }
+  75% {
+    border-radius: 30%;
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    transform: rotate(270deg) scale(1.05);
+  }
+}
+
+.keyframe-animation-color-shift {
+  animation: colorShift 4s linear infinite;
+}
+
+@keyframes colorShift {
+  0% {
+    background: #ff6b6b;
+    transform: scale(1);
+  }
+  25% {
+    background: #4ecdc4;
+    transform: scale(1.1);
+  }
+  50% {
+    background: #45b7d1;
+    transform: scale(1);
+  }
+  75% {
+    background: #96ceb4;
+    transform: scale(1.1);
+  }
+  100% {
+    background: #ff6b6b;
+    transform: scale(1);
+  }
+}
+
+.keyframe-animation-rotation-3d {
+  animation: rotation3D 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes rotation3D {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(90deg) rotateY(90deg) rotateZ(0deg);
+  }
+  75% {
+    transform: rotateX(0deg) rotateY(90deg) rotateZ(90deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg);
+  }
+}
+
+.keyframe-animation-path-animation {
+  animation: pathAnimation 5s ease-in-out infinite;
+}
+
+@keyframes pathAnimation {
+  0% {
+    offset-distance: 0%;
+    transform: translate(0, 0);
+  }
+  25% {
+    offset-distance: 25%;
+    transform: translate(100px, -50px);
+  }
+  50% {
+    offset-distance: 50%;
+    transform: translate(200px, 0);
+  }
+  75% {
+    offset-distance: 75%;
+    transform: translate(100px, 50px);
+  }
+  100% {
+    offset-distance: 100%;
+    transform: translate(0, 0);
+  }
+}
+
+/* ===== INTERACTION ANIMATIONS ===== */
+
+.interaction-animation-hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interaction-animation-hover-lift:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.interaction-animation-click-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.interaction-animation-click-ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.interaction-animation-click-ripple:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.interaction-animation-drag {
+  cursor: grab;
+  transition: transform 0.1s ease-out;
+}
+
+.interaction-animation-drag:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+
+.interaction-animation-scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interaction-animation-scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.interaction-animation-parallax {
+  transition: transform 0.1s ease-out;
+}
+
+/* ===== PERFORMANCE OPTIMIZED ANIMATIONS ===== */
+
+.performance-animation-gpu-accelerated {
+  /* Force GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.performance-animation-optimal {
+  /* Optimize for performance */
+  animation: optimalMove 2s linear infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes optimalMove {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(100px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.performance-animation-low-motion {
+  /* Respect user's motion preferences */
+  animation: lowMotion 3s ease-in-out infinite;
+}
+
+@keyframes lowMotion {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.performance-animation-batch {
+  /* Batch animations for better performance */
+  animation: batchScale 2s ease-in-out infinite,
+             batchRotate 3s linear infinite;
+}
+
+@keyframes batchScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes batchRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== ADVANCED ANIMATION COMPONENTS ===== */
+
+.advanced-animation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--advanced-animation-border-color);
+}
+
+.advanced-animation-title {
+  font-family: var(--advanced-animation-font-family);
+  font-style: var(--advanced-animation-font-style);
+  font-variant: var(--advanced-animation-font-variant);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: var(--advanced-animation-line-height);
+  color: #1f2937;
+  margin: 0;
+}
+
+.advanced-animation-type {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--advanced-animation-spring-color);
+  background: #f3e8ff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e9d5ff;
+}
+
+.advanced-animation-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--advanced-animation-border-color);
+}
+
+.advanced-animation-control {
+  font-family: var(--advanced-animation-font-family);
+  font-style: var(--advanced-animation-font-style);
+  font-variant: var(--advanced-animation-font-variant);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: var(--advanced-animation-line-height);
+  color: white;
+  background-color: #3b82f6;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.advanced-animation-control:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.advanced-animation-control:active {
+  background-color: #1d4ed8;
+  transform: translateY(0);
+}
+
+.advanced-animation-control.spring {
+  background-color: var(--advanced-animation-spring-color);
+}
+
+.advanced-animation-control.spring:hover {
+  background-color: #7c3aed;
+}
+
+.advanced-animation-control.physics {
+  background-color: var(--advanced-animation-physics-color);
+}
+
+.advanced-animation-control.physics:hover {
+  background-color: #16a34a;
+}
+
+.advanced-animation-control.easing {
+  background-color: var(--advanced-animation-easing-color);
+}
+
+.advanced-animation-control.easing:hover {
+  background-color: #d97706;
+}
+
+.advanced-animation-control.keyframe {
+  background-color: var(--advanced-animation-keyframe-color);
+}
+
+.advanced-animation-control.keyframe:hover {
+  background-color: #dc2626;
+}
+
+.advanced-animation-control.interaction {
+  background-color: var(--advanced-animation-interaction-color);
+}
+
+.advanced-animation-control.interaction:hover {
+  background-color: #0369a1;
+}
+
+.advanced-animation-control.performance {
+  background-color: var(--advanced-animation-performance-color);
+}
+
+.advanced-animation-control.performance:hover {
+  background-color: #db2777;
+}
+
+/* ===== ADVANCED ANIMATION DEMO ITEMS ===== */
+
+.animation-demo-item {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  margin: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.animation-demo-item.spring {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.animation-demo-item.physics {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.animation-demo-item.easing {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.animation-demo-item.keyframe {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.animation-demo-item.interaction {
+  background: linear-gradient(135deg, #0891b2 0%, #0369a1 100%);
+}
+
+.animation-demo-item.performance {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+}
+
+/* ===== ADVANCED ANIMATION ANIMATIONS ===== */
+
+@keyframes advancedAnimationSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes advancedAnimationFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes advancedAnimationRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes advancedAnimationPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.advanced-animation-animated {
+  animation: advancedAnimationSlideIn 0.6s ease-out;
+}
+
+.advanced-animation-fade-in {
+  animation: advancedAnimationFadeIn 0.4s ease-out;
+}
+
+.advanced-animation-rotating {
+  animation: advancedAnimationRotate 2s linear infinite;
+}
+
+.advanced-animation-pulsing {
+  animation: advancedAnimationPulse 2s ease-in-out infinite;
+}
+
+/* ===== RESPONSIVE ADVANCED ANIMATION ===== */
+
+@media (max-width: 768px) {
+  .advanced-animation-container {
+    padding: 16px;
+    margin: 16px 0;
+  }
+  
+  .advanced-animation-title {
+    font-size: 16px;
+  }
+  
+  .animation-demo-item {
+    width: 60px;
+    height: 60px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .advanced-animation-container {
+    padding: 12px;
+    margin: 12px 0;
+  }
+  
+  .advanced-animation-title {
+    font-size: 14px;
+  }
+  
+  .animation-demo-item {
+    width: 50px;
+    height: 50px;
+    font-size: 9px;
+  }
+}
+
+/* ===== ACCESSIBLE ADVANCED ANIMATION ===== */
+
+@media (prefers-contrast: high) {
+  .advanced-animation-container {
+    border-width: 3px;
+    border-color: #000000;
+  }
+  
+  .animation-demo-item {
+    border: 2px solid #000000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advanced-animation-container,
+  .animation-demo-item,
+  .advanced-animation-control {
+    transition: none;
+  }
+  
+  .spring-animation,
+  .physics-animation,
+  .easing-animation-ease-in-quad,
+  .easing-animation-ease-out-quad,
+  .easing-animation-ease-in-out-quad,
+  .keyframe-animation-morph,
+  .keyframe-animation-color-shift,
+  .keyframe-animation-rotation-3d,
+  .keyframe-animation-path-animation,
+  .performance-animation-optimal,
+  .performance-animation-batch {
+    animation: none;
+  }
+  
+  .advanced-animation-animated,
+  .advanced-animation-fade-in,
+  .advanced-animation-rotating,
+  .advanced-animation-pulsing {
+    animation: none;
+  }
+}
+
+/* ===== PRINT ADVANCED ANIMATION ===== */
+
+@media print {
+  .advanced-animation-container {
+    background: white;
+    box-shadow: none;
+    border: 2px solid #000000;
+    break-inside: avoid;
+  }
+  
+  .advanced-animation-control {
+    display: none;
+  }
+  
+  .animation-demo-item {
+    border: 1px solid #000000;
+  }
+}
+
+/* ===== ADVANCED ANIMATION UTILITIES ===== */
+
+.advanced-animation-small {
+  --advanced-animation-padding: 12px;
+  --advanced-animation-radius: 8px;
+}
+
+.advanced-animation-large {
+  --advanced-animation-padding: 24px;
+  --advanced-animation-radius: 16px;
+}
+
+.advanced-animation-dark {
+  --advanced-animation-bg: #1f2937;
+  --advanced-animation-color: #f9fafb;
+  --advanced-animation-border-color: #374151;
+}
+
+.advanced-animation-dark .animation-demo-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== ADVANCED ANIMATION PRESETS ===== */
+
+.animation-preset-bouncy {
+  animation: springBounce 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animation-preset-smooth {
+  animation: easeInOutCubic 1s ease-in-out;
+}
+
+.animation-preset-dramatic {
+  animation: morphShape 2s ease-in-out;
+}
+
+.animation-preset-subtle {
+  animation: lowMotion 3s ease-in-out;
+}
+
+.animation-preset-energetic {
+  animation: physicsDrop 2s ease-in infinite;
+}
+
+.animation-preset-elegant {
+  animation: rotation3D 4s linear infinite;
+}

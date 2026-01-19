@@ -1,0 +1,838 @@
+/* @DEMO Variable Font Manipulation Professional Implementation */
+
+/* ===== VARIABLE FONT MANIPULATION BASE STYLES ===== */
+
+/* Root Level Variable Font Variables */
+:root {
+  /* Variable Font Animation Variables */
+  --variable-font-animation-duration: 0.6s;
+  --variable-font-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --variable-font-border-color: #e2e8f0;
+  --variable-font-hover-border: #3b82f6;
+  --variable-font-active-border: #2563eb;
+  
+  /* Variable Font Type Variables */
+  --variable-font-weight-color: #8b5cf6;
+  --variable-font-width-color: #22c55e;
+  --variable-font-slant-color: #f59e0b;
+  --variable-font-optical-size-color: #ef4444;
+  --variable-font-gradation-color: #0891b2;
+  --variable-font-text-rendering-color: #ec4899;
+  
+  /* Enhanced Typography for Variable Fonts */
+  --variable-font-font-family: Arial, Helvetica, sans-serif;
+  --variable-font-font-style: normal;
+  --variable-font-font-variant: normal;
+  --variable-font-font-weight: normal;
+  --variable-font-font-size: 14px;
+  --variable-font-line-height: 1.6;
+  --variable-font-color: #000000;
+  
+  /* Container Variables */
+  --variable-font-bg: #ffffff;
+  --variable-font-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --variable-font-radius: 12px;
+  --variable-font-padding: 20px;
+}
+
+/* ===== VARIABLE FONT CONTAINER ===== */
+
+.variable-font-container {
+  font-family: var(--variable-font-font-family);
+  font-style: var(--variable-font-font-style);
+  font-variant: var(--variable-font-font-variant);
+  font-weight: var(--variable-font-font-weight);
+  font-size: var(--variable-font-font-size);
+  line-height: var(--variable-font-line-height);
+  color: var(--variable-font-color);
+  background: var(--variable-font-bg);
+  border-radius: var(--variable-font-radius);
+  box-shadow: var(--variable-font-shadow);
+  border: 2px solid var(--variable-font-border-color);
+  padding: var(--variable-font-padding);
+  margin: 20px 0;
+  transition: all var(--variable-font-animation-duration) var(--variable-font-animation-easing);
+}
+
+.variable-font-container:hover {
+  border-color: var(--variable-font-hover-border);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ===== VARIABLE FONT WEIGHT MANIPULATION ===== */
+
+.variable-font-weight-demo {
+  --font-weight-min: 100;
+  --font-weight-max: 900;
+  --font-weight-current: 400;
+  --font-weight-step: 100;
+  
+  font-family: 'Inter', 'Roboto Flex', 'Source Sans Variable', Arial, sans-serif;
+  font-variation-settings: 'wght' var(--font-weight-current);
+  transition: font-variation-settings 0.3s ease;
+}
+
+.variable-font-weight-light {
+  font-variation-settings: 'wght' 100;
+  font-weight: 100;
+}
+
+.variable-font-weight-regular {
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+}
+
+.variable-font-weight-medium {
+  font-variation-settings: 'wght' 500;
+  font-weight: 500;
+}
+
+.variable-font-weight-semibold {
+  font-variation-settings: 'wght' 600;
+  font-weight: 600;
+}
+
+.variable-font-weight-bold {
+  font-variation-settings: 'wght' 700;
+  font-weight: 700;
+}
+
+.variable-font-weight-black {
+  font-variation-settings: 'wght' 900;
+  font-weight: 900;
+}
+
+/* ===== VARIABLE FONT WIDTH MANIPULATION ===== */
+
+.variable-font-width-demo {
+  --font-width-min: 25;
+  --font-width-max: 200;
+  --font-width-current: 100;
+  --font-width-step: 25;
+  
+  font-family: 'Inter', 'Roboto Flex', 'Source Sans Variable', Arial, sans-serif;
+  font-variation-settings: 'wdth' var(--font-width-current);
+  transition: font-variation-settings 0.3s ease;
+}
+
+.variable-font-width-ultra-condensed {
+  font-variation-settings: 'wdth' 25;
+  font-stretch: ultra-condensed;
+}
+
+.variable-font-width-extra-condensed {
+  font-variation-settings: 'wdth' 50;
+  font-stretch: extra-condensed;
+}
+
+.variable-font-width-condensed {
+  font-variation-settings: 'wdth' 75;
+  font-stretch: condensed;
+}
+
+.variable-font-width-normal {
+  font-variation-settings: 'wdth' 100;
+  font-stretch: normal;
+}
+
+.variable-font-width-expanded {
+  font-variation-settings: 'wdth' 125;
+  font-stretch: expanded;
+}
+
+.variable-font-width-extra-expanded {
+  font-variation-settings: 'wdth' 150;
+  font-stretch: extra-expanded;
+}
+
+.variable-font-width-ultra-expanded {
+  font-variation-settings: 'wdth' 200;
+  font-stretch: ultra-expanded;
+}
+
+/* ===== VARIABLE FONT SLANT/ITALIC MANIPULATION ===== */
+
+.variable-font-slant-demo {
+  --font-slant-min: -20;
+  --font-slant-max: 20;
+  --font-slant-current: 0;
+  --font-slant-step: 5;
+  
+  font-family: 'Inter', 'Roboto Flex', 'Source Sans Variable', Arial, sans-serif;
+  font-variation-settings: 'slnt' var(--font-slant-current);
+  transition: font-variation-settings 0.3s ease;
+}
+
+.variable-font-slant-back {
+  font-variation-settings: 'slnt' -20;
+  font-style: oblique -20deg;
+}
+
+.variable-font-slant-back-moderate {
+  font-variation-settings: 'slnt' -10;
+  font-style: oblique -10deg;
+}
+
+.variable-font-slant-upright {
+  font-variation-settings: 'slnt' 0;
+  font-style: normal;
+}
+
+.variable-font-slant-forward-moderate {
+  font-variation-settings: 'slnt' 10;
+  font-style: oblique 10deg;
+}
+
+.variable-font-slant-forward {
+  font-variation-settings: 'slnt' 20;
+  font-style: oblique 20deg;
+}
+
+/* ===== VARIABLE FONT OPTICAL SIZE MANIPULATION ===== */
+
+.variable-font-optical-size-demo {
+  --font-optical-size-min: 8;
+  --font-optical-size-max: 144;
+  --font-optical-size-current: 24;
+  --font-optical-size-step: 4;
+  
+  font-family: 'Inter', 'Roboto Flex', 'Source Sans Variable', Arial, sans-serif;
+  font-variation-settings: 'opsz' var(--font-optical-size-current);
+  transition: font-variation-settings 0.3s ease;
+}
+
+.variable-font-optical-size-caption {
+  font-variation-settings: 'opsz' 8;
+  font-size: 8px;
+}
+
+.variable-font-optical-size-small {
+  font-variation-settings: 'opsz' 12;
+  font-size: 12px;
+}
+
+.variable-font-optical-size-text {
+  font-variation-settings: 'opsz' 16;
+  font-size: 16px;
+}
+
+.variable-font-optical-size-body {
+  font-variation-settings: 'opsz' 24;
+  font-size: 24px;
+}
+
+.variable-font-optical-size-subheading {
+  font-variation-settings: 'opsz' 36;
+  font-size: 36px;
+}
+
+.variable-font-optical-size-heading {
+  font-variation-settings: 'opsz' 48;
+  font-size: 48px;
+}
+
+.variable-font-optical-size-display {
+  font-variation-settings: 'opsz' 72;
+  font-size: 72px;
+}
+
+.variable-font-optical-size-poster {
+  font-variation-settings: 'opsz' 144;
+  font-size: 144px;
+}
+
+/* ===== VARIABLE FONT GRADATION MANIPULATION ===== */
+
+.variable-font-gradation-demo {
+  --font-gradation-min: 0;
+  --font-gradation-max: 100;
+  --font-gradation-current: 50;
+  --font-gradation-step: 10;
+  
+  font-family: 'Amstelvar', 'Decovar', Arial, sans-serif;
+  font-variation-settings: 'GRAD' var(--font-gradation-current);
+  transition: font-variation-settings 0.3s ease;
+}
+
+.variable-font-gradation-min {
+  font-variation-settings: 'GRAD' 0;
+}
+
+.variable-font-gradation-low {
+  font-variation-settings: 'GRAD' 25;
+}
+
+.variable-font-gradation-medium {
+  font-variation-settings: 'GRAD' 50;
+}
+
+.variable-font-gradation-high {
+  font-variation-settings: 'GRAD' 75;
+}
+
+.variable-font-gradation-max {
+  font-variation-settings: 'GRAD' 100;
+}
+
+/* ===== VARIABLE FONT TEXT RENDERING MANIPULATION ===== */
+
+.variable-font-text-rendering-demo {
+  --font-text-rendering-min: 0;
+  --font-text-rendering-max: 100;
+  --font-text-rendering-current: 50;
+  --font-text-rendering-step: 10;
+  
+  font-family: 'Amstelvar', 'Decovar', Arial, sans-serif;
+  font-variation-settings: 'YTLC' var(--font-text-rendering-current);
+  transition: font-variation-settings 0.3s ease;
+}
+
+.variable-font-text-rendering-auto {
+  font-variation-settings: 'YTLC' 0;
+  text-rendering: auto;
+}
+
+.variable-font-text-rendering-optimize-speed {
+  font-variation-settings: 'YTLC' 25;
+  text-rendering: optimizeSpeed;
+}
+
+.variable-font-text-rendering-optimize-legibility {
+  font-variation-settings: 'YTLC' 50;
+  text-rendering: optimizeLegibility;
+}
+
+.variable-font-text-rendering-geometric-precision {
+  font-variation-settings: 'YTLC' 75;
+  text-rendering: geometricPrecision;
+}
+
+.variable-font-text-rendering-crisp-edges {
+  font-variation-settings: 'YTLC' 100;
+  text-rendering: crispEdges;
+}
+
+/* ===== COMBINED VARIABLE FONT MANIPULATION ===== */
+
+.variable-font-combined-demo {
+  --combined-weight: 400;
+  --combined-width: 100;
+  --combined-slant: 0;
+  --combined-optical-size: 24;
+  --combined-gradation: 50;
+  
+  font-family: 'Inter', 'Roboto Flex', 'Source Sans Variable', Arial, sans-serif;
+  font-variation-settings: 
+    'wght' var(--combined-weight),
+    'wdth' var(--combined-width),
+    'slnt' var(--combined-slant),
+    'opsz' var(--combined-optical-size);
+  transition: font-variation-settings 0.3s ease;
+}
+
+.variable-font-combined-elegant {
+  font-variation-settings: 
+    'wght' 300,
+    'wdth' 87.5,
+    'slnt' -5,
+    'opsz' 36;
+}
+
+.variable-font-combined-bold {
+  font-variation-settings: 
+    'wght' 700,
+    'wdth' 112.5,
+    'slnt' 0,
+    'opsz' 48;
+}
+
+.variable-font-combined-compact {
+  font-variation-settings: 
+    'wght' 500,
+    'wdth' 75,
+    'slnt' 0,
+    'opsz' 16;
+}
+
+.variable-font-combined-expanded {
+  font-variation-settings: 
+    'wght' 600,
+    'wdth' 125,
+    'slnt' 5,
+    'opsz' 32;
+}
+
+.variable-font-combined-display {
+  font-variation-settings: 
+    'wght' 800,
+    'wdth' 100,
+    'slnt' 0,
+    'opsz' 72;
+}
+
+/* ===== VARIABLE FONT COMPONENTS ===== */
+
+.variable-font-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--variable-font-border-color);
+}
+
+.variable-font-title {
+  font-family: var(--variable-font-font-family);
+  font-style: var(--variable-font-font-style);
+  font-variant: var(--variable-font-font-variant);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: var(--variable-font-line-height);
+  color: #1f2937;
+  margin: 0;
+}
+
+.variable-font-type {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--variable-font-weight-color);
+  background: #f3e8ff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e9d5ff;
+}
+
+.variable-font-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--variable-font-border-color);
+}
+
+.variable-font-control {
+  font-family: var(--variable-font-font-family);
+  font-style: var(--variable-font-font-style);
+  font-variant: var(--variable-font-font-variant);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: var(--variable-font-line-height);
+  color: white;
+  background-color: #3b82f6;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.variable-font-control:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.variable-font-control:active {
+  background-color: #1d4ed8;
+  transform: translateY(0);
+}
+
+.variable-font-control.weight {
+  background-color: var(--variable-font-weight-color);
+}
+
+.variable-font-control.weight:hover {
+  background-color: #7c3aed;
+}
+
+.variable-font-control.width {
+  background-color: var(--variable-font-width-color);
+}
+
+.variable-font-control.width:hover {
+  background-color: #16a34a;
+}
+
+.variable-font-control.slant {
+  background-color: var(--variable-font-slant-color);
+}
+
+.variable-font-control.slant:hover {
+  background-color: #d97706;
+}
+
+.variable-font-control.optical-size {
+  background-color: var(--variable-font-optical-size-color);
+}
+
+.variable-font-control.optical-size:hover {
+  background-color: #dc2626;
+}
+
+.variable-font-control.gradation {
+  background-color: var(--variable-font-gradation-color);
+}
+
+.variable-font-control.gradation:hover {
+  background-color: #0369a1;
+}
+
+.variable-font-control.text-rendering {
+  background-color: var(--variable-font-text-rendering-color);
+}
+
+.variable-font-control.text-rendering:hover {
+  background-color: #db2777;
+}
+
+/* ===== VARIABLE FONT DEMO ITEMS ===== */
+
+.variable-font-demo-item {
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.variable-font-demo-item:hover {
+  border-color: var(--variable-font-hover-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.variable-font-demo-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.variable-font-demo-item:hover::before {
+  left: 100%;
+}
+
+.variable-font-preview-text {
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+  color: #1f2937;
+}
+
+.variable-font-preview-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== VARIABLE FONT SLIDERS ===== */
+
+.variable-font-slider-container {
+  margin: 20px 0;
+  padding: 16px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.variable-font-slider-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-family: var(--variable-font-font-family);
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.variable-font-slider-value {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--variable-font-weight-color);
+  background: #f3e8ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #e9d5ff;
+}
+
+.variable-font-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e5e7eb;
+  outline: none;
+  transition: background 0.3s;
+  -webkit-appearance: none;
+}
+
+.variable-font-slider:hover {
+  background: #d1d5db;
+}
+
+.variable-font-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--variable-font-weight-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.variable-font-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+}
+
+.variable-font-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--variable-font-weight-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.variable-font-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+}
+
+/* ===== VARIABLE FONT ANIMATIONS ===== */
+
+@keyframes variableFontWeightPulse {
+  0%, 100% {
+    font-variation-settings: 'wght' 400;
+  }
+  50% {
+    font-variation-settings: 'wght' 700;
+  }
+}
+
+@keyframes variableFontWidthPulse {
+  0%, 100% {
+    font-variation-settings: 'wdth' 100;
+  }
+  50% {
+    font-variation-settings: 'wdth' 150;
+  }
+}
+
+@keyframes variableFontSlantPulse {
+  0%, 100% {
+    font-variation-settings: 'slnt' 0;
+  }
+  50% {
+    font-variation-settings: 'slnt' 15;
+  }
+}
+
+@keyframes variableFontOpticalSizePulse {
+  0%, 100% {
+    font-variation-settings: 'opsz' 24;
+  }
+  50% {
+    font-variation-settings: 'opsz' 48;
+  }
+}
+
+@keyframes variableFontGradationPulse {
+  0%, 100% {
+    font-variation-settings: 'GRAD' 0;
+  }
+  50% {
+    font-variation-settings: 'GRAD' 100;
+  }
+}
+
+.variable-font-animated-weight {
+  animation: variableFontWeightPulse 3s ease-in-out infinite;
+}
+
+.variable-font-animated-width {
+  animation: variableFontWidthPulse 3s ease-in-out infinite;
+}
+
+.variable-font-animated-slant {
+  animation: variableFontSlantPulse 3s ease-in-out infinite;
+}
+
+.variable-font-animated-optical-size {
+  animation: variableFontOpticalSizePulse 3s ease-in-out infinite;
+}
+
+.variable-font-animated-gradation {
+  animation: variableFontGradationPulse 3s ease-in-out infinite;
+}
+
+/* ===== RESPONSIVE VARIABLE FONTS ===== */
+
+@media (max-width: 768px) {
+  .variable-font-container {
+    padding: 16px;
+    margin: 16px 0;
+  }
+  
+  .variable-font-title {
+    font-size: 16px;
+  }
+  
+  .variable-font-preview-text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .variable-font-container {
+    padding: 12px;
+    margin: 12px 0;
+  }
+  
+  .variable-font-title {
+    font-size: 14px;
+  }
+  
+  .variable-font-preview-text {
+    font-size: 18px;
+  }
+}
+
+/* ===== ACCESSIBLE VARIABLE FONTS ===== */
+
+@media (prefers-contrast: high) {
+  .variable-font-container {
+    border-width: 3px;
+    border-color: #000000;
+  }
+  
+  .variable-font-demo-item {
+    border-width: 2px;
+    border-color: #000000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .variable-font-container,
+  .variable-font-demo-item,
+  .variable-font-control {
+    transition: none;
+  }
+  
+  .variable-font-animated-weight,
+  .variable-font-animated-width,
+  .variable-font-animated-slant,
+  .variable-font-animated-optical-size,
+  .variable-font-animated-gradation {
+    animation: none;
+  }
+}
+
+/* ===== PRINT VARIABLE FONTS ===== */
+
+@media print {
+  .variable-font-container {
+    background: white;
+    box-shadow: none;
+    border: 2px solid #000000;
+    break-inside: avoid;
+  }
+  
+  .variable-font-control {
+    display: none;
+  }
+  
+  .variable-font-demo-item {
+    border: 1px solid #000000;
+    break-inside: avoid;
+  }
+}
+
+/* ===== VARIABLE FONT UTILITIES ===== */
+
+.variable-font-small {
+  --variable-font-padding: 12px;
+  --variable-font-radius: 8px;
+}
+
+.variable-font-large {
+  --variable-font-padding: 24px;
+  --variable-font-radius: 16px;
+}
+
+.variable-font-dark {
+  --variable-font-bg: #1f2937;
+  --variable-font-color: #f9fafb;
+  --variable-font-border-color: #374151;
+}
+
+.variable-font-dark .variable-font-demo-item {
+  background: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+/* ===== VARIABLE FONT PRESETS ===== */
+
+.variable-font-preset-heading {
+  font-variation-settings: 
+    'wght' 700,
+    'wdth' 100,
+    'slnt' 0,
+    'opsz' 48;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.variable-font-preset-body {
+  font-variation-settings: 
+    'wght' 400,
+    'wdth' 100,
+    'slnt' 0,
+    'opsz' 16;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.variable-font-preset-caption {
+  font-variation-settings: 
+    'wght' 300,
+    'wdth' 87.5,
+    'slnt' 0,
+    'opsz' 12;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.variable-font-preset-display {
+  font-variation-settings: 
+    'wght' 900,
+    'wdth' 125,
+    'slnt' -5,
+    'opsz' 72;
+  font-size: 72px;
+  line-height: 1.1;
+}
+
+.variable-font-preset-elegant {
+  font-variation-settings: 
+    'wght' 200,
+    'wdth' 87.5,
+    'slnt' -3,
+    'opsz' 24;
+  font-size: 24px;
+  line-height: 1.5;
+}

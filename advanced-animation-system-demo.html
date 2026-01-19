@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Advanced Animation System Professional Implementation</title>
+    
+    <!-- Advanced Animation System Styles -->
+    <link rel="stylesheet" href="advanced-animation-system.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .animation-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        .animation-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+            min-height: 120px;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Advanced Animation System Professional Implementation</h1>
+            <p class="demo-subtitle">Complete advanced animation system with Spring animations, Physics simulations, Custom easing functions, Keyframe animations, Interaction animations, and Performance optimization</p>
+        </div>
+        
+        <!-- Advanced Animation Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Advanced Animation System Overview</h2>
+            
+            <div class="animation-data-box">
+Advanced Animation System Implemented:
+
+🌀 Spring Animations
+• Physics-based spring physics
+• Adjustable stiffness and damping
+• Multiple spring presets (gentle, normal, stiff)
+• Natural bounce effects
+
+🌊 Physics Animations
+• Gravity simulation with bounce
+• Pendulum motion
+• Projectile trajectories
+• Real-world physics calculations
+
+📈 Custom Easing Functions
+• Quadratic easing (in, out, in-out)
+• Cubic easing (in, out, in-out)
+• Quartic easing (in, out, in-out)
+• Mathematical precision curves
+
+🎬 Advanced Keyframes
+• Shape morphing animations
+• Color shifting effects
+• 3D rotation transforms
+• Path-based animations
+
+🎮 Interaction Animations
+• Hover effects and transitions
+• Click ripple effects
+• Drag and drop animations
+• Scroll-based reveals
+• Parallax scrolling
+
+⚡ Performance Optimization
+• GPU-accelerated animations
+• Transform-based animations
+• Reduced motion support
+• Batch animation processing
+• Memory-efficient keyframes
+
+Browser Support:
+✅ Modern CSS animations (Full support)
+✅ CSS transforms (Full support)
+✅ CSS transitions (Full support)
+✅ Performance APIs (Good support)
+✅ Accessibility features (Full support)
+✅ Progressive enhancement (Implemented)
+            </div>
+        </div>
+        
+        <!-- Spring Animations -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Spring Animations</h2>
+            
+            <div class="advanced-animation-container">
+                <div class="advanced-animation-header">
+                    <h4 class="advanced-animation-title">Spring Physics Animations</h4>
+                    <span class="advanced-animation-type">Spring System</span>
+                </div>
+                <div class="advanced-animation-content">
+                    <p>Physics-based spring animations with adjustable stiffness, damping, and mass properties for natural motion effects.</p>
+                    
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item spring spring-animation">Spring</div>
+                        <div class="animation-demo-item spring spring-animation-gentle">Gentle</div>
+                        <div class="animation-demo-item spring spring-animation-stiff">Stiff</div>
+                    </div>
+                    
+                    <div class="advanced-animation-controls">
+                        <button class="advanced-animation-control spring" onclick="adjustSpringStiffness(50)">Soft Spring</button>
+                        <button class="advanced-animation-control spring" onclick="adjustSpringStiffness(100)">Normal Spring</button>
+                        <button class="advanced-animation-control spring" onclick="adjustSpringStiffness(200)">Stiff Spring</button>
+                        <button class="advanced-animation-control" onclick="toggleSpringAnimation()">Toggle Animation</button>
+                        <button class="advanced-animation-control" onclick="addSpringItem()">Add Spring</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Physics Animations -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Physics Animations</h2>
+            
+            <div class="advanced-animation-container">
+                <div class="advanced-animation-header">
+                    <h4 class="advanced-animation-title">Real-World Physics Simulations</h4>
+                    <span class="advanced-animation-type">Physics Engine</span>
+                </div>
+                <div class="advanced-animation-content">
+                    <p>Realistic physics simulations including gravity, bounce, pendulum motion, and projectile trajectories.</p>
+                    
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item physics physics-animation">Gravity</div>
+                        <div class="animation-demo-item physics physics-animation-pendulum">Pendulum</div>
+                        <div class="animation-demo-item physics physics-animation-projectile">Projectile</div>
+                    </div>
+                    
+                    <div class="advanced-animation-controls">
+                        <button class="advanced-animation-control physics" onclick="adjustGravity(5)">Low Gravity</button>
+                        <button class="advanced-animation-control physics" onclick="adjustGravity(10)">Earth Gravity</button>
+                        <button class="advanced-animation-control physics" onclick="adjustGravity(20)">High Gravity</button>
+                        <button class="advanced-animation-control" onclick="togglePhysicsAnimation()">Toggle Physics</button>
+                        <button class="advanced-animation-control" onclick="addPhysicsItem()">Add Physics</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Custom Easing Functions -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Custom Easing Functions</h2>
+            
+            <div class="advanced-animation-container">
+                <div class="advanced-animation-header">
+                    <h4 class="advanced-animation-title">Mathematical Easing Curves</h4>
+                    <span class="advanced-animation-type">Easing Functions</span>
+                </div>
+                <div class="advanced-animation-content">
+                    <p>Precise mathematical easing functions for smooth, natural animation transitions with quadratic, cubic, and quartic curves.</p>
+                    
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item easing easing-animation-ease-in-quad">In</div>
+                        <div class="animation-demo-item easing easing-animation-ease-out-quad">Out</div>
+                        <div class="animation-demo-item easing easing-animation-ease-in-out-quad">InOut</div>
+                        <div class="animation-demo-item easing easing-animation-ease-in-cubic">Cubic</div>
+                        <div class="animation-demo-item easing easing-animation-ease-out-cubic">Out</div>
+                        <div class="animation-demo-item easing easing-animation-ease-in-out-cubic">InOut</div>
+                    </div>
+                    
+                    <div class="advanced-animation-controls">
+                        <button class="advanced-animation-control easing" onclick="setEasingType('quad')">Quadratic</button>
+                        <button class="advanced-animation-control easing" onclick="setEasingType('cubic')">Cubic</button>
+                        <button class="advanced-animation-control easing" onclick="setEasingType('quart')">Quartic</button>
+                        <button class="advanced-animation-control" onclick="toggleEasingAnimation()">Toggle Easing</button>
+                        <button class="advanced-animation-control" onclick="addEasingItem()">Add Easing</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Advanced Keyframe Animations -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Advanced Keyframe Animations</h2>
+            
+            <div class="advanced-animation-container">
+                <div class="advanced-animation-header">
+                    <h4 class="advanced-animation-title">Complex Keyframe Sequences</h4>
+                    <span class="advanced-animation-type">Keyframes</span>
+                </div>
+                <div class="advanced-animation-content">
+                    <p>Advanced keyframe animations including shape morphing, color shifting, 3D rotations, and path-based animations.</p>
+                    
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item keyframe keyframe-animation-morph">Morph</div>
+                        <div class="animation-demo-item keyframe keyframe-animation-color-shift">Color</div>
+                        <div class="animation-demo-item keyframe keyframe-animation-rotation-3d">3D</div>
+                        <div class="animation-demo-item keyframe keyframe-animation-path-animation">Path</div>
+                    </div>
+                    
+                    <div class="advanced-animation-controls">
+                        <button class="advanced-animation-control keyframe" onclick="setKeyframeType('morph')">Shape Morph</button>
+                        <button class="advanced-animation-control keyframe" onclick="setKeyframeType('color')">Color Shift</button>
+                        <button class="advanced-animation-control keyframe" onclick="setKeyframeType('3d')">3D Rotation</button>
+                        <button class="advanced-animation-control" onclick="toggleKeyframeAnimation()">Toggle Keyframe</button>
+                        <button class="advanced-animation-control" onclick="addKeyframeItem()">Add Keyframe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interaction Animations -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Interaction Animations</h2>
+            
+            <div class="advanced-animation-container">
+                <div class="advanced-animation-header">
+                    <h4 class="advanced-animation-title">User Interaction Effects</h4>
+                    <span class="advanced-animation-type">Interactions</span>
+                </div>
+                <div class="advanced-animation-content">
+                    <p>Interactive animations triggered by user actions including hover effects, click ripples, drag animations, and scroll reveals.</p>
+                    
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item interaction interaction-animation-hover-lift">Hover</div>
+                        <div class="animation-demo-item interaction interaction-animation-click-ripple">Click</div>
+                        <div class="animation-demo-item interaction interaction-animation-drag">Drag</div>
+                        <div class="animation-demo-item interaction interaction-animation-scroll-reveal">Scroll</div>
+                    </div>
+                    
+                    <div class="advanced-animation-controls">
+                        <button class="advanced-animation-control interaction" onclick="setInteractionType('hover')">Hover Effects</button>
+                        <button class="advanced-animation-control interaction" onclick="setInteractionType('click')">Click Effects</button>
+                        <button class="advanced-animation-control interaction" onclick="setInteractionType('drag')">Drag Effects</button>
+                        <button class="advanced-animation-control" onclick="toggleInteractionAnimation()">Toggle Interaction</button>
+                        <button class="advanced-animation-control" onclick="addInteractionItem()">Add Interaction</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Performance Optimization -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Performance Optimization</h2>
+            
+            <div class="advanced-animation-container">
+                <div class="advanced-animation-header">
+                    <h4 class="advanced-animation-title">Optimized Animation Performance</h4>
+                    <span class="advanced-animation-type">Performance</span>
+                </div>
+                <div class="advanced-animation-content">
+                    <p>GPU-accelerated animations with transform optimization, reduced motion support, and memory-efficient batch processing.</p>
+                    
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item performance performance-animation-gpu-accelerated">GPU</div>
+                        <div class="animation-demo-item performance performance-animation-optimal">Optimal</div>
+                        <div class="animation-demo-item performance performance-animation-low-motion">Low Motion</div>
+                        <div class="animation-demo-item performance performance-animation-batch">Batch</div>
+                    </div>
+                    
+                    <div class="advanced-animation-controls">
+                        <button class="advanced-animation-control performance" onclick="enableGPUAcceleration()">Enable GPU</button>
+                        <button class="advanced-animation-control performance" onclick="optimizePerformance()">Optimize</button>
+                        <button class="advanced-animation-control performance" onclick="respectMotionPreference()">Low Motion</button>
+                        <button class="advanced-animation-control" onclick="togglePerformanceAnimation()">Toggle Performance</button>
+                        <button class="advanced-animation-control" onclick="addPerformanceItem()">Add Performance</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animation Presets -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Animation Presets</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🌀 Bouncy Preset</h3>
+                    <p class="arial-text-body">Energetic bouncy animations with spring physics for playful interactions.</p>
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item animation-preset-bouncy">Bounce</div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📈 Smooth Preset</h3>
+                    <p class="arial-text-body">Smooth cubic easing animations for elegant transitions.</p>
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item animation-preset-smooth">Smooth</div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎭 Dramatic Preset</h3>
+                    <p class="arial-text-body">Bold morphing animations for dramatic visual effects.</p>
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item animation-preset-dramatic">Dramatic</div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🌊 Energetic Preset</h3>
+                    <p class="arial-text-body">High-energy physics animations with gravity and bounce.</p>
+                    <div class="animation-showcase">
+                        <div class="animation-demo-item animation-preset-energetic">Energy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🌀 Spring Physics</h3>
+                    <p class="arial-text-body">Natural spring animations with adjustable stiffness and damping for realistic motion.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🌊 Physics Simulations</h3>
+                    <p class="arial-text-body">Real-world physics including gravity, bounce, and projectile trajectories.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📈 Custom Easing</h3>
+                    <p class="arial-text-body">Mathematical easing functions with quadratic, cubic, and quartic curves.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>⚡ Performance Optimized</h3>
+                    <p class="arial-text-body">GPU-accelerated animations with reduced motion support and batch processing.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Advanced Animation System</p>
+                <p class="arial-footer-main">Professional advanced animation system with Spring, Physics, Easing, Keyframes, Interactions, and Performance optimization</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Advanced Animation System JavaScript functions
+        let springItemCount = 3;
+        let physicsItemCount = 3;
+        let easingItemCount = 6;
+        let keyframeItemCount = 4;
+        let interactionItemCount = 4;
+        let performanceItemCount = 4;
+        
+        // Spring Animation Functions
+        function adjustSpringStiffness(stiffness) {
+            const springItems = document.querySelectorAll('.spring-animation, .spring-animation-gentle, .spring-animation-stiff');
+            springItems.forEach(item => {
+                item.style.setProperty('--spring-stiffness', stiffness);
+            });
+        }
+        
+        function toggleSpringAnimation() {
+            const springItems = document.querySelectorAll('.spring-animation, .spring-animation-gentle, .spring-animation-stiff');
+            springItems.forEach(item => {
+                if (item.style.animationPlayState === 'paused') {
+                    item.style.animationPlayState = 'running';
+                } else {
+                    item.style.animationPlayState = 'paused';
+                }
+            });
+        }
+        
+        function addSpringItem() {
+            const showcase = document.querySelector('.animation-showcase');
+            const newItem = document.createElement('div');
+            newItem.className = 'animation-demo-item spring spring-animation advanced-animation-fade-in';
+            springItemCount++;
+            newItem.textContent = `Spring ${springItemCount}`;
+            showcase.appendChild(newItem);
+        }
+        
+        // Physics Animation Functions
+        function adjustGravity(gravity) {
+            const physicsItems = document.querySelectorAll('.physics-animation, .physics-animation-pendulum, .physics-animation-projectile');
+            physicsItems.forEach(item => {
+                item.style.setProperty('--physics-gravity', gravity);
+            });
+        }
+        
+        function togglePhysicsAnimation() {
+            const physicsItems = document.querySelectorAll('.physics-animation, .physics-animation-pendulum, .physics-animation-projectile');
+            physicsItems.forEach(item => {
+                if (item.style.animationPlayState === 'paused') {
+                    item.style.animationPlayState = 'running';
+                } else {
+                    item.style.animationPlayState = 'paused';
+                }
+            });
+        }
+        
+        function addPhysicsItem() {
+            const showcase = document.querySelectorAll('.animation-showcase')[1];
+            const newItem = document.createElement('div');
+            newItem.className = 'animation-demo-item physics physics-animation advanced-animation-fade-in';
+            physicsItemCount++;
+            newItem.textContent = `Physics ${physicsItemCount}`;
+            showcase.appendChild(newItem);
+        }
+        
+        // Easing Animation Functions
+        function setEasingType(type) {
+            const easingItems = document.querySelectorAll('.easing-animation-ease-in-quad, .easing-animation-ease-out-quad, .easing-animation-ease-in-out-quad, .easing-animation-ease-in-cubic, .easing-animation-ease-out-cubic, .easing-animation-ease-in-out-cubic');
+            easingItems.forEach(item => {
+                item.style.animationName = `easeInOut${type.charAt(0).toUpperCase() + type.slice(1)}`;
+            });
+        }
+        
+        function toggleEasingAnimation() {
+            const easingItems = document.querySelectorAll('.easing-animation-ease-in-quad, .easing-animation-ease-out-quad, .easing-animation-ease-in-out-quad, .easing-animation-ease-in-cubic, .easing-animation-ease-out-cubic, .easing-animation-ease-in-out-cubic');
+            easingItems.forEach(item => {
+                if (item.style.animationPlayState === 'paused') {
+                    item.style.animationPlayState = 'running';
+                } else {
+                    item.style.animationPlayState = 'paused';
+                }
+            });
+        }
+        
+        function addEasingItem() {
+            const showcase = document.querySelectorAll('.animation-showcase')[2];
+            const newItem = document.createElement('div');
+            newItem.className = 'animation-demo-item easing easing-animation-ease-in-out-quad advanced-animation-fade-in';
+            easingItemCount++;
+            newItem.textContent = `Easing ${easingItemCount}`;
+            showcase.appendChild(newItem);
+        }
+        
+        // Keyframe Animation Functions
+        function setKeyframeType(type) {
+            const keyframeItems = document.querySelectorAll('.keyframe-animation-morph, .keyframe-animation-color-shift, .keyframe-animation-rotation-3d, .keyframe-animation-path-animation');
+            keyframeItems.forEach(item => {
+                switch(type) {
+                    case 'morph':
+                        item.style.animationName = 'morphShape';
+                        break;
+                    case 'color':
+                        item.style.animationName = 'colorShift';
+                        break;
+                    case '3d':
+                        item.style.animationName = 'rotation3D';
+                        break;
+                    default:
+                        item.style.animationName = 'pathAnimation';
+                }
+            });
+        }
+        
+        function toggleKeyframeAnimation() {
+            const keyframeItems = document.querySelectorAll('.keyframe-animation-morph, .keyframe-animation-color-shift, .keyframe-animation-rotation-3d, .keyframe-animation-path-animation');
+            keyframeItems.forEach(item => {
+                if (item.style.animationPlayState === 'paused') {
+                    item.style.animationPlayState = 'running';
+                } else {
+                    item.style.animationPlayState = 'paused';
+                }
+            });
+        }
+        
+        function addKeyframeItem() {
+            const showcase = document.querySelectorAll('.animation-showcase')[3];
+            const newItem = document.createElement('div');
+            newItem.className = 'animation-demo-item keyframe keyframe-animation-morph advanced-animation-fade-in';
+            keyframeItemCount++;
+            newItem.textContent = `Keyframe ${keyframeItemCount}`;
+            showcase.appendChild(newItem);
+        }
+        
+        // Interaction Animation Functions
+        function setInteractionType(type) {
+            const interactionItems = document.querySelectorAll('.interaction-animation-hover-lift, .interaction-animation-click-ripple, .interaction-animation-drag, .interaction-animation-scroll-reveal');
+            interactionItems.forEach(item => {
+                switch(type) {
+                    case 'hover':
+                        item.className = 'animation-demo-item interaction interaction-animation-hover-lift';
+                        break;
+                    case 'click':
+                        item.className = 'animation-demo-item interaction interaction-animation-click-ripple';
+                        break;
+                    case 'drag':
+                        item.className = 'animation-demo-item interaction interaction-animation-drag';
+                        break;
+                    default:
+                        item.className = 'animation-demo-item interaction interaction-animation-scroll-reveal';
+                }
+            });
+        }
+        
+        function toggleInteractionAnimation() {
+            const interactionItems = document.querySelectorAll('.interaction-animation-scroll-reveal');
+            interactionItems.forEach(item => {
+                item.classList.toggle('revealed');
+            });
+        }
+        
+        function addInteractionItem() {
+            const showcase = document.querySelectorAll('.animation-showcase')[4];
+            const newItem = document.createElement('div');
+            newItem.className = 'animation-demo-item interaction interaction-animation-hover-lift advanced-animation-fade-in';
+            interactionItemCount++;
+            newItem.textContent = `Interaction ${interactionItemCount}`;
+            showcase.appendChild(newItem);
+        }
+        
+        // Performance Animation Functions
+        function enableGPUAcceleration() {
+            const performanceItems = document.querySelectorAll('.performance-animation-gpu-accelerated, .performance-animation-optimal, .performance-animation-low-motion, .performance-animation-batch');
+            performanceItems.forEach(item => {
+                item.classList.add('performance-animation-gpu-accelerated');
+                item.style.transform = 'translateZ(0)';
+                item.style.willChange = 'transform';
+            });
+        }
+        
+        function optimizePerformance() {
+            const performanceItems = document.querySelectorAll('.performance-animation-gpu-accelerated, .performance-animation-optimal, .performance-animation-low-motion, .performance-animation-batch');
+            performanceItems.forEach(item => {
+                item.classList.add('performance-animation-optimal');
+                item.style.transform = 'translate3d(0, 0, 0)';
+            });
+        }
+        
+        function respectMotionPreference() {
+            const performanceItems = document.querySelectorAll('.performance-animation-gpu-accelerated, .performance-animation-optimal, .performance-animation-low-motion, .performance-animation-batch');
+            performanceItems.forEach(item => {
+                item.classList.add('performance-animation-low-motion');
+            });
+        }
+        
+        function togglePerformanceAnimation() {
+            const performanceItems = document.querySelectorAll('.performance-animation-gpu-accelerated, .performance-animation-optimal, .performance-animation-low-motion, .performance-animation-batch');
+            performanceItems.forEach(item => {
+                if (item.style.animationPlayState === 'paused') {
+                    item.style.animationPlayState = 'running';
+                } else {
+                    item.style.animationPlayState = 'paused';
+                }
+            });
+        }
+        
+        function addPerformanceItem() {
+            const showcase = document.querySelectorAll('.animation-showcase')[5];
+            const newItem = document.createElement('div');
+            newItem.className = 'animation-demo-item performance performance-animation-gpu-accelerated advanced-animation-fade-in';
+            performanceItemCount++;
+            newItem.textContent = `Perf ${performanceItemCount}`;
+            showcase.appendChild(newItem);
+        }
+        
+        // Scroll reveal functionality
+        function handleScrollReveal() {
+            const reveals = document.querySelectorAll('.interaction-animation-scroll-reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('revealed');
+                } else {
+                    element.classList.remove('revealed');
+                }
+            });
+        }
+        
+        // Initialize animations on load
+        function initializeAdvancedAnimations() {
+            // Add entrance animations
+            const containers = document.querySelectorAll('.advanced-animation-container');
+            containers.forEach((container, index) => {
+                setTimeout(() => {
+                    container.classList.add('advanced-animation-animated');
+                }, index * 200);
+            });
+            
+            // Add interactive features
+            addInteractiveFeatures();
+            
+            // Initialize scroll reveal
+            handleScrollReveal();
+        }
+        
+        function addInteractiveFeatures() {
+            // Add click handlers to animation items
+            const allItems = document.querySelectorAll('.animation-demo-item');
+            
+            allItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.2)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+                
+                // Add hover enhancement
+                item.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '';
+                });
+            });
+            
+            // Add drag functionality to drag items
+            const dragItems = document.querySelectorAll('.interaction-animation-drag');
+            dragItems.forEach(item => {
+                let isDragging = false;
+                let startX, startY, initialX, initialY;
+                
+                item.addEventListener('mousedown', function(e) {
+                    isDragging = true;
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    initialX = item.offsetLeft;
+                    initialY = item.offsetTop;
+                    item.style.cursor = 'grabbing';
+                });
+                
+                document.addEventListener('mousemove', function(e) {
+                    if (!isDragging) return;
+                    
+                    const dx = e.clientX - startX;
+                    const dy = e.clientY - startY;
+                    
+                    item.style.transform = `translate(${dx}px, ${dy}px)`;
+                });
+                
+                document.addEventListener('mouseup', function() {
+                    if (isDragging) {
+                        isDragging = false;
+                        item.style.cursor = 'grab';
+                        setTimeout(() => {
+                            item.style.transform = '';
+                        }, 100);
+                    }
+                });
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAdvancedAnimations();
+            
+            // Add scroll event listener for scroll reveal
+            window.addEventListener('scroll', handleScrollReveal);
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

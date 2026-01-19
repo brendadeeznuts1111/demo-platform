@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Variable Font Manipulation Professional Implementation</title>
+    
+    <!-- Variable Font Manipulation Styles -->
+    <link rel="stylesheet" href="variable-font-manipulation.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <!-- Import Variable Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Source+Sans+Variable:wdth,wght@75..125,200..900&family=Amstelvar:opsz,wght,GRAD@8..144,100..900,0..200&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .variable-font-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Variable Font Manipulation Professional Implementation</h1>
+            <p class="demo-subtitle">Complete variable font system with Weight, Width, Slant, Optical Size, Gradation, and Text Rendering manipulation</p>
+        </div>
+        
+        <!-- Variable Font Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Variable Font Manipulation Overview</h2>
+            
+            <div class="variable-font-data-box">
+Variable Font Manipulation Implemented:
+
+⚖️ Font Weight (wght)
+• Range: 100 (Thin) to 900 (Black)
+• Smooth transitions between weights
+• Real-time weight adjustment
+• Performance optimized
+
+📏 Font Width (wdth)
+• Range: 25% (Ultra-Condensed) to 200% (Ultra-Expanded)
+• Condensed to expanded variations
+• Responsive width adaptation
+• Space-efficient typography
+
+📐 Font Slant (slnt)
+• Range: -20° (Back Slant) to +20° (Forward Slant)
+• Oblique angle control
+• Italic alternatives
+• Dynamic slant adjustment
+
+🔍 Optical Size (opsz)
+• Range: 8px (Caption) to 144px (Poster)
+• Size-optimized rendering
+• Automatic detail adjustment
+• Print and digital optimization
+
+🎨 Font Gradation (GRAD)
+• Range: 0 (Min) to 100 (Max)
+• Stroke weight variation
+• Style intensity control
+• Creative typography effects
+
+🖼️ Text Rendering (YTLC)
+• Auto, OptimizeSpeed, OptimizeLegibility
+• GeometricPrecision, CrispEdges
+• Rendering quality control
+• Performance vs quality balance
+
+Browser Support:
+✅ Modern browsers with variable font support (Chrome, Edge, Safari, Firefox)
+✅ Fallback to static fonts for older browsers
+✅ Progressive enhancement implemented
+✅ Performance optimized loading
+✅ Accessibility considerations included
+            </div>
+        </div>
+        
+        <!-- Font Weight Manipulation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Font Weight Manipulation</h2>
+            
+            <div class="variable-font-container">
+                <div class="variable-font-header">
+                    <h4 class="variable-font-title">Variable Font Weight</h4>
+                    <span class="variable-font-type">Weight (wght)</span>
+                </div>
+                <div class="variable-font-content">
+                    <p>Smooth weight transitions from 100 (Thin) to 900 (Black) with real-time adjustment.</p>
+                    
+                    <div class="variable-font-slider-container">
+                        <div class="variable-font-slider-label">
+                            <span>Font Weight</span>
+                            <span class="variable-font-slider-value" id="weightValue">400</span>
+                        </div>
+                        <input type="range" class="variable-font-slider" id="weightSlider" min="100" max="900" value="400" step="100">
+                    </div>
+                    
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-weight-demo" id="weightDemo">
+                            The quick brown fox jumps over the lazy dog
+                        </div>
+                        <div class="variable-font-preview-label">Weight: <span id="weightLabel">400</span></div>
+                    </div>
+                    
+                    <div class="variable-font-controls">
+                        <button class="variable-font-control weight" onclick="setWeight(100)">Thin</button>
+                        <button class="variable-font-control weight" onclick="setWeight(300)">Light</button>
+                        <button class="variable-font-control weight" onclick="setWeight(400)">Regular</button>
+                        <button class="variable-font-control weight" onclick="setWeight(600)">Semibold</button>
+                        <button class="variable-font-control weight" onclick="setWeight(700)">Bold</button>
+                        <button class="variable-font-control weight" onclick="setWeight(900)">Black</button>
+                        <button class="variable-font-control" onclick="animateWeight()">Animate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Font Width Manipulation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Font Width Manipulation</h2>
+            
+            <div class="variable-font-container">
+                <div class="variable-font-header">
+                    <h4 class="variable-font-title">Variable Font Width</h4>
+                    <span class="variable-font-type">Width (wdth)</span>
+                </div>
+                <div class="variable-font-content">
+                    <p>Width variations from ultra-condensed to ultra-expanded for space-efficient typography.</p>
+                    
+                    <div class="variable-font-slider-container">
+                        <div class="variable-font-slider-label">
+                            <span>Font Width</span>
+                            <span class="variable-font-slider-value" id="widthValue">100%</span>
+                        </div>
+                        <input type="range" class="variable-font-slider" id="widthSlider" min="25" max="200" value="100" step="25">
+                    </div>
+                    
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-width-demo" id="widthDemo">
+                            Responsive typography design
+                        </div>
+                        <div class="variable-font-preview-label">Width: <span id="widthLabel">100%</span></div>
+                    </div>
+                    
+                    <div class="variable-font-controls">
+                        <button class="variable-font-control width" onclick="setWidth(25)">Ultra-Condensed</button>
+                        <button class="variable-font-control width" onclick="setWidth(50)">Extra-Condensed</button>
+                        <button class="variable-font-control width" onclick="setWidth(75)">Condensed</button>
+                        <button class="variable-font-control width" onclick="setWidth(100)">Normal</button>
+                        <button class="variable-font-control width" onclick="setWidth(125)">Expanded</button>
+                        <button class="variable-font-control width" onclick="setWidth(150)">Extra-Expanded</button>
+                        <button class="variable-font-control" onclick="animateWidth()">Animate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Font Slant Manipulation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Font Slant Manipulation</h2>
+            
+            <div class="variable-font-container">
+                <div class="variable-font-header">
+                    <h4 class="variable-font-title">Variable Font Slant</h4>
+                    <span class="variable-font-type">Slant (slnt)</span>
+                </div>
+                <div class="variable-font-content">
+                    <p>Dynamic slant control from -20° (back slant) to +20° (forward slant) for expressive typography.</p>
+                    
+                    <div class="variable-font-slider-container">
+                        <div class="variable-font-slider-label">
+                            <span>Font Slant</span>
+                            <span class="variable-font-slider-value" id="slantValue">0°</span>
+                        </div>
+                        <input type="range" class="variable-font-slider" id="slantSlider" min="-20" max="20" value="0" step="5">
+                    </div>
+                    
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-slant-demo" id="slantDemo">
+                            Expressive typography with slant
+                        </div>
+                        <div class="variable-font-preview-label">Slant: <span id="slantLabel">0°</span></div>
+                    </div>
+                    
+                    <div class="variable-font-controls">
+                        <button class="variable-font-control slant" onclick="setSlant(-20)">Back Slant</button>
+                        <button class="variable-font-control slant" onclick="setSlant(-10)">Back Moderate</button>
+                        <button class="variable-font-control slant" onclick="setSlant(0)">Upright</button>
+                        <button class="variable-font-control slant" onclick="setSlant(10)">Forward Moderate</button>
+                        <button class="variable-font-control slant" onclick="setSlant(20)">Forward Slant</button>
+                        <button class="variable-font-control" onclick="animateSlant()">Animate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Optical Size Manipulation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Optical Size Manipulation</h2>
+            
+            <div class="variable-font-container">
+                <div class="variable-font-header">
+                    <h4 class="variable-font-title">Optical Size Adjustment</h4>
+                    <span class="variable-font-type">Optical Size (opsz)</span>
+                </div>
+                <div class="variable-font-content">
+                    <p>Size-optimized rendering from 8px caption to 144px poster with automatic detail adjustment.</p>
+                    
+                    <div class="variable-font-slider-container">
+                        <div class="variable-font-slider-label">
+                            <span>Optical Size</span>
+                            <span class="variable-font-slider-value" id="opticalSizeValue">24px</span>
+                        </div>
+                        <input type="range" class="variable-font-slider" id="opticalSizeSlider" min="8" max="144" value="24" step="4">
+                    </div>
+                    
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-optical-size-demo" id="opticalSizeDemo" style="font-size: 24px;">
+                            Size-optimized typography
+                        </div>
+                        <div class="variable-font-preview-label">Optical Size: <span id="opticalSizeLabel">24px</span></div>
+                    </div>
+                    
+                    <div class="variable-font-controls">
+                        <button class="variable-font-control optical-size" onclick="setOpticalSize(8)">Caption</button>
+                        <button class="variable-font-control optical-size" onclick="setOpticalSize(12)">Small</button>
+                        <button class="variable-font-control optical-size" onclick="setOpticalSize(16)">Text</button>
+                        <button class="variable-font-control optical-size" onclick="setOpticalSize(24)">Body</button>
+                        <button class="variable-font-control optical-size" onclick="setOpticalSize(36)">Subheading</button>
+                        <button class="variable-font-control optical-size" onclick="setOpticalSize(48)">Heading</button>
+                        <button class="variable-font-control optical-size" onclick="setOpticalSize(72)">Display</button>
+                        <button class="variable-font-control" onclick="animateOpticalSize()">Animate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Combined Variable Font -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Combined Variable Font</h2>
+            
+            <div class="variable-font-container">
+                <div class="variable-font-header">
+                    <h4 class="variable-font-title">Multi-Axis Variable Font</h4>
+                    <span class="variable-font-type">Combined Axes</span>
+                </div>
+                <div class="variable-font-content">
+                    <p>Simultaneous manipulation of multiple font axes for complete typographic control.</p>
+                    
+                    <div class="variable-font-slider-container">
+                        <div class="variable-font-slider-label">
+                            <span>Combined Weight</span>
+                            <span class="variable-font-slider-value" id="combinedWeightValue">400</span>
+                        </div>
+                        <input type="range" class="variable-font-slider" id="combinedWeightSlider" min="100" max="900" value="400" step="100">
+                    </div>
+                    
+                    <div class="variable-font-slider-container">
+                        <div class="variable-font-slider-label">
+                            <span>Combined Width</span>
+                            <span class="variable-font-slider-value" id="combinedWidthValue">100%</span>
+                        </div>
+                        <input type="range" class="variable-font-slider" id="combinedWidthSlider" min="25" max="200" value="100" step="25">
+                    </div>
+                    
+                    <div class="variable-font-slider-container">
+                        <div class="variable-font-slider-label">
+                            <span>Combined Slant</span>
+                            <span class="variable-font-slider-value" id="combinedSlantValue">0°</span>
+                        </div>
+                        <input type="range" class="variable-font-slider" id="combinedSlantSlider" min="-20" max="20" value="0" step="5">
+                    </div>
+                    
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-combined-demo" id="combinedDemo">
+                            Complete typographic control
+                        </div>
+                        <div class="variable-font-preview-label">
+                            Weight: <span id="combinedWeightLabel">400</span> | 
+                            Width: <span id="combinedWidthLabel">100%</span> | 
+                            Slant: <span id="combinedSlantLabel">0°</span>
+                        </div>
+                    </div>
+                    
+                    <div class="variable-font-controls">
+                        <button class="variable-font-control" onclick="setCombinedPreset('elegant')">Elegant</button>
+                        <button class="variable-font-control" onclick="setCombinedPreset('bold')">Bold</button>
+                        <button class="variable-font-control" onclick="setCombinedPreset('compact')">Compact</button>
+                        <button class="variable-font-control" onclick="setCombinedPreset('expanded')">Expanded</button>
+                        <button class="variable-font-control" onclick="setCombinedPreset('display')">Display</button>
+                        <button class="variable-font-control" onclick="animateCombined()">Animate All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Font Presets -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Variable Font Presets</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>📝 Body Text</h3>
+                    <p class="arial-text-body">Optimized for body text with comfortable reading weight and normal width.</p>
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-preset-body">
+                            The body text preset provides optimal readability for extended reading.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎨 Display</h3>
+                    <p class="arial-text-body">Bold display typography with maximum impact and visual presence.</p>
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-preset-display">
+                            DISPLAY
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🏷️ Caption</h3>
+                    <p class="arial-text-body">Lightweight caption text optimized for small sizes and tight spaces.</p>
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-preset-caption">
+                            Caption text for metadata and annotations
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>✨ Elegant</h3>
+                    <p class="arial-text-body">Sophisticated typography with subtle weight and slight back slant.</p>
+                    <div class="variable-font-demo-item">
+                        <div class="variable-font-preview-text variable-font-preset-elegant">
+                            Elegant typography for refined designs
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>⚖️ Weight Control</h3>
+                    <p class="arial-text-body">Smooth weight transitions from 100 to 900 with real-time adjustment and performance optimization.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📏 Width Adaptation</h3>
+                    <p class="arial-text-body">Responsive width variations from ultra-condensed to ultra-expanded for space-efficient typography.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📐 Optical Sizing</h3>
+                    <p class="arial-text-body">Size-optimized rendering with automatic detail adjustment for caption to poster sizes.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎨 Multi-Axis Control</h3>
+                    <p class="arial-text-body">Simultaneous manipulation of multiple font axes for complete typographic control.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Variable Font Manipulation</p>
+                <p class="arial-footer-main">Professional variable font system with Weight, Width, Slant, Optical Size, and multi-axis control</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Variable Font Manipulation JavaScript functions
+        let animationIntervals = {};
+        
+        // Font Weight Functions
+        function setWeight(weight) {
+            const demo = document.getElementById('weightDemo');
+            const slider = document.getElementById('weightSlider');
+            const value = document.getElementById('weightValue');
+            const label = document.getElementById('weightLabel');
+            
+            demo.style.fontVariationSettings = `'wght' ${weight}`;
+            demo.style.fontWeight = weight;
+            slider.value = weight;
+            value.textContent = weight;
+            label.textContent = weight;
+        }
+        
+        function animateWeight() {
+            if (animationIntervals.weight) {
+                clearInterval(animationIntervals.weight);
+                animationIntervals.weight = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWeight = 100;
+            
+            animationIntervals.weight = setInterval(() => {
+                currentWeight += direction * 50;
+                
+                if (currentWeight >= 900) {
+                    currentWeight = 900;
+                    direction = -1;
+                } else if (currentWeight <= 100) {
+                    currentWeight = 100;
+                    direction = 1;
+                }
+                
+                setWeight(currentWeight);
+            }, 100);
+        }
+        
+        // Font Width Functions
+        function setWidth(width) {
+            const demo = document.getElementById('widthDemo');
+            const slider = document.getElementById('widthSlider');
+            const value = document.getElementById('widthValue');
+            const label = document.getElementById('widthLabel');
+            
+            demo.style.fontVariationSettings = `'wdth' ${width}`;
+            demo.style.fontStretch = width + '%';
+            slider.value = width;
+            value.textContent = width + '%';
+            label.textContent = width + '%';
+        }
+        
+        function animateWidth() {
+            if (animationIntervals.width) {
+                clearInterval(animationIntervals.width);
+                animationIntervals.width = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentWidth = 25;
+            
+            animationIntervals.width = setInterval(() => {
+                currentWidth += direction * 25;
+                
+                if (currentWidth >= 200) {
+                    currentWidth = 200;
+                    direction = -1;
+                } else if (currentWidth <= 25) {
+                    currentWidth = 25;
+                    direction = 1;
+                }
+                
+                setWidth(currentWidth);
+            }, 100);
+        }
+        
+        // Font Slant Functions
+        function setSlant(slant) {
+            const demo = document.getElementById('slantDemo');
+            const slider = document.getElementById('slantSlider');
+            const value = document.getElementById('slantValue');
+            const label = document.getElementById('slantLabel');
+            
+            demo.style.fontVariationSettings = `'slnt' ${slant}`;
+            demo.style.fontStyle = slant === 0 ? 'normal' : `oblique ${slant}deg`;
+            slider.value = slant;
+            value.textContent = slant + '°';
+            label.textContent = slant + '°';
+        }
+        
+        function animateSlant() {
+            if (animationIntervals.slant) {
+                clearInterval(animationIntervals.slant);
+                animationIntervals.slant = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentSlant = -20;
+            
+            animationIntervals.slant = setInterval(() => {
+                currentSlant += direction * 5;
+                
+                if (currentSlant >= 20) {
+                    currentSlant = 20;
+                    direction = -1;
+                } else if (currentSlant <= -20) {
+                    currentSlant = -20;
+                    direction = 1;
+                }
+                
+                setSlant(currentSlant);
+            }, 100);
+        }
+        
+        // Optical Size Functions
+        function setOpticalSize(size) {
+            const demo = document.getElementById('opticalSizeDemo');
+            const slider = document.getElementById('opticalSizeSlider');
+            const value = document.getElementById('opticalSizeValue');
+            const label = document.getElementById('opticalSizeLabel');
+            
+            demo.style.fontVariationSettings = `'opsz' ${size}`;
+            demo.style.fontSize = size + 'px';
+            slider.value = size;
+            value.textContent = size + 'px';
+            label.textContent = size + 'px';
+        }
+        
+        function animateOpticalSize() {
+            if (animationIntervals.opticalSize) {
+                clearInterval(animationIntervals.opticalSize);
+                animationIntervals.opticalSize = null;
+                return;
+            }
+            
+            let direction = 1;
+            let currentSize = 8;
+            
+            animationIntervals.opticalSize = setInterval(() => {
+                currentSize += direction * 8;
+                
+                if (currentSize >= 144) {
+                    currentSize = 144;
+                    direction = -1;
+                } else if (currentSize <= 8) {
+                    currentSize = 8;
+                    direction = 1;
+                }
+                
+                setOpticalSize(currentSize);
+            }, 100);
+        }
+        
+        // Combined Font Functions
+        function updateCombinedFont() {
+            const demo = document.getElementById('combinedDemo');
+            const weight = document.getElementById('combinedWeightSlider').value;
+            const width = document.getElementById('combinedWidthSlider').value;
+            const slant = document.getElementById('combinedSlantSlider').value;
+            
+            demo.style.fontVariationSettings = `'wght' ${weight}, 'wdth' ${width}, 'slnt' ${slant}`;
+            
+            document.getElementById('combinedWeightValue').textContent = weight;
+            document.getElementById('combinedWidthValue').textContent = width + '%';
+            document.getElementById('combinedSlantValue').textContent = slant + '°';
+            
+            document.getElementById('combinedWeightLabel').textContent = weight;
+            document.getElementById('combinedWidthLabel').textContent = width + '%';
+            document.getElementById('combinedSlantLabel').textContent = slant + '°';
+        }
+        
+        function setCombinedPreset(preset) {
+            const presets = {
+                elegant: { weight: 300, width: 87.5, slant: -5 },
+                bold: { weight: 700, width: 112.5, slant: 0 },
+                compact: { weight: 500, width: 75, slant: 0 },
+                expanded: { weight: 600, width: 125, slant: 5 },
+                display: { weight: 800, width: 100, slant: 0 }
+            };
+            
+            const settings = presets[preset];
+            if (settings) {
+                document.getElementById('combinedWeightSlider').value = settings.weight;
+                document.getElementById('combinedWidthSlider').value = settings.width;
+                document.getElementById('combinedSlantSlider').value = settings.slant;
+                updateCombinedFont();
+            }
+        }
+        
+        function animateCombined() {
+            if (animationIntervals.combined) {
+                clearInterval(animationIntervals.combined);
+                animationIntervals.combined = null;
+                return;
+            }
+            
+            let step = 0;
+            const presets = [
+                { weight: 300, width: 87.5, slant: -5 },
+                { weight: 700, width: 112.5, slant: 0 },
+                { weight: 500, width: 75, slant: 0 },
+                { weight: 600, width: 125, slant: 5 },
+                { weight: 800, width: 100, slant: 0 }
+            ];
+            
+            animationIntervals.combined = setInterval(() => {
+                const preset = presets[step % presets.length];
+                document.getElementById('combinedWeightSlider').value = preset.weight;
+                document.getElementById('combinedWidthSlider').value = preset.width;
+                document.getElementById('combinedSlantSlider').value = preset.slant;
+                updateCombinedFont();
+                step++;
+            }, 1000);
+        }
+        
+        // Initialize variable fonts on load
+        function initializeVariableFonts() {
+            // Set up slider event listeners
+            document.getElementById('weightSlider').addEventListener('input', function() {
+                setWeight(this.value);
+            });
+            
+            document.getElementById('widthSlider').addEventListener('input', function() {
+                setWidth(this.value);
+            });
+            
+            document.getElementById('slantSlider').addEventListener('input', function() {
+                setSlant(this.value);
+            });
+            
+            document.getElementById('opticalSizeSlider').addEventListener('input', function() {
+                setOpticalSize(this.value);
+            });
+            
+            document.getElementById('combinedWeightSlider').addEventListener('input', updateCombinedFont);
+            document.getElementById('combinedWidthSlider').addEventListener('input', updateCombinedFont);
+            document.getElementById('combinedSlantSlider').addEventListener('input', updateCombinedFont);
+            
+            // Add entrance animations
+            const containers = document.querySelectorAll('.variable-font-container');
+            containers.forEach((container, index) => {
+                setTimeout(() => {
+                    container.classList.add('advanced-animation-animated');
+                }, index * 200);
+            });
+            
+            // Add interactive features
+            addInteractiveFeatures();
+        }
+        
+        function addInteractiveFeatures() {
+            // Add click handlers to demo items
+            const demoItems = document.querySelectorAll('.variable-font-demo-item');
+            
+            demoItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.02)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+            
+            // Add hover enhancement
+            demoItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '';
+                });
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeVariableFonts();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

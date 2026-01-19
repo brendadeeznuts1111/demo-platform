@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Custom Layout Algorithms Professional Implementation</title>
+    
+    <!-- Custom Layout Algorithms Styles -->
+    <link rel="stylesheet" href="custom-layout-algorithms.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .layout-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Custom Layout Algorithms Professional Implementation</h1>
+            <p class="demo-subtitle">Complete custom layout system with Masonry, Grid, Flexbox, Stack, Waterfall, Spiral, Circular, Diagonal, and Hexagonal layouts</p>
+        </div>
+        
+        <!-- Custom Layout Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Custom Layout Algorithms Overview</h2>
+            
+            <div class="layout-data-box">
+Custom Layout Algorithms Implemented:
+
+🏗️ Masonry Layout
+• Pinterest-style brick layout
+• Auto-sizing based on content
+• Responsive column adjustment
+• Optimized space utilization
+
+🔲 Advanced Grid Layout
+• CSS Grid with auto-fit/auto-fill
+• Dense packing algorithm
+• Variable item spanning
+• Responsive grid adaptation
+
+🎯 Advanced Flexbox Layout
+• Flexible item distribution
+• Dynamic flex properties
+• Responsive flex behavior
+• Advanced alignment control
+
+📚 Stack Layout
+• Vertical/horizontal stacking
+• Configurable spacing
+• Alignment options
+• Distribution control
+
+🌊 Waterfall Layout
+• Magazine-style columns
+• Content-aware positioning
+• Optimal column usage
+• Responsive column count
+
+🌀 Spiral Layout
+• Circular spiral arrangement
+• Mathematical positioning
+• Interactive item placement
+• Dynamic spiral generation
+
+⭕ Circular Layout
+• Radial item distribution
+• Equal angle spacing
+• Centered positioning
+• Interactive rotation
+
+📐 Diagonal Layout
+• Angled item placement
+• Overlapping effects
+• Dynamic angle adjustment
+• Visual depth creation
+
+⬡ Hexagonal Layout
+• Honeycomb pattern
+• Efficient space usage
+• Geometric precision
+• Interactive hexagons
+
+Browser Support:
+✅ Modern CSS Grid and Flexbox (Full support)
+✅ CSS Shapes and Clip-path (Good support)
+✅ CSS Transforms (Full support)
+✅ Responsive Design (Full support)
+✅ Progressive Enhancement (Implemented)
+            </div>
+        </div>
+        
+        <!-- Masonry Layout -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Masonry Layout Algorithm</h2>
+            
+            <div class="custom-layout-container">
+                <div class="custom-layout-header">
+                    <h4 class="custom-layout-title">Masonry Layout</h4>
+                    <span class="custom-layout-type">Pinterest Style</span>
+                </div>
+                <div class="custom-layout-content">
+                    <p>Pinterest-style masonry layout with automatic item positioning and optimal space utilization.</p>
+                    
+                    <div class="masonry-layout">
+                        <div class="masonry-item">
+                            <h4 style="margin: 0 0 8px 0; color: #8b5cf6;">Short Item</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">This is a short content item.</p>
+                        </div>
+                        <div class="masonry-item">
+                            <h4 style="margin: 0 0 8px 0; color: #8b5cf6;">Medium Item</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">This is a medium-length content item with more text to demonstrate the masonry layout algorithm.</p>
+                        </div>
+                        <div class="masonry-item">
+                            <h4 style="margin: 0 0 8px 0; color: #8b5cf6;">Tall Item</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">This is a tall content item with significantly more text to show how the masonry layout handles different content heights while maintaining optimal spacing and alignment.</p>
+                            <p style="margin: 8px 0 0 0; font-size: 12px; color: #6b7280;">Additional content to increase height.</p>
+                        </div>
+                        <div class="masonry-item">
+                            <h4 style="margin: 0 0 8px 0; color: #8b5cf6;">Small Item</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Small content.</p>
+                        </div>
+                        <div class="masonry-item">
+                            <h4 style="margin: 0 0 8px 0; color: #8b5cf6;">Extra Tall</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">This is an extra tall content item with lots of text to demonstrate the maximum height handling in the masonry layout algorithm.</p>
+                            <p style="margin: 8px 0 0 0; font-size: 12px; color: #6b7280;">The masonry layout automatically adjusts to accommodate different content sizes while maintaining visual balance.</p>
+                            <p style="margin: 8px 0 0 0; font-size: 12px; color: #6b7280;">Each item finds its optimal position based on available space.</p>
+                        </div>
+                        <div class="masonry-item">
+                            <h4 style="margin: 0 0 8px 0; color: #8b5cf6;">Regular Item</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">This is a regular-sized content item with moderate text length.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-layout-controls">
+                        <button class="custom-layout-control masonry" onclick="adjustMasonryColumns(2)">2 Columns</button>
+                        <button class="custom-layout-control masonry" onclick="adjustMasonryColumns(3)">3 Columns</button>
+                        <button class="custom-layout-control masonry" onclick="adjustMasonryColumns(4)">4 Columns</button>
+                        <button class="custom-layout-control" onclick="addMasonryItem()">Add Item</button>
+                        <button class="custom-layout-control" onclick="shuffleMasonry()">Shuffle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Advanced Grid Layout -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Advanced Grid Layout Algorithm</h2>
+            
+            <div class="custom-layout-container">
+                <div class="custom-layout-header">
+                    <h4 class="custom-layout-title">Advanced Grid Layout</h4>
+                    <span class="custom-layout-type">CSS Grid Enhanced</span>
+                </div>
+                <div class="custom-layout-content">
+                    <p>Advanced CSS Grid layout with auto-fit, auto-fill, dense packing, and variable item spanning.</p>
+                    
+                    <div class="advanced-grid-layout">
+                        <div class="grid-item">Item 1</div>
+                        <div class="grid-item span-2">Span 2</div>
+                        <div class="grid-item">Item 3</div>
+                        <div class="grid-item row-span-2">Row Span 2</div>
+                        <div class="grid-item">Item 5</div>
+                        <div class="grid-item span-3">Span 3</div>
+                        <div class="grid-item">Item 7</div>
+                        <div class="grid-item">Item 8</div>
+                        <div class="grid-item span-2">Span 2</div>
+                        <div class="grid-item">Item 10</div>
+                        <div class="grid-item row-span-2">Row Span 2</div>
+                        <div class="grid-item">Item 12</div>
+                    </div>
+                    
+                    <div class="custom-layout-controls">
+                        <button class="custom-layout-control grid" onclick="adjustGridColumns(2)">2 Columns</button>
+                        <button class="custom-layout-control grid" onclick="adjustGridColumns(4)">4 Columns</button>
+                        <button class="custom-layout-control grid" onclick="adjustGridColumns(6)">6 Columns</button>
+                        <button class="custom-layout-control" onclick="toggleDensePacking()">Toggle Dense</button>
+                        <button class="custom-layout-control" onclick="addGridItem()">Add Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Advanced Flexbox Layout -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Advanced Flexbox Layout Algorithm</h2>
+            
+            <div class="custom-layout-container">
+                <div class="custom-layout-header">
+                    <h4 class="custom-layout-title">Advanced Flexbox Layout</h4>
+                    <span class="custom-layout-type">Flexible Distribution</span>
+                </div>
+                <div class="custom-layout-content">
+                    <p>Advanced flexbox layout with dynamic flex properties, responsive behavior, and enhanced alignment control.</p>
+                    
+                    <div class="advanced-flex-layout">
+                        <div class="flex-item">
+                            <h4 style="margin: 0 0 8px 0; color: #f59e0b;">Flex Item 1</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Flexible content with automatic sizing.</p>
+                        </div>
+                        <div class="flex-item">
+                            <h4 style="margin: 0 0 8px 0; color: #f59e0b;">Flex Item 2</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Another flexible item with different content length.</p>
+                        </div>
+                        <div class="flex-item">
+                            <h4 style="margin: 0 0 8px 0; color: #f59e0b;">Flex Item 3</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Third flexible item demonstrating equal distribution.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-layout-controls">
+                        <button class="custom-layout-control flex" onclick="setFlexDirection('row')">Row</button>
+                        <button class="custom-layout-control flex" onclick="setFlexDirection('column')">Column</button>
+                        <button class="custom-layout-control flex" onclick="setFlexJustify('space-between')">Space Between</button>
+                        <button class="custom-layout-control flex" onclick="setFlexJustify('center')">Center</button>
+                        <button class="custom-layout-control" onclick="addFlexItem()">Add Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stack Layout -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Stack Layout Algorithm</h2>
+            
+            <div class="custom-layout-container">
+                <div class="custom-layout-header">
+                    <h4 class="custom-layout-title">Stack Layout</h4>
+                    <span class="custom-layout-type">Vertical Stacking</span>
+                </div>
+                <div class="custom-layout-content">
+                    <p>Stack layout with configurable spacing, alignment options, and distribution control.</p>
+                    
+                    <div class="stack-layout">
+                        <div class="stack-item">
+                            <h4 style="margin: 0 0 8px 0; color: #ef4444;">Stack Item 1</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">First item in the stack.</p>
+                        </div>
+                        <div class="stack-item">
+                            <h4 style="margin: 0 0 8px 0; color: #ef4444;">Stack Item 2</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Second item with more content.</p>
+                        </div>
+                        <div class="stack-item">
+                            <h4 style="margin: 0 0 8px 0; color: #ef4444;">Stack Item 3</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Third item in the vertical stack.</p>
+                        </div>
+                        <div class="stack-item">
+                            <h4 style="margin: 0 0 8px 0; color: #ef4444;">Stack Item 4</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Fourth item demonstrating consistent spacing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-layout-controls">
+                        <button class="custom-layout-control stack" onclick="setStackDirection('vertical')">Vertical</button>
+                        <button class="custom-layout-control stack" onclick="setStackDirection('horizontal')">Horizontal</button>
+                        <button class="custom-layout-control stack" onclick="setStackSpacing(8)">Compact</button>
+                        <button class="custom-layout-control stack" onclick="setStackSpacing(20)">Spacious</button>
+                        <button class="custom-layout-control" onclick="addStackItem()">Add Item</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Waterfall Layout -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Waterfall Layout Algorithm</h2>
+            
+            <div class="custom-layout-container">
+                <div class="custom-layout-header">
+                    <h4 class="custom-layout-title">Waterfall Layout</h4>
+                    <span class="custom-layout-type">Magazine Style</span>
+                </div>
+                <div class="custom-layout-content">
+                    <p>Magazine-style waterfall layout with content-aware positioning and optimal column usage.</p>
+                    
+                    <div class="waterfall-layout">
+                        <div class="waterfall-item">
+                            <h4 style="margin: 0 0 8px 0; color: #0891b2;">Article 1</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Short article content.</p>
+                        </div>
+                        <div class="waterfall-item">
+                            <h4 style="margin: 0 0 8px 0; color: #0891b2;">Article 2</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">This is a longer article with more content to demonstrate the waterfall layout's ability to handle varying content lengths while maintaining optimal column distribution.</p>
+                        </div>
+                        <div class="waterfall-item">
+                            <h4 style="margin: 0 0 8px 0; color: #0891b2;">Article 3</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Medium-length article content.</p>
+                        </div>
+                        <div class="waterfall-item">
+                            <h4 style="margin: 0 0 8px 0; color: #0891b2;">Article 4</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Brief article content.</p>
+                        </div>
+                        <div class="waterfall-item">
+                            <h4 style="margin: 0 0 8px 0; color: #0891b2;">Article 5</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">This article demonstrates how the waterfall layout automatically balances content across columns for optimal reading experience.</p>
+                            <p style="margin: 8px 0 0 0; font-size: 12px; color: #6b7280;">Additional content for height variation.</p>
+                        </div>
+                        <div class="waterfall-item">
+                            <h4 style="margin: 0 0 8px 0; color: #0891b2;">Article 6</h4>
+                            <p style="margin: 0; font-size: 12px; color: #6b7280;">Short article content.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="custom-layout-controls">
+                        <button class="custom-layout-control waterfall" onclick="adjustWaterfallColumns(2)">2 Columns</button>
+                        <button class="custom-layout-control waterfall" onclick="adjustWaterfallColumns(3)">3 Columns</button>
+                        <button class="custom-layout-control waterfall" onclick="adjustWaterfallColumns(4)">4 Columns</button>
+                        <button class="custom-layout-control" onclick="addWaterfallItem()">Add Article</button>
+                        <button class="custom-layout-control" onclick="shuffleWaterfall()">Shuffle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Special Layouts -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Special Layout Algorithms</h2>
+            
+            <div class="demo-grid">
+                <!-- Spiral Layout -->
+                <div class="custom-layout-container">
+                    <div class="custom-layout-header">
+                        <h4 class="custom-layout-title">Spiral Layout</h4>
+                        <span class="custom-layout-type">Mathematical</span>
+                    </div>
+                    <div class="custom-layout-content">
+                        <p>Circular spiral arrangement with mathematical positioning.</p>
+                        <div class="spiral-layout" id="spiralLayout">
+                            <!-- Spiral items will be generated by JavaScript -->
+                        </div>
+                        <div class="custom-layout-controls">
+                            <button class="custom-layout-control spiral" onclick="generateSpiral(8)">8 Items</button>
+                            <button class="custom-layout-control spiral" onclick="generateSpiral(12)">12 Items</button>
+                            <button class="custom-layout-control spiral" onclick="animateSpiral()">Animate</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Circular Layout -->
+                <div class="custom-layout-container">
+                    <div class="custom-layout-header">
+                        <h4 class="custom-layout-title">Circular Layout</h4>
+                        <span class="custom-layout-type">Radial</span>
+                    </div>
+                    <div class="custom-layout-content">
+                        <p>Radial item distribution with equal angle spacing.</p>
+                        <div class="circular-layout" id="circularLayout">
+                            <!-- Circular items will be generated by JavaScript -->
+                        </div>
+                        <div class="custom-layout-controls">
+                            <button class="custom-layout-control" onclick="generateCircular(6)">6 Items</button>
+                            <button class="custom-layout-control" onclick="generateCircular(8)">8 Items</button>
+                            <button class="custom-layout-control" onclick="rotateCircular()">Rotate</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hexagonal Layout -->
+                <div class="custom-layout-container">
+                    <div class="custom-layout-header">
+                        <h4 class="custom-layout-title">Hexagonal Layout</h4>
+                        <span class="custom-layout-type">Honeycomb</span>
+                    </div>
+                    <div class="custom-layout-content">
+                        <p>Honeycomb pattern with geometric precision.</p>
+                        <div class="hexagonal-layout" id="hexagonalLayout">
+                            <!-- Hexagonal items will be generated by JavaScript -->
+                        </div>
+                        <div class="custom-layout-controls">
+                            <button class="custom-layout-control" onclick="generateHexagonal(6)">Small</button>
+                            <button class="custom-layout-control" onclick="generateHexagonal(12)">Medium</button>
+                            <button class="custom-layout-control" onclick="animateHexagonal()">Animate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🏗️ Masonry Layout</h3>
+                    <p class="arial-text-body">Pinterest-style brick layout with automatic item positioning and optimal space utilization.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🔲 Advanced Grid</h3>
+                    <p class="arial-text-body">CSS Grid with auto-fit, auto-fill, dense packing, and variable item spanning.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎯 Advanced Flexbox</h3>
+                    <p class="arial-text-body">Flexible item distribution with dynamic flex properties and responsive behavior.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p class="arial-text-body">Fully responsive layout algorithms that adapt to all screen sizes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Custom Layout Algorithms</p>
+                <p class="arial-footer-main">Professional custom layout system with Masonry, Grid, Flexbox, Stack, Waterfall, and special layouts</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Custom Layout Algorithms JavaScript functions
+        let masonryItemCount = 6;
+        let gridItemCount = 12;
+        let flexItemCount = 3;
+        let stackItemCount = 4;
+        let waterfallItemCount = 6;
+        
+        // Masonry Layout Functions
+        function adjustMasonryColumns(columns) {
+            const masonryLayout = document.querySelector('.masonry-layout');
+            masonryLayout.style.setProperty('--masonry-columns', columns);
+        }
+        
+        function addMasonryItem() {
+            const masonryLayout = document.querySelector('.masonry-layout');
+            const newItem = document.createElement('div');
+            newItem.className = 'masonry-item custom-layout-fade-in';
+            masonryItemCount++;
+            
+            const heights = ['Short', 'Medium', 'Tall', 'Small', 'Extra Tall', 'Regular'];
+            const randomHeight = heights[Math.floor(Math.random() * heights.length)];
+            
+            newItem.innerHTML = `
+                <h4 style="margin: 0 0 8px 0; color: #8b5cf6;">${randomHeight} Item ${masonryItemCount}</h4>
+                <p style="margin: 0; font-size: 12px; color: #6b7280;">This is item number ${masonryItemCount} with ${randomHeight.toLowerCase()} content.</p>
+            `;
+            
+            masonryLayout.appendChild(newItem);
+        }
+        
+        function shuffleMasonry() {
+            const masonryLayout = document.querySelector('.masonry-layout');
+            const items = Array.from(masonryLayout.children);
+            
+            // Shuffle array
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [items[i], items[j]] = [items[j], items[i]];
+            }
+            
+            // Re-append shuffled items
+            items.forEach(item => masonryLayout.appendChild(item));
+        }
+        
+        // Grid Layout Functions
+        function adjustGridColumns(minWidth) {
+            const gridLayout = document.querySelector('.advanced-grid-layout');
+            gridLayout.style.setProperty('--grid-min-width', minWidth + 'px');
+        }
+        
+        function toggleDensePacking() {
+            const gridLayout = document.querySelector('.advanced-grid-layout');
+            const currentFlow = gridLayout.style.gridAutoFlow;
+            gridLayout.style.gridAutoFlow = currentFlow === 'dense' ? 'row' : 'dense';
+        }
+        
+        function addGridItem() {
+            const gridLayout = document.querySelector('.advanced-grid-layout');
+            const newItem = document.createElement('div');
+            newItem.className = 'grid-item custom-layout-fade-in';
+            gridItemCount++;
+            newItem.textContent = `Item ${gridItemCount}`;
+            gridLayout.appendChild(newItem);
+        }
+        
+        // Flexbox Layout Functions
+        function setFlexDirection(direction) {
+            const flexLayout = document.querySelector('.advanced-flex-layout');
+            flexLayout.style.setProperty('--flex-direction', direction);
+        }
+        
+        function setFlexJustify(justify) {
+            const flexLayout = document.querySelector('.advanced-flex-layout');
+            flexLayout.style.setProperty('--flex-justify', justify);
+        }
+        
+        function addFlexItem() {
+            const flexLayout = document.querySelector('.advanced-flex-layout');
+            const newItem = document.createElement('div');
+            newItem.className = 'flex-item custom-layout-fade-in';
+            flexItemCount++;
+            
+            newItem.innerHTML = `
+                <h4 style="margin: 0 0 8px 0; color: #f59e0b;">Flex Item ${flexItemCount}</h4>
+                <p style="margin: 0; font-size: 12px; color: #6b7280;">New flexible item number ${flexItemCount}.</p>
+            `;
+            
+            flexLayout.appendChild(newItem);
+        }
+        
+        // Stack Layout Functions
+        function setStackDirection(direction) {
+            const stackLayout = document.querySelector('.stack-layout');
+            stackLayout.style.setProperty('--stack-direction', direction);
+        }
+        
+        function setStackSpacing(spacing) {
+            const stackLayout = document.querySelector('.stack-layout');
+            stackLayout.style.setProperty('--stack-spacing', spacing + 'px');
+        }
+        
+        function addStackItem() {
+            const stackLayout = document.querySelector('.stack-layout');
+            const newItem = document.createElement('div');
+            newItem.className = 'stack-item custom-layout-fade-in';
+            stackItemCount++;
+            
+            newItem.innerHTML = `
+                <h4 style="margin: 0 0 8px 0; color: #ef4444;">Stack Item ${stackItemCount}</h4>
+                <p style="margin: 0; font-size: 12px; color: #6b7280;">Item number ${stackItemCount} in the stack.</p>
+            `;
+            
+            stackLayout.appendChild(newItem);
+        }
+        
+        // Waterfall Layout Functions
+        function adjustWaterfallColumns(columns) {
+            const waterfallLayout = document.querySelector('.waterfall-layout');
+            waterfallLayout.style.setProperty('--waterfall-columns', columns);
+        }
+        
+        function addWaterfallItem() {
+            const waterfallLayout = document.querySelector('.waterfall-layout');
+            const newItem = document.createElement('div');
+            newItem.className = 'waterfall-item custom-layout-fade-in';
+            waterfallItemCount++;
+            
+            const contents = [
+                'Short article content.',
+                'This is a longer article with more content to demonstrate the waterfall layout.',
+                'Medium-length article content with some detail.',
+                'Brief article content.',
+                'This article demonstrates how the waterfall layout automatically balances content across columns.'
+            ];
+            
+            const randomContent = contents[Math.floor(Math.random() * contents.length)];
+            
+            newItem.innerHTML = `
+                <h4 style="margin: 0 0 8px 0; color: #0891b2;">Article ${waterfallItemCount}</h4>
+                <p style="margin: 0; font-size: 12px; color: #6b7280;">${randomContent}</p>
+            `;
+            
+            waterfallLayout.appendChild(newItem);
+        }
+        
+        function shuffleWaterfall() {
+            const waterfallLayout = document.querySelector('.waterfall-layout');
+            const items = Array.from(waterfallLayout.children);
+            
+            // Shuffle array
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [items[i], items[j]] = [items[j], items[i]];
+            }
+            
+            // Re-append shuffled items
+            items.forEach(item => waterfallLayout.appendChild(item));
+        }
+        
+        // Special Layout Functions
+        function generateSpiral(itemCount) {
+            const spiralLayout = document.getElementById('spiralLayout');
+            spiralLayout.innerHTML = '';
+            
+            for (let i = 0; i < itemCount; i++) {
+                const item = document.createElement('div');
+                item.className = 'spiral-item custom-layout-fade-in';
+                item.textContent = i + 1;
+                
+                // Calculate spiral position
+                const angle = (i / itemCount) * Math.PI * 4; // 2 full rotations
+                const radius = 20 + (i / itemCount) * 130;
+                const x = Math.cos(angle) * radius + 150;
+                const y = Math.sin(angle) * radius + 150;
+                
+                item.style.left = x + 'px';
+                item.style.top = y + 'px';
+                item.style.animationDelay = (i * 0.1) + 's';
+                
+                spiralLayout.appendChild(item);
+            }
+        }
+        
+        function generateCircular(itemCount) {
+            const circularLayout = document.getElementById('circularLayout');
+            circularLayout.innerHTML = '';
+            
+            for (let i = 0; i < itemCount; i++) {
+                const item = document.createElement('div');
+                item.className = 'circular-item custom-layout-fade-in';
+                item.textContent = i + 1;
+                
+                // Calculate circular position
+                const angle = (i / itemCount) * Math.PI * 2 - Math.PI / 2; // Start from top
+                const x = Math.cos(angle) * 120 + 120;
+                const y = Math.sin(angle) * 120 + 120;
+                
+                item.style.left = x + 'px';
+                item.style.top = y + 'px';
+                item.style.animationDelay = (i * 0.1) + 's';
+                
+                circularLayout.appendChild(item);
+            }
+        }
+        
+        function generateHexagonal(itemCount) {
+            const hexagonalLayout = document.getElementById('hexagonalLayout');
+            hexagonalLayout.innerHTML = '';
+            
+            hexagonalLayout.style.setProperty('--hexagon-columns', Math.ceil(Math.sqrt(itemCount)));
+            
+            for (let i = 0; i < itemCount; i++) {
+                const item = document.createElement('div');
+                item.className = 'hexagon-item custom-layout-fade-in';
+                item.textContent = i + 1;
+                item.style.animationDelay = (i * 0.1) + 's';
+                
+                hexagonalLayout.appendChild(item);
+            }
+        }
+        
+        function animateSpiral() {
+            const items = document.querySelectorAll('.spiral-item');
+            items.forEach((item, index) => {
+                item.style.animation = 'none';
+                setTimeout(() => {
+                    item.style.animation = 'customLayoutRotate 2s linear infinite';
+                    item.style.animationDelay = (index * 0.1) + 's';
+                }, 10);
+            });
+        }
+        
+        function rotateCircular() {
+            const circularLayout = document.getElementById('circularLayout');
+            circularLayout.style.transform = 'rotate(360deg)';
+            circularLayout.style.transition = 'transform 2s ease-in-out';
+            
+            setTimeout(() => {
+                circularLayout.style.transform = 'rotate(0deg)';
+            }, 2000);
+        }
+        
+        function animateHexagonal() {
+            const items = document.querySelectorAll('.hexagon-item');
+            items.forEach((item, index) => {
+                item.style.animation = 'none';
+                setTimeout(() => {
+                    item.style.animation = 'customLayoutPulse 2s ease-in-out infinite';
+                    item.style.animationDelay = (index * 0.1) + 's';
+                }, 10);
+            });
+        }
+        
+        // Initialize layouts on load
+        function initializeCustomLayouts() {
+            // Generate initial special layouts
+            generateSpiral(8);
+            generateCircular(8);
+            generateHexagonal(6);
+            
+            // Add entrance animations
+            const containers = document.querySelectorAll('.custom-layout-container');
+            containers.forEach((container, index) => {
+                setTimeout(() => {
+                    container.classList.add('custom-layout-animated');
+                }, index * 200);
+            });
+            
+            // Add interactive features
+            addInteractiveFeatures();
+        }
+        
+        function addInteractiveFeatures() {
+            // Add click handlers to layout items
+            const allItems = document.querySelectorAll('.masonry-item, .grid-item, .flex-item, .stack-item, .waterfall-item');
+            
+            allItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(1.05)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                });
+            });
+            
+            // Add hover effects to special layout items
+            const specialItems = document.querySelectorAll('.spiral-item, .circular-item, .hexagon-item');
+            
+            specialItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '20';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '';
+                });
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCustomLayouts();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
