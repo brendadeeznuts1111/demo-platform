@@ -1,9 +1,9 @@
 {
-  "name": "@DEMO",
-  "version": "2.0.1",
-  "description": "🚀 Enterprise-Grade Chrome Web Application Platform",
-  "main": "server-minimal.js",
-  "type": "commonjs",
+  "name": "@demo-platform/distributed-systems",
+  "version": "2.0.0",
+  "description": "Enterprise-grade distributed systems platform with AI, Blockchain, Quantum Computing, IoT, and Cybersecurity",
+  "main": "server-ultimate.js",
+  "type": "module",
   "scripts": {
     "start": "bun server-minimal.js",
     "dev": "bun --hot server-minimal.js",
@@ -26,12 +26,89 @@
     "fetch-example": "bun fetch-example.js",
     "optimize": "./optimize-size.sh",
     "metadata": "./file-metadata.sh",
-    "index": "cat FILE_INDEX.md"
+    "index": "cat FILE_INDEX.md",
+    "build": "bun build server-ultimate.js --outdir ./dist --target bun",
+    "deploy": "bun run build && bun run deploy:production",
+    "deploy:production": "echo 'Deploying to production...'",
+    "docs": "cat DISTRIBUTED_SYSTEMS_GUIDE.md",
+    "version": "echo 'v2.0.0 - Enterprise Distributed Systems Platform'",
+    "version:bump": "bun version-manager.js bump",
+    "version:release": "bun version-manager.js release",
+    "version:info": "bun version-manager.js info",
+    "version:validate": "bun version-manager.js validate",
+    "version:check": "bun version-manager.js check",
+    "release:create": "bun release-manager.js release",
+    "release:list": "bun release-manager.js list",
+    "release:status": "bun release-manager.js status",
+    "release:rollback": "bun release-manager.js rollback",
+    "deploy:dev": "bun release-manager.js release development",
+    "deploy:staging": "bun release-manager.js release staging",
+    "deploy:prod": "bun release-manager.js release production"
   },
-  "keywords": ["enterprise", "websocket", "real-time", "analytics"],
-  "author": "@DEMO",
+  "keywords": [
+    "enterprise", 
+    "distributed-systems", 
+    "ai", 
+    "blockchain", 
+    "quantum-computing", 
+    "iot", 
+    "cybersecurity", 
+    "edge-computing", 
+    "microservices", 
+    "real-time", 
+    "analytics",
+    "machine-learning",
+    "threat-intelligence",
+    "neural-networks",
+    "quantum-algorithms",
+    "blockchain-security",
+    "iot-analytics",
+    "edge-ai"
+  ],
+  "author": {
+    "name": "DEMO Platform Team",
+    "email": "team@demo-platform.com",
+    "url": "https://github.com/brendadeeznuts1111/demo-platform"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brendadeeznuts1111/demo-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brendadeeznuts1111/demo-platform/issues"
+  },
+  "homepage": "https://github.com/brendadeeznuts1111/demo-platform#readme",
   "engines": {
-    "bun": ">=1.0.0"
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
+  },
+  "volta": {
+    "node": "18.19.0",
+    "bun": "1.3.6"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "*.js",
+    "*.md",
+    "Contents/",
+    "*.sh",
+    "dist/"
+  ],
+  "bin": {
+    "demo-platform": "./Contents/MacOS/@DEMO-Launcher",
+    "demo-server": "./Contents/MacOS/ultimate-server"
+  },
+  "man": [
+    "./man/demo-platform.1"
+  ],
+  "directories": {
+    "lib": "./",
+    "doc": "./",
+    "man": "./man",
+    "bin": "./Contents/MacOS"
   }
 }

@@ -1,0 +1,235 @@
+{
+  "version": "2.0.0",
+  "environments": {
+    "development": {
+      "name": "Development Environment",
+      "branch": "main",
+      "buildCommand": "bun run build",
+      "deployCommand": "echo 'Deploying to development environment'",
+      "healthCheck": "curl -f http://localhost:9999/health || curl -f http://localhost:9999/",
+      "rollbackEnabled": true,
+      "autoDeploy": false,
+      "servers": [
+        {
+          "host": "localhost",
+          "port": 9999,
+          "protocol": "http"
+        },
+        {
+          "host": "localhost",
+          "port": 3010,
+          "protocol": "http"
+        },
+        {
+          "host": "localhost",
+          "port": 3011,
+          "protocol": "http"
+        },
+        {
+          "host": "localhost",
+          "port": 3012,
+          "protocol": "http"
+        }
+      ]
+    },
+    "staging": {
+      "name": "Staging Environment",
+      "branch": "develop",
+      "buildCommand": "bun run build:staging",
+      "deployCommand": "echo 'Deploying to staging environment'",
+      "healthCheck": "curl -f https://staging.demo-platform.com/health",
+      "rollbackEnabled": true,
+      "autoDeploy": true,
+      "servers": [
+        {
+          "host": "staging.demo-platform.com",
+          "port": 443,
+          "protocol": "https"
+        }
+      ]
+    },
+    "production": {
+      "name": "Production Environment",
+      "branch": "main",
+      "buildCommand": "bun run build:production",
+      "deployCommand": "echo 'Deploying to production environment'",
+      "healthCheck": "curl -f https://demo-platform.com/health",
+      "rollbackEnabled": true,
+      "autoDeploy": false,
+      "servers": [
+        {
+          "host": "demo-platform.com",
+          "port": 443,
+          "protocol": "https"
+        },
+        {
+          "host": "api.demo-platform.com",
+          "port": 443,
+          "protocol": "https"
+        },
+        {
+          "host": "quantum.demo-platform.com",
+          "port": 443,
+          "protocol": "https"
+        },
+        {
+          "host": "security.demo-platform.com",
+          "port": 443,
+          "protocol": "https"
+        },
+        {
+          "host": "iot.demo-platform.com",
+          "port": 443,
+          "protocol": "https"
+        }
+      ]
+    }
+  },
+  "notifications": {
+    "slack": {
+      "enabled": false,
+      "webhook": "${SLACK_WEBHOOK_URL}",
+      "channel": "#deployments",
+      "username": "DEMO Platform Bot",
+      "iconEmoji": ":rocket:"
+    },
+    "email": {
+      "enabled": false,
+      "recipients": [
+        "team@demo-platform.com",
+        "devops@demo-platform.com"
+      ],
+      "smtp": {
+        "host": "${SMTP_HOST}",
+        "port": 587,
+        "secure": false,
+        "auth": {
+          "user": "${SMTP_USER}",
+          "pass": "${SMTP_PASS}"
+        }
+      }
+    },
+    "discord": {
+      "enabled": false,
+      "webhook": "${DISCORD_WEBHOOK_URL}"
+    }
+  },
+  "security": {
+    "requireAuthentication": true,
+    "allowedUsers": [
+      "admin",
+      "deployer",
+      "devops"
+    ],
+    "auditLog": true,
+    "encryptionAtRest": true,
+    "sslVerification": true
+  },
+  "monitoring": {
+    "enabled": true,
+    "metrics": {
+      "prometheus": {
+        "enabled": true,
+        "port": 9090
+      },
+      "grafana": {
+        "enabled": true,
+        "url": "https://grafana.demo-platform.com"
+      }
+    },
+    "logging": {
+      "level": "info",
+      "format": "json",
+      "retention": "30d"
+    },
+    "alerting": {
+      "enabled": true,
+      "channels": ["slack", "email"],
+      "thresholds": {
+        "errorRate": 0.05,
+        "responseTime": 2000,
+        "cpuUsage": 0.8,
+        "memoryUsage": 0.9
+      }
+    }
+  },
+  "rollback": {
+    "enabled": true,
+    "maxVersions": 5,
+    "automaticRollback": {
+      "enabled": true,
+      "conditions": [
+        "healthCheckFailure",
+        "errorRateAboveThreshold",
+        "responseTimeAboveThreshold"
+      ],
+      "waitTime": 300
+    }
+  },
+  "features": {
+    "blueGreenDeployment": false,
+    "canaryDeployment": false,
+    "featureFlags": true,
+    "a_bTesting": false,
+    "progressiveDelivery": false
+  },
+  "scaling": {
+    "autoScaling": {
+      "enabled": false,
+      "minReplicas": 2,
+      "maxReplicas": 10,
+      "targetCPUUtilization": 70,
+      "targetMemoryUtilization": 80
+    },
+    "loadBalancing": {
+      "algorithm": "round_robin",
+      "healthCheckInterval": 30,
+      "unhealthyThreshold": 3,
+      "healthyThreshold": 2
+    }
+  },
+  "backup": {
+    "enabled": true,
+    "schedule": "0 2 * * *",
+    "retention": "30d",
+    "destinations": [
+      {
+        "type": "s3",
+        "bucket": "demo-platform-backups",
+        "region": "us-west-2"
+      },
+      {
+        "type": "local",
+        "path": "/var/backups/demo-platform"
+      }
+    ]
+  },
+  "compliance": {
+    "gdpr": true,
+    "soc2": true,
+    "iso27001": false,
+    "hipaa": false,
+    "pci": false
+  },
+  "testing": {
+    "preDeployment": {
+      "unitTests": true,
+      "integrationTests": true,
+      "e2eTests": false,
+      "securityTests": true,
+      "performanceTests": false
+    },
+    "postDeployment": {
+      "smokeTests": true,
+      "healthChecks": true,
+      "performanceValidation": false
+    }
+  },
+  "documentation": {
+    "autoGenerate": true,
+    "includeApiDocs": true,
+    "includeChangelog": true,
+    "includeDeploymentNotes": true,
+    "outputFormat": ["html", "pdf"]
+  }
+}
