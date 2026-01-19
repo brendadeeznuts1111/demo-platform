@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Enhanced Table System Professional Implementation</title>
+    
+    <!-- Enhanced Table System Styles -->
+    <link rel="stylesheet" href="enhanced-table-system.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .table-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Enhanced Table System Professional Implementation</h1>
+            <p class="demo-subtitle">Complete enhanced table system with multiple columns, properties, sorting, filtering, pagination, and interactive features</p>
+        </div>
+        
+        <!-- Enhanced Table Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Enhanced Table System Overview</h2>
+            
+            <div class="table-data-box">
+Enhanced Table System Implemented:
+
+📊 Professional Table Styling
+• Enhanced container with Arial typography integration
+• Interactive headers and cells with hover effects
+• Smooth transitions and visual feedback
+• Professional color schemes and gradients
+
+🏗️ Multiple Column Types
+• ID column with monospace font styling
+• Name column with enhanced typography
+• Type column with color-coded badges
+• Value column with highlighted code display
+• Status column with visual indicators
+• Actions column with interactive buttons
+• Created/Updated timestamps
+• Priority levels with color coding
+• Category and Owner assignments
+• Tags with styled labels
+
+🎬 Advanced Features
+• Sortable columns with visual indicators
+• Pagination with navigation controls
+• Search functionality with real-time filtering
+• Expandable rows for detailed content
+• Column visibility toggles
+• Export functionality
+
+🎭 Multiple Variants
+• Minimal, outlined, striped, bordered styles
+• Compact and spacious size options
+• Color themes for different contexts
+• Dark mode support
+• Preset configurations
+
+🎮 Interactive Features
+• Click, hover, and active states
+• Sortable and filterable columns
+• Search and filter functionality
+• Pagination controls
+• Row selection and bulk actions
+
+📱 Responsive Design
+• Mobile-optimized table display
+• Horizontal scrolling for wide tables
+• Touch-friendly interactions
+• Adaptive column layouts
+
+♿ Accessibility Features
+• High contrast mode support
+• Reduced motion considerations
+• Screen reader optimization
+• Keyboard navigation support
+
+Browser Support:
+✅ Modern browsers with full CSS support
+✅ Mobile browsers with touch support
+✅ Accessibility tools compatibility
+✅ Progressive enhancement with fallbacks
+✅ Performance optimized rendering
+✅ Cross-browser consistency
+            </div>
+        </div>
+        
+        <!-- Basic Enhanced Table -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Basic Enhanced Table</h2>
+            
+            <div class="enhanced-table-container">
+                <div class="enhanced-table-header">
+                    <h4 class="enhanced-table-title">Enhanced Data Table</h4>
+                    <span class="enhanced-table-type">12 Columns</span>
+                </div>
+                <div class="enhanced-table-content">
+                    <p>Professional enhanced table with multiple columns, styling, and interactive features.</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="enhanced-table-search">
+                        <input type="text" class="enhanced-table-search-input" placeholder="Search table..." id="tableSearch">
+                        <button class="enhanced-table-search-btn" onclick="searchTable()">Search</button>
+                    </div>
+                    
+                    <!-- Filter Controls -->
+                    <div class="enhanced-table-filter">
+                        <select class="enhanced-table-filter-select" id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                        <select class="enhanced-table-filter-select" id="priorityFilter">
+                            <option value="">All Priority</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                        <select class="enhanced-table-filter-select" id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="development">Development</option>
+                            <option value="design">Design</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="sales">Sales</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Enhanced Table -->
+                    <div class="enhanced-table-scrollable">
+                        <table class="enhanced-table enhanced-table-sortable" id="mainTable">
+                            <thead>
+                                <tr>
+                                    <th class="enhanced-table-col-id" onclick="sortTable(0)">ID</th>
+                                    <th class="enhanced-table-col-name" onclick="sortTable(1)">Name</th>
+                                    <th class="enhanced-table-col-type" onclick="sortTable(2)">Type</th>
+                                    <th class="enhanced-table-col-value" onclick="sortTable(3)">Value</th>
+                                    <th class="enhanced-table-col-status" onclick="sortTable(4)">Status</th>
+                                    <th class="enhanced-table-col-priority" onclick="sortTable(5)">Priority</th>
+                                    <th class="enhanced-table-col-category" onclick="sortTable(6)">Category</th>
+                                    <th class="enhanced-table-col-owner" onclick="sortTable(7)">Owner</th>
+                                    <th class="enhanced-table-col-created" onclick="sortTable(8)">Created</th>
+                                    <th class="enhanced-table-col-updated" onclick="sortTable(9)">Updated</th>
+                                    <th class="enhanced-table-col-tags">Tags</th>
+                                    <th class="enhanced-table-col-actions">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <tr>
+                                    <td class="enhanced-table-col-id">#001</td>
+                                    <td class="enhanced-table-col-name">Alpha Component</td>
+                                    <td class="enhanced-table-col-type">string</td>
+                                    <td class="enhanced-table-col-value">primary</td>
+                                    <td class="enhanced-table-col-status"><span class="enhanced-table-status-active">Active</span></td>
+                                    <td class="enhanced-table-col-priority"><span class="enhanced-table-priority-high">High</span></td>
+                                    <td class="enhanced-table-col-category">Development</td>
+                                    <td class="enhanced-table-col-owner">John Doe</td>
+                                    <td class="enhanced-table-col-created">2024-01-15</td>
+                                    <td class="enhanced-table-col-updated">2024-01-20</td>
+                                    <td class="enhanced-table-col-tags">
+                                        <span class="enhanced-table-tag">ui</span>
+                                        <span class="enhanced-table-tag">core</span>
+                                    </td>
+                                    <td class="enhanced-table-col-actions">
+                                        <button class="enhanced-table-action" onclick="editRow(this)">✏️</button>
+                                        <button class="enhanced-table-action" onclick="deleteRow(this)">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="enhanced-table-col-id">#002</td>
+                                    <td class="enhanced-table-col-name">Beta Module</td>
+                                    <td class="enhanced-table-col-type">number</td>
+                                    <td class="enhanced-table-col-value">42</td>
+                                    <td class="enhanced-table-col-status"><span class="enhanced-table-status-inactive">Inactive</span></td>
+                                    <td class="enhanced-table-col-priority"><span class="enhanced-table-priority-medium">Medium</span></td>
+                                    <td class="enhanced-table-col-category">Design</td>
+                                    <td class="enhanced-table-col-owner">Jane Smith</td>
+                                    <td class="enhanced-table-col-created">2024-01-10</td>
+                                    <td class="enhanced-table-col-updated">2024-01-18</td>
+                                    <td class="enhanced-table-col-tags">
+                                        <span class="enhanced-table-tag">design</span>
+                                        <span class="enhanced-table-tag">ui</span>
+                                    </td>
+                                    <td class="enhanced-table-col-actions">
+                                        <button class="enhanced-table-action" onclick="editRow(this)">✏️</button>
+                                        <button class="enhanced-table-action" onclick="deleteRow(this)">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="enhanced-table-col-id">#003</td>
+                                    <td class="enhanced-table-col-name">Gamma Service</td>
+                                    <td class="enhanced-table-col-type">boolean</td>
+                                    <td class="enhanced-table-col-value">true</td>
+                                    <td class="enhanced-table-col-status"><span class="enhanced-table-status-pending">Pending</span></td>
+                                    <td class="enhanced-table-col-priority"><span class="enhanced-table-priority-low">Low</span></td>
+                                    <td class="enhanced-table-col-category">Marketing</td>
+                                    <td class="enhanced-table-col-owner">Bob Johnson</td>
+                                    <td class="enhanced-table-col-created">2024-01-12</td>
+                                    <td class="enhanced-table-col-updated">2024-01-19</td>
+                                    <td class="enhanced-table-col-tags">
+                                        <span class="enhanced-table-tag">api</span>
+                                        <span class="enhanced-table-tag">service</span>
+                                    </td>
+                                    <td class="enhanced-table-col-actions">
+                                        <button class="enhanced-table-action" onclick="editRow(this)">✏️</button>
+                                        <button class="enhanced-table-action" onclick="deleteRow(this)">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="enhanced-table-col-id">#004</td>
+                                    <td class="enhanced-table-col-name">Delta Widget</td>
+                                    <td class="enhanced-table-col-type">object</td>
+                                    <td class="enhanced-table-col-value">{...}</td>
+                                    <td class="enhanced-table-col-status"><span class="enhanced-table-status-active">Active</span></td>
+                                    <td class="enhanced-table-col-priority"><span class="enhanced-table-priority-high">High</span></td>
+                                    <td class="enhanced-table-col-category">Sales</td>
+                                    <td class="enhanced-table-col-owner">Alice Brown</td>
+                                    <td class="enhanced-table-col-created">2024-01-08</td>
+                                    <td class="enhanced-table-col-updated">2024-01-22</td>
+                                    <td class="enhanced-table-col-tags">
+                                        <span class="enhanced-table-tag">widget</span>
+                                        <span class="enhanced-table-tag">sales</span>
+                                    </td>
+                                    <td class="enhanced-table-col-actions">
+                                        <button class="enhanced-table-action" onclick="editRow(this)">✏️</button>
+                                        <button class="enhanced-table-action" onclick="deleteRow(this)">🗑️</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="enhanced-table-col-id">#005</td>
+                                    <td class="enhanced-table-col-name">Epsilon Plugin</td>
+                                    <td class="enhanced-table-col-type">array</td>
+                                    <td class="enhanced-table-col-value">[...]</td>
+                                    <td class="enhanced-table-col-status"><span class="enhanced-table-status-active">Active</span></td>
+                                    <td class="enhanced-table-col-priority"><span class="enhanced-table-priority-medium">Medium</span></td>
+                                    <td class="enhanced-table-col-category">Development</td>
+                                    <td class="enhanced-table-col-owner">Charlie Wilson</td>
+                                    <td class="enhanced-table-col-created">2024-01-14</td>
+                                    <td class="enhanced-table-col-updated">2024-01-21</td>
+                                    <td class="enhanced-table-col-tags">
+                                        <span class="enhanced-table-tag">plugin</span>
+                                        <span class="enhanced-table-tag">ext</span>
+                                    </td>
+                                    <td class="enhanced-table-col-actions">
+                                        <button class="enhanced-table-action" onclick="editRow(this)">✏️</button>
+                                        <button class="enhanced-table-action" onclick="deleteRow(this)">🗑️</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="enhanced-table-pagination">
+                        <div class="enhanced-table-pagination-info">
+                            Showing 1-5 of 25 entries
+                        </div>
+                        <div class="enhanced-table-pagination-controls">
+                            <button class="enhanced-table-page-btn" onclick="changePage('prev')">‹</button>
+                            <button class="enhanced-table-page-btn active" onclick="changePage(1)">1</button>
+                            <button class="enhanced-table-page-btn" onclick="changePage(2)">2</button>
+                            <button class="enhanced-table-page-btn" onclick="changePage(3)">3</button>
+                            <button class="enhanced-table-page-btn" onclick="changePage(4)">4</button>
+                            <button class="enhanced-table-page-btn" onclick="changePage(5)">5</button>
+                            <button class="enhanced-table-page-btn" onclick="changePage('next')">›</button>
+                        </div>
+                    </div>
+                    
+                    <div class="enhanced-table-controls">
+                        <button class="enhanced-table-control" onclick="addRow()">Add Row</button>
+                        <button class="enhanced-table-control secondary" onclick="exportTable()">Export</button>
+                        <button class="enhanced-table-control accent" onclick="toggleVariant()">Change Style</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enhanced Table Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Enhanced Table Variants</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🎨 Striped Variant</h3>
+                    <p class="arial-text-body">Alternating row colors for better readability with professional styling.</p>
+                    <div class="enhanced-table-container enhanced-dock-left-variant-striped enhanced-dock-left-size-small">
+                        <table class="enhanced-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Alpha</td>
+                                    <td><span class="enhanced-table-status-active">Active</span></td>
+                                    <td><span class="enhanced-table-priority-high">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>Beta</td>
+                                    <td><span class="enhanced-table-status-inactive">Inactive</span></td>
+                                    <td><span class="enhanced-table-priority-medium">Medium</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#003</td>
+                                    <td>Gamma</td>
+                                    <td><span class="enhanced-table-status-pending">Pending</span></td>
+                                    <td><span class="enhanced-table-priority-low">Low</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🖼️ Bordered Variant</h3>
+                    <p class="arial-text-body">Full borders on all cells for clear data separation and structure.</p>
+                    <div class="enhanced-table-container enhanced-dock-left-variant-bordered enhanced-dock-left-size-small">
+                        <table class="enhanced-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Alpha</td>
+                                    <td><span class="enhanced-table-status-active">Active</span></td>
+                                    <td><span class="enhanced-table-priority-high">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>Beta</td>
+                                    <td><span class="enhanced-table-status-inactive">Inactive</span></td>
+                                    <td><span class="enhanced-table-priority-medium">Medium</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#003</td>
+                                    <td>Gamma</td>
+                                    <td><span class="enhanced-table-status-pending">Pending</span></td>
+                                    <td><span class="enhanced-table-priority-low">Low</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📐 Compact Variant</h3>
+                    <p class="arial-text-body">Space-efficient design with reduced padding for dense data display.</p>
+                    <div class="enhanced-table-container enhanced-dock-left-variant-compact">
+                        <table class="enhanced-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Value</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Alpha</td>
+                                    <td class="enhanced-table-col-type">string</td>
+                                    <td class="enhanced-table-col-value">primary</td>
+                                    <td><span class="enhanced-table-status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>Beta</td>
+                                    <td class="enhanced-table-col-type">number</td>
+                                    <td class="enhanced-table-col-value">42</td>
+                                    <td><span class="enhanced-table-status-inactive">Inactive</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#003</td>
+                                    <td>Gamma</td>
+                                    <td class="enhanced-table-col-type">boolean</td>
+                                    <td class="enhanced-table-col-value">true</td>
+                                    <td><span class="enhanced-table-status-pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📖 Spacious Variant</h3>
+                    <p class="arial-text-body">Enhanced spacing for better readability with larger fonts and padding.</p>
+                    <div class="enhanced-table-container enhanced-dock-left-variant-spacious">
+                        <table class="enhanced-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Value</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Alpha Component</td>
+                                    <td class="enhanced-table-col-type">string</td>
+                                    <td class="enhanced-table-col-value">primary</td>
+                                    <td><span class="enhanced-table-status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>Beta Module</td>
+                                    <td class="enhanced-table-col-type">number</td>
+                                    <td class="enhanced-table-col-value">42</td>
+                                    <td><span class="enhanced-table-status-inactive">Inactive</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#003</td>
+                                    <td>Gamma Service</td>
+                                    <td class="enhanced-table-col-type">boolean</td>
+                                    <td class="enhanced-table-col-value">true</td>
+                                    <td><span class="enhanced-table-status-pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enhanced Table Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Enhanced Table Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🔍 Search & Filter</h3>
+                    <p class="arial-text-body">Real-time search with multiple filter options for instant data discovery.</p>
+                    <div class="enhanced-table-container enhanced-dock-left-size-small">
+                        <div class="enhanced-table-search">
+                            <input type="text" class="enhanced-table-search-input" placeholder="Search...">
+                            <button class="enhanced-table-search-btn">🔍</button>
+                        </div>
+                        <div class="enhanced-table-filter">
+                            <select class="enhanced-table-filter-select">
+                                <option>Status</option>
+                                <option>Active</option>
+                                <option>Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📊 Sortable Columns</h3>
+                    <p class="arial-text-body">Click column headers to sort ascending or descending with visual indicators.</p>
+                    <div class="enhanced-table-container enhanced-dock-left-size-small">
+                        <table class="enhanced-table enhanced-table-sortable">
+                            <thead>
+                                <tr>
+                                    <th class="sort-asc">ID ↑</th>
+                                    <th>Name</th>
+                                    <th class="sort-desc">Priority ↓</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Alpha</td>
+                                    <td><span class="enhanced-table-priority-high">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>Beta</td>
+                                    <td><span class="enhanced-table-priority-medium">Medium</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📄 Pagination</h3>
+                    <p class="arial-text-body">Navigate through large datasets with intuitive pagination controls.</p>
+                    <div class="enhanced-table-container enhanced-dock-left-size-small">
+                        <div class="enhanced-table-pagination">
+                            <div class="enhanced-table-pagination-info">
+                                Showing 1-10 of 100
+                            </div>
+                            <div class="enhanced-table-pagination-controls">
+                                <button class="enhanced-table-page-btn">‹</button>
+                                <button class="enhanced-table-page-btn active">1</button>
+                                <button class="enhanced-table-page-btn">2</button>
+                                <button class="enhanced-table-page-btn">3</button>
+                                <button class="enhanced-table-page-btn">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🏷️ Tags & Categories</h3>
+                    <p class="arial-text-body">Visual tags and categories for easy data classification and filtering.</p>
+                    <div class="enhanced-table-container enhanced-dock-left-size-small">
+                        <table class="enhanced-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Tags</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alpha</td>
+                                    <td class="enhanced-table-col-category">Development</td>
+                                    <td class="enhanced-table-col-tags">
+                                        <span class="enhanced-table-tag">ui</span>
+                                        <span class="enhanced-table-tag">core</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Beta</td>
+                                    <td class="enhanced-table-col-category">Design</td>
+                                    <td class="enhanced-table-col-tags">
+                                        <span class="enhanced-table-tag">design</span>
+                                        <span class="enhanced-table-tag">ui</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>📊 Professional Table Styling</h3>
+                    <p class="arial-text-body">Enhanced container with Arial typography, interactive headers, and smooth transitions.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🏗️ Multiple Column Types</h3>
+                    <p class="arial-text-body">12 specialized columns including ID, Name, Type, Value, Status, Priority, Category, Owner, Created, Updated, Tags, and Actions.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎬 Advanced Features</h3>
+                    <p class="arial-text-body">Sortable columns, pagination, search functionality, expandable rows, and export capabilities.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎮 Interactive Features</h3>
+                    <p class="arial-text-body">Click, hover, active states, sortable/filterable columns, search, filters, and pagination.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Enhanced Table System</p>
+                <p class="arial-footer-main">Professional enhanced table system with 12+ columns, sorting, filtering, pagination, and interactive features</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Enhanced Table System JavaScript functions
+        let currentSortColumn = -1;
+        let sortDirection = 'asc';
+        let currentVariant = 'default';
+        
+        // Table sorting function
+        function sortTable(columnIndex) {
+            const table = document.getElementById('mainTable');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            // Toggle sort direction
+            if (currentSortColumn === columnIndex) {
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortDirection = 'asc';
+                currentSortColumn = columnIndex;
+            }
+            
+            // Update header classes
+            const headers = table.querySelectorAll('th');
+            headers.forEach((header, index) => {
+                header.classList.remove('sort-asc', 'sort-desc');
+                if (index === columnIndex) {
+                    header.classList.add(sortDirection === 'asc' ? 'sort-asc' : 'sort-desc');
+                }
+            });
+            
+            // Sort rows
+            rows.sort((a, b) => {
+                const aValue = a.cells[columnIndex].textContent.trim();
+                const bValue = b.cells[columnIndex].textContent.trim();
+                
+                let comparison = 0;
+                if (!isNaN(aValue) && !isNaN(bValue)) {
+                    comparison = parseFloat(aValue) - parseFloat(bValue);
+                } else {
+                    comparison = aValue.localeCompare(bValue);
+                }
+                
+                return sortDirection === 'asc' ? comparison : -comparison;
+            });
+            
+            // Reorder rows
+            rows.forEach(row => tbody.appendChild(row));
+        }
+        
+        // Search function
+        function searchTable() {
+            const searchTerm = document.getElementById('tableSearch').value.toLowerCase();
+            const tbody = document.getElementById('tableBody');
+            const rows = tbody.querySelectorAll('tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+        
+        // Filter functions
+        document.getElementById('statusFilter').addEventListener('change', filterTable);
+        document.getElementById('priorityFilter').addEventListener('change', filterTable);
+        document.getElementById('categoryFilter').addEventListener('change', filterTable);
+        
+        function filterTable() {
+            const statusFilter = document.getElementById('statusFilter').value;
+            const priorityFilter = document.getElementById('priorityFilter').value;
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const tbody = document.getElementById('tableBody');
+            const rows = tbody.querySelectorAll('tr');
+            
+            rows.forEach(row => {
+                let show = true;
+                
+                if (statusFilter && !row.textContent.includes(statusFilter)) {
+                    show = false;
+                }
+                if (priorityFilter && !row.textContent.includes(priorityFilter)) {
+                    show = false;
+                }
+                if (categoryFilter && !row.textContent.includes(categoryFilter)) {
+                    show = false;
+                }
+                
+                row.style.display = show ? '' : 'none';
+            });
+        }
+        
+        // Row management functions
+        function addRow() {
+            const tbody = document.getElementById('tableBody');
+            const newRow = tbody.insertRow();
+            const newId = '#' + String(tbody.rows.length + 1).padStart(3, '0');
+            
+            newRow.innerHTML = `
+                <td class="enhanced-table-col-id">${newId}</td>
+                <td class="enhanced-table-col-name">New Component</td>
+                <td class="enhanced-table-col-type">string</td>
+                <td class="enhanced-table-col-value">value</td>
+                <td class="enhanced-table-col-status"><span class="enhanced-table-status-pending">Pending</span></td>
+                <td class="enhanced-table-col-priority"><span class="enhanced-table-priority-medium">Medium</span></td>
+                <td class="enhanced-table-col-category">Development</td>
+                <td class="enhanced-table-col-owner">User</td>
+                <td class="enhanced-table-col-created">${new Date().toISOString().split('T')[0]}</td>
+                <td class="enhanced-table-col-updated">${new Date().toISOString().split('T')[0]}</td>
+                <td class="enhanced-table-col-tags">
+                    <span class="enhanced-table-tag">new</span>
+                </td>
+                <td class="enhanced-table-col-actions">
+                    <button class="enhanced-table-action" onclick="editRow(this)">✏️</button>
+                    <button class="enhanced-table-action" onclick="deleteRow(this)">🗑️</button>
+                </td>
+            `;
+            
+            newRow.classList.add('enhanced-table-animated-slide-in');
+        }
+        
+        function editRow(button) {
+            const row = button.closest('tr');
+            const nameCell = row.querySelector('.enhanced-table-col-name');
+            const currentName = nameCell.textContent;
+            
+            const newName = prompt('Edit name:', currentName);
+            if (newName && newName !== currentName) {
+                nameCell.textContent = newName;
+                row.classList.add('enhanced-table-animated-highlight');
+                
+                // Update timestamp
+                const updatedCell = row.querySelector('.enhanced-table-col-updated');
+                updatedCell.textContent = new Date().toISOString().split('T')[0];
+            }
+        }
+        
+        function deleteRow(button) {
+            if (confirm('Are you sure you want to delete this row?')) {
+                const row = button.closest('tr');
+                row.style.transform = 'translateX(-100%)';
+                row.style.opacity = '0';
+                setTimeout(() => row.remove(), 300);
+            }
+        }
+        
+        // Pagination function
+        function changePage(page) {
+            // In a real implementation, this would load different data
+            console.log('Changing to page:', page);
+            
+            // Update active button
+            const buttons = document.querySelectorAll('.enhanced-table-page-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            if (page === 'prev' || page === 'next') {
+                // Handle prev/next navigation
+                const activeBtn = document.querySelector('.enhanced-table-page-btn.active');
+                const currentPage = parseInt(activeBtn.textContent);
+                const newPage = page === 'prev' ? Math.max(1, currentPage - 1) : Math.min(5, currentPage + 1);
+                
+                buttons.forEach(btn => {
+                    if (btn.textContent == newPage) {
+                        btn.classList.add('active');
+                    }
+                });
+            } else {
+                // Handle direct page selection
+                buttons.forEach(btn => {
+                    if (btn.textContent == page) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        }
+        
+        // Export function
+        function exportTable() {
+            const table = document.getElementById('mainTable');
+            const rows = table.querySelectorAll('tr');
+            let csv = [];
+            
+            rows.forEach(row => {
+                const rowData = [];
+                const cells = row.querySelectorAll('th, td');
+                cells.forEach(cell => {
+                    rowData.push(cell.textContent.trim());
+                });
+                csv.push(rowData.join(','));
+            });
+            
+            const csvContent = csv.join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'table-data.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+        
+        // Variant toggle function
+        function toggleVariant() {
+            const container = document.querySelector('.enhanced-table-container');
+            const variants = ['default', 'striped', 'bordered', 'compact', 'spacious'];
+            const currentIndex = variants.indexOf(currentVariant);
+            currentVariant = variants[(currentIndex + 1) % variants.length];
+            
+            // Remove all variant classes
+            variants.forEach(variant => {
+                container.classList.remove(`enhanced-dock-left-variant-${variant}`);
+            });
+            
+            // Add new variant class (skip default)
+            if (currentVariant !== 'default') {
+                container.classList.add(`enhanced-dock-left-variant-${currentVariant}`);
+            }
+        }
+        
+        // Interactive features
+        function addInteractiveFeatures() {
+            // Add row selection
+            const table = document.getElementById('mainTable');
+            const rows = table.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                row.addEventListener('click', function(e) {
+                    // Don't select if clicking on action buttons
+                    if (e.target.closest('.enhanced-table-col-actions')) {
+                        return;
+                    }
+                    
+                    // Toggle selection
+                    this.classList.toggle('selected');
+                    
+                    // Update visual feedback
+                    if (this.classList.contains('selected')) {
+                        this.style.background = '#eff6ff';
+                    } else {
+                        this.style.background = '';
+                    }
+                });
+            });
+            
+            // Add double-click to edit
+            rows.forEach(row => {
+                row.addEventListener('dblclick', function(e) {
+                    if (e.target.closest('.enhanced-table-col-name')) {
+                        const editBtn = this.querySelector('.enhanced-table-action');
+                        if (editBtn) {
+                            editBtn.click();
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Initialize enhanced table on load
+        function initializeEnhancedTable() {
+            // Add entrance animations
+            const container = document.querySelector('.enhanced-table-container');
+            container.classList.add('enhanced-table-animated-slide-in');
+            
+            // Add interactive features
+            addInteractiveFeatures();
+            
+            // Add real-time search
+            document.getElementById('tableSearch').addEventListener('input', searchTable);
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEnhancedTable();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
