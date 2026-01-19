@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO URL Column Type Variants Professional Implementation</title>
+    
+    <!-- URL Column Type Variants Styles -->
+    <link rel="stylesheet" href="url-column-type-variants.css">
+    <link rel="stylesheet" href="enhanced-url-column-type.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .variant-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .variant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .variant-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 22px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+        
+        .variant-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        .variant-examples {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .variant-example {
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .variant-example:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .variant-label {
+            font-weight: 600;
+            color: #374151;
+            min-width: 100px;
+        }
+        
+        .variant-demo {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #6b7280;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .variants-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">URL Column Type Variants Professional Implementation</h1>
+            <p class="demo-subtitle">Complete URL column type variant system with 50+ professional variants across 8 categories</p>
+        </div>
+        
+        <!-- URL Column Type Variants Statistics -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">URL Column Type Variants Statistics</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Style Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Size Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">State Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Color Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Theme Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Shape Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Animation Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Total Variants</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Style Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Style Variants</h2>
+            
+            <div class="variants-grid">
+                <!-- Minimal Variant -->
+                <div class="variant-card">
+                    <h3>🎨 Minimal Variant</h3>
+                    <p class="arial-text-body">Clean, simple design with underline and subtle hover effects.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Standard:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-minimal" onclick="handleUrlClick('minimal')">https://example.com</a>
+                            </div>
+                        </div>
+                        <div class="variant-example">
+                            <span class="variant-label">Hover:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-minimal url-column-state-hover">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Outlined Variant -->
+                <div class="variant-card">
+                    <h3>🖼️ Outlined Variant</h3>
+                    <p class="arial-text-body">Border-only design with fill effect on hover interaction.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Standard:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined" onclick="handleUrlClick('outlined')">https://example.com</a>
+                            </div>
+                        </div>
+                        <div class="variant-example">
+                            <span class="variant-label">Hover:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-state-hover">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Filled Variant -->
+                <div class="variant-card">
+                    <h3>🎯 Filled Variant</h3>
+                    <p class="arial-text-body">Solid background with opacity and enhanced hover effects.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Standard:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-filled" onclick="handleUrlClick('filled')">https://example.com</a>
+                            </div>
+                        </div>
+                        <div class="variant-example">
+                            <span class="variant-label">Hover:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-filled url-column-state-hover">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Glass Variant -->
+                <div class="variant-card">
+                    <h3>🔮 Glass Variant</h3>
+                    <p class="arial-text-body">Frosted glass effect with backdrop blur and transparency.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Standard:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-glass" onclick="handleUrlClick('glass')">https://example.com</a>
+                            </div>
+                        </div>
+                        <div class="variant-example">
+                            <span class="variant-label">Hover:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-glass url-column-state-hover">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gradient Variant -->
+                <div class="variant-card">
+                    <h3>🌈 Gradient Variant</h3>
+                    <p class="arial-text-body">Beautiful gradient backgrounds with smooth color transitions.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Standard:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-gradient" onclick="handleUrlClick('gradient')">https://example.com</a>
+                            </div>
+                        </div>
+                        <div class="variant-example">
+                            <span class="variant-label">Hover:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-gradient url-column-state-hover">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Neon Variant -->
+                <div class="variant-card">
+                    <h3>💫 Neon Variant</h3>
+                    <p class="arial-text-body">Glowing cyberpunk-style design with neon effects.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Standard:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-neon" onclick="handleUrlClick('neon')">https://example.com</a>
+                            </div>
+                        </div>
+                        <div class="variant-example">
+                            <span class="variant-label">Hover:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-neon url-column-state-hover">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Retro Variant -->
+                <div class="variant-card">
+                    <h3>🕹️ Retro Variant</h3>
+                    <p class="arial-text-body">8-bit retro gaming style with bold colors and fonts.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Standard:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-retro" onclick="handleUrlClick('retro')">https://example.com</a>
+                            </div>
+                        </div>
+                        <div class="variant-example">
+                            <span class="variant-label">Hover:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-retro url-column-state-hover">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Size Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Size Variants</h2>
+            
+            <div class="variants-grid">
+                <div class="variant-card">
+                    <h3>📏 Small Size</h3>
+                    <p class="arial-text-body">Compact 12px font size for space-constrained layouts.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Small:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-size-small" onclick="handleUrlClick('small')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>📐 Medium Size</h3>
+                    <p class="arial-text-body">Standard 14px font size for regular use cases.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Medium:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-size-medium" onclick="handleUrlClick('medium')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>📊 Large Size</h3>
+                    <p class="arial-text-body">Comfortable 16px font size for better readability.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Large:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-size-large" onclick="handleUrlClick('large')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>📈 XLarge Size</h3>
+                    <p class="arial-text-body">Large 18px font size for prominent display.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">XLarge:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-size-xlarge" onclick="handleUrlClick('xlarge')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- State Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">State Variants</h2>
+            
+            <div class="variants-grid">
+                <div class="variant-card">
+                    <h3>✨ Default State</h3>
+                    <p class="arial-text-body">Normal appearance with standard styling.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Default:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-state-default" onclick="handleUrlClick('default')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🎯 Active State</h3>
+                    <p class="arial-text-body">Pressed/active state with enhanced visual feedback.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Active:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-state-active" onclick="handleUrlClick('active')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🚫 Disabled State</h3>
+                    <p class="arial-text-body">Grayed out, non-interactive state with reduced opacity.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Disabled:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-state-disabled">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>⏳ Loading State</h3>
+                    <p class="arial-text-body">Loading state with animated spinner indicator.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Loading:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-state-loading">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>✅ Success State</h3>
+                    <p class="arial-text-body">Green success state with checkmark indicator.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Success:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-state-success" onclick="handleUrlClick('success')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>❌ Error State</h3>
+                    <p class="arial-text-body">Red error state with strikethrough and X indicator.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Error:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-state-error">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>⚠️ Warning State</h3>
+                    <p class="arial-text-body">Orange warning state with warning indicator.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Warning:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-state-warning" onclick="handleUrlClick('warning')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Color Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Color Variants</h2>
+            
+            <div class="variants-grid">
+                <div class="variant-card">
+                    <h3>🔵 Primary Color</h3>
+                    <p class="arial-text-body">Blue primary color for main actions and emphasis.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Primary:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-color-primary" onclick="handleUrlClick('primary')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>⚪ Secondary Color</h3>
+                    <p class="arial-text-body">Gray secondary color for secondary actions.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Secondary:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-color-secondary" onclick="handleUrlClick('secondary')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🟢 Success Color</h3>
+                    <p class="arial-text-body">Green success color for positive actions.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Success:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-color-success" onclick="handleUrlClick('success-color')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🟡 Warning Color</h3>
+                    <p class="arial-text-body">Orange warning color for caution states.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Warning:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-color-warning" onclick="handleUrlClick('warning-color')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🔴 Error Color</h3>
+                    <p class="arial-text-body">Red error color for destructive actions.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Error:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-color-error" onclick="handleUrlClick('error-color')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🔷 Info Color</h3>
+                    <p class="arial-text-body">Cyan info color for informational content.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Info:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-color-info" onclick="handleUrlClick('info-color')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Theme Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Theme Variants</h2>
+            
+            <div class="variants-grid">
+                <div class="variant-card">
+                    <h3>🌙 Dark Theme</h3>
+                    <p class="arial-text-body">Dark mode theme with inverted colors.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Dark:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-theme-dark" onclick="handleUrlClick('dark')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>☀️ Light Theme</h3>
+                    <p class="arial-text-body">Light mode theme with bright colors.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Light:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-theme-light" onclick="handleUrlClick('light')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🔲 High Contrast</h3>
+                    <p class="arial-text-body">High contrast theme for accessibility.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">High Contrast:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-theme-high-contrast" onclick="handleUrlClick('high-contrast')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🎨 Pastel Theme</h3>
+                    <p class="arial-text-body">Soft pastel colors for gentle appearance.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Pastel:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-theme-pastel" onclick="handleUrlClick('pastel')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>⚫ Monochrome</h3>
+                    <p class="arial-text-body">Black and white theme for classic look.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Monochrome:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-theme-monochrome" onclick="handleUrlClick('monochrome')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animation Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Animation Variants</h2>
+            
+            <div class="variants-grid">
+                <div class="variant-card">
+                    <h3>🦘 Bounce Animation</h3>
+                    <p class="arial-text-body">Playful bouncing animation for attention.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Bounce:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-animation-bounce" onclick="handleUrlClick('bounce')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>💗 Pulse Animation</h3>
+                    <p class="arial-text-body">Gentle pulsing effect for living feel.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Pulse:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-animation-pulse" onclick="handleUrlClick('pulse')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🫨 Shake Animation</h3>
+                    <p class="arial-text-body">Shake animation for error or attention.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Shake:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-animation-shake" onclick="handleUrlClick('shake')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>✨ Glow Animation</h3>
+                    <p class="arial-text-body">Glowing effect for emphasis.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Glow:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-animation-glow" onclick="handleUrlClick('glow')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>🌅 Fade In</h3>
+                    <p class="arial-text-body">Smooth fade in animation on load.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Fade In:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-animation-fade-in" onclick="handleUrlClick('fade-in')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="variant-card">
+                    <h3>➡️ Slide In</h3>
+                    <p class="arial-text-body">Slide in animation from the left.</p>
+                    
+                    <div class="variant-examples">
+                        <div class="variant-example">
+                            <span class="variant-label">Slide In:</span>
+                            <div class="variant-demo">
+                                <a href="#" class="url-column-variant-outlined url-column-animation-slide-in" onclick="handleUrlClick('slide-in')">https://example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Demo -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Interactive Variant Demo</h2>
+            
+            <div class="enhanced-url-column-container">
+                <div class="add-column-container">
+                    <div class="add-column-header">
+                        <h4 class="add-column-title">Interactive URL Variants</h4>
+                        <span class="enhanced-table-type">Click to Test</span>
+                    </div>
+                </div>
+                
+                <div class="variant-examples">
+                    <div class="variant-example">
+                        <span class="variant-label">Click Result:</span>
+                        <div class="variant-demo" id="click-result">Click any URL variant to see the result</div>
+                    </div>
+                </div>
+                
+                <div class="variant-examples">
+                    <div class="variant-example">
+                        <span class="variant-label">Combined:</span>
+                        <div class="variant-demo">
+                            <a href="#" class="url-column-variant-gradient url-column-size-large url-column-animation-glow" onclick="handleUrlClick('combined')">https://awesome-example.com</a>
+                        </div>
+                    </div>
+                    <div class="variant-example">
+                        <span class="variant-label">Neon Large:</span>
+                        <div class="variant-demo">
+                            <a href="#" class="url-column-variant-neon url-column-size-large url-column-animation-pulse" onclick="handleUrlClick('neon-large')">https://neon-example.com</a>
+                        </div>
+                    </div>
+                    <div class="variant-example">
+                        <span class="variant-label">Glass Success:</span>
+                        <div class="variant-demo">
+                            <a href="#" class="url-column-variant-glass url-column-state-success url-column-animation-fade-in" onclick="handleUrlClick('glass-success')">https://success-example.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - URL Column Type Variants</p>
+                <p class="arial-footer-main">Professional URL column type variant system with 50+ variants across 8 categories</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // URL Column Type Variants JavaScript functions
+        
+        // Handle URL click with variant tracking
+        function handleUrlClick(variant) {
+            const result = document.getElementById('click-result');
+            const timestamp = new Date().toLocaleTimeString();
+            result.innerHTML = `<strong>${variant}</strong> variant clicked at ${timestamp}`;
+            result.style.color = '#3b82f6';
+            result.style.fontWeight = '600';
+            
+            // Add animation to result
+            result.classList.add('url-column-animation-fade-in');
+            
+            setTimeout(() => {
+                result.style.color = '#6b7280';
+                result.style.fontWeight = 'normal';
+                result.classList.remove('url-column-animation-fade-in');
+            }, 3000);
+            
+            console.log(`URL variant clicked: ${variant}`);
+        }
+        
+        // Add interactive animations
+        function addInteractiveFeatures() {
+            // Add hover effects to all variant examples
+            const examples = document.querySelectorAll('.variant-example');
+            examples.forEach(example => {
+                example.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                example.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Add click animations to interactive elements
+            const interactiveElements = document.querySelectorAll('.url-column-variant-minimal, .url-column-variant-outlined, .url-column-variant-filled, .url-column-variant-glass, .url-column-variant-gradient, .url-column-variant-neon, .url-column-variant-retro');
+            interactiveElements.forEach(element => {
+                element.addEventListener('click', function(e) {
+                    if (!this.classList.contains('url-column-state-disabled')) {
+                        this.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                        }, 150);
+                    }
+                });
+            });
+            
+            // Add entrance animations to cards
+            const cards = document.querySelectorAll('.variant-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('url-column-animation-slide-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Add stat counter animations
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                if (target === 50) {
+                    // Handle special case for "50+"
+                    let current = 0;
+                    const increment = 2;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= 50) {
+                            stat.textContent = '50+';
+                            clearInterval(timer);
+                        } else {
+                            stat.textContent = current;
+                        }
+                    }, 30);
+                } else {
+                    let current = 0;
+                    const increment = target / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current);
+                    }, 30);
+                }
+            });
+        }
+        
+        // Initialize URL column type variants on load
+        function initializeUrlColumnTypeVariants() {
+            // Add entrance animations
+            const container = document.querySelector('.enhanced-url-column-container');
+            if (container) {
+                container.classList.add('url-column-animation-slide-in');
+            }
+            
+            // Add interactive features
+            addInteractiveFeatures();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'v') {
+                    e.preventDefault();
+                    document.querySelector('.url-column-variant-gradient').click();
+                }
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeUrlColumnTypeVariants();
+        });
+    </script>
+</body>
+</html>
