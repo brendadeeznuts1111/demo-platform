@@ -3,7 +3,7 @@
 // @DEMO Enhanced Arial Typography Demonstration
 // Professional typography system with style attributes
 
-import { writeFileSync } from 'fs';
+import { writeFileSync } from 'node:fs';
 
 class TypographyDemo {
   constructor() {

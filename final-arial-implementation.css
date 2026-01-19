@@ -13,8 +13,10 @@
   color: #000000;
 }
 
-/* Arial Heading Style Attributes */
-.arial-final-h1 {
+/* ===== ENHANCED ARIAL HEADING STYLE ATTRIBUTES ===== */
+
+/* Main Heading H1 - Primary Page Titles */
+.arial-heading-h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -22,9 +24,25 @@
   font-size: 32px;
   line-height: normal;
   color: #000000;
+  margin: 0 0 16px 0;
 }
 
-.arial-final-h2 {
+/* Secondary Heading H2 - Section Titles */
+.arial-heading-h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 14px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Tertiary Heading H3 - Subsection Titles */
+.arial-heading-h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -32,9 +50,11 @@
   font-size: 24px;
   line-height: normal;
   color: #000000;
+  margin: 0 0 12px 0;
 }
 
-.arial-final-h3 {
+/* Quaternary Heading H4 - Component Titles */
+.arial-heading-h4 {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -42,9 +62,111 @@
   font-size: 20px;
   line-height: normal;
   color: #000000;
+  margin: 0 0 10px 0;
 }
 
-.arial-final-h4 {
+/* Quinary Heading H5 - Small Titles */
+.arial-heading-h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+/* Senary Heading H6 - Micro Titles */
+.arial-heading-h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 6px 0;
+}
+
+/* ===== ENHANCED ARIAL BODY TEXT STYLE ATTRIBUTES ===== */
+
+/* Standard Body Text - Default Paragraph Text */
+.arial-text-body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 16px 0;
+}
+
+/* Small Body Text - Secondary Information */
+.arial-text-small {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 12px 0;
+}
+
+/* Large Body Text - Emphasized Content */
+.arial-text-large {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+/* Lead Text - Introduction Text */
+.arial-text-lead {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 24px 0;
+}
+
+/* Caption Text - Image Captions and Labels */
+.arial-text-caption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: normal;
+  color: #666666;
+  margin: 0 0 8px 0;
+}
+
+/* Subtitle Text - Secondary Titles */
+.arial-text-subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 12px 0;
+}
+
+/* ===== ENHANCED ARIAL UI ELEMENTS STYLE ATTRIBUTES ===== */
+
+/* Button Elements - Interactive Controls */
+.arial-ui-button {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -54,7 +176,52 @@
   color: #000000;
 }
 
-.arial-final-h5 {
+/* Input Elements - Form Fields */
+.arial-ui-input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+}
+
+/* Label Elements - Form Labels */
+.arial-ui-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+}
+
+/* Select Elements - Dropdown Menus */
+.arial-ui-select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+}
+
+/* Textarea Elements - Multi-line Text Input */
+.arial-ui-textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+}
+
+/* Checkbox and Radio Labels */
+.arial-ui-form-label {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -64,80 +231,10 @@
   color: #000000;
 }
 
-.arial-final-h6 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: normal;
-  color: #000000;
-}
+/* ===== ENHANCED ARIAL NAVIGATION & LINKS STYLE ATTRIBUTES ===== */
 
-/* Arial Body Text Style Attributes */
-.arial-final-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: normal;
-  color: #000000;
-}
-
-.arial-final-body-small {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: normal;
-  color: #000000;
-}
-
-.arial-final-body-large {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: normal;
-  color: #000000;
-}
-
-/* Arial UI Elements Style Attributes */
-.arial-final-button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: normal;
-  color: #000000;
-}
-
-.arial-final-input {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: normal;
-  color: #000000;
-}
-
-.arial-final-label {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: normal;
-  color: #000000;
-}
-
-/* Arial Navigation Style Attributes */
-.arial-final-nav {
+/* Navigation Menu Items */
+.arial-nav-menu {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -147,7 +244,20 @@
   color: #000000;
 }
 
-.arial-final-link {
+/* Navigation Links */
+.arial-nav-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #0000ff;
+  text-decoration: none;
+}
+
+/* Standard Links */
+.arial-link-default {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -155,10 +265,35 @@
   font-size: 18px;
   line-height: normal;
   color: #0000ff;
+  text-decoration: none;
 }
 
-/* Arial Table Style Attributes */
-.arial-final-table {
+/* Breadcrumb Navigation */
+.arial-nav-breadcrumb {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  color: #666666;
+}
+
+/* Pagination Links */
+.arial-nav-pagination {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  color: #0000ff;
+}
+
+/* ===== ENHANCED ARIAL TABLE STYLE ATTRIBUTES ===== */
+
+/* Table Container */
+.arial-table-container {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -168,7 +303,20 @@
   color: #000000;
 }
 
-.arial-final-table-header {
+/* Table Headers */
+.arial-table-header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  background-color: #f8f9fa;
+}
+
+/* Table Data Cells */
+.arial-table-cell {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -178,18 +326,21 @@
   color: #000000;
 }
 
-.arial-final-table-cell {
+/* Table Footer */
+.arial-table-footer {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: normal;
-  color: #000000;
+  color: #666666;
 }
 
-/* Arial Code Style Attributes */
-.arial-final-code {
+/* ===== ENHANCED ARIAL CODE & TECHNICAL STYLE ATTRIBUTES ===== */
+
+/* Inline Code Elements */
+.arial-code-inline {
   font-family: 'Courier New', monospace;
   font-style: normal;
   font-variant: normal;
@@ -197,9 +348,13 @@
   font-size: 14px;
   line-height: normal;
   color: #000000;
+  background-color: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
-.arial-final-pre {
+/* Code Block Elements */
+.arial-code-block {
   font-family: 'Courier New', monospace;
   font-style: normal;
   font-variant: normal;
@@ -207,10 +362,47 @@
   font-size: 14px;
   line-height: normal;
   color: #000000;
+  background-color: #f1f5f9;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre;
 }
 
-/* Arial Form Style Attributes */
-.arial-final-form {
+/* Preformatted Text */
+.arial-code-pre {
+  font-family: 'Courier New', monospace;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  color: #000000;
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Keyboard Shortcuts */
+.arial-code-kbd {
+  font-family: 'Courier New', monospace;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: normal;
+  color: #000000;
+  background-color: #f3f4f6;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+}
+
+/* ===== ENHANCED ARIAL ALERT & MESSAGE STYLE ATTRIBUTES ===== */
+
+/* Default Alert Messages */
+.arial-alert-default {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
@@ -218,57 +410,70 @@
   font-size: 18px;
   line-height: normal;
   color: #000000;
+  background-color: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
 }
 
-.arial-final-select {
+/* Success Alert Messages */
+.arial-alert-success {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: normal;
-  color: #000000;
+  color: #14532d;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 16px;
 }
 
-.arial-final-textarea {
+/* Warning Alert Messages */
+.arial-alert-warning {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: normal;
-  color: #000000;
+  color: #92400e;
+  background-color: #fffbeb;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 16px;
 }
 
-/* Arial Alert Style Attributes */
-.arial-final-alert {
+/* Error Alert Messages */
+.arial-alert-error {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: normal;
-  color: #000000;
+  color: #991b1b;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
 }
 
-.arial-final-warning {
+/* Info Alert Messages */
+.arial-alert-info {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: normal;
-  color: #ff0000;
-}
-
-.arial-final-success {
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: normal;
-  color: #008000;
+  color: #1e40af;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 16px;
 }
 
 /* Arial Footer Style Attributes */
@@ -457,7 +662,6 @@
   text-decoration: none;
 }
 
-/* Arial Text Transform */
 .arial-final-uppercase {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
@@ -489,6 +693,220 @@
   line-height: normal;
   color: #000000;
   text-transform: capitalize;
+}
+
+/* ===== ENHANCED ARIAL FOOTER & METADATA STYLE ATTRIBUTES ===== */
+
+/* Main Footer Content */
+.arial-footer-main {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  color: #666666;
+}
+
+/* Footer Links */
+.arial-footer-link {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+/* Copyright Text */
+.arial-footer-copyright {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: normal;
+  color: #9ca3af;
+}
+
+/* Footer Headings */
+.arial-footer-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  margin: 0 0 12px 0;
+}
+
+/* ===== ENHANCED ARIAL UTILITY STYLE ATTRIBUTES ===== */
+
+/* Text Alignment Utilities */
+.arial-util-text-left {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-align: left;
+}
+
+.arial-util-text-center {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-align: center;
+}
+
+.arial-util-text-right {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-align: right;
+}
+
+.arial-util-text-justify {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-align: justify;
+}
+
+/* Text Decoration Utilities */
+.arial-util-text-underline {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-decoration: underline;
+}
+
+.arial-util-text-no-decoration {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-decoration: none;
+}
+
+.arial-util-text-line-through {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-decoration: line-through;
+}
+
+/* Text Transform Utilities */
+.arial-util-text-uppercase {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.arial-util-text-lowercase {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-transform: lowercase;
+}
+
+.arial-util-text-capitalize {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+  text-transform: capitalize;
+}
+
+/* Text Weight Utilities */
+.arial-util-text-light {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+}
+
+.arial-util-text-normal {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+}
+
+.arial-util-text-medium {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+}
+
+.arial-util-text-semibold {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
+}
+
+.arial-util-text-bold {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: normal;
+  color: #000000;
 }
 
 /* ===== FINAL ARIAL IMPLEMENTATION ===== */
