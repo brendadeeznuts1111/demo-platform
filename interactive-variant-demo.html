@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Interactive Variant Demo Professional Implementation</title>
+    
+    <!-- Interactive Variant Demo Styles -->
+    <link rel="stylesheet" href="interactive-variant-demo.css">
+    <link rel="stylesheet" href="apple-system-ui-font.css">
+    <link rel="stylesheet" href="url-column-type-variants.css">
+    <link rel="stylesheet" href="enhanced-url-column-type.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 1.4;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        
+        .demo-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.02em;
+        }
+        
+        .demo-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #6b7280;
+            margin: 0 0 30px 0;
+            letter-spacing: -0.015em;
+        }
+        
+        .demo-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #007aff;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007aff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .theme-toggle:hover {
+            background: #0051d5;
+            transform: scale(1.1);
+        }
+        
+        .result-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #e2e8f0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .result-panel.active {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-color: #007aff;
+        }
+        
+        .result-content {
+            text-align: center;
+        }
+        
+        .result-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        
+        .result-description {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+        
+        .result-classes {
+            font-family: "SF Mono", "Monaco", "Inconsolata", monospace;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: #374151;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 36px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-stats {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-header">
+            <h1 class="demo-title">Interactive Variant Demo</h1>
+            <p class="demo-subtitle">Professional demonstration of font variants, URL column types, and interactive features</p>
+            
+            <div class="demo-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="font-size-count">7</div>
+                    <div class="stat-label">Font Sizes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="font-weight-count">9</div>
+                    <div class="stat-label">Font Weights</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="color-count">7</div>
+                    <div class="stat-label">Color Variants</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="url-count">5</div>
+                    <div class="stat-label">URL Styles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="animation-count">5</div>
+                    <div class="stat-label">Animations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="state-count">6</div>
+                    <div class="stat-label">States</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Font Size Variants -->
+        <div class="interactive-variant-demo-container">
+            <h2 class="interactive-variant-demo-title">Font Size Variants</h2>
+            <p class="interactive-variant-demo-description">Click on any size variant to see it in action</p>
+            
+            <div class="interactive-variant-demo-controls">
+                <button class="interactive-variant-demo-control" onclick="clearSelection()">Clear</button>
+                <button class="interactive-variant-demo-control" onclick="animateAll()">Animate All</button>
+            </div>
+            
+            <div class="interactive-variant-demo-grid">
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-xs', 'Extra Small (11px)', 'interactive-variant-demo-font-xs')">
+                    <h3 class="interactive-variant-demo-card-title">Extra Small</h3>
+                    <p class="interactive-variant-demo-card-description">Compact 11px font size for tight spaces</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-xs">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-sm', 'Small (13px)', 'interactive-variant-demo-font-sm')">
+                    <h3 class="interactive-variant-demo-card-title">Small</h3>
+                    <p class="interactive-variant-demo-card-description">Standard 13px font size for secondary content</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-sm">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-base', 'Base (17px)', 'interactive-variant-demo-font-base')">
+                    <h3 class="interactive-variant-demo-card-title">Base</h3>
+                    <p class="interactive-variant-demo-card-description">Standard 17px font size for body content</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-base">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-lg', 'Large (20px)', 'interactive-variant-demo-font-lg')">
+                    <h3 class="interactive-variant-demo-card-title">Large</h3>
+                    <p class="interactive-variant-demo-card-description">Comfortable 20px font size for emphasis</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-lg">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-xl', 'Extra Large (24px)', 'interactive-variant-demo-font-xl')">
+                    <h3 class="interactive-variant-demo-card-title">Extra Large</h3>
+                    <p class="interactive-variant-demo-card-description">Large 24px font size for headings</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-xl">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-2xl', '2X Large (28px)', 'interactive-variant-demo-font-2xl')">
+                    <h3 class="interactive-variant-demo-card-title">2X Large</h3>
+                    <p class="interactive-variant-demo-card-description">Very large 28px font size for display</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-2xl">The quick brown fox jumps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Font Weight Variants -->
+        <div class="interactive-variant-demo-container">
+            <h2 class="interactive-variant-demo-title">Font Weight Variants</h2>
+            <p class="interactive-variant-demo-description">Explore different font weights for visual hierarchy</p>
+            
+            <div class="interactive-variant-demo-grid">
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-thin', 'Thin (100)', 'interactive-variant-demo-font-thin')">
+                    <h3 class="interactive-variant-demo-card-title">Thin</h3>
+                    <p class="interactive-variant-demo-card-description">Ultra-light 100 weight for elegant designs</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-thin">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-light', 'Light (300)', 'interactive-variant-demo-font-light')">
+                    <h3 class="interactive-variant-demo-card-title">Light</h3>
+                    <p class="interactive-variant-demo-card-description">Light 300 weight for subtle emphasis</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-light">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-normal', 'Normal (400)', 'interactive-variant-demo-font-normal')">
+                    <h3 class="interactive-variant-demo-card-title">Normal</h3>
+                    <p class="interactive-variant-demo-card-description">Standard 400 weight for body text</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-normal">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-medium', 'Medium (500)', 'interactive-variant-demo-font-medium')">
+                    <h3 class="interactive-variant-demo-card-title">Medium</h3>
+                    <p class="interactive-variant-demo-card-description">Medium 500 weight for balanced emphasis</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-medium">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-semibold', 'Semibold (600)', 'interactive-variant-demo-font-semibold')">
+                    <h3 class="interactive-variant-demo-card-title">Semibold</h3>
+                    <p class="interactive-variant-demo-card-description">Semibold 600 weight for subheadings</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-semibold">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-bold', 'Bold (700)', 'interactive-variant-demo-font-bold')">
+                    <h3 class="interactive-variant-demo-card-title">Bold</h3>
+                    <p class="interactive-variant-demo-card-description">Bold 700 weight for strong emphasis</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-bold">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-heavy', 'Heavy (800)', 'interactive-variant-demo-font-heavy')">
+                    <h3 class="interactive-variant-demo-card-title">Heavy</h3>
+                    <p class="interactive-variant-demo-card-description">Heavy 800 weight for strong headlines</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-heavy">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-black', 'Black (900)', 'interactive-variant-demo-font-black')">
+                    <h3 class="interactive-variant-demo-card-title">Black</h3>
+                    <p class="interactive-variant-demo-card-description">Black 900 weight for maximum impact</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-black">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Color Variants -->
+        <div class="interactive-variant-demo-container">
+            <h2 class="interactive-variant-demo-title">Color Variants</h2>
+            <p class="interactive-variant-demo-description">Semantic color variants for different contexts</p>
+            
+            <div class="interactive-variant-demo-grid">
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-primary', 'Primary', 'interactive-variant-demo-font-primary')">
+                    <h3 class="interactive-variant-demo-card-title">Primary</h3>
+                    <p class="interactive-variant-demo-card-description">Main content color for primary text</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-primary">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-secondary', 'Secondary', 'interactive-variant-demo-font-secondary')">
+                    <h3 class="interactive-variant-demo-card-title">Secondary</h3>
+                    <p class="interactive-variant-demo-card-description">Supporting content color for secondary text</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-secondary">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-accent', 'Accent', 'interactive-variant-demo-font-accent')">
+                    <h3 class="interactive-variant-demo-card-title">Accent</h3>
+                    <p class="interactive-variant-demo-card-description">Highlight color for emphasis and links</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-accent">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-success', 'Success', 'interactive-variant-demo-font-success')">
+                    <h3 class="interactive-variant-demo-card-title">Success</h3>
+                    <p class="interactive-variant-demo-card-description">Green color for success states</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-success">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-warning', 'Warning', 'interactive-variant-demo-font-warning')">
+                    <h3 class="interactive-variant-demo-card-title">Warning</h3>
+                    <p class="interactive-variant-demo-card-description">Orange color for warning messages</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-warning">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-error', 'Error', 'interactive-variant-demo-font-error')">
+                    <h3 class="interactive-variant-demo-card-title">Error</h3>
+                    <p class="interactive-variant-demo-card-description">Red color for error states</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-error">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('font-info', 'Info', 'interactive-variant-demo-font-info')">
+                    <h3 class="interactive-variant-demo-card-title">Info</h3>
+                    <p class="interactive-variant-demo-card-description">Blue color for informational content</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-font-info">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- URL Column Type Variants -->
+        <div class="interactive-variant-demo-container">
+            <h2 class="interactive-variant-demo-title">URL Column Type Variants</h2>
+            <p class="interactive-variant-demo-description">Interactive URL styles with different visual approaches</p>
+            
+            <div class="interactive-variant-demo-grid">
+                <div class="interactive-variant-demo-card" onclick="selectVariant('url-minimal', 'Minimal URL', 'interactive-variant-demo-url-minimal')">
+                    <h3 class="interactive-variant-demo-card-title">Minimal</h3>
+                    <p class="interactive-variant-demo-card-description">Clean underline style with subtle hover</p>
+                    <div class="interactive-variant-demo-preview">
+                        <a href="#" class="interactive-variant-demo-url-minimal" onclick="event.stopPropagation()">https://example.com/minimal</a>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('url-outlined', 'Outlined URL', 'interactive-variant-demo-url-outlined')">
+                    <h3 class="interactive-variant-demo-card-title">Outlined</h3>
+                    <p class="interactive-variant-demo-card-description">Border style with fill on hover</p>
+                    <div class="interactive-variant-demo-preview">
+                        <a href="#" class="interactive-variant-demo-url-outlined" onclick="event.stopPropagation()">https://example.com/outlined</a>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('url-filled', 'Filled URL', 'interactive-variant-demo-url-filled')">
+                    <h3 class="interactive-variant-demo-card-title">Filled</h3>
+                    <p class="interactive-variant-demo-card-description">Solid background with opacity</p>
+                    <div class="interactive-variant-demo-preview">
+                        <a href="#" class="interactive-variant-demo-url-filled" onclick="event.stopPropagation()">https://example.com/filled</a>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('url-gradient', 'Gradient URL', 'interactive-variant-demo-url-gradient')">
+                    <h3 class="interactive-variant-demo-card-title">Gradient</h3>
+                    <p class="interactive-variant-demo-card-description">Beautiful gradient background</p>
+                    <div class="interactive-variant-demo-preview">
+                        <a href="#" class="interactive-variant-demo-url-gradient" onclick="event.stopPropagation()">https://example.com/gradient</a>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('url-neon', 'Neon URL', 'interactive-variant-demo-url-neon')">
+                    <h3 class="interactive-variant-demo-card-title">Neon</h3>
+                    <p class="interactive-variant-demo-card-description">Glowing cyberpunk-style design</p>
+                    <div class="interactive-variant-demo-preview">
+                        <a href="#" class="interactive-variant-demo-url-neon" onclick="event.stopPropagation()">https://example.com/neon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Animation Variants -->
+        <div class="interactive-variant-demo-container">
+            <h2 class="interactive-variant-demo-title">Animation Variants</h2>
+            <p class="interactive-variant-demo-description">Interactive animations for engaging user experience</p>
+            
+            <div class="interactive-variant-demo-grid">
+                <div class="interactive-variant-demo-card" onclick="selectVariant('animation-bounce', 'Bounce Animation', 'interactive-variant-demo-animation-bounce')">
+                    <h3 class="interactive-variant-demo-card-title">Bounce</h3>
+                    <p class="interactive-variant-demo-card-description">Playful bouncing animation</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-animation-bounce">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('animation-pulse', 'Pulse Animation', 'interactive-variant-demo-animation-pulse')">
+                    <h3 class="interactive-variant-demo-card-title">Pulse</h3>
+                    <p class="interactive-variant-demo-card-description">Gentle pulsing effect</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-animation-pulse">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('animation-glow', 'Glow Animation', 'interactive-variant-demo-animation-glow')">
+                    <h3 class="interactive-variant-demo-card-title">Glow</h3>
+                    <p class="interactive-variant-demo-card-description">Glowing shadow effect</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-animation-glow">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('animation-fade-in', 'Fade In Animation', 'interactive-variant-demo-animation-fade-in')">
+                    <h3 class="interactive-variant-demo-card-title">Fade In</h3>
+                    <p class="interactive-variant-demo-card-description">Smooth fade in effect</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-animation-fade-in">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('animation-slide-in', 'Slide In Animation', 'interactive-variant-demo-animation-slide-in')">
+                    <h3 class="interactive-variant-demo-card-title">Slide In</h3>
+                    <p class="interactive-variant-demo-card-description">Slide from left animation</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-animation-slide-in">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- State Variants -->
+        <div class="interactive-variant-demo-container">
+            <h2 class="interactive-variant-demo-title">State Variants</h2>
+            <p class="interactive-variant-demo-description">Different states for interactive elements</p>
+            
+            <div class="interactive-variant-demo-grid">
+                <div class="interactive-variant-demo-card" onclick="selectVariant('state-default', 'Default State', 'interactive-variant-demo-state-default')">
+                    <h3 class="interactive-variant-demo-card-title">Default</h3>
+                    <p class="interactive-variant-demo-card-description">Normal appearance</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-state-default">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('state-hover', 'Hover State', 'interactive-variant-demo-state-hover')">
+                    <h3 class="interactive-variant-demo-card-title">Hover</h3>
+                    <p class="interactive-variant-demo-card-description">Interactive hover state</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-state-hover">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('state-active', 'Active State', 'interactive-variant-demo-state-active')">
+                    <h3 class="interactive-variant-demo-card-title">Active</h3>
+                    <p class="interactive-variant-demo-card-description">Pressed/active state</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-state-active">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('state-disabled', 'Disabled State', 'interactive-variant-demo-state-disabled')">
+                    <h3 class="interactive-variant-demo-card-title">Disabled</h3>
+                    <p class="interactive-variant-demo-card-description">Non-interactive state</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-state-disabled">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('state-success', 'Success State', 'interactive-variant-demo-state-success')">
+                    <h3 class="interactive-variant-demo-card-title">Success</h3>
+                    <p class="interactive-variant-demo-card-description">Positive feedback state</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-state-success">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('state-error', 'Error State', 'interactive-variant-demo-state-error')">
+                    <h3 class="interactive-variant-demo-card-title">Error</h3>
+                    <p class="interactive-variant-demo-card-description">Error feedback state</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-state-error">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+                
+                <div class="interactive-variant-demo-card" onclick="selectVariant('state-warning', 'Warning State', 'interactive-variant-demo-state-warning')">
+                    <h3 class="interactive-variant-demo-card-title">Warning</h3>
+                    <p class="interactive-variant-demo-card-description">Warning feedback state</p>
+                    <div class="interactive-variant-demo-preview">
+                        <span class="interactive-variant-demo-state-warning">The quick brown fox jumps over the lazy dog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Result Panel -->
+        <div class="result-panel" id="result-panel">
+            <div class="result-content">
+                <h3 class="result-title" id="result-title">Interactive Variant Demo</h3>
+                <p class="result-description" id="result-description">Click on any variant to see its details and classes</p>
+                <div class="result-classes" id="result-classes">No variant selected</div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-header">
+            <div style="text-align: center;">
+                <p class="interactive-variant-demo-caption" style="color: #6b7280; font-size: 13px; margin-bottom: 8px;">© 2025 @DEMO Platform - Interactive Variant Demo</p>
+                <p class="interactive-variant-demo-footnote" style="color: #6b7280; font-size: 11px;">Professional interactive demonstration of font variants, URL column types, and styling options</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Interactive Variant Demo JavaScript functions
+        
+        let selectedVariant = null;
+        let isDarkMode = false;
+        
+        // Select variant and update result panel
+        function selectVariant(variantId, variantName, variantClass) {
+            // Clear previous selection
+            clearSelection();
+            
+            // Set new selection
+            selectedVariant = {
+                id: variantId,
+                name: variantName,
+                class: variantClass
+            };
+            
+            // Update card states
+            const cards = document.querySelectorAll('.interactive-variant-demo-card');
+            cards.forEach(card => {
+                if (card.onclick && card.onclick.toString().includes(variantId)) {
+                    card.classList.add('active');
+                }
+            });
+            
+            // Update result panel
+            updateResultPanel(variantName, variantClass);
+            
+            // Add animation to result panel
+            const resultPanel = document.getElementById('result-panel');
+            resultPanel.classList.add('active');
+            resultPanel.classList.add('interactive-variant-demo-animation-fade-in');
+            
+            setTimeout(() => {
+                resultPanel.classList.remove('interactive-variant-demo-animation-fade-in');
+            }, 600);
+            
+            // Log selection
+            console.log(`Variant selected: ${variantName} (${variantClass})`);
+        }
+        
+        // Clear selection
+        function clearSelection() {
+            selectedVariant = null;
+            
+            // Clear card states
+            const cards = document.querySelectorAll('.interactive-variant-demo-card');
+            cards.forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Reset result panel
+            const resultPanel = document.getElementById('result-panel');
+            resultPanel.classList.remove('active');
+            
+            document.getElementById('result-title').textContent = 'Interactive Variant Demo';
+            document.getElementById('result-description').textContent = 'Click on any variant to see its details and classes';
+            document.getElementById('result-classes').textContent = 'No variant selected';
+        }
+        
+        // Update result panel
+        function updateResultPanel(variantName, variantClass) {
+            document.getElementById('result-title').textContent = variantName;
+            document.getElementById('result-description').textContent = `Selected variant with applied styling`;
+            document.getElementById('result-classes').textContent = `Applied class: ${variantClass}`;
+        }
+        
+        // Animate all variants
+        function animateAll() {
+            const previews = document.querySelectorAll('.interactive-variant-demo-preview span');
+            previews.forEach((preview, index) => {
+                setTimeout(() => {
+                    preview.classList.add('interactive-variant-demo-animation-bounce');
+                    setTimeout(() => {
+                        preview.classList.remove('interactive-variant-demo-animation-bounce');
+                    }, 2000);
+                }, index * 100);
+            });
+        }
+        
+        // Toggle theme
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.theme-toggle');
+            
+            if (body.classList.contains('interactive-variant-demo-dark')) {
+                body.classList.remove('interactive-variant-demo-dark');
+                button.textContent = '🌙';
+                isDarkMode = false;
+            } else {
+                body.classList.add('interactive-variant-demo-dark');
+                button.textContent = '☀️';
+                isDarkMode = true;
+            }
+        }
+        
+        // Add interactive features
+        function addInteractiveFeatures() {
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.interactive-variant-demo-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'translateY(-6px)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'translateY(-4px)';
+                    }
+                });
+            });
+            
+            // Add click animations to controls
+            const controls = document.querySelectorAll('.interactive-variant-demo-control');
+            controls.forEach(control => {
+                control.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+            
+            // Add entrance animations to sections
+            const sections = document.querySelectorAll('.interactive-variant-demo-container');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('interactive-variant-demo-animation-slide-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Animate stat counters
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current);
+                }, 30);
+            });
+        }
+        
+        // Initialize Interactive Variant Demo
+        function initializeInteractiveVariantDemo() {
+            // Add interactive features
+            addInteractiveFeatures();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Check for system dark mode preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.classList.add('interactive-variant-demo-dark');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+                isDarkMode = true;
+            }
+            
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (e.matches) {
+                    document.body.classList.add('interactive-variant-demo-dark');
+                    document.querySelector('.theme-toggle').textContent = '☀️';
+                    isDarkMode = true;
+                } else {
+                    document.body.classList.remove('interactive-variant-demo-dark');
+                    document.querySelector('.theme-toggle').textContent = '🌙';
+                    isDarkMode = false;
+                }
+            });
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey || e.metaKey) {
+                    switch(e.key) {
+                        case 'c':
+                            e.preventDefault();
+                            clearSelection();
+                            break;
+                        case 'a':
+                            e.preventDefault();
+                            animateAll();
+                            break;
+                        case 'd':
+                            e.preventDefault();
+                            toggleTheme();
+                            break;
+                    }
+                }
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeInteractiveVariantDemo();
+        });
+    </script>
+</body>
+</html>
