@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Apple System UI Font Professional Implementation</title>
+    
+    <!-- Apple System UI Font Styles -->
+    <link rel="stylesheet" href="apple-system-ui-font.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 1.4;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+        
+        .demo-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+            letter-spacing: -0.015em;
+        }
+        
+        .font-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .font-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .font-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .font-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #1f2937;
+            margin: 0 0 15px 0;
+            letter-spacing: -0.015em;
+        }
+        
+        .font-card p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        .font-examples {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .font-example {
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+        
+        .font-example:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .font-label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .font-demo {
+            margin-top: 8px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #007aff;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007aff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .dark-mode-toggle:hover {
+            background: #0051d5;
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 36px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .font-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+    
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Apple System UI Font</h1>
+            <p class="demo-subtitle">Professional implementation of Apple's native system font with complete typography system</p>
+        </div>
+        
+        <!-- Apple System UI Font Statistics -->
+        <div class="demo-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Font Sizes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Font Weights</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Color Variants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Heading Styles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Body Styles</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Button Sizes</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Font Size Variants -->
+        <div class="demo-section">
+            <h2 class="apple-system-ui-font-h2">Font Size Variants</h2>
+            
+            <div class="font-grid">
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Size System</h3>
+                    <p class="apple-system-ui-font-body">Complete size system from extra small to 5X large.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Extra Small (11px)</div>
+                            <div class="font-demo apple-system-ui-font-xs">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Small (13px)</div>
+                            <div class="font-demo apple-system-ui-font-sm">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Base (17px)</div>
+                            <div class="font-demo apple-system-ui-font-base">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Large (20px)</div>
+                            <div class="font-demo apple-system-ui-font-lg">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Extra Large (24px)</div>
+                            <div class="font-demo apple-system-ui-font-xl">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Display Sizes</h3>
+                    <p class="apple-system-ui-font-body">Large display sizes for headings and hero text.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">2X Large (28px)</div>
+                            <div class="font-demo apple-system-ui-font-2xl">The quick brown fox</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">3X Large (34px)</div>
+                            <div class="font-demo apple-system-ui-font-3xl">The quick brown fox</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">4X Large (40px)</div>
+                            <div class="font-demo apple-system-ui-font-4xl">The quick brown fox</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">5X Large (48px)</div>
+                            <div class="font-demo apple-system-ui-font-5xl">The quick brown fox</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Font Weight Variants -->
+        <div class="demo-section">
+            <h2 class="apple-system-ui-font-h2">Font Weight Variants</h2>
+            
+            <div class="font-grid">
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Weight System</h3>
+                    <p class="apple-system-ui-font-body">Complete weight system from thin to black.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Thin (100)</div>
+                            <div class="font-demo apple-system-ui-font-thin">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Light (300)</div>
+                            <div class="font-demo apple-system-ui-font-light">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Normal (400)</div>
+                            <div class="font-demo apple-system-ui-font-normal">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Medium (500)</div>
+                            <div class="font-demo apple-system-ui-font-medium">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Semibold (600)</div>
+                            <div class="font-demo apple-system-ui-font-semibold">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Heavy Weights</h3>
+                    <p class="apple-system-ui-font-body">Bold and heavy weights for emphasis.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Bold (700)</div>
+                            <div class="font-demo apple-system-ui-font-bold">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Heavy (800)</div>
+                            <div class="font-demo apple-system-ui-font-heavy">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Black (900)</div>
+                            <div class="font-demo apple-system-ui-font-black">The quick brown fox jumps over the lazy dog</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Heading Styles -->
+        <div class="demo-section">
+            <h2 class="apple-system-ui-font-h2">Heading Styles</h2>
+            
+            <div class="font-grid">
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Display Headings</h3>
+                    <p class="apple-system-ui-font-body">Large display headings for hero sections.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Display XS</div>
+                            <div class="font-demo apple-system-ui-font-display-xs">Display Heading XS</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Display SM</div>
+                            <div class="font-demo apple-system-ui-font-display-sm">Display Heading SM</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Display MD</div>
+                            <div class="font-demo apple-system-ui-font-display-md">Display Heading MD</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Display LG</div>
+                            <div class="font-demo apple-system-ui-font-display-lg">Display Heading LG</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Standard Headings</h3>
+                    <p class="apple-system-ui-font-body">H1-H6 heading hierarchy for content.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Heading 1</div>
+                            <div class="font-demo apple-system-ui-font-h1">Heading 1 Style</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Heading 2</div>
+                            <div class="font-demo apple-system-ui-font-h2">Heading 2 Style</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Heading 3</div>
+                            <div class="font-demo apple-system-ui-font-h3">Heading 3 Style</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Heading 4</div>
+                            <div class="font-demo apple-system-ui-font-h4">Heading 4 Style</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Heading 5</div>
+                            <div class="font-demo apple-system-ui-font-h5">Heading 5 Style</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Heading 6</div>
+                            <div class="font-demo apple-system-ui-font-h6">Heading 6 Style</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Body Text Styles -->
+        <div class="demo-section">
+            <h2 class="apple-system-ui-font-h2">Body Text Styles</h2>
+            
+            <div class="font-grid">
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Text Variants</h3>
+                    <p class="apple-system-ui-font-body">Different body text sizes for various contexts.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Body Large</div>
+                            <div class="font-demo apple-system-ui-font-body-large">This is large body text designed for better readability in important content areas. It provides excellent legibility while maintaining the Apple design aesthetic.</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Body</div>
+                            <div class="font-demo apple-system-ui-font-body">This is standard body text perfect for most content. It strikes a balance between readability and space efficiency, following Apple's typography guidelines.</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Body Small</div>
+                            <div class="font-demo apple-system-ui-font-body-small">This is small body text ideal for secondary content, captions, and metadata where space is limited but readability must be maintained.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Specialized Text</h3>
+                    <p class="apple-system-ui-font-body">Code, captions, and footnote styles.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Code</div>
+                            <div class="font-demo apple-system-ui-font-code">const example = "Apple System UI Font";</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Preformatted</div>
+                            <div class="font-demo apple-system-ui-font-pre">
+function appleSystemUIFont() {
+    return "Professional typography";
+}</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Blockquote</div>
+                            <div class="font-demo apple-system-ui-font-blockquote">The Apple System UI Font provides the perfect balance of readability and aesthetic appeal, following Apple's design principles.</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Caption</div>
+                            <div class="font-demo apple-system-ui-font-caption">This is a caption text for images and figures.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Color Variants -->
+        <div class="demo-section">
+            <h2 class="apple-system-ui-font-h2">Color Variants</h2>
+            
+            <div class="font-grid">
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">System Colors</h3>
+                    <p class="apple-system-ui-font-body">Apple's system color palette for text.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Primary</div>
+                            <div class="font-demo apple-system-ui-font-primary">Primary text color for main content</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Secondary</div>
+                            <div class="font-demo apple-system-ui-font-secondary">Secondary text color for supporting content</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Tertiary</div>
+                            <div class="font-demo apple-system-ui-font-tertiary">Tertiary text color for subtle elements</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Quaternary</div>
+                            <div class="font-demo apple-system-ui-font-quaternary">Quaternary text color for very subtle elements</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Semantic Colors</h3>
+                    <p class="apple-system-ui-font-body">Colors for different states and meanings.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Accent</div>
+                            <div class="font-demo apple-system-ui-font-accent">Accent color for links and interactive elements</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Success</div>
+                            <div class="font-demo apple-system-ui-font-success">Success color for positive feedback</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Warning</div>
+                            <div class="font-demo apple-system-ui-font-warning">Warning color for caution messages</div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Error</div>
+                            <div class="font-demo apple-system-ui-font-error">Error color for negative feedback</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form Elements -->
+        <div class="demo-section">
+            <h2 class="apple-system-ui-font-h2">Form Elements</h2>
+            
+            <div class="font-grid">
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Input Fields</h3>
+                    <p class="apple-system-ui-font-body">Apple-styled form inputs and labels.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Label</div>
+                            <div class="font-demo">
+                                <label class="apple-system-ui-font-label">Email Address</label>
+                                <input type="email" class="apple-system-ui-font-input" placeholder="Enter your email" />
+                            </div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Text Input</div>
+                            <div class="font-demo">
+                                <input type="text" class="apple-system-ui-font-input" placeholder="Enter text here" />
+                            </div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Password</div>
+                            <div class="font-demo">
+                                <input type="password" class="apple-system-ui-font-input" placeholder="Enter password" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="font-card">
+                    <h3 class="apple-system-ui-font-h3">Buttons</h3>
+                    <p class="apple-system-ui-font-body">Apple-styled buttons in different sizes.</p>
+                    
+                    <div class="font-examples">
+                        <div class="font-example">
+                            <div class="font-label">Large Button</div>
+                            <div class="font-demo">
+                                <button class="apple-system-ui-font-button-large">Large Button</button>
+                            </div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Standard Button</div>
+                            <div class="font-demo">
+                                <button class="apple-system-ui-font-button">Standard Button</button>
+                            </div>
+                        </div>
+                        <div class="font-example">
+                            <div class="font-label">Small Button</div>
+                            <div class="font-demo">
+                                <button class="apple-system-ui-font-button-small">Small Button</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Demo -->
+        <div class="demo-section">
+            <h2 class="apple-system-ui-font-h2">Interactive Typography Demo</h2>
+            
+            <div class="apple-system-ui-font-container">
+                <h3 class="apple-system-ui-font-h3">Interactive Font Playground</h3>
+                <p class="apple-system-ui-font-body">Experiment with different font combinations and see how they work together.</p>
+                
+                <div class="font-examples">
+                    <div class="font-example">
+                        <div class="font-label">Combined Styles</div>
+                        <div class="font-demo">
+                            <h4 class="apple-system-ui-font-h4 apple-system-ui-font-accent">Mixed Typography</h4>
+                            <p class="apple-system-ui-font-body">This paragraph uses <span class="apple-system-ui-font-semibold">semibold emphasis</span>, <span class="apple-system-ui-font-italic">italic text</span>, and <a href="#" class="apple-system-ui-font-link" onclick="handleLinkClick()">interactive links</a>.</p>
+                            <p class="apple-system-ui-font-body-small apple-system-ui-font-secondary">Small secondary text with <span class="apple-system-ui-font-success">success color</span> and <span class="apple-system-ui-font-error">error color</span> examples.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="font-example">
+                        <div class="font-label">Code Example</div>
+                        <div class="font-demo">
+                            <p class="apple-system-ui-font-body">Here's some inline code: <code class="apple-system-ui-font-code">apple-system-ui-font</code> and a code block:</p>
+                            <pre class="apple-system-ui-font-pre">
+// Apple System UI Font Implementation
+const fontStack = '-apple-system, BlinkMacSystemFont, "SF Pro Display"';
+document.body.style.fontFamily = fontStack;</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center;">
+                <p class="apple-system-ui-font-caption apple-system-ui-font-secondary">© 2025 @DEMO Platform - Apple System UI Font</p>
+                <p class="apple-system-ui-font-footnote apple-system-ui-font-secondary">Professional Apple System UI Font implementation with complete typography system</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Apple System UI Font JavaScript functions
+        
+        // Toggle dark mode
+        function toggleDarkMode() {
+            const body = document.body;
+            const button = document.querySelector('.dark-mode-toggle');
+            
+            if (body.classList.contains('apple-system-ui-font-dark')) {
+                body.classList.remove('apple-system-ui-font-dark');
+                button.textContent = '🌙';
+            } else {
+                body.classList.add('apple-system-ui-font-dark');
+                button.textContent = '☀️';
+            }
+        }
+        
+        // Handle link click
+        function handleLinkClick() {
+            alert('Apple System UI Font link clicked!\n\nThis demonstrates the interactive link styling with hover effects and proper typography.');
+        }
+        
+        // Add interactive animations
+        function addInteractiveFeatures() {
+            // Add hover effects to all font examples
+            const examples = document.querySelectorAll('.font-example');
+            examples.forEach(example => {
+                example.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                example.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Add click animations to buttons
+            const buttons = document.querySelectorAll('.apple-system-ui-font-button, .apple-system-ui-font-button-large, .apple-system-ui-font-button-small');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+            
+            // Add entrance animations to cards
+            const cards = document.querySelectorAll('.font-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('apple-system-ui-font-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Add stat counter animations
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current);
+                }, 30);
+            });
+        }
+        
+        // Initialize Apple System UI Font on load
+        function initializeAppleSystemUIFont() {
+            // Add entrance animations
+            const container = document.querySelector('.apple-system-ui-font-container');
+            if (container) {
+                container.classList.add('apple-system-ui-font-slide-in');
+            }
+            
+            // Add interactive features
+            addInteractiveFeatures();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Check for system dark mode preference
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.classList.add('apple-system-ui-font-dark');
+                document.querySelector('.dark-mode-toggle').textContent = '☀️';
+            }
+            
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                if (e.matches) {
+                    document.body.classList.add('apple-system-ui-font-dark');
+                    document.querySelector('.dark-mode-toggle').textContent = '☀️';
+                } else {
+                    document.body.classList.remove('apple-system-ui-font-dark');
+                    document.querySelector('.dark-mode-toggle').textContent = '🌙';
+                }
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAppleSystemUIFont();
+        });
+    </script>
+</body>
+</html>
