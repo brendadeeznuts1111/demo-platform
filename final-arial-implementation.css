@@ -33,7 +33,7 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  font-size: 28px;
+  font-size: 24px;
   line-height: normal;
   color: #000000;
   margin: 0 0 14px 0;
@@ -47,7 +47,7 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  font-size: 24px;
+  font-size: 20px;
   line-height: normal;
   color: #000000;
   margin: 0 0 12px 0;
@@ -59,7 +59,7 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 18px;
   line-height: normal;
   color: #000000;
   margin: 0 0 10px 0;
@@ -71,7 +71,7 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   line-height: normal;
   color: #000000;
   margin: 0 0 8px 0;
@@ -83,7 +83,7 @@
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: normal;
   color: #000000;
   margin: 0 0 6px 0;
@@ -511,7 +511,7 @@
     color: #000000;
   }
   
-  .arial-final-h1 {
+  .arial-heading-h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-variant: normal;
@@ -519,9 +519,10 @@
     font-size: 28px;
     line-height: normal;
     color: #000000;
+    margin: 0 0 14px 0;
   }
   
-  .arial-final-h2 {
+  .arial-heading-h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-variant: normal;
@@ -529,6 +530,52 @@
     font-size: 22px;
     line-height: normal;
     color: #000000;
+    margin: 0 0 12px 0;
+    padding-bottom: 6px;
+  }
+  
+  .arial-heading-h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 10px 0;
+  }
+  
+  .arial-heading-h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 8px 0;
+  }
+  
+  .arial-heading-h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 6px 0;
+  }
+  
+  .arial-heading-h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 4px 0;
   }
 }
 
@@ -544,7 +591,7 @@
     color: #000000;
   }
   
-  .arial-final-h1 {
+  .arial-heading-h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-variant: normal;
@@ -552,6 +599,63 @@
     font-size: 24px;
     line-height: normal;
     color: #000000;
+    margin: 0 0 12px 0;
+  }
+  
+  .arial-heading-h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 10px 0;
+    padding-bottom: 4px;
+  }
+  
+  .arial-heading-h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 8px 0;
+  }
+  
+  .arial-heading-h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 6px 0;
+  }
+  
+  .arial-heading-h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 4px 0;
+  }
+  
+  .arial-heading-h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: normal;
+    color: #000000;
+    margin: 0 0 3px 0;
   }
 }
 
