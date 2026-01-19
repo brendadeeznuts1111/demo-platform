@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Enhanced Column Types Professional Implementation</title>
+    
+    <!-- Enhanced Column Types Styles -->
+    <link rel="stylesheet" href="enhanced-column-types.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .column-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .column-type-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .column-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .column-type-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .column-type-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        .column-type-examples {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .column-type-example {
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+        
+        .column-type-example:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .column-types-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Enhanced Column Types Professional Implementation</h1>
+            <p class="demo-subtitle">Complete enhanced column type system with 9 different data types, advanced styling, and interactive features</p>
+        </div>
+        
+        <!-- Enhanced Column Types Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Enhanced Column Types Overview</h2>
+            
+            <div class="enhanced-column-types-container">
+                <div class="add-column-container">
+                    <div class="add-column-header">
+                        <h4 class="add-column-title">Enhanced Column Types</h4>
+                        <span class="enhanced-table-type">9 Types</span>
+                    </div>
+                </div>
+                
+                <div class="enhanced-column-types-table-scrollable">
+                    <table class="enhanced-column-types-table">
+                        <thead>
+                            <tr>
+                                <th>Column Type</th>
+                                <th>Basic Example</th>
+                                <th>Advanced Example</th>
+                                <th>Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-text">Text</td>
+                                <td class="column-type-text">Sample Text</td>
+                                <td class="column-type-text-long">This is a very long text example that will be truncated with ellipsis...</td>
+                                <td>Standard text with icons, truncation, hover expansion</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-number">Number</td>
+                                <td class="column-type-number">1,234.56</td>
+                                <td class="column-type-number-large">$1,234,567.89</td>
+                                <td>Numeric values with formatting, alignment, variants</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-date">Date</td>
+                                <td class="column-type-date">2024-01-15</td>
+                                <td class="column-type-date-today">Today</td>
+                                <td>Date values with calendar styling, states</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-boolean true">Boolean</td>
+                                <td class="column-type-boolean true">True</td>
+                                <td class="column-type-boolean false">False</td>
+                                <td>True/False with color-coded visual indicators</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-select">Select</td>
+                                <td class="column-type-select">Option A</td>
+                                <td class="column-type-select-high">High Priority</td>
+                                <td>Dropdown with color-coded options</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-email">Email</td>
+                                <td class="column-type-email">user@example.com</td>
+                                <td class="column-type-email-valid">verified@example.com</td>
+                                <td>Email addresses with validation, links</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-url">URL</td>
+                                <td class="column-type-url">https://example.com</td>
+                                <td class="column-type-url-secure">https://secure.example.com</td>
+                                <td>Web links with security indicators</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-currency">Currency</td>
+                                <td class="column-type-currency-positive">$1,234.56</td>
+                                <td class="column-type-currency-large">$99,999.99</td>
+                                <td>Monetary values with formatting</td>
+                            </tr>
+                            <tr class="enhanced-table-animated-slide-in">
+                                <td class="column-type-percentage">Percentage</td>
+                                <td class="column-type-percentage">75.5%</td>
+                                <td class="column-type-percentage-bar-75">75.5%</td>
+                                <td>Percentage values with bars, colors</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Detailed Column Type Examples -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Detailed Column Type Examples</h2>
+            
+            <div class="column-types-grid">
+                <!-- Text Column Type -->
+                <div class="column-type-card">
+                    <h3>📝 Text Column Type</h3>
+                    <p class="arial-text-body">Standard text input with icons, truncation, and hover expansion capabilities.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Basic Text:</strong>
+                            <div class="column-type-text">Sample Text Content</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Long Text (Hover to Expand):</strong>
+                            <div class="column-type-text-long">This is a very long text example that demonstrates truncation with ellipsis and hover expansion functionality for better user experience when dealing with lengthy content.</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Placeholder Text:</strong>
+                            <div class="column-type-text-placeholder">Enter your text here...</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Number Column Type -->
+                <div class="column-type-card">
+                    <h3>🔢 Number Column Type</h3>
+                    <p class="arial-text-body">Numeric values with proper formatting, alignment, and visual variants for different number types.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Standard Number:</strong>
+                            <div class="column-type-number">1,234.56</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Large Number:</strong>
+                            <div class="column-type-number-large">1,234,567.89</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Negative Number:</strong>
+                            <div class="column-type-number-negative">-1,234.56</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Zero Value:</strong>
+                            <div class="column-type-number-zero">0.00</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Date Column Type -->
+                <div class="column-type-card">
+                    <h3>📅 Date Column Type</h3>
+                    <p class="arial-text-body">Date values with calendar styling, state indicators, and temporal context.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Standard Date:</strong>
+                            <div class="column-type-date">2024-01-15</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Today's Date:</strong>
+                            <div class="column-type-date-today">Today</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Past Date:</strong>
+                            <div class="column-type-date-past">2023-12-01</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Future Date:</strong>
+                            <div class="column-type-date-future">2024-12-31</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Date with Time:</strong>
+                            <div>
+                                <div class="column-type-date">2024-01-15</div>
+                                <div class="column-type-date-time">14:30:00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Boolean Column Type -->
+                <div class="column-type-card">
+                    <h3>✅ Boolean Column Type</h3>
+                    <p class="arial-text-body">True/False values with color-coded visual indicators and states.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>True Value:</strong>
+                            <div class="column-type-boolean true">True</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>False Value:</strong>
+                            <div class="column-type-boolean false">False</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Null Value:</strong>
+                            <div class="column-type-boolean null">Null</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Yes/No Variant:</strong>
+                            <div>
+                                <div class="column-type-boolean true">Yes</div>
+                                <div class="column-type-boolean false">No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Select Column Type -->
+                <div class="column-type-card">
+                    <h3>📋 Select Column Type</h3>
+                    <p class="arial-text-body">Dropdown selection with color-coded options and priority indicators.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Standard Option:</strong>
+                            <div class="column-type-select">Option A</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>High Priority:</strong>
+                            <div class="column-type-select-high">High</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Medium Priority:</strong>
+                            <div class="column-type-select-medium">Medium</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Low Priority:</strong>
+                            <div class="column-type-select-low">Low</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Status Options:</strong>
+                            <div>
+                                <div class="column-type-select">Active</div>
+                                <div class="column-type-select-medium">Pending</div>
+                                <div class="column-type-select-low">Inactive</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Email Column Type -->
+                <div class="column-type-card">
+                    <h3>📧 Email Column Type</h3>
+                    <p class="arial-text-body">Email addresses with validation, clickable links, and verification status.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Standard Email:</strong>
+                            <div class="column-type-email">user@example.com</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Verified Email:</strong>
+                            <div class="column-type-email-valid">verified@example.com</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Invalid Email:</strong>
+                            <div class="column-type-email-invalid">invalid@.com</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Business Email:</strong>
+                            <div class="column-type-email">business@company.com</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- URL Column Type -->
+                <div class="column-type-card">
+                    <h3>🔗 URL Column Type</h3>
+                    <p class="arial-text-body">Web links with security indicators, external link markers, and truncation.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Standard URL:</strong>
+                            <div class="column-type-url">https://example.com</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Secure URL:</strong>
+                            <div class="column-type-url-secure">https://secure.example.com</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>External Link:</strong>
+                            <div class="column-type-url-external">https://external.com</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Long URL:</strong>
+                            <div class="column-type-url">https://very-long-domain-name.example.com/path/to/page</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Currency Column Type -->
+                <div class="column-type-card">
+                    <h3>💰 Currency Column Type</h3>
+                    <p class="arial-text-body">Monetary values with formatting, currency symbols, and color coding.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Positive Amount:</strong>
+                            <div class="column-type-currency-positive">$1,234.56</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Negative Amount:</strong>
+                            <div class="column-type-currency-negative">-$1,234.56</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Zero Amount:</strong>
+                            <div class="column-type-currency-zero">$0.00</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Large Amount:</strong>
+                            <div class="column-type-currency-large">$99,999.99</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Different Currencies:</strong>
+                            <div>
+                                <div class="column-type-currency-symbol-usd">$1,234.56</div>
+                                <div class="column-type-currency-symbol-eur">€1,234.56</div>
+                                <div class="column-type-currency-symbol-gbp">£1,234.56</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Percentage Column Type -->
+                <div class="column-type-card">
+                    <h3>📊 Percentage Column Type</h3>
+                    <p class="arial-text-body">Percentage values with visual bars, color coding, and progress indicators.</p>
+                    
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Standard Percentage:</strong>
+                            <div class="column-type-percentage">75.5%</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>High Percentage:</strong>
+                            <div class="column-type-percentage-high">95.0%</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Medium Percentage:</strong>
+                            <div class="column-type-percentage-medium">50.0%</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Low Percentage:</strong>
+                            <div class="column-type-percentage-low">25.0%</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Progress Bars:</strong>
+                            <div>
+                                <div class="column-type-percentage-bar-75">75%</div>
+                                <div class="column-type-percentage-bar-50">50%</div>
+                                <div class="column-type-percentage-bar-25">25%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Interactive Features</h2>
+            
+            <div class="enhanced-column-types-container">
+                <div class="add-column-container">
+                    <div class="add-column-header">
+                        <h4 class="add-column-title">Interactive Column Types</h4>
+                        <span class="enhanced-table-type">Click to Interact</span>
+                    </div>
+                </div>
+                
+                <div class="enhanced-column-types-table-scrollable">
+                    <table class="enhanced-column-types-table">
+                        <thead>
+                            <tr>
+                                <th>Interactive Type</th>
+                                <th>Example</th>
+                                <th>Action</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="column-type-text">Clickable Text</td>
+                                <td class="column-type-clickable column-type-text" onclick="handleClick('text')">Click me!</td>
+                                <td>Click</td>
+                                <td id="text-result">Click the text to see result</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-number">Animated Number</td>
+                                <td class="column-type-animated-pulse column-type-number">1,234</td>
+                                <td>Hover</td>
+                                <td>Number pulses on hover</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-boolean true">Toggle Boolean</td>
+                                <td class="column-type-interactive column-type-boolean true" onclick="toggleBoolean(this)">True</td>
+                                <td>Click</td>
+                                <td>Toggle between True/False</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-email">Clickable Email</td>
+                                <td class="column-type-email" onclick="handleEmailClick()">test@example.com</td>
+                                <td>Click</td>
+                                <td>Opens email client</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-url">Clickable URL</td>
+                                <td class="column-type-url" onclick="handleUrlClick()">https://example.com</td>
+                                <td>Click</td>
+                                <td>Opens in new tab</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Column Type Variants -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Column Type Variants</h2>
+            
+            <div class="column-types-grid">
+                <div class="column-type-card">
+                    <h3>Size Variants</h3>
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Small:</strong>
+                            <div class="column-type-text column-type-size-small">Small Text</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Medium:</strong>
+                            <div class="column-type-text column-type-size-medium">Medium Text</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Large:</strong>
+                            <div class="column-type-text column-type-size-large">Large Text</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>XLarge:</strong>
+                            <div class="column-type-text column-type-size-xlarge">XLarge Text</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column-type-card">
+                    <h3>Style Variants</h3>
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Minimal:</strong>
+                            <div class="column-type-select column-type-variant-minimal">Minimal</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Outlined:</strong>
+                            <div class="column-type-select column-type-variant-outlined">Outlined</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Filled:</strong>
+                            <div class="column-type-select column-type-variant-filled">Filled</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Glass:</strong>
+                            <div class="column-type-select column-type-variant-glass">Glass</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column-type-card">
+                    <h3>State Variants</h3>
+                    <div class="column-type-examples">
+                        <div class="column-type-example">
+                            <strong>Default:</strong>
+                            <div class="column-type-select column-type-state-default">Default</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Hover:</strong>
+                            <div class="column-type-select column-type-state-hover">Hover</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Active:</strong>
+                            <div class="column-type-select column-type-state-active">Active</div>
+                        </div>
+                        <div class="column-type-example">
+                            <strong>Disabled:</strong>
+                            <div class="column-type-select column-type-state-disabled">Disabled</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Enhanced Column Types</p>
+                <p class="arial-footer-main">Professional enhanced column type system with 9 different data types, advanced styling, and interactive features</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Enhanced Column Types JavaScript functions
+        
+        // Handle text click
+        function handleClick(type) {
+            const result = document.getElementById('text-result');
+            result.textContent = `Text clicked at ${new Date().toLocaleTimeString()}`;
+            result.style.color = '#3b82f6';
+            result.style.fontWeight = '600';
+            
+            setTimeout(() => {
+                result.style.color = '#6b7280';
+                result.style.fontWeight = 'normal';
+            }, 2000);
+        }
+        
+        // Toggle boolean value
+        function toggleBoolean(element) {
+            if (element.classList.contains('true')) {
+                element.classList.remove('true');
+                element.classList.add('false');
+                element.textContent = 'False';
+            } else {
+                element.classList.remove('false');
+                element.classList.add('true');
+                element.textContent = 'True';
+            }
+        }
+        
+        // Handle email click
+        function handleEmailClick() {
+            window.location.href = 'mailto:test@example.com';
+        }
+        
+        // Handle URL click
+        function handleUrlClick() {
+            window.open('https://example.com', '_blank');
+        }
+        
+        // Add interactive animations
+        function addInteractiveFeatures() {
+            // Add hover effects to all column type examples
+            const examples = document.querySelectorAll('.column-type-example');
+            examples.forEach(example => {
+                example.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                example.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+            
+            // Add click animations to interactive elements
+            const interactiveElements = document.querySelectorAll('.column-type-interactive');
+            interactiveElements.forEach(element => {
+                element.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+            
+            // Add entrance animations to cards
+            const cards = document.querySelectorAll('.column-type-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('enhanced-table-animated-slide-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+        
+        // Initialize enhanced column types on load
+        function initializeEnhancedColumnTypes() {
+            // Add entrance animations
+            const container = document.querySelector('.enhanced-column-types-container');
+            if (container) {
+                container.classList.add('enhanced-table-animated-slide-in');
+            }
+            
+            // Add interactive features
+            addInteractiveFeatures();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'e') {
+                    e.preventDefault();
+                    document.querySelector('.column-type-email').click();
+                }
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault();
+                    document.querySelector('.column-type-url').click();
+                }
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEnhancedColumnTypes();
+        });
+    </script>
+</body>
+</html>
