@@ -1,0 +1,5 @@
+{
+  "generated": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+  "generator": "@DEMO File Metadata Fixer",
+  "version": "2.0.1",
+  "files": [

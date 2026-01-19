@@ -8,10 +8,15 @@
     "start": "bun server-minimal.js",
     "dev": "bun --hot server-minimal.js",
     "full": "bun server.js",
+    "secure": "bun server-secure.js",
+    "monitor": "bun monitoring-dashboard.js",
     "test": "bun test",
+    "security-test": "bun security-test.js",
     "websocket-test": "bun websocket-test.js",
     "fetch-example": "bun fetch-example.js",
-    "optimize": "./optimize-size.sh"
+    "optimize": "./optimize-size.sh",
+    "metadata": "./file-metadata.sh",
+    "index": "cat FILE_INDEX.md"
   },
   "keywords": ["enterprise", "websocket", "real-time", "analytics"],
   "author": "@DEMO",
