@@ -1,0 +1,536 @@
+/* @DEMO Enhanced Font Features - Professional Typography */
+
+/* ===== ENHANCED FONT FEATURES BASE STYLES ===== */
+
+/* Root Level Font Feature Settings */
+:root {
+  /* Enhanced Font Feature Variables */
+  --font-feature-settings-normal: "kern" 1, "liga" 1, "calt" 1;
+  --font-feature-settings-enhanced: "kern" 1, "liga" 1, "calt" 1, "dlig" 1, "hlig" 1;
+  --font-feature-settings-capitals: "kern" 1, "liga" 1, "calt" 1, "smcp" 1, "c2sc" 1, "pcap" 1;
+  --font-feature-settings-numericals: "kern" 1, "liga" 1, "calt" 1, "onum" 1, "lnum" 1, "tnum" 1, "frac" 1;
+  --font-feature-settings-alternates: "kern" 1, "liga" 1, "calt" 1, "salt" 1, "ss01" 1, "ss02" 1;
+  --font-feature-settings-positional: "kern" 1, "liga" 1, "calt" 1, "subs" 1, "sups" 1, "ordn" 1;
+  --font-feature-settings-stylistic: "kern" 1, "liga" 1, "calt" 1, "salt" 1, "ss01" 1, "ss02" 1, "ss03" 1;
+  
+  /* Professional Font Families with Enhanced Features */
+  --enhanced-font-family: 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
+  --serif-font-family: 'Georgia', 'Times New Roman', serif;
+  --monospace-font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  
+  /* Enhanced Typography Variables */
+  --enhanced-font-size: 18px;
+  --enhanced-line-height: 1.6;
+  --enhanced-letter-spacing: 0.01em;
+  --enhanced-word-spacing: 0.05em;
+}
+
+/* ===== ENHANCED BASE TYPOGRAPHY WITH FONT FEATURES ===== */
+
+/* Enhanced Base Typography */
+.arial-enhanced-base {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-normal);
+  -webkit-font-feature-settings: var(--font-feature-settings-normal);
+  -moz-font-feature-settings: var(--font-feature-settings-normal);
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* Enhanced Typography with Ligatures */
+.arial-enhanced-ligatures {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-enhanced);
+  -webkit-font-feature-settings: var(--font-feature-settings-enhanced);
+  -moz-font-feature-settings: var(--font-feature-settings-enhanced);
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* ===== CAPS ENHANCEMENT ===== */
+
+/* Small Capitals */
+.arial-enhanced-small-caps {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-capitals);
+  -webkit-font-feature-settings: var(--font-feature-settings-capitals);
+  -moz-font-feature-settings: var(--font-feature-settings-capitals);
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+/* Petite Capitals */
+.arial-enhanced-petite-caps {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: calc(var(--enhanced-font-size) * 0.8);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pcap" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pcap" 1;
+  -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "pcap" 1;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+/* All Capitals */
+.arial-enhanced-all-caps {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "smcp" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "smcp" 1;
+  -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "smcp" 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ===== NUMERICAL ENHANCEMENT ===== */
+
+/* Old Style Numerals */
+.arial-enhanced-old-style {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-numericals);
+  -webkit-font-feature-settings: var(--font-feature-settings-numericals);
+  -moz-font-feature-settings: var(--font-feature-settings-numericals);
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* Lining Numerals */
+.arial-enhanced-lining {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "lnum" 1, "tnum" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "lnum" 1, "tnum" 1;
+  -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "lnum" 1, "tnum" 1;
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* Tabular Numerals */
+.arial-enhanced-tabular {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "tnum" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "tnum" 1;
+  -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "tnum" 1;
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fraction Numerals */
+.arial-enhanced-fractions {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "frac" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "frac" 1;
+  -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "frac" 1;
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* ===== POSITIONAL FORMS ===== */
+
+/* Subscript and Superscript */
+.arial-enhanced-positional {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-positional);
+  -webkit-font-feature-settings: var(--font-feature-settings-positional);
+  -moz-font-feature-settings: var(--font-feature-settings-positional);
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* Ordinals */
+.arial-enhanced-ordinals {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ordn" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ordn" 1;
+  -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ordn" 1;
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* Scientific Notation */
+.arial-enhanced-scientific {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "sups" 1, "subs" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "sups" 1, "subs" 1;
+  -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "sups" 1, "subs" 1;
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* ===== ALTERNATES ENHANCEMENT ===== */
+
+/* Stylistic Alternates */
+.arial-enhanced-alternates {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-alternates);
+  -webkit-font-feature-settings: var(--font-feature-settings-alternates);
+  -moz-font-feature-settings: var(--font-feature-settings-alternates);
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* Contextual Alternates */
+.arial-enhanced-contextual {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "salt" 1;
+  -webkit-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "salt" 1;
+  -moz-font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "salt" 1;
+  letter-spacing: var(--enhanced-letter-spacing);
+  word-spacing: var(--enhanced-word-spacing);
+}
+
+/* ===== ENHANCED HEADINGS WITH FONT FEATURES ===== */
+
+/* Enhanced H1 with Font Features */
+.arial-enhanced-h1 {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-enhanced);
+  -webkit-font-feature-settings: var(--font-feature-settings-enhanced);
+  -moz-font-feature-settings: var(--font-feature-settings-enhanced);
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+/* Enhanced H2 with Font Features */
+.arial-enhanced-h2 {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-enhanced);
+  -webkit-font-feature-settings: var(--font-feature-settings-enhanced);
+  -moz-font-feature-settings: var(--font-feature-settings-enhanced);
+  letter-spacing: -0.01em;
+  margin: 0 0 14px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Enhanced H3 with Font Features */
+.arial-enhanced-h3 {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-enhanced);
+  -webkit-font-feature-settings: var(--font-feature-settings-enhanced);
+  -moz-font-feature-settings: var(--font-feature-settings-enhanced);
+  letter-spacing: 0;
+  margin: 0 0 12px 0;
+}
+
+/* ===== PROFESSIONAL COMPONENTS WITH ENHANCED FONTS ===== */
+
+/* Enhanced Card Component */
+.arial-enhanced-card {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-normal);
+  -webkit-font-feature-settings: var(--font-feature-settings-normal);
+  -moz-font-feature-settings: var(--font-feature-settings-normal);
+  background: white;
+  padding: 24px;
+  margin: 16px 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: var(--enhanced-letter-spacing);
+}
+
+/* Enhanced Button Component */
+.arial-enhanced-button {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  color: white;
+  background-color: #3b82f6;
+  padding: 12px 24px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-feature-settings: var(--font-feature-settings-normal);
+  -webkit-font-feature-settings: var(--font-feature-settings-normal);
+  -moz-font-feature-settings: var(--font-feature-settings-normal);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.arial-enhanced-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Alert Component */
+.arial-enhanced-alert {
+  font-family: var(--enhanced-font-family);
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  font-size: var(--enhanced-font-size);
+  line-height: var(--enhanced-line-height);
+  color: #000000;
+  font-feature-settings: var(--font-feature-settings-normal);
+  -webkit-font-feature-settings: var(--font-feature-settings-normal);
+  -moz-font-feature-settings: var(--font-feature-settings-normal);
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+  background-color: #f8fafc;
+  letter-spacing: var(--enhanced-letter-spacing);
+}
+
+/* ===== RESPONSIVE ENHANCED FONTS ===== */
+
+/* Mobile Responsive Enhanced Fonts */
+@media (max-width: 768px) {
+  :root {
+    --enhanced-font-size: 16px;
+    --enhanced-line-height: 1.5;
+    --enhanced-letter-spacing: 0.005em;
+  }
+  
+  .arial-enhanced-h1 {
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+  
+  .arial-enhanced-h2 {
+    font-size: 22px;
+    letter-spacing: 0;
+  }
+  
+  .arial-enhanced-h3 {
+    font-size: 18px;
+  }
+}
+
+/* Small Mobile Enhanced Fonts */
+@media (max-width: 480px) {
+  :root {
+    --enhanced-font-size: 14px;
+    --enhanced-line-height: 1.4;
+    --enhanced-letter-spacing: 0;
+  }
+  
+  .arial-enhanced-h1 {
+    font-size: 24px;
+  }
+  
+  .arial-enhanced-h2 {
+    font-size: 20px;
+  }
+  
+  .arial-enhanced-h3 {
+    font-size: 16px;
+  }
+}
+
+/* ===== ACCESSIBLE ENHANCED FONTS ===== */
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .arial-enhanced-base,
+  .arial-enhanced-ligatures,
+  .arial-enhanced-small-caps,
+  .arial-enhanced-petite-caps,
+  .arial-enhanced-all-caps,
+  .arial-enhanced-old-style,
+  .arial-enhanced-lining,
+  .arial-enhanced-tabular,
+  .arial-enhanced-fractions,
+  .arial-enhanced-positional,
+  .arial-enhanced-ordinals,
+  .arial-enhanced-scientific,
+  .arial-enhanced-alternates,
+  .arial-enhanced-contextual {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .arial-enhanced-button,
+  .arial-enhanced-button:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ===== PRINT ENHANCED FONTS ===== */
+
+@media print {
+  .arial-enhanced-base,
+  .arial-enhanced-ligatures,
+  .arial-enhanced-small-caps,
+  .arial-enhanced-petite-caps,
+  .arial-enhanced-all-caps,
+  .arial-enhanced-old-style,
+  .arial-enhanced-lining,
+  .arial-enhanced-tabular,
+  .arial-enhanced-fractions,
+  .arial-enhanced-positional,
+  .arial-enhanced-ordinals,
+  .arial-enhanced-scientific,
+  .arial-enhanced-alternates,
+  .arial-enhanced-contextual {
+    color: #000000;
+    background: transparent;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+}
+
+/* ===== UTILITY CLASSES FOR ENHANCED FONTS ===== */
+
+/* Font Feature Utilities */
+.enhanced-kerning {
+  font-feature-settings: "kern" 1;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+}
+
+.enhanced-ligatures {
+  font-feature-settings: "liga" 1, "dlig" 1, "hlig" 1;
+  -webkit-font-feature-settings: "liga" 1, "dlig" 1, "hlig" 1;
+  -moz-font-feature-settings: "liga" 1, "dlig" 1, "hlig" 1;
+}
+
+.enhanced-contextual {
+  font-feature-settings: "calt" 1;
+  -webkit-font-feature-settings: "calt" 1;
+  -moz-font-feature-settings: "calt" 1;
+}
+
+.enhanced-discretionary {
+  font-feature-settings: "dlig" 1;
+  -webkit-font-feature-settings: "dlig" 1;
+  -moz-font-feature-settings: "dlig" 1;
+}
+
+.enhanced-historical {
+  font-feature-settings: "hlig" 1;
+  -webkit-font-feature-settings: "hlig" 1;
+  -moz-font-feature-settings: "hlig" 1;
+}
+
+/* Spacing Utilities */
+.enhanced-tight {
+  letter-spacing: -0.02em;
+}
+
+.enhanced-normal {
+  letter-spacing: 0;
+}
+
+.enhanced-relaxed {
+  letter-spacing: 0.02em;
+}
+
+.enhanced-loose {
+  letter-spacing: 0.05em;
+}
