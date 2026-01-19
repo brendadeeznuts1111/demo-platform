@@ -1,0 +1,699 @@
+/* @DEMO JavaScript Object Property Descriptors Professional Implementation */
+
+/* ===== PROPERTY DESCRIPTORS BASE STYLES ===== */
+
+/* Root Level Property Descriptors Variables */
+:root {
+  /* Property Descriptors Animation Variables */
+  --property-descriptors-animation-duration: 0.4s;
+  --property-descriptors-animation-easing: ease-in-out;
+  --property-descriptors-border-color: #e2e8f0;
+  --property-descriptors-hover-border: #3b82f6;
+  --property-descriptors-active-border: #2563eb;
+  
+  /* Property Type Variables */
+  --property-getter-color: #22c55e;
+  --property-setter-color: #ef4444;
+  --property-lookup-color: #3b82f6;
+  --property-define-color: #8b5cf6;
+  --property-value-color: #f59e0b;
+  --property-configurable-color: #0891b2;
+  --property-enumerable-color: #ec4899;
+  --property-writable-color: #f97316;
+  
+  /* Enhanced Typography for Property Descriptors */
+  --property-descriptors-font-family: Arial, Helvetica, sans-serif;
+  --property-descriptors-font-style: normal;
+  --property-descriptors-font-variant: normal;
+  --property-descriptors-font-weight: normal;
+  --property-descriptors-font-size: 14px;
+  --property-descriptors-line-height: 1.6;
+  --property-descriptors-color: #000000;
+  
+  /* Container Variables */
+  --property-descriptors-bg: #ffffff;
+  --property-descriptors-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --property-descriptors-radius: 12px;
+  --property-descriptors-padding: 20px;
+}
+
+/* ===== PROPERTY DESCRIPTORS CONTAINER ===== */
+
+.property-descriptors-container {
+  font-family: var(--property-descriptors-font-family);
+  font-style: var(--property-descriptors-font-style);
+  font-variant: var(--property-descriptors-font-variant);
+  font-weight: var(--property-descriptors-font-weight);
+  font-size: var(--property-descriptors-font-size);
+  line-height: var(--property-descriptors-line-height);
+  color: var(--property-descriptors-color);
+  background: var(--property-descriptors-bg);
+  border-radius: var(--property-descriptors-radius);
+  box-shadow: var(--property-descriptors-shadow);
+  border: 2px solid var(--property-descriptors-border-color);
+  padding: var(--property-descriptors-padding);
+  margin: 20px 0;
+  transition: all var(--property-descriptors-animation-duration) var(--property-descriptors-animation-easing);
+}
+
+.property-descriptors-container:hover {
+  border-color: var(--property-descriptors-hover-border);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ===== PROPERTY DESCRIPTORS HEADER ===== */
+
+.property-descriptors-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--property-descriptors-border-color);
+}
+
+.property-descriptors-title {
+  font-family: var(--property-descriptors-font-family);
+  font-style: var(--property-descriptors-font-style);
+  font-variant: var(--property-descriptors-font-variant);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: var(--property-descriptors-line-height);
+  color: #1f2937;
+  margin: 0;
+}
+
+.property-descriptors-type {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--property-define-color);
+  background: #f3e8ff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e9d5ff;
+}
+
+/* ===== PROPERTY DESCRIPTORS CONTENT ===== */
+
+.property-descriptors-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== PROPERTY DESCRIPTORS METHODS ===== */
+
+.property-descriptors-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.property-descriptor-method {
+  background: white;
+  border: 1px solid var(--property-descriptors-border-color);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.property-descriptor-method:hover {
+  border-color: var(--property-descriptors-hover-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.property-descriptor-method.getter {
+  border-left: 4px solid var(--property-getter-color);
+}
+
+.property-descriptor-method.setter {
+  border-left: 4px solid var(--property-setter-color);
+}
+
+.property-descriptor-method.lookup {
+  border-left: 4px solid var(--property-lookup-color);
+}
+
+.property-descriptor-method.define {
+  border-left: 4px solid var(--property-define-color);
+}
+
+.property-descriptor-method-name {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.property-descriptor-method-description {
+  font-family: var(--property-descriptors-font-family);
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.property-descriptor-method-signature {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  background: #f8fafc;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  word-break: break-all;
+  color: #4b5563;
+}
+
+/* ===== PROPERTY DESCRIPTORS STATUS ===== */
+
+.property-descriptor-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.property-status-getter {
+  background: #dcfce7;
+  color: var(--property-getter-color);
+  border: 1px solid #bbf7d0;
+}
+
+.property-status-setter {
+  background: #fef2f2;
+  color: var(--property-setter-color);
+  border: 1px solid #fecaca;
+}
+
+.property-status-lookup {
+  background: #dbeafe;
+  color: var(--property-lookup-color);
+  border: 1px solid #bfdbfe;
+}
+
+.property-status-define {
+  background: #f3e8ff;
+  color: var(--property-define-color);
+  border: 1px solid #e9d5ff;
+}
+
+/* ===== PROPERTY DESCRIPTORS EXAMPLES ===== */
+
+.property-descriptors-examples {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f9fafb;
+  border: 1px solid var(--property-descriptors-border-color);
+  border-radius: 8px;
+}
+
+.property-descriptors-examples-title {
+  font-family: var(--property-descriptors-font-family);
+  font-style: var(--property-descriptors-font-style);
+  font-variant: var(--property-descriptors-font-variant);
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.property-descriptors-examples-content {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #4b5563;
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* ===== PROPERTY DESCRIPTORS INTERACTIVE ===== */
+
+.property-descriptors-interactive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.property-descriptors-input {
+  background: white;
+  border: 1px solid var(--property-descriptors-border-color);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.property-descriptors-input h4 {
+  font-family: var(--property-descriptors-font-family);
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.property-descriptors-input input {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.property-descriptors-input textarea {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.property-descriptors-output {
+  background: #f8fafc;
+  border: 1px solid var(--property-descriptors-border-color);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.property-descriptors-output h4 {
+  font-family: var(--property-descriptors-font-family);
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.property-descriptors-output-content {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #4b5563;
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  min-height: 80px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* ===== PROPERTY DESCRIPTORS ATTRIBUTES ===== */
+
+.property-descriptors-attributes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.property-attribute {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: white;
+  border: 1px solid var(--property-descriptors-border-color);
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  transition: all 0.2s ease;
+}
+
+.property-attribute:hover {
+  background: #f8fafc;
+  border-color: var(--property-descriptors-hover-border);
+}
+
+.property-attribute-name {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.property-attribute-value {
+  color: #4b5563;
+}
+
+.property-attribute.boolean-true {
+  background: #dcfce7;
+  border-color: #bbf7d0;
+  color: var(--property-getter-color);
+}
+
+.property-attribute.boolean-false {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: var(--property-setter-color);
+}
+
+/* ===== PROPERTY DESCRIPTORS METHODS ===== */
+
+.property-descriptors-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--property-descriptors-border-color);
+}
+
+.property-descriptors-control {
+  font-family: var(--property-descriptors-font-family);
+  font-style: var(--property-descriptors-font-style);
+  font-variant: var(--property-descriptors-font-variant);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: var(--property-descriptors-line-height);
+  color: white;
+  background-color: #3b82f6;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.property-descriptors-control:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.property-descriptors-control:active {
+  background-color: #1d4ed8;
+  transform: translateY(0);
+}
+
+.property-descriptors-control.getter {
+  background-color: var(--property-getter-color);
+}
+
+.property-descriptors-control.getter:hover {
+  background-color: #16a34a;
+}
+
+.property-descriptors-control.setter {
+  background-color: var(--property-setter-color);
+}
+
+.property-descriptors-control.setter:hover {
+  background-color: #dc2626;
+}
+
+.property-descriptors-control.lookup {
+  background-color: var(--property-lookup-color);
+}
+
+.property-descriptors-control.lookup:hover {
+  background-color: #1d4ed8;
+}
+
+.property-descriptors-control.define {
+  background-color: var(--property-define-color);
+}
+
+.property-descriptors-control.define:hover {
+  background-color: #7c3aed;
+}
+
+.property-descriptors-control.danger {
+  background-color: #ef4444;
+}
+
+.property-descriptors-control.danger:hover {
+  background-color: #dc2626;
+}
+
+.property-descriptors-control.secondary {
+  background-color: #6b7280;
+}
+
+.property-descriptors-control.secondary:hover {
+  background-color: #4b5563;
+}
+
+/* ===== PROPERTY DESCRIPTORS ANIMATIONS ===== */
+
+@keyframes propertyDescriptorPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.property-descriptor-method.animated {
+  animation: propertyDescriptorPulse 2s ease-in-out infinite;
+}
+
+@keyframes propertyDescriptorSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.property-descriptors-container.animated {
+  animation: propertyDescriptorSlideIn 0.6s ease-out;
+}
+
+@keyframes propertyDescriptorHighlight {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+}
+
+.property-descriptor-method.highlighted {
+  animation: propertyDescriptorHighlight 1s ease-in-out;
+}
+
+/* ===== PROPERTY DESCRIPTORS LEGEND ===== */
+
+.property-descriptors-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--property-descriptors-border-color);
+  border-radius: 8px;
+}
+
+.property-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--property-descriptors-font-family);
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.property-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.property-legend-color.getter {
+  background-color: var(--property-getter-color);
+}
+
+.property-legend-color.setter {
+  background-color: var(--property-setter-color);
+}
+
+.property-legend-color.lookup {
+  background-color: var(--property-lookup-color);
+}
+
+.property-legend-color.define {
+  background-color: var(--property-define-color);
+}
+
+/* ===== RESPONSIVE PROPERTY DESCRIPTORS ===== */
+
+@media (max-width: 768px) {
+  .property-descriptors-container {
+    padding: 16px;
+    margin: 16px 0;
+  }
+  
+  .property-descriptors-title {
+    font-size: 16px;
+  }
+  
+  .property-descriptors-methods {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .property-descriptors-interactive {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .property-descriptors-controls {
+    gap: 6px;
+  }
+  
+  .property-descriptors-control {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-descriptors-container {
+    padding: 12px;
+    margin: 12px 0;
+  }
+  
+  .property-descriptors-title {
+    font-size: 14px;
+  }
+  
+  .property-descriptor-method-name {
+    font-size: 12px;
+  }
+  
+  .property-descriptor-method-description {
+    font-size: 11px;
+  }
+  
+  .property-descriptors-control {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+
+/* ===== ACCESSIBLE PROPERTY DESCRIPTORS ===== */
+
+@media (prefers-contrast: high) {
+  .property-descriptors-container {
+    border-width: 3px;
+    border-color: #000000;
+  }
+  
+  .property-descriptor-method {
+    border-width: 2px;
+    border-color: #000000;
+  }
+  
+  .property-descriptor-method-name {
+    color: #000000;
+  }
+  
+  .property-descriptor-method-signature {
+    color: #000000;
+    background: #ffffff;
+    border-color: #000000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .property-descriptors-container,
+  .property-descriptor-method,
+  .property-descriptors-control {
+    transition: none;
+  }
+  
+  .property-descriptor-method.animated,
+  .property-descriptors-container.animated,
+  .property-descriptor-method.highlighted {
+    animation: none;
+  }
+}
+
+/* ===== PRINT PROPERTY DESCRIPTORS ===== */
+
+@media print {
+  .property-descriptors-container {
+    background: white;
+    box-shadow: none;
+    border: 2px solid #000000;
+    break-inside: avoid;
+  }
+  
+  .property-descriptors-control {
+    display: none;
+  }
+  
+  .property-descriptor-method {
+    border: 1px solid #000000;
+  }
+  
+  .property-descriptor-method-name,
+  .property-descriptor-method-signature {
+    color: #000000;
+  }
+}
+
+/* ===== PROPERTY DESCRIPTORS UTILITIES ===== */
+
+.property-descriptors-small {
+  --property-descriptors-padding: 12px;
+  --property-descriptors-radius: 8px;
+}
+
+.property-descriptors-large {
+  --property-descriptors-padding: 24px;
+  --property-descriptors-radius: 16px;
+}
+
+.property-descriptors-dark {
+  --property-descriptors-bg: #1f2937;
+  --property-descriptors-color: #f9fafb;
+  --property-descriptors-border-color: #374151;
+}
+
+.property-descriptors-dark .property-descriptor-method {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.property-descriptors-dark .property-descriptor-method-signature {
+  background: #1f2937;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
+
+.property-descriptors-dark .property-descriptors-input,
+.property-descriptors-dark .property-descriptors-output {
+  background: #374151;
+  border-color: #4b5563;
+}

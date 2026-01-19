@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO JavaScript Property Descriptors Professional Implementation</title>
+    
+    <!-- Property Descriptors Styles -->
+    <link rel="stylesheet" href="javascript-property-descriptors.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .property-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">JavaScript Property Descriptors Professional Implementation</h1>
+            <p class="demo-subtitle">Complete property descriptor system with professional manipulation and enhanced typography</p>
+        </div>
+        
+        <!-- Property Descriptors Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Property Descriptors Overview</h2>
+            
+            <div class="property-data-box">
+JavaScript Object Property Descriptors:
+
+__defineGetter__(propertyName, getterFunction)
+__defineSetter__(propertyName, setterFunction)
+__lookupGetter__(propertyName)
+__lookupSetter__(propertyName)
+
+Modern Equivalents:
+Object.defineProperty(obj, prop, descriptor)
+Object.getOwnPropertyDescriptor(obj, prop)
+Object.defineProperties(obj, descriptors)
+
+Property Descriptor Attributes:
+• configurable: boolean - Can the property be deleted or modified?
+• enumerable: boolean - Will the property appear in for...in loops?
+• value: any - The value associated with the property
+• writable: boolean - Can the property value be changed?
+• get: function - Getter function for the property
+• set: function - Setter function for the property
+
+Legacy Methods:
+• __defineGetter__ - Defines a getter function for a property
+• __defineSetter__ - Defines a setter function for a property
+• __lookupGetter__ - Returns the getter function for a property
+• __lookupSetter__ - Returns the setter function for a property
+            </div>
+        </div>
+        
+        <!-- Property Descriptors Methods -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Property Descriptor Methods</h2>
+            
+            <div class="property-descriptors-container">
+                <div class="property-descriptors-header">
+                    <h4 class="property-descriptors-title">Property Descriptor Methods</h4>
+                    <span class="property-descriptors-type">Legacy & Modern</span>
+                </div>
+                <div class="property-descriptors-content">
+                    <div class="property-descriptors-methods">
+                        <div class="property-descriptor-method getter" onclick="showMethodDetails('defineGetter')">
+                            <div class="property-descriptor-status property-status-getter">Getter</div>
+                            <div class="property-descriptor-method-name">
+                                <span>__defineGetter__</span>
+                            </div>
+                            <div class="property-descriptor-method-description">
+                                Defines a getter function for a property using legacy syntax
+                            </div>
+                            <div class="property-descriptor-method-signature">
+                                obj.__defineGetter__(prop, getterFunction)
+                            </div>
+                        </div>
+                        
+                        <div class="property-descriptor-method setter" onclick="showMethodDetails('defineSetter')">
+                            <div class="property-descriptor-status property-status-setter">Setter</div>
+                            <div class="property-descriptor-method-name">
+                                <span>__defineSetter__</span>
+                            </div>
+                            <div class="property-descriptor-method-description">
+                                Defines a setter function for a property using legacy syntax
+                            </div>
+                            <div class="property-descriptor-method-signature">
+                                obj.__defineSetter__(prop, setterFunction)
+                            </div>
+                        </div>
+                        
+                        <div class="property-descriptor-method lookup" onclick="showMethodDetails('lookupGetter')">
+                            <div class="property-descriptor-status property-status-lookup">Lookup</div>
+                            <div class="property-descriptor-method-name">
+                                <span>__lookupGetter__</span>
+                            </div>
+                            <div class="property-descriptor-method-description">
+                                Returns the getter function defined for a property
+                            </div>
+                            <div class="property-descriptor-method-signature">
+                                obj.__lookupGetter__(prop)
+                            </div>
+                        </div>
+                        
+                        <div class="property-descriptor-method lookup" onclick="showMethodDetails('lookupSetter')">
+                            <div class="property-descriptor-status property-status-lookup">Lookup</div>
+                            <div class="property-descriptor-method-name">
+                                <span>__lookupSetter__</span>
+                            </div>
+                            <div class="property-descriptor-method-description">
+                                Returns the setter function defined for a property
+                            </div>
+                            <div class="property-descriptor-method-signature">
+                                obj.__lookupSetter__(prop)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-descriptors-examples">
+                        <div class="property-descriptors-examples-title">Usage Examples</div>
+                        <div class="property-descriptors-examples-content" id="examplesContent">
+// Legacy Property Descriptors
+const obj = {};
+
+// Define getter
+obj.__defineGetter__('name', function() {
+    return this._name || 'Default Name';
+});
+
+// Define setter
+obj.__defineSetter__('name', function(value) {
+    this._name = value.toUpperCase();
+});
+
+// Lookup functions
+const nameGetter = obj.__lookupGetter__('name');
+const nameSetter = obj.__lookupSetter__('name');
+
+console.log(nameGetter); // [Function: name]
+console.log(nameSetter); // [Function: name]
+
+// Modern equivalent
+Object.defineProperty(obj, 'name', {
+    get: function() { return this._name || 'Default Name'; },
+    set: function(value) { this._name = value.toUpperCase(); },
+    configurable: true,
+    enumerable: true
+});
+                        </div>
+                    </div>
+                    
+                    <div class="property-descriptors-controls">
+                        <button class="property-descriptors-control getter" onclick="demonstrateDefineGetter()">Define Getter</button>
+                        <button class="property-descriptors-control setter" onclick="demonstrateDefineSetter()">Define Setter</button>
+                        <button class="property-descriptors-control lookup" onclick="demonstrateLookupGetter()">Lookup Getter</button>
+                        <button class="property-descriptors-control lookup" onclick="demonstrateLookupSetter()">Lookup Setter</button>
+                        <button class="property-descriptors-control secondary" onclick="showModernEquivalent()">Modern Equivalent</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Property Descriptors -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Interactive Property Descriptors</h2>
+            
+            <div class="property-descriptors-container">
+                <div class="property-descriptors-header">
+                    <h4 class="property-descriptors-title">Live Property Manipulation</h4>
+                </div>
+                <div class="property-descriptors-content">
+                    <div class="property-descriptors-interactive">
+                        <div class="property-descriptors-input">
+                            <h4>Property Definition</h4>
+                            <input type="text" id="propertyName" placeholder="Property name (e.g., fullName)" value="fullName">
+                            <textarea id="getterCode" placeholder="Getter function code">function() { return this._fullName || 'John Doe'; }</textarea>
+                            <textarea id="setterCode" placeholder="Setter function code">function(value) { this._fullName = value.trim(); }</textarea>
+                            <div class="property-descriptors-controls">
+                                <button class="property-descriptors-control getter" onclick="defineProperty()">Define Property</button>
+                                <button class="property-descriptors-control danger" onclick="clearProperty()">Clear</button>
+                            </div>
+                        </div>
+                        
+                        <div class="property-descriptors-output">
+                            <h4>Property Output</h4>
+                            <div class="property-descriptors-output-content" id="outputContent">
+Property not defined yet. Use the controls to define a property with getter and setter functions.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="property-descriptors-attributes">
+                        <div class="property-attribute">
+                            <span class="property-attribute-name">configurable:</span>
+                            <span class="property-attribute-value" id="configurableValue">true</span>
+                        </div>
+                        <div class="property-attribute">
+                            <span class="property-attribute-name">enumerable:</span>
+                            <span class="property-attribute-value" id="enumerableValue">true</span>
+                        </div>
+                        <div class="property-attribute">
+                            <span class="property-attribute-name">writable:</span>
+                            <span class="property-attribute-value" id="writableValue">false</span>
+                        </div>
+                        <div class="property-attribute">
+                            <span class="property-attribute-name">has getter:</span>
+                            <span class="property-attribute-value" id="hasGetterValue">false</span>
+                        </div>
+                        <div class="property-attribute">
+                            <span class="property-attribute-name">has setter:</span>
+                            <span class="property-attribute-value" id="hasSetterValue">false</span>
+                        </div>
+                        <div class="property-attribute">
+                            <span class="property-attribute-name">value:</span>
+                            <span class="property-attribute-value" id="propertyValue">undefined</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Property Descriptor Attributes -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Property Descriptor Attributes</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🔧 Configurable</h3>
+                    <p class="arial-text-body">Controls whether the property can be deleted or its descriptor can be modified.</p>
+                    <div class="property-data-box">
+// Configurable property
+Object.defineProperty(obj, 'configurableProp', {
+    value: 'can be changed',
+    configurable: true,
+    enumerable: true,
+    writable: true
+});
+
+// Non-configurable property
+Object.defineProperty(obj, 'fixedProp', {
+    value: 'cannot be changed',
+    configurable: false,
+    enumerable: true,
+    writable: false
+});
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🔍 Enumerable</h3>
+                    <p class="arial-text-body">Controls whether the property appears in for...in loops and Object.keys().</p>
+                    <div class="property-data-box">
+// Enumerable property
+Object.defineProperty(obj, 'visibleProp', {
+    value: 'visible in loops',
+    enumerable: true
+});
+
+// Non-enumerable property
+Object.defineProperty(obj, 'hiddenProp', {
+    value: 'hidden from loops',
+    enumerable: false
+});
+
+for (let key in obj) {
+    console.log(key); // Only shows 'visibleProp'
+}
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>✏️ Writable</h3>
+                    <p class="arial-text-body">Controls whether the property value can be changed (only for data descriptors).</p>
+                    <div class="property-data-box">
+// Writable property
+Object.defineProperty(obj, 'writableProp', {
+    value: 'can be modified',
+    writable: true
+});
+
+// Read-only property
+Object.defineProperty(obj, 'readOnlyProp', {
+    value: 'cannot be modified',
+    writable: false
+});
+
+obj.writableProp = 'new value'; // Works
+obj.readOnlyProp = 'new value'; // Fails silently
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎯 Get/Set</h3>
+                    <p class="arial-text-body">Getter and setter functions for computed properties (accessor descriptors).</p>
+                    <div class="property-data-box">
+// Accessor descriptor
+Object.defineProperty(obj, 'computedProp', {
+    get: function() { return this._value * 2; },
+    set: function(value) { this._value = value / 2; },
+    configurable: true,
+    enumerable: true
+});
+
+obj.computedProp = 10; // Sets _value to 5
+console.log(obj.computedProp); // Returns 10
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legacy vs Modern Comparison -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Legacy vs Modern Property Descriptors</h2>
+            
+            <div class="property-descriptors-container">
+                <div class="property-descriptors-header">
+                    <h4 class="property-descriptors-title">Method Comparison</h4>
+                </div>
+                <div class="property-descriptors-content">
+                    <div class="property-descriptors-legend">
+                        <div class="property-legend-item">
+                            <div class="property-legend-color getter"></div>
+                            <span>Getter Methods</span>
+                        </div>
+                        <div class="property-legend-item">
+                            <div class="property-legend-color setter"></div>
+                            <span>Setter Methods</span>
+                        </div>
+                        <div class="property-legend-item">
+                            <div class="property-legend-color lookup"></div>
+                            <span>Lookup Methods</span>
+                        </div>
+                        <div class="property-legend-item">
+                            <div class="property-legend-color define"></div>
+                            <span>Modern Methods</span>
+                        </div>
+                    </div>
+                    
+                    <div class="property-data-box">
+LEGACY METHODS (Deprecated but still supported):
+
+✓ __defineGetter__(propertyName, getterFunction)
+• Defines a getter function for a property
+• Legacy syntax, not recommended for new code
+• Still works in all modern browsers
+
+✓ __defineSetter__(propertyName, setterFunction)
+• Defines a setter function for a property
+• Legacy syntax, not recommended for new code
+• Still works in all modern browsers
+
+✓ __lookupGetter__(propertyName)
+• Returns the getter function for a property
+• Returns undefined if no getter exists
+• Legacy method for introspection
+
+✓ __lookupSetter__(propertyName)
+• Returns the setter function for a property
+• Returns undefined if no setter exists
+• Legacy method for introspection
+
+
+MODERN EQUIVALENTS (Recommended):
+
+✓ Object.defineProperty(obj, prop, descriptor)
+• Defines or modifies a property with full descriptor
+• Supports all descriptor attributes
+• Standardized and recommended approach
+
+✓ Object.getOwnPropertyDescriptor(obj, prop)
+• Returns the property descriptor for a property
+• Complete descriptor information
+• Standardized introspection method
+
+✓ Object.defineProperties(obj, descriptors)
+• Defines multiple properties at once
+• Efficient for bulk property definition
+• Standardized approach
+
+✓ Object.getOwnPropertyDescriptors(obj)
+• Returns all property descriptors for an object
+• Complete descriptor mapping
+• Useful for object cloning and inspection
+                    </div>
+                    
+                    <div class="property-descriptors-controls">
+                        <button class="property-descriptors-control" onclick="showLegacyExample()">Legacy Example</button>
+                        <button class="property-descriptors-control" onclick="showModernExample()">Modern Example</button>
+                        <button class="property-descriptors-control secondary" onclick="comparePerformance()">Performance</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🔧 Property Manipulation</h3>
+                    <p class="arial-text-body">Complete property descriptor manipulation with getter/setter functions and attribute control.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📊 Real-time Analysis</h3>
+                    <p class="arial-text-body">Live property analysis with descriptor inspection and attribute tracking.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎬 Professional Animations</h3>
+                    <p class="arial-text-body">Smooth transitions and animations for property definition and manipulation.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p class="arial-text-body">Fully responsive property descriptors that adapt to all screen sizes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Property Descriptors Implementation</p>
+                <p class="arial-footer-main">Professional JavaScript property descriptors with enhanced typography and manipulation</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Property Descriptors manipulation functions
+        let testObject = {};
+        
+        function showMethodDetails(method) {
+            const examples = {
+                'defineGetter': {
+                    title: '__defineGetter__ Method',
+                    code: `// Define a getter using legacy syntax
+const obj = {};
+
+obj.__defineGetter__('fullName', function() {
+    return this.firstName + ' ' + this.lastName;
+});
+
+obj.firstName = 'John';
+obj.lastName = 'Doe';
+
+console.log(obj.fullName); // "John Doe"
+
+// Modern equivalent
+Object.defineProperty(obj, 'fullName', {
+    get: function() {
+        return this.firstName + ' ' + this.lastName;
+    },
+    configurable: true,
+    enumerable: true
+});`,
+                    description: 'Defines a getter function for a property using legacy syntax. The getter function is called whenever the property value is accessed.'
+                },
+                'defineSetter': {
+                    title: '__defineSetter__ Method',
+                    code: `// Define a setter using legacy syntax
+const obj = {};
+
+obj.__defineSetter__('fullName', function(value) {
+    const parts = value.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1] || '';
+});
+
+obj.fullName = 'Jane Smith';
+
+console.log(obj.firstName); // "Jane"
+console.log(obj.lastName); // "Smith"
+
+// Modern equivalent
+Object.defineProperty(obj, 'fullName', {
+    set: function(value) {
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1] || '';
+    },
+    configurable: true,
+    enumerable: true
+});`,
+                    description: 'Defines a setter function for a property using legacy syntax. The setter function is called whenever the property value is assigned.'
+                },
+                'lookupGetter': {
+                    title: '__lookupGetter__ Method',
+                    code: `// Lookup getter function
+const obj = {};
+
+obj.__defineGetter__('computed', function() {
+    return this._value * 2;
+});
+
+const getter = obj.__lookupGetter__('computed');
+console.log(getter); // [Function: computed]
+
+// Test the getter
+obj._value = 5;
+console.log(obj.computed); // 10
+
+// Modern equivalent
+const descriptor = Object.getOwnPropertyDescriptor(obj, 'computed');
+console.log(descriptor.get); // [Function: computed]`,
+                    description: 'Returns the getter function defined for a property. Returns undefined if no getter exists.'
+                },
+                'lookupSetter': {
+                    title: '__lookupSetter__ Method',
+                    code: `// Lookup setter function
+const obj = {};
+
+obj.__defineSetter__('computed', function(value) {
+    this._value = value / 2;
+});
+
+const setter = obj.__lookupSetter__('computed');
+console.log(setter); // [Function: computed]
+
+// Test the setter
+obj.computed = 10; // Sets _value to 5
+console.log(obj._value); // 5
+
+// Modern equivalent
+const descriptor = Object.getOwnPropertyDescriptor(obj, 'computed');
+console.log(descriptor.set); // [Function: computed]`,
+                    description: 'Returns the setter function defined for a property. Returns undefined if no setter exists.'
+                }
+            };
+            
+            const example = examples[method];
+            if (example) {
+                const examplesContent = document.getElementById('examplesContent');
+                examplesContent.textContent = `// ${example.title}
+
+${example.description}
+
+${example.code}
+
+Browser Support:
+✅ Chrome/Chromium (Full support)
+✅ Firefox (Full support)
+✅ Safari (Full support)
+✅ Edge (Full support)
+✅ Mobile browsers (Full support)
+
+Note: Legacy methods are deprecated but still supported for backward compatibility.
+Modern Object.defineProperty() is recommended for new code.`;
+                
+                // Highlight the method card
+                const cards = document.querySelectorAll('.property-descriptor-method');
+                cards.forEach(card => card.classList.remove('highlighted'));
+                event.currentTarget.classList.add('highlighted');
+            }
+        }
+        
+        function demonstrateDefineGetter() {
+            const obj = {};
+            
+            // Define getter using legacy syntax
+            obj.__defineGetter__('dynamicValue', function() {
+                return Math.random() * 100;
+            });
+            
+            const examplesContent = document.getElementById('examplesContent');
+            examplesContent.innerHTML = `// Demonstrating __defineGetter__
+
+const obj = {};
+
+// Define getter using legacy syntax
+obj.__defineGetter__('dynamicValue', function() {
+    return Math.random() * 100;
+});
+
+// Access the property (getter is called)
+console.log(obj.dynamicValue); // ${obj.dynamicValue.toFixed(2)}
+console.log(obj.dynamicValue); // ${obj.dynamicValue.toFixed(2)} (different value)
+
+// The getter function is called each time
+// No actual value is stored, it's computed on access
+
+// Modern equivalent:
+Object.defineProperty(obj, 'dynamicValue', {
+    get: function() { return Math.random() * 100; },
+    configurable: true,
+    enumerable: true
+});`;
+        }
+        
+        function demonstrateDefineSetter() {
+            const obj = {};
+            let validationCount = 0;
+            
+            // Define setter using legacy syntax
+            obj.__defineSetter__('validatedValue', function(value) {
+                validationCount++;
+                if (typeof value === 'number' && value >= 0) {
+                    this._validatedValue = value;
+                } else {
+                    throw new Error('Value must be a non-negative number');
+                }
+            });
+            
+            // Define getter to show the value
+            obj.__defineGetter__('validatedValue', function() {
+                return this._validatedValue;
+            });
+            
+            const examplesContent = document.getElementById('examplesContent');
+            examplesContent.innerHTML = `// Demonstrating __defineSetter__
+
+const obj = {};
+let validationCount = 0;
+
+// Define setter using legacy syntax
+obj.__defineSetter__('validatedValue', function(value) {
+    validationCount++;
+    if (typeof value === 'number' && value >= 0) {
+        this._validatedValue = value;
+    } else {
+        throw new Error('Value must be a non-negative number');
+    }
+});
+
+// Test the setter
+try {
+    obj.validatedValue = 42;     // ✓ Valid
+    console.log(obj.validatedValue); // 42
+    console.log('Validations:', validationCount); // 1
+    
+    obj.validatedValue = 100;    // ✓ Valid
+    console.log(obj.validatedValue); // 100
+    console.log('Validations:', validationCount); // 2
+    
+    // obj.validatedValue = -5;   // ✗ Throws error
+} catch (error) {
+    console.log('Error:', error.message);
+}
+
+// The setter validates and transforms values on assignment
+// Modern equivalent uses Object.defineProperty() with set function`;
+        }
+        
+        function demonstrateLookupGetter() {
+            const obj = {};
+            
+            // Define getter
+            obj.__defineGetter__('computed', function() {
+                return this.base * this.multiplier;
+            });
+            
+            obj.base = 10;
+            obj.multiplier = 2;
+            
+            // Lookup the getter
+            const getter = obj.__lookupGetter__('computed');
+            
+            const examplesContent = document.getElementById('examplesContent');
+            examplesContent.innerHTML = `// Demonstrating __lookupGetter__
+
+const obj = {};
+
+// Define getter
+obj.__defineGetter__('computed', function() {
+    return this.base * this.multiplier;
+});
+
+obj.base = 10;
+obj.multiplier = 2;
+
+// Lookup the getter function
+const getter = obj.__lookupGetter__('computed');
+console.log(getter); // ${getter.toString()}
+
+// Verify it's the same function
+console.log(getter === obj.__lookupGetter__('computed')); // true
+
+// Use the getter function directly
+console.log(getter.call(obj)); // ${obj.computed}
+
+// Modern equivalent:
+const descriptor = Object.getOwnPropertyDescriptor(obj, 'computed');
+console.log(descriptor.get === getter); // true
+
+// __lookupGetter__ is useful for:
+// • Introspection of existing properties
+// • Function comparison and testing
+// • Dynamic property analysis`;
+        }
+        
+        function demonstrateLookupSetter() {
+            const obj = {};
+            let callCount = 0;
+            
+            // Define setter
+            obj.__defineSetter__('tracked', function(value) {
+                callCount++;
+                this._tracked = value;
+            });
+            
+            // Define getter
+            obj.__defineGetter__('tracked', function() {
+                return this._tracked;
+            });
+            
+            // Lookup the setter
+            const setter = obj.__lookupSetter__('tracked');
+            
+            const examplesContent = document.getElementById('examplesContent');
+            examplesContent.innerHTML = `// Demonstrating __lookupSetter__
+
+const obj = {};
+let callCount = 0;
+
+// Define setter
+obj.__defineSetter__('tracked', function(value) {
+    callCount++;
+    this._tracked = value;
+});
+
+// Define getter
+obj.__defineGetter__('tracked', function() {
+    return this._tracked;
+});
+
+// Lookup the setter function
+const setter = obj.__lookupSetter__('tracked');
+console.log(setter); // ${setter.toString()}
+
+// Use the setter function directly
+setter.call(obj, 'direct call');
+console.log(obj.tracked); // "direct call"
+console.log('Call count:', callCount); // 1
+
+// Normal assignment
+obj.tracked = 'normal assignment';
+console.log(obj.tracked); // "normal assignment"
+console.log('Call count:', callCount); // 2
+
+// Modern equivalent:
+const descriptor = Object.getOwnPropertyDescriptor(obj, 'tracked');
+console.log(descriptor.set === setter); // true
+
+// __lookupSetter__ is useful for:
+// • Function introspection
+// • Setter function analysis
+// • Dynamic property manipulation`;
+        }
+        
+        function showModernEquivalent() {
+            const examplesContent = document.getElementById('examplesContent');
+            examplesContent.innerHTML = `// Modern Property Descriptors (Recommended)
+
+// Single property definition
+Object.defineProperty(obj, 'modernProp', {
+    get: function() { return this._value || 'default'; },
+    set: function(value) { this._value = value; },
+    configurable: true,
+    enumerable: true
+});
+
+// Multiple property definition
+Object.defineProperties(obj, {
+    firstName: {
+        value: 'John',
+        writable: true,
+        configurable: true,
+        enumerable: true
+    },
+    lastName: {
+        value: 'Doe',
+        writable: true,
+        configurable: true,
+        enumerable: true
+    },
+    fullName: {
+        get: function() { return this.firstName + ' ' + this.lastName; },
+        configurable: true,
+        enumerable: true
+    }
+});
+
+// Get property descriptor
+const descriptor = Object.getOwnPropertyDescriptor(obj, 'fullName');
+console.log(descriptor);
+// { get: [Function], set: undefined, enumerable: true, configurable: true }
+
+// Get all property descriptors
+const allDescriptors = Object.getOwnPropertyDescriptors(obj);
+console.log(allDescriptors);
+
+// Advantages of modern methods:
+// ✓ Standardized and recommended
+// ✓ Complete descriptor control
+// ✓ Better error handling
+// ✓ More expressive syntax
+// ✓ Better browser tooling support`;
+        }
+        
+        function defineProperty() {
+            const propertyName = document.getElementById('propertyName').value;
+            const getterCode = document.getElementById('getterCode').value;
+            const setterCode = document.getElementById('setterCode').value;
+            
+            if (!propertyName) {
+                alert('Please enter a property name');
+                return;
+            }
+            
+            try {
+                // Create getter and setter functions
+                const getter = getterCode ? new Function('return ' + getterCode)() : undefined;
+                const setter = setterCode ? new Function('value', setterCode) : undefined;
+                
+                // Define property using modern Object.defineProperty
+                const descriptor = {
+                    configurable: true,
+                    enumerable: true
+                };
+                
+                if (getter) descriptor.get = getter;
+                if (setter) descriptor.set = setter;
+                
+                Object.defineProperty(testObject, propertyName, descriptor);
+                
+                updatePropertyDisplay(propertyName);
+                
+            } catch (error) {
+                alert('Error defining property: ' + error.message);
+            }
+        }
+        
+        function clearProperty() {
+            testObject = {};
+            document.getElementById('propertyName').value = '';
+            document.getElementById('getterCode').value = '';
+            document.getElementById('setterCode').value = '';
+            updatePropertyDisplay('');
+        }
+        
+        function updatePropertyDisplay(propertyName) {
+            const outputContent = document.getElementById('outputContent');
+            
+            if (!propertyName || !(propertyName in testObject)) {
+                outputContent.innerHTML = 'Property not defined yet. Use the controls to define a property with getter and setter functions.';
+                updateAttributesDisplay(null);
+                return;
+            }
+            
+            const descriptor = Object.getOwnPropertyDescriptor(testObject, propertyName);
+            const value = testObject[propertyName];
+            
+            outputContent.innerHTML = `Property: "${propertyName}"
+Value: ${JSON.stringify(value)}
+
+Descriptor:
+${JSON.stringify(descriptor, null, 2)}
+
+Property Type: ${descriptor.get && descriptor.set ? 'Accessor (Getter/Setter)' : 'Data'}
+Configurable: ${descriptor.configurable}
+Enumerable: ${descriptor.enumerable}
+${descriptor.get ? 'Has Getter: true' : 'Has Getter: false'}
+${descriptor.set ? 'Has Setter: true' : 'Has Setter: false'}
+
+Legacy Methods:
+__lookupGetter__: ${testObject.__lookupGetter__(propertyName) ? 'Function' : 'undefined'}
+__lookupSetter__: ${testObject.__lookupSetter__(propertyName) ? 'Function' : 'undefined'}`;
+            
+            updateAttributesDisplay(descriptor);
+        }
+        
+        function updateAttributesDisplay(descriptor) {
+            if (!descriptor) {
+                document.getElementById('configurableValue').textContent = 'true';
+                document.getElementById('enumerableValue').textContent = 'true';
+                document.getElementById('writableValue').textContent = 'false';
+                document.getElementById('hasGetterValue').textContent = 'false';
+                document.getElementById('hasSetterValue').textContent = 'false';
+                document.getElementById('propertyValue').textContent = 'undefined';
+                return;
+            }
+            
+            document.getElementById('configurableValue').textContent = descriptor.configurable;
+            document.getElementById('enumerableValue').textContent = descriptor.enumerable;
+            document.getElementById('writableValue').textContent = descriptor.writable !== undefined ? descriptor.writable : 'N/A';
+            document.getElementById('hasGetterValue').textContent = descriptor.get ? 'true' : 'false';
+            document.getElementById('hasSetterValue').textContent = descriptor.set ? 'true' : 'false';
+            document.getElementById('propertyValue').textContent = JSON.stringify(testObject[document.getElementById('propertyName').value]);
+            
+            // Update attribute colors
+            const attributes = document.querySelectorAll('.property-attribute');
+            attributes.forEach(attr => {
+                const valueSpan = attr.querySelector('.property-attribute-value');
+                if (valueSpan.textContent === 'true') {
+                    attr.classList.add('boolean-true');
+                    attr.classList.remove('boolean-false');
+                } else if (valueSpan.textContent === 'false') {
+                    attr.classList.add('boolean-false');
+                    attr.classList.remove('boolean-true');
+                } else {
+                    attr.classList.remove('boolean-true', 'boolean-false');
+                }
+            });
+        }
+        
+        function showLegacyExample() {
+            const examplesContent = document.getElementById('examplesContent');
+            examplesContent.innerHTML = `// LEGACY PROPERTY DESCRIPTORS EXAMPLE
+
+const person = {};
+
+// Define getter using legacy syntax
+person.__defineGetter__('fullName', function() {
+    return this.firstName + ' ' + this.lastName;
+});
+
+// Define setter using legacy syntax
+person.__defineSetter__('fullName', function(value) {
+    const parts = value.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1] || '';
+});
+
+// Use the property
+person.fullName = 'Alice Johnson';
+console.log(person.firstName); // "Alice"
+console.log(person.lastName); // "Johnson"
+console.log(person.fullName); // "Alice Johnson"
+
+// Lookup functions
+const getter = person.__lookupGetter__('fullName');
+const setter = person.__lookupSetter__('fullName');
+
+console.log('Getter function:', getter);
+console.log('Setter function:', setter);
+
+// Legacy methods work but are deprecated
+// Use Object.defineProperty() for new code`;
+        }
+        
+        function showModernExample() {
+            const examplesContent = document.getElementById('examplesContent');
+            examplesContent.innerHTML = `// MODERN PROPERTY DESCRIPTORS EXAMPLE
+
+const person = {};
+
+// Define property using modern syntax
+Object.defineProperty(person, 'fullName', {
+    get: function() {
+        return this.firstName + ' ' + this.lastName;
+    },
+    set: function(value) {
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1] || '';
+    },
+    configurable: true,
+    enumerable: true
+});
+
+// Use the property
+person.fullName = 'Bob Smith';
+console.log(person.firstName); // "Bob"
+console.log(person.lastName); // "Smith"
+console.log(person.fullName); // "Bob Smith"
+
+// Get descriptor
+const descriptor = Object.getOwnPropertyDescriptor(person, 'fullName');
+console.log('Descriptor:', descriptor);
+
+// Multiple properties at once
+Object.defineProperties(person, {
+    age: {
+        value: 30,
+        writable: true,
+        configurable: true,
+        enumerable: true
+    },
+    isAdult: {
+        get: function() { return this.age >= 18; },
+        configurable: true,
+        enumerable: true
+    }
+});
+
+console.log(person.isAdult); // true
+
+// Modern methods are recommended for all new code`;
+        }
+        
+        function comparePerformance() {
+            const examplesContent = document.getElementById('examplesContent');
+            examplesContent.innerHTML = `// PERFORMANCE COMPARISON
+
+// Test setup
+const iterations = 1000000;
+const obj1 = {};
+const obj2 = {};
+
+// Legacy method setup
+obj1.__defineGetter__('test', function() { return 42; });
+
+// Modern method setup
+Object.defineProperty(obj2, 'test', {
+    get: function() { return 42; },
+    configurable: true,
+    enumerable: true
+});
+
+// Performance test
+console.time('Legacy __defineGetter__');
+for (let i = 0; i < iterations; i++) {
+    obj1.test;
+}
+console.timeEnd('Legacy __defineGetter__');
+
+console.time('Modern Object.defineProperty');
+for (let i = 0; i < iterations; i++) {
+    obj2.test;
+}
+console.timeEnd('Modern Object.defineProperty');
+
+// Results may vary by browser and JavaScript engine
+// Modern methods are generally optimized better
+// Legacy methods are maintained for backward compatibility
+
+// Recommendation:
+// ✓ Use Object.defineProperty() for new code
+// ✓ Legacy methods only when maintaining old code
+// ✓ Performance differences are usually negligible
+// ✓ Code clarity and maintainability are more important`;
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial animations
+            setTimeout(() => {
+                const container = document.querySelector('.property-descriptors-container');
+                if (container) {
+                    container.classList.add('animated');
+                }
+            }, 500);
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add hover effects to method cards
+            const cards = document.querySelectorAll('.property-descriptor-method');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
