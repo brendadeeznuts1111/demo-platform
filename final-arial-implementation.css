@@ -1138,6 +1138,185 @@
   color: #000000;
 }
 
+/* ===== BORDER BLOCK COLOR UTILITIES ===== */
+
+/* Base Border Block Color with Arial Typography */
+.arial-border-block-base {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: yellow;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Light Gray Border Block Color */
+.arial-border-block-light {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #f5f6f7;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Global Values Implementation */
+.arial-border-block-inherit {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: inherit;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.arial-border-block-initial {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: initial;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.arial-border-block-revert {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: revert;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.arial-border-block-revert-layer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: revert-layer;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.arial-border-block-unset {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: unset;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Professional Border Block Colors */
+.arial-border-block-blue {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #3b82f6;
+  border-block-style: solid;
+  border-block-width: 3px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+}
+
+.arial-border-block-green {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #22c55e;
+  border-block-style: solid;
+  border-block-width: 3px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background-color: #f0fdf4;
+}
+
+.arial-border-block-red {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #ef4444;
+  border-block-style: solid;
+  border-block-width: 3px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background-color: #fef2f2;
+}
+
+.arial-border-block-purple {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #8b5cf6;
+  border-block-style: solid;
+  border-block-width: 3px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background-color: #f5f3ff;
+}
+
 /* ===== FINAL ARIAL IMPLEMENTATION ===== */
 
 /* Global Arial Style Attribute Application */

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Border Block Color Professional Implementation</title>
+    
+    <!-- Border Block Color Styles -->
+    <link rel="stylesheet" href="border-block-color-styles.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .specification-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Border Block Color Professional Implementation</h1>
+            <p class="demo-subtitle">Complete border-block-color implementation with Arial typography and professional styling</p>
+        </div>
+        
+        <!-- Exact Specifications -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Your Exact Border Block Color Specifications</h2>
+            
+            <div class="specification-box">
+border-block-color: yellow;
+border-block-color: #f5f6f7;
+
+/* Global values */
+border-block-color: inherit;
+border-block-color: initial;
+border-block-color: revert;
+border-block-color: revert-layer;
+border-block-color: unset;
+            </div>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Yellow Border Block</h3>
+                    <p>Basic yellow border-block-color implementation</p>
+                    <div class="arial-border-block-base">
+                        <strong>Yellow Border Block</strong><br>
+                        This element demonstrates the yellow border-block-color property with Arial typography and professional styling.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Light Gray Border Block</h3>
+                    <p>Light gray #f5f6f7 border-block-color implementation</p>
+                    <div class="arial-border-block-light">
+                        <strong>Light Gray Border Block</strong><br>
+                        This element demonstrates the #f5f6f7 border-block-color property with subtle, professional styling.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Global Values -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Global Values Implementation</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Inherit Value</h3>
+                    <p>border-block-color: inherit</p>
+                    <div class="arial-border-block-inherit">
+                        <strong>Inherit Border Block</strong><br>
+                        This element uses the inherit value for border-block-color, inheriting from its parent element.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Initial Value</h3>
+                    <p>border-block-color: initial</p>
+                    <div class="arial-border-block-initial">
+                        <strong>Initial Border Block</strong><br>
+                        This element uses the initial value for border-block-color, setting it to the browser's default.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Revert Value</h3>
+                    <p>border-block-color: revert</p>
+                    <div class="arial-border-block-revert">
+                        <strong>Revert Border Block</strong><br>
+                        This element uses the revert value for border-block-color, reverting to the user agent's stylesheet.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Revert Layer Value</h3>
+                    <p>border-block-color: revert-layer</p>
+                    <div class="arial-border-block-revert-layer">
+                        <strong>Revert Layer Border Block</strong><br>
+                        This element uses the revert-layer value for border-block-color, reverting to the previous cascade layer.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Unset Value</h3>
+                    <p>border-block-color: unset</p>
+                    <div class="arial-border-block-unset">
+                        <strong>Unset Border Block</strong><br>
+                        This element uses the unset value for border-block-color, acting as either inherit or initial.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Professional Color Variations -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Professional Color Variations</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Professional Blue</h3>
+                    <p>Blue border-block-color with matching background</p>
+                    <div class="arial-border-block-blue">
+                        <strong>Professional Blue Border</strong><br>
+                        This element demonstrates professional blue border-block-color with complementary styling.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Success Green</h3>
+                    <p>Green border-block-color for success states</p>
+                    <div class="arial-border-block-green">
+                        <strong>Success Green Border</strong><br>
+                        This element demonstrates green border-block-color perfect for success messages.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Error Red</h3>
+                    <p>Red border-block-color for error states</p>
+                    <div class="arial-border-block-red">
+                        <strong>Error Red Border</strong><br>
+                        This element demonstrates red border-block-color ideal for error notifications.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Purple Accent</h3>
+                    <p>Purple border-block-color for accent elements</p>
+                    <div class="arial-border-block-purple">
+                        <strong>Purple Accent Border</strong><br>
+                        This element demonstrates purple border-block-color for accent and highlight elements.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Individual Border Block Sides -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Individual Border Block Sides</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Block Start Border</h3>
+                    <p>border-block-start-color: #3b82f6</p>
+                    <div class="arial-border-block-start">
+                        <strong>Block Start Border</strong><br>
+                        This element demonstrates border-block-start-color with blue styling on the top edge.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Block End Border</h3>
+                    <p>border-block-end-color: #22c55e</p>
+                    <div class="arial-border-block-end">
+                        <strong>Block End Border</strong><br>
+                        This element demonstrates border-block-end-color with green styling on the bottom edge.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tables with Border Block -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Tables with Border Block Colors</h2>
+            
+            <div class="table-container">
+                <table class="arial-table-border-block">
+                    <thead>
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                            <th>Header 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data 1,1</td>
+                            <td>Data 1,2</td>
+                            <td>Data 1,3</td>
+                        </tr>
+                        <tr>
+                            <td>Data 2,1</td>
+                            <td>Data 2,2</td>
+                            <td>Data 2,3</td>
+                        </tr>
+                        <tr>
+                            <td>Data 3,1</td>
+                            <td>Data 3,2</td>
+                            <td>Data 3,3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🎨 Arial Typography</h3>
+                    <p class="arial-text-body">All elements use Arial font with your exact style attributes for consistent professional appearance.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p class="arial-text-body">Border block colors adapt perfectly to mobile, tablet, and desktop screens with optimal sizing.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>♿ Accessibility</h3>
+                    <p class="arial-text-body">WCAG 2.1 AA compliant with high contrast mode and screen reader support.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎨 Professional Design</h3>
+                    <p class="arial-text-body">Modern styling with complementary colors, proper spacing, and professional appearance.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Border Block Color Implementation</p>
+                <p class="arial-footer-main">Professional border-block-color with Arial typography and global values</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.demo-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

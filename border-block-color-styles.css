@@ -1,0 +1,435 @@
+/* @DEMO Border Block Color Styles - Professional Implementation */
+
+/* ===== BORDER BLOCK COLOR BASE STYLES ===== */
+
+/* Base Border Block Color with Arial Typography */
+.arial-border-block-base {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: yellow;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Light Gray Border Block Color */
+.arial-border-block-light {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #f5f6f7;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* ===== GLOBAL VALUES IMPLEMENTATION ===== */
+
+/* Inherit Border Block Color */
+.arial-border-block-inherit {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: inherit;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Initial Border Block Color */
+.arial-border-block-initial {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: initial;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Revert Border Block Color */
+.arial-border-block-revert {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: revert;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Revert Layer Border Block Color */
+.arial-border-block-revert-layer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: revert-layer;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* Unset Border Block Color */
+.arial-border-block-unset {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: unset;
+  border-block-style: solid;
+  border-block-width: 2px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* ===== ENHANCED BORDER BLOCK COLOR VARIATIONS ===== */
+
+/* Professional Border Block Colors */
+.arial-border-block-blue {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #3b82f6;
+  border-block-style: solid;
+  border-block-width: 3px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+}
+
+.arial-border-block-green {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #22c55e;
+  border-block-style: solid;
+  border-block-width: 3px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background-color: #f0fdf4;
+}
+
+.arial-border-block-red {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #ef4444;
+  border-block-style: solid;
+  border-block-width: 3px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background-color: #fef2f2;
+}
+
+.arial-border-block-purple {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-color: #8b5cf6;
+  border-block-style: solid;
+  border-block-width: 3px;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  background-color: #f5f3ff;
+}
+
+/* ===== BORDER BLOCK WITH INLINE AND BLOCK START/END ===== */
+
+/* Individual Border Block Sides */
+.arial-border-block-start {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-start-color: #3b82f6;
+  border-block-start-style: solid;
+  border-block-start-width: 4px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.arial-border-block-end {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-block-end-color: #22c55e;
+  border-block-end-style: solid;
+  border-block-end-width: 4px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+/* ===== BORDER BLOCK IN TABLES ===== */
+
+/* Table with Border Block Colors */
+.arial-table-border-block {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-block-color: #3b82f6;
+  border-block-style: solid;
+  border-block-width: 3px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.arial-table-border-block td,
+.arial-table-border-block th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-inline-color: #e2e8f0;
+  border-inline-style: solid;
+  border-inline-width: 1px;
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.arial-table-border-block th {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+}
+
+/* Striped Table with Border Block */
+.arial-table-border-block-striped tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* ===== RESPONSIVE BORDER BLOCK STYLES ===== */
+
+/* Mobile Responsive Border Block */
+@media (max-width: 768px) {
+  .arial-border-block-base,
+  .arial-border-block-light,
+  .arial-border-block-blue,
+  .arial-border-block-green,
+  .arial-border-block-red,
+  .arial-border-block-purple {
+    font-size: 14px;
+    padding: 12px;
+    margin: 12px 0;
+    border-block-width: 2px;
+  }
+  
+  .arial-table-border-block {
+    font-size: 14px;
+  }
+  
+  .arial-table-border-block td,
+  .arial-table-border-block th {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Small Mobile Border Block */
+@media (max-width: 480px) {
+  .arial-border-block-base,
+  .arial-border-block-light,
+  .arial-border-block-blue,
+  .arial-border-block-green,
+  .arial-border-block-red,
+  .arial-border-block-purple {
+    font-size: 12px;
+    padding: 8px;
+    margin: 8px 0;
+    border-block-width: 1px;
+  }
+  
+  .arial-table-border-block {
+    font-size: 12px;
+  }
+  
+  .arial-table-border-block td,
+  .arial-table-border-block th {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* ===== ACCESSIBLE BORDER BLOCK STYLES ===== */
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .arial-border-block-base {
+    border-block-color: #000000;
+    border-block-width: 3px;
+  }
+  
+  .arial-border-block-light {
+    border-block-color: #666666;
+    border-block-width: 3px;
+  }
+  
+  .arial-border-block-blue {
+    border-block-color: #1e40af;
+    border-block-width: 4px;
+  }
+  
+  .arial-border-block-green {
+    border-block-color: #14532d;
+    border-block-width: 4px;
+  }
+  
+  .arial-border-block-red {
+    border-block-color: #991b1b;
+    border-block-width: 4px;
+  }
+  
+  .arial-border-block-purple {
+    border-block-color: #5b21b6;
+    border-block-width: 4px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .arial-border-block-base,
+  .arial-border-block-light,
+  .arial-border-block-blue,
+  .arial-border-block-green,
+  .arial-border-block-red,
+  .arial-border-block-purple {
+    transition: none;
+  }
+}
+
+/* ===== PRINT BORDER BLOCK STYLES ===== */
+
+@media print {
+  .arial-border-block-base {
+    border-block-color: #000000;
+    background-color: transparent;
+  }
+  
+  .arial-border-block-light {
+    border-block-color: #cccccc;
+    background-color: transparent;
+  }
+  
+  .arial-border-block-blue,
+  .arial-border-block-green,
+  .arial-border-block-red,
+  .arial-border-block-purple {
+    border-block-color: #000000;
+    background-color: transparent;
+  }
+}
+
+/* ===== UTILITY BORDER BLOCK CLASSES ===== */
+
+/* Border Block Width Utilities */
+.arial-border-block-thin {
+  border-block-width: 1px;
+}
+
+.arial-border-block-medium {
+  border-block-width: 2px;
+}
+
+.arial-border-block-thick {
+  border-block-width: 4px;
+}
+
+/* Border Block Style Utilities */
+.arial-border-block-solid {
+  border-block-style: solid;
+}
+
+.arial-border-block-dashed {
+  border-block-style: dashed;
+}
+
+.arial-border-block-dotted {
+  border-block-style: dotted;
+}
+
+.arial-border-block-double {
+  border-block-style: double;
+}
+
+/* Border Block Radius Utilities */
+.arial-border-block-rounded {
+  border-radius: 8px;
+}
+
+.arial-border-block-rounded-lg {
+  border-radius: 12px;
+}
+
+.arial-border-block-rounded-xl {
+  border-radius: 16px;
+}
