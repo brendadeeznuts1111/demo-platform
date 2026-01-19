@@ -1317,6 +1317,137 @@
   background-color: #f5f3ff;
 }
 
+/* ===== ENHANCED ICON SYSTEM INTEGRATION ===== */
+
+/* Enhanced Icon Base Implementation */
+img.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* Enhanced Icon Size Variants */
+img.icon-xs { width: 12px; height: 12px; }
+img.icon-sm { width: 16px; height: 16px; }
+img.icon-base { width: 20px; height: 20px; }
+img.icon-lg { width: 24px; height: 24px; }
+img.icon-xl { width: 32px; height: 32px; }
+img.icon-2xl { width: 40px; height: 40px; }
+img.icon-3xl { width: 48px; height: 48px; }
+
+/* Enhanced Icon Color Variants */
+img.icon-primary {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+img.icon-primary:hover {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+img.icon-success {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(89%) saturate(1444%) hue-rotate(87deg) brightness(96%) contrast(89%);
+}
+
+img.icon-warning {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(355%) hue-rotate(1deg) brightness(104%) contrast(95%);
+}
+
+img.icon-error {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(88%) saturate(3558%) hue-rotate(346deg) brightness(92%) contrast(89%);
+}
+
+/* Enhanced Icon Background Variants */
+img.icon-bg {
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+img.icon-bg-accent {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+
+img.icon-bg-success {
+  background: #dcfce7;
+  border-color: #22c55e;
+}
+
+img.icon-bg-error {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+
+/* Enhanced Icon Animation Variants */
+img.icon-animation-spin {
+  animation: enhancedIconSpin 1s linear infinite;
+}
+
+img.icon-animation-pulse {
+  animation: enhancedIconPulse 2s ease-in-out infinite;
+}
+
+img.icon-animation-bounce {
+  animation: enhancedIconBounce 2s ease-in-out infinite;
+}
+
+/* Enhanced Icon State Variants */
+img.icon-state-hover:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+img.icon-state-active:active {
+  opacity: 1;
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
+
+img.icon-state-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+/* Enhanced Icon Keyframes */
+@keyframes enhancedIconSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes enhancedIconPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes enhancedIconBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Enhanced Icon Dark Mode */
+body.dark-mode img.icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+body.dark-mode img.icon-bg {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 /* ===== FINAL ARIAL IMPLEMENTATION ===== */
 
 /* Global Arial Style Attribute Application */
