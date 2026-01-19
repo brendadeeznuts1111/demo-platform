@@ -1,0 +1,654 @@
+/* @DEMO SVGPathSegMovetoAbs Professional Implementation */
+
+/* ===== SVG PATH SEGMENT MOVETOABS BASE STYLES ===== */
+
+/* Root Level SVGPathSegMovetoAbs Variables */
+:root {
+  /* SVGPathSegMovetoAbs Animation Variables */
+  --movetoabs-animation-duration: 0.5s;
+  --movetoabs-animation-easing: ease-in-out;
+  --movetoabs-segment-color: #3b82f6;
+  --movetoabs-point-color: #ef4444;
+  --movetoabs-line-color: #6b7280;
+  --movetoabs-hover-color: #2563eb;
+  --movetoabs-active-color: #1d4ed8;
+  
+  /* Path Segment Type Variables */
+  --movetoabs-type-color: #059669;
+  --movetoabs-coordinate-color: #1f2937;
+  --movetoabs-value-color: #4b5563;
+  --movetoabs-constant-color: #7c3aed;
+  
+  /* Enhanced Typography for SVGPathSegMovetoAbs */
+  --movetoabs-font-family: Arial, Helvetica, sans-serif;
+  --movetoabs-font-style: normal;
+  --movetoabs-font-variant: normal;
+  --movetoabs-font-weight: normal;
+  --movetoabs-font-size: 14px;
+  --movetoabs-line-height: 1.6;
+  --movetoabs-color: #000000;
+  
+  /* Container Variables */
+  --movetoabs-bg: #ffffff;
+  --movetoabs-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --movetoabs-radius: 12px;
+  --movetoabs-padding: 20px;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS CONTAINER ===== */
+
+.svg-path-segment-movetoabs-container {
+  font-family: var(--movetoabs-font-family);
+  font-style: var(--movetoabs-font-style);
+  font-variant: var(--movetoabs-font-variant);
+  font-weight: var(--movetoabs-font-weight);
+  font-size: var(--movetoabs-font-size);
+  line-height: var(--movetoabs-line-height);
+  color: var(--movetoabs-color);
+  background: var(--movetoabs-bg);
+  border-radius: var(--movetoabs-radius);
+  box-shadow: var(--movetoabs-shadow);
+  border: 2px solid #e2e8f0;
+  padding: var(--movetoabs-padding);
+  margin: 20px 0;
+  transition: all var(--movetoabs-animation-duration) var(--movetoabs-animation-easing);
+}
+
+.svg-path-segment-movetoabs-container:hover {
+  border-color: var(--movetoabs-hover-color);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS HEADER ===== */
+
+.svg-path-segment-movetoabs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.svg-path-segment-movetoabs-title {
+  font-family: var(--movetoabs-font-family);
+  font-style: var(--movetoabs-font-style);
+  font-variant: var(--movetoabs-font-variant);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: var(--movetoabs-line-height);
+  color: var(--movetoabs-coordinate-color);
+  margin: 0;
+}
+
+.svg-path-segment-movetoabs-type {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--movetoabs-type-color);
+  background: #f0fdf4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #bbf7d0;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS CONTENT ===== */
+
+.svg-path-segment-movetoabs-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.svg-path-segment-movetoabs-visualization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 200px;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS SVG ===== */
+
+.svg-path-segment-movetoabs-svg {
+  width: 100%;
+  max-width: 400px;
+  height: 200px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS STYLES ===== */
+
+.svg-path-segment-movetoabs-path {
+  stroke: var(--movetoabs-segment-color);
+  stroke-width: 2px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all var(--movetoabs-animation-duration) var(--movetoabs-animation-easing);
+}
+
+.svg-path-segment-movetoabs-path:hover {
+  stroke: var(--movetoabs-hover-color);
+  stroke-width: 3px;
+}
+
+.svg-path-segment-movetoabs-point {
+  fill: var(--movetoabs-point-color);
+  stroke: white;
+  stroke-width: 2px;
+  r: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.svg-path-segment-movetoabs-point:hover {
+  fill: var(--movetoabs-hover-color);
+  r: 8px;
+}
+
+.svg-path-segment-movetoabs-point.active {
+  fill: var(--movetoabs-active-color);
+  r: 10px;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS COORDINATES ===== */
+
+.svg-path-segment-movetoabs-coordinates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.svg-path-segment-movetoabs-coordinate {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.svg-path-segment-movetoabs-coordinate:hover {
+  background: #e0f2fe;
+  border-color: var(--movetoabs-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.svg-path-segment-movetoabs-coordinate-label {
+  font-family: var(--movetoabs-font-family);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--movetoabs-coordinate-color);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.svg-path-segment-movetoabs-coordinate-value {
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  color: var(--movetoabs-value-color);
+  background: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS PROTOTYPE ===== */
+
+.svg-path-segment-movetoabs-prototype {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.svg-path-segment-movetoabs-prototype-title {
+  font-family: var(--movetoabs-font-family);
+  font-style: var(--movetoabs-font-style);
+  font-variant: var(--movetoabs-font-variant);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--movetoabs-coordinate-color);
+  margin: 0 0 12px 0;
+}
+
+.svg-path-segment-movetoabs-prototype-content {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--movetoabs-value-color);
+  background: white;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS CONSTANTS ===== */
+
+.svg-path-segment-movetoabs-constants {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.svg-path-segment-movetoabs-constant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  transition: all 0.2s ease;
+}
+
+.svg-path-segment-movetoabs-constant:hover {
+  background: #f3f4f6;
+  border-color: var(--movetoabs-hover-color);
+}
+
+.svg-path-segment-movetoabs-constant-name {
+  font-weight: 600;
+  color: var(--movetoabs-constant-color);
+}
+
+.svg-path-segment-movetoabs-constant-value {
+  color: var(--movetoabs-value-color);
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS METHODS ===== */
+
+.svg-path-segment-movetoabs-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.svg-path-segment-movetoabs-method {
+  font-family: var(--movetoabs-font-family);
+  font-style: var(--movetoabs-font-style);
+  font-variant: var(--movetoabs-font-variant);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: var(--movetoabs-line-height);
+  color: white;
+  background-color: #3b82f6;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.svg-path-segment-movetoabs-method:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.svg-path-segment-movetoabs-method:active {
+  background-color: #1d4ed8;
+  transform: translateY(0);
+}
+
+.svg-path-segment-movetoabs-method.danger {
+  background-color: #ef4444;
+}
+
+.svg-path-segment-movetoabs-method.danger:hover {
+  background-color: #dc2626;
+}
+
+.svg-path-segment-movetoabs-method.secondary {
+  background-color: #6b7280;
+}
+
+.svg-path-segment-movetoabs-method.secondary:hover {
+  background-color: #4b5563;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS SYMBOL ===== */
+
+.svg-path-segment-movetoabs-symbol {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--movetoabs-type-color);
+  background: #fef3c7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #fbbf24;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS ANIMATIONS ===== */
+
+@keyframes movetoabsPointPulse {
+  0%, 100% {
+    r: 6px;
+    opacity: 1;
+  }
+  50% {
+    r: 10px;
+    opacity: 0.7;
+  }
+}
+
+.svg-path-segment-movetoabs-point-animated {
+  animation: movetoabsPointPulse 2s ease-in-out infinite;
+}
+
+@keyframes movetoabsPathDraw {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-path-segment-movetoabs-path-animated {
+  animation: movetoabsPathDraw 2s ease-in-out forwards;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS INTERACTIVE ===== */
+
+.svg-path-segment-movetoabs-interactive {
+  position: relative;
+}
+
+.svg-path-segment-movetoabs-interactive .svg-path-segment-movetoabs-coordinate {
+  cursor: pointer;
+}
+
+.svg-path-segment-movetoabs-interactive .svg-path-segment-movetoabs-coordinate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.svg-path-segment-movetoabs-interactive .svg-path-segment-movetoabs-coordinate:hover::before {
+  left: 100%;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS GRID ===== */
+
+.svg-path-segment-movetoabs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.svg-path-segment-movetoabs-grid-item {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.svg-path-segment-movetoabs-grid-item:hover {
+  border-color: var(--movetoabs-hover-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.svg-path-segment-movetoabs-grid-title {
+  font-family: var(--movetoabs-font-family);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--movetoabs-coordinate-color);
+  margin: 0 0 12px 0;
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS PATH TYPES ===== */
+
+.svg-path-segment-movetoabs-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.svg-path-segment-movetoabs-type-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: #0369a1;
+  transition: all 0.2s ease;
+}
+
+.svg-path-segment-movetoabs-type-item:hover {
+  background: #e0f2fe;
+  border-color: #0ea5e9;
+}
+
+.svg-path-segment-movetoabs-type-item.active {
+  background: #dbeafe;
+  border-color: var(--movetoabs-hover-color);
+  color: var(--movetoabs-hover-color);
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS COORDINATE INPUT ===== */
+
+.svg-path-segment-movetoabs-coordinate-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.svg-path-segment-movetoabs-coordinate-input input {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  padding: 6px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  width: 80px;
+  text-align: center;
+}
+
+.svg-path-segment-movetoabs-coordinate-input input:focus {
+  outline: none;
+  border-color: var(--movetoabs-hover-color);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.svg-path-segment-movetoabs-coordinate-input button {
+  font-family: var(--movetoabs-font-family);
+  font-size: 12px;
+  padding: 6px 12px;
+  background: var(--movetoabs-segment-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.svg-path-segment-movetoabs-coordinate-input button:hover {
+  background: var(--movetoabs-hover-color);
+}
+
+/* ===== RESPONSIVE SVG PATH SEGMENT MOVETOABS ===== */
+
+@media (max-width: 768px) {
+  .svg-path-segment-movetoabs-container {
+    padding: 16px;
+    margin: 16px 0;
+  }
+  
+  .svg-path-segment-movetoabs-title {
+    font-size: 16px;
+  }
+  
+  .svg-path-segment-movetoabs-coordinates {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .svg-path-segment-movetoabs-constants {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .svg-path-segment-movetoabs-methods {
+    gap: 6px;
+  }
+  
+  .svg-path-segment-movetoabs-method {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .svg-path-segment-movetoabs-container {
+    padding: 12px;
+    margin: 12px 0;
+  }
+  
+  .svg-path-segment-movetoabs-title {
+    font-size: 14px;
+  }
+  
+  .svg-path-segment-movetoabs-coordinate-label {
+    font-size: 12px;
+  }
+  
+  .svg-path-segment-movetoabs-coordinate-value {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  
+  .svg-path-segment-movetoabs-method {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+
+/* ===== ACCESSIBLE SVG PATH SEGMENT MOVETOABS ===== */
+
+@media (prefers-contrast: high) {
+  .svg-path-segment-movetoabs-container {
+    border-width: 3px;
+    border-color: #000000;
+  }
+  
+  .svg-path-segment-movetoabs-path {
+    stroke-width: 3px;
+    stroke: #000000;
+  }
+  
+  .svg-path-segment-movetoabs-point {
+    stroke: #000000;
+    fill: #ffffff;
+  }
+  
+  .svg-path-segment-movetoabs-coordinate {
+    border-width: 2px;
+    border-color: #000000;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svg-path-segment-movetoabs-container,
+  .svg-path-segment-movetoabs-path,
+  .svg-path-segment-movetoabs-point,
+  .svg-path-segment-movetoabs-coordinate,
+  .svg-path-segment-movetoabs-method {
+    transition: none;
+  }
+  
+  .svg-path-segment-movetoabs-point-animated,
+  .svg-path-segment-movetoabs-path-animated {
+    animation: none;
+  }
+}
+
+/* ===== PRINT SVG PATH SEGMENT MOVETOABS ===== */
+
+@media print {
+  .svg-path-segment-movetoabs-container {
+    background: white;
+    box-shadow: none;
+    border: 2px solid #000000;
+    break-inside: avoid;
+  }
+  
+  .svg-path-segment-movetoabs-method {
+    display: none;
+  }
+  
+  .svg-path-segment-movetoabs-path {
+    stroke: #000000;
+    stroke-width: 1px;
+  }
+  
+  .svg-path-segment-movetoabs-point {
+    fill: #000000;
+    stroke: none;
+  }
+}
+
+/* ===== SVG PATH SEGMENT MOVETOABS UTILITIES ===== */
+
+.svg-path-segment-movetoabs-small {
+  --movetoabs-padding: 12px;
+  --movetoabs-radius: 8px;
+}
+
+.svg-path-segment-movetoabs-large {
+  --movetoabs-padding: 24px;
+  --movetoabs-radius: 16px;
+}
+
+.svg-path-segment-movetoabs-dark {
+  --movetoabs-bg: #1f2937;
+  --movetoabs-coordinate-color: #f9fafb;
+  --movetoabs-value-color: #d1d5db;
+  --movetoabs-type-color: #10b981;
+}
+
+.svg-path-segment-movetoabs-dark .svg-path-segment-movetoabs-coordinate {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.svg-path-segment-movetoabs-dark .svg-path-segment-movetoabs-coordinate-value {
+  background: #1f2937;
+  border-color: #4b5563;
+  color: #d1d5db;
+}
