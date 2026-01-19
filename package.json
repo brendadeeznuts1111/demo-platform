@@ -1,0 +1,22 @@
+{
+  "name": "@DEMO",
+  "version": "2.0.1",
+  "description": "🚀 Enterprise-Grade Chrome Web Application Platform",
+  "main": "server-minimal.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "bun server-minimal.js",
+    "dev": "bun --hot server-minimal.js",
+    "full": "bun server.js",
+    "test": "bun test",
+    "websocket-test": "bun websocket-test.js",
+    "fetch-example": "bun fetch-example.js",
+    "optimize": "./optimize-size.sh"
+  },
+  "keywords": ["enterprise", "websocket", "real-time", "analytics"],
+  "author": "@DEMO",
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}
