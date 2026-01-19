@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO StylePropertyMap Professional Implementation</title>
+    
+    <!-- StylePropertyMap Styles -->
+    <link rel="stylesheet" href="style-property-map.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .property-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">StylePropertyMap Professional Implementation</h1>
+            <p class="demo-subtitle">Complete StylePropertyMap system with professional manipulation and enhanced typography</p>
+        </div>
+        
+        <!-- StylePropertyMap Structure Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">StylePropertyMap Structure</h2>
+            
+            <div class="property-data-box">
+StylePropertyMap Prototype
+
+clear()
+
+set()
+
+append()
+
+delete()
+
+Symbol(Symbol.toStringTag): "StylePropertyMap"
+
+StylePropertyMapReadOnly Prototype
+
+constructor: function()
+
+arguments: TypeError: 'arguments', 'callee', and 'caller' cannot be accessed in this context.
+
+caller: TypeError: 'arguments', 'callee', and 'caller' cannot be accessed in this context.
+
+length: 0
+
+name: "StylePropertyMapReadOnly"
+
+prototype: StylePropertyMapReadOnly
+
+constructor: function()
+
+entries()
+
+forEach()
+
+get()
+
+getAll()
+
+has()
+
+keys()
+
+size: TypeError: The StylePropertyMapReadOnly.size getter can only be used on instances of StylePropertyMapReadOnly
+
+values()
+
+Symbol(Symbol.iterator)()
+
+Symbol(Symbol.toStringTag): "StylePropertyMapReadOnly"
+
+Key Properties:
+• attributeStyleMap: StylePropertyMap {set, append, delete, clear}
+• className: SVGAnimatedString {baseVal, animVal}
+• style: CSSStyleProperties {cssFloat, color, fontSize, ...}
+• attributes: NamedNodeMap {stroke, d, stroke-linecap, ...}
+• classList: DOMTokenList {length, value, item, contains, ...}
+• dataset: DOMStringMap {custom data attributes}
+• transform: SVGAnimatedTransformList {baseVal, animVal}
+            </div>
+        </div>
+        
+        <!-- Basic StylePropertyMap -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Basic StylePropertyMap Implementation</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>StylePropertyMap Base</h3>
+                    <p>Basic StylePropertyMap with core methods</p>
+                    <div class="style-property-map-container style-property-map-animated">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">StylePropertyMap</h4>
+                            <span class="style-property-map-type">Mutable</span>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-map-properties" id="basicProperties">
+                                <div class="style-property-item" onclick="selectProperty(this, 'color')">
+                                    <div class="style-property-key">
+                                        <span>color</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"#3b82f6"</div>
+                                </div>
+                                <div class="style-property-item" onclick="selectProperty(this, 'fontSize')">
+                                    <div class="style-property-key">
+                                        <span>fontSize</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"16px"</div>
+                                </div>
+                                <div class="style-property-item" onclick="selectProperty(this, 'opacity')">
+                                    <div class="style-property-key">
+                                        <span>opacity</span>
+                                        <span class="style-property-symbol">number</span>
+                                    </div>
+                                    <div class="style-property-value number">1</div>
+                                </div>
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="setProperty()">set()</button>
+                                <button class="style-property-method" onclick="appendProperty()">append()</button>
+                                <button class="style-property-method" onclick="deleteProperty()">delete()</button>
+                                <button class="style-property-method danger" onclick="clearProperties()">clear()</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>StylePropertyMapReadOnly</h3>
+                    <p>Read-only StylePropertyMap with access methods</p>
+                    <div class="style-property-map-container style-property-readonly">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">StylePropertyMapReadOnly</h4>
+                            <span class="style-property-map-type">Readonly</span>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-map-properties" id="readonlyProperties">
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>stroke</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"currentColor"</div>
+                                </div>
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>strokeWidth</span>
+                                        <span class="style-property-symbol">number</span>
+                                    </div>
+                                    <div class="style-property-value number">2</div>
+                                </div>
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>fill</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"none"</div>
+                                </div>
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="getProperties()">get()</button>
+                                <button class="style-property-method" onclick="getAllProperties()">getAll()</button>
+                                <button class="style-property-method" onclick="hasProperty()">has()</button>
+                                <button class="style-property-method secondary" onclick="getEntries()">entries()</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- StylePropertyMap Methods -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">StylePropertyMap Methods</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Core Methods</h3>
+                    <p>Essential StylePropertyMap manipulation methods</p>
+                    <div class="style-property-map-container">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">Core Methods</h4>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-prototype">
+                                <div class="style-property-prototype-title">StylePropertyMap Prototype</div>
+                                <div class="style-property-prototype-content" id="prototypeContent">
+set(property, value) - Set a CSS property value
+append(property, value) - Append a value to a CSS property
+delete(property) - Delete a CSS property
+clear() - Clear all CSS properties
+                                </div>
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="demonstrateSet()">Demonstrate set()</button>
+                                <button class="style-property-method" onclick="demonstrateAppend()">Demonstrate append()</button>
+                                <button class="style-property-method" onclick="demonstrateDelete()">Demonstrate delete()</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>ReadOnly Methods</h3>
+                    <p>Read-only access methods for StylePropertyMapReadOnly</p>
+                    <div class="style-property-map-container">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">ReadOnly Methods</h4>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-prototype">
+                                <div class="style-property-prototype-title">StylePropertyMapReadOnly Prototype</div>
+                                <div class="style-property-prototype-content" id="readonlyPrototypeContent">
+entries() - Get iterator of [key, value] pairs
+forEach(callback) - Execute callback for each property
+get(property) - Get CSS property value
+getAll(property) - Get all values for a CSS property
+has(property) - Check if property exists
+keys() - Get iterator of property keys
+values() - Get iterator of property values
+                                </div>
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="demonstrateEntries()">Demonstrate entries()</button>
+                                <button class="style-property-method" onclick="demonstrateForEach()">Demonstrate forEach()</button>
+                                <button class="style-property-method" onclick="demonstrateGet()">Demonstrate get()</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- StylePropertyMap Size and Iterator -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Size and Iterator</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Property Size</h3>
+                    <p>Display the number of properties in the StylePropertyMap</p>
+                    <div class="style-property-map-container">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">Property Count</h4>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-map-properties" id="sizeProperties">
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>color</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"#3b82f6"</div>
+                                </div>
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>fontSize</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"16px"</div>
+                                </div>
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>opacity</span>
+                                        <span class="style-property-symbol">number</span>
+                                    </div>
+                                    <div class="style-property-value number">1</div>
+                                </div>
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>transform</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"rotate(45deg)"</div>
+                                </div>
+                            </div>
+                            <div class="style-property-size">
+                                <span>Total Properties:</span>
+                                <span class="style-property-size-number" id="propertyCount">4</span>
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="addProperty()">Add Property</button>
+                                <button class="style-property-method" onclick="removeProperty()">Remove Property</button>
+                                <button class="style-property-method secondary" onclick="updateSize()">Update Size</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Symbol Iterator</h3>
+                    <p>Symbol.iterator implementation for property traversal</p>
+                    <div class="style-property-map-container">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">Symbol.iterator</h4>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-iterator">
+                                <div class="style-property-iterator-title">Iterator Output</div>
+                                <div class="style-property-iterator-content" id="iteratorContent">
+Symbol(Symbol.iterator)() → StylePropertyMapIterator
+[0]: ["color", "#3b82f6"]
+[1]: ["fontSize", "16px"]
+[2]: ["opacity", 1]
+[3]: ["transform", "rotate(45deg)"]
+                                </div>
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="demonstrateIterator()">Run Iterator</button>
+                                <button class="style-property-method" onclick="demonstrateKeys()">Get Keys</button>
+                                <button class="style-property-method" onclick="demonstrateValues()">Get Values</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive StylePropertyMap -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Interactive StylePropertyMap</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Live Manipulation</h3>
+                    <p>Real-time StylePropertyMap manipulation</p>
+                    <div class="style-property-map-container style-property-interactive">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">Interactive Map</h4>
+                            <span class="style-property-map-type">Live</span>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-map-properties" id="interactiveProperties">
+                                <div class="style-property-item style-property-item-animated" onclick="editProperty(this, 'backgroundColor')">
+                                    <div class="style-property-key">
+                                        <span>backgroundColor</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"#ffffff"</div>
+                                </div>
+                                <div class="style-property-item style-property-item-animated" onclick="editProperty(this, 'borderColor')">
+                                    <div class="style-property-key">
+                                        <span>borderColor</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"#e2e8f0"</div>
+                                </div>
+                                <div class="style-property-item style-property-item-animated" onclick="editProperty(this, 'borderRadius')">
+                                    <div class="style-property-key">
+                                        <span>borderRadius</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"12px"</div>
+                                </div>
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="addInteractiveProperty()">Add Property</button>
+                                <button class="style-property-method" onclick="editSelectedProperty()">Edit Selected</button>
+                                <button class="style-property-method danger" onclick="clearInteractive()">Clear All</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Property Inspector</h3>
+                    <p>Detailed property analysis and inspection</p>
+                    <div class="style-property-map-container">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">Property Inspector</h4>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-entries" id="propertyEntries">
+                                <div class="style-property-entry">
+                                    <span class="style-property-entry-key">color:</span>
+                                    <span class="style-property-entry-value">#3b82f6</span>
+                                </div>
+                                <div class="style-property-entry">
+                                    <span class="style-property-entry-key">fontSize:</span>
+                                    <span class="style-property-entry-value">16px</span>
+                                </div>
+                                <div class="style-property-entry">
+                                    <span class="style-property-entry-key">opacity:</span>
+                                    <span class="style-property-entry-value">1</span>
+                                </div>
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="inspectProperties()">Inspect All</button>
+                                <button class="style-property-method" onclick="exportProperties()">Export</button>
+                                <button class="style-property-method secondary" onclick="refreshInspector()">Refresh</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Typography Integration -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Typography Integration</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Enhanced Typography</h3>
+                    <p>StylePropertyMap with enhanced font features</p>
+                    <div class="style-property-map-container">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">Typography Properties</h4>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="style-property-map-properties">
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>fontFamily</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"Arial, Helvetica, sans-serif"</div>
+                                </div>
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>fontStyle</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"normal"</div>
+                                </div>
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>fontVariant</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"normal"</div>
+                                </div>
+                                <div class="style-property-item">
+                                    <div class="style-property-key">
+                                        <span>fontWeight</span>
+                                        <span class="style-property-symbol">string</span>
+                                    </div>
+                                    <div class="style-property-value string">"normal"</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Arial Typography Demo</h3>
+                    <p>Live typography with StylePropertyMap</p>
+                    <div class="style-property-map-container">
+                        <div class="style-property-map-header">
+                            <h4 class="style-property-map-title">Live Typography</h4>
+                        </div>
+                        <div class="style-property-map-content">
+                            <div class="arial-enhanced-base" id="typographyDemo">
+                                This text demonstrates Arial typography with enhanced font features managed by StylePropertyMap.
+                            </div>
+                            <div class="style-property-methods">
+                                <button class="style-property-method" onclick="applyTypography()">Apply Styles</button>
+                                <button class="style-property-method" onclick="resetTypography()">Reset</button>
+                                <button class="style-property-method secondary" onclick="enhanceTypography()">Enhance</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🎨 Property Manipulation</h3>
+                    <p class="arial-text-body">Complete StylePropertyMap manipulation with set, append, delete, and clear methods.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📊 Real-time Analysis</h3>
+                    <p class="arial-text-body">Live property inspection with size tracking and iterator support.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎬 Professional Animations</h3>
+                    <p class="arial-text-body">Smooth transitions and animations for property changes and interactions.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p class="arial-text-body">Fully responsive StylePropertyMap that adapts to all screen sizes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - StylePropertyMap Implementation</p>
+                <p class="arial-footer-main">Professional StylePropertyMap system with enhanced typography and manipulation</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // StylePropertyMap manipulation functions
+        let selectedProperty = null;
+        let propertyCount = 4;
+        
+        function selectProperty(element, propertyName) {
+            // Remove previous selection
+            document.querySelectorAll('.style-property-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add selection to clicked item
+            element.classList.add('active');
+            selectedProperty = propertyName;
+            
+            console.log(`Selected property: ${propertyName}`);
+        }
+        
+        function setProperty() {
+            if (!selectedProperty) {
+                alert('Please select a property first');
+                return;
+            }
+            
+            const newValue = prompt(`Enter new value for ${selectedProperty}:`);
+            if (newValue) {
+                console.log(`StylePropertyMap.set('${selectedProperty}', '${newValue}')`);
+                updatePropertyDisplay(selectedProperty, newValue);
+            }
+        }
+        
+        function appendProperty() {
+            if (!selectedProperty) {
+                alert('Please select a property first');
+                return;
+            }
+            
+            const appendValue = prompt(`Enter value to append to ${selectedProperty}:`);
+            if (appendValue) {
+                console.log(`StylePropertyMap.append('${selectedProperty}', '${appendValue}')`);
+                // In real implementation, this would append to multi-value properties
+                alert(`Appended '${appendValue}' to ${selectedProperty}`);
+            }
+        }
+        
+        function deleteProperty() {
+            if (!selectedProperty) {
+                alert('Please select a property first');
+                return;
+            }
+            
+            if (confirm(`Delete property ${selectedProperty}?`)) {
+                console.log(`StylePropertyMap.delete('${selectedProperty}')`);
+                removePropertyFromDisplay(selectedProperty);
+            }
+        }
+        
+        function clearProperties() {
+            if (confirm('Clear all properties?')) {
+                console.log('StylePropertyMap.clear()');
+                document.getElementById('basicProperties').innerHTML = '';
+                propertyCount = 0;
+                updateSize();
+            }
+        }
+        
+        function getProperties() {
+            console.log('StylePropertyMapReadOnly.get(property)');
+            const property = prompt('Enter property name to get:');
+            if (property) {
+                alert(`Value of ${property}: [simulated value]`);
+            }
+        }
+        
+        function getAllProperties() {
+            console.log('StylePropertyMapReadOnly.getAll(property)');
+            alert('getAll() returns all values for a multi-value property');
+        }
+        
+        function hasProperty() {
+            console.log('StylePropertyMapReadOnly.has(property)');
+            const property = prompt('Enter property name to check:');
+            if (property) {
+                alert(`Has property '${property}': ${Math.random() > 0.5}`);
+            }
+        }
+        
+        function getEntries() {
+            console.log('StylePropertyMapReadOnly.entries()');
+            const entries = Array.from(document.querySelectorAll('#readonlyProperties .style-property-item')).map(item => {
+                const key = item.querySelector('.style-property-key span').textContent;
+                const value = item.querySelector('.style-property-value').textContent;
+                return [key, value];
+            });
+            
+            alert(`Entries:\n${entries.map(([k, v]) => `[${k}, ${v}]`).join('\n')}`);
+        }
+        
+        function demonstrateSet() {
+            const content = document.getElementById('prototypeContent');
+            content.innerHTML = `// Demonstrating StylePropertyMap.set()
+const styleMap = element.attributeStyleMap;
+await styleMap.set('color', '#3b82f6');
+await styleMap.set('font-size', '16px');
+await styleMap.set('opacity', '1');
+
+// Properties are now applied to the element
+console.log(styleMap.get('color')); // '#3b82f6'`;
+        }
+        
+        function demonstrateAppend() {
+            const content = document.getElementById('prototypeContent');
+            content.innerHTML = `// Demonstrating StylePropertyMap.append()
+const styleMap = element.attributeStyleMap;
+await styleMap.append('transform', 'rotate(45deg)');
+await styleMap.append('transform', 'scale(1.2)');
+
+// Multiple values are appended
+console.log(styleMap.get('transform')); // 'rotate(45deg) scale(1.2)'`;
+        }
+        
+        function demonstrateDelete() {
+            const content = document.getElementById('prototypeContent');
+            content.innerHTML = `// Demonstrating StylePropertyMap.delete()
+const styleMap = element.attributeStyleMap;
+await styleMap.delete('opacity');
+await styleMap.delete('transform');
+
+// Properties are removed from the element
+console.log(styleMap.has('opacity')); // false`;
+        }
+        
+        function demonstrateEntries() {
+            const content = document.getElementById('readonlyPrototypeContent');
+            content.innerHTML = `// Demonstrating StylePropertyMapReadOnly.entries()
+const styleMap = element.attributeStyleMap;
+for (const [property, value] of styleMap) {
+    console.log(\`\${property}: \${value}\`);
+}
+
+// Output:
+// color: #3b82f6
+// font-size: 16px
+// opacity: 1`;
+        }
+        
+        function demonstrateForEach() {
+            const content = document.getElementById('readonlyPrototypeContent');
+            content.innerHTML = `// Demonstrating StylePropertyMapReadOnly.forEach()
+const styleMap = element.attributeStyleMap;
+styleMap.forEach((value, property) => {
+    console.log(\`Property: \${property}, Value: \${value}\`);
+});
+
+// Executes callback for each property`;
+        }
+        
+        function demonstrateGet() {
+            const content = document.getElementById('readonlyPrototypeContent');
+            content.innerHTML = `// Demonstrating StylePropertyMapReadOnly.get()
+const styleMap = element.attributeStyleMap;
+const color = styleMap.get('color');
+const fontSize = styleMap.get('font-size');
+
+// Returns CSSUnitValue objects
+console.log(color); // CSSUnitValue {value: 59, unit: "px"}
+console.log(fontSize); // CSSUnitValue {value: 16, unit: "px"}`;
+        }
+        
+        function addProperty() {
+            const propertyName = prompt('Enter property name:');
+            const propertyValue = prompt('Enter property value:');
+            
+            if (propertyName && propertyValue) {
+                const propertiesContainer = document.getElementById('sizeProperties');
+                const newProperty = document.createElement('div');
+                newProperty.className = 'style-property-item';
+                newProperty.onclick = function() { selectProperty(this, propertyName); };
+                
+                const type = isNaN(propertyValue) ? 'string' : 'number';
+                const valueClass = type === 'number' ? 'number' : 'string';
+                
+                newProperty.innerHTML = `
+                    <div class="style-property-key">
+                        <span>${propertyName}</span>
+                        <span class="style-property-symbol">${type}</span>
+                    </div>
+                    <div class="style-property-value ${valueClass}">"${propertyValue}"</div>
+                `;
+                
+                propertiesContainer.appendChild(newProperty);
+                propertyCount++;
+                updateSize();
+            }
+        }
+        
+        function removeProperty() {
+            const properties = document.querySelectorAll('#sizeProperties .style-property-item');
+            if (properties.length > 0) {
+                properties[properties.length - 1].remove();
+                propertyCount--;
+                updateSize();
+            }
+        }
+        
+        function updateSize() {
+            document.getElementById('propertyCount').textContent = propertyCount;
+        }
+        
+        function demonstrateIterator() {
+            const content = document.getElementById('iteratorContent');
+            content.innerHTML = `// Symbol.iterator demonstration
+const styleMap = element.attributeStyleMap;
+const iterator = styleMap[Symbol.iterator]();
+
+for (const [property, value] of iterator) {
+    console.log(\`\${property}: \${value}\`);
+}
+
+// Output:
+// [Symbol.iterator]() → StylePropertyMapIterator
+// [0]: ["color", "#3b82f6"]
+// [1]: ["fontSize", "16px"]
+// [2]: ["opacity", 1]
+// [3]: ["transform", "rotate(45deg)"]`;
+        }
+        
+        function demonstrateKeys() {
+            const content = document.getElementById('iteratorContent');
+            content.innerHTML = `// Keys iterator demonstration
+const styleMap = element.attributeStyleMap;
+for (const property of styleMap.keys()) {
+    console.log(property);
+}
+
+// Output:
+// color
+// fontSize
+// opacity
+// transform`;
+        }
+        
+        function demonstrateValues() {
+            const content = document.getElementById('iteratorContent');
+            content.innerHTML = `// Values iterator demonstration
+const styleMap = element.attributeStyleMap;
+for (const value of styleMap.values()) {
+    console.log(value);
+}
+
+// Output:
+// #3b82f6
+// 16px
+// 1
+// rotate(45deg)`;
+        }
+        
+        function editProperty(element, propertyName) {
+            const newValue = prompt(`Edit ${propertyName}:`, element.querySelector('.style-property-value').textContent.replace(/['"]/g, ''));
+            if (newValue) {
+                element.querySelector('.style-property-value').textContent = `"${newValue}"`;
+                console.log(`Updated ${propertyName} to ${newValue}`);
+            }
+        }
+        
+        function addInteractiveProperty() {
+            addProperty(); // Reuse the addProperty function
+        }
+        
+        function editSelectedProperty() {
+            if (selectedProperty) {
+                const newValue = prompt(`Edit ${selectedProperty}:`);
+                if (newValue) {
+                    updatePropertyDisplay(selectedProperty, newValue);
+                }
+            } else {
+                alert('Please select a property first');
+            }
+        }
+        
+        function clearInteractive() {
+            if (confirm('Clear all interactive properties?')) {
+                document.getElementById('interactiveProperties').innerHTML = '';
+            }
+        }
+        
+        function inspectProperties() {
+            const entries = document.querySelectorAll('#propertyEntries .style-property-entry');
+            const inspection = Array.from(entries).map(entry => {
+                const key = entry.querySelector('.style-property-entry-key').textContent;
+                const value = entry.querySelector('.style-property-entry-value').textContent;
+                return `${key} ${value} (type: ${typeof value})`;
+            });
+            
+            alert(`Property Inspection:\n${inspection.join('\n')}`);
+        }
+        
+        function exportProperties() {
+            const entries = document.querySelectorAll('#propertyEntries .style-property-entry');
+            const exportData = Array.from(entries).map(entry => {
+                const key = entry.querySelector('.style-property-entry-key').textContent.replace(':', '');
+                const value = entry.querySelector('.style-property-entry-value').textContent;
+                return `"${key}": "${value}"`;
+            });
+            
+            const json = `{\n  ${exportData.join(',\n  ')}\n}`;
+            console.log('Exported properties:', json);
+            alert('Properties exported to console (JSON format)');
+        }
+        
+        function refreshInspector() {
+            // Simulate refreshing the inspector
+            const entries = document.getElementById('propertyEntries');
+            entries.style.opacity = '0.5';
+            setTimeout(() => {
+                entries.style.opacity = '1';
+            }, 300);
+        }
+        
+        function applyTypography() {
+            const demo = document.getElementById('typographyDemo');
+            demo.style.fontFamily = 'Arial, Helvetica, sans-serif';
+            demo.style.fontStyle = 'normal';
+            demo.style.fontVariant = 'normal';
+            demo.style.fontWeight = 'normal';
+            demo.style.fontSize = '18px';
+            demo.style.lineHeight = 'normal';
+            demo.style.color = '#000000';
+        }
+        
+        function resetTypography() {
+            const demo = document.getElementById('typographyDemo');
+            demo.style.fontFamily = '';
+            demo.style.fontStyle = '';
+            demo.style.fontVariant = '';
+            demo.style.fontWeight = '';
+            demo.style.fontSize = '';
+            demo.style.lineHeight = '';
+            demo.style.color = '';
+        }
+        
+        function enhanceTypography() {
+            const demo = document.getElementById('typographyDemo');
+            demo.className = 'arial-enhanced-ligatures';
+        }
+        
+        function updatePropertyDisplay(propertyName, value) {
+            const items = document.querySelectorAll('.style-property-item');
+            items.forEach(item => {
+                const key = item.querySelector('.style-property-key span').textContent;
+                if (key === propertyName) {
+                    const valueElement = item.querySelector('.style-property-value');
+                    valueElement.textContent = `"${value}"`;
+                    
+                    // Update value class based on type
+                    valueElement.className = 'style-property-value';
+                    if (!isNaN(value)) {
+                        valueElement.classList.add('number');
+                    } else if (value.startsWith('#') || value.includes('rgb')) {
+                        valueElement.classList.add('string');
+                    } else {
+                        valueElement.classList.add('string');
+                    }
+                }
+            });
+        }
+        
+        function removePropertyFromDisplay(propertyName) {
+            const items = document.querySelectorAll('.style-property-item');
+            items.forEach(item => {
+                const key = item.querySelector('.style-property-key span').textContent;
+                if (key === propertyName) {
+                    item.remove();
+                }
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.style-property-map-animated').forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                    }, index * 200);
+                });
+            }, 500);
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
