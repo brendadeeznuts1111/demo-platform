@@ -1388,3 +1388,300 @@ code, pre {
   line-height: normal;
   color: #000000;
 }
+
+/* ===== CSS CUSTOM PROPERTIES UTILITIES ===== */
+
+/* Root Level Custom Properties */
+:root {
+  /* Your Exact Specifications */
+  --some-keyword: left;
+  --some-color: #123456;
+  --some-complex-value: 3px 6px rgb(20 32 54);
+  
+  /* Professional Arial Typography Variables */
+  --arial-font-family: Arial, Helvetica, sans-serif;
+  --arial-font-style: normal;
+  --arial-font-variant: normal;
+  --arial-font-weight: normal;
+  --arial-font-size: 18px;
+  --arial-line-height: normal;
+  --arial-color: #000000;
+  
+  /* Heading Size Variables */
+  --arial-h1-size: 32px;
+  --arial-h2-size: 24px;
+  --arial-h3-size: 20px;
+  --arial-h4-size: 18px;
+  --arial-h5-size: 16px;
+  --arial-h6-size: 14px;
+  
+  /* Professional Color Palette */
+  --primary-color: #3b82f6;
+  --success-color: #22c55e;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --info-color: #06b6d4;
+  
+  /* Spacing Variables */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Border Variables */
+  --border-width: 1px;
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  
+  /* Shadow Variables */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Arial Typography with Variables */
+.arial-variable-base {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-font-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+}
+
+/* Heading Typography with Variables */
+.arial-variable-h1 {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-h1-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+.arial-variable-h2 {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-h2-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  margin: 0 0 var(--spacing-md) 0;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: var(--border-width) solid var(--border-color);
+}
+
+.arial-variable-h3 {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-h3-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.arial-variable-h4 {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-h4-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.arial-variable-h5 {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-h5-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.arial-variable-h6 {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-h6-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+/* Exact Specifications Demonstration */
+.arial-some-keyword {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-font-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  text-align: var(--some-keyword);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.arial-some-color {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-font-size);
+  line-height: var(--arial-line-height);
+  color: var(--some-color);
+  background-color: var(--some-color);
+  color: white;
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--border-radius);
+}
+
+.arial-some-complex {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-font-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  padding: var(--some-complex-value);
+  margin: var(--spacing-md) 0;
+  border: var(--border-width) solid var(--some-color);
+  border-radius: var(--border-radius);
+}
+
+/* Professional Components with CSS Variables */
+.arial-variable-card {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-font-size);
+  line-height: var(--arial-line-height);
+  color: var(--arial-color);
+  background: white;
+  padding: var(--spacing-lg);
+  margin: var(--spacing-md) 0;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.arial-variable-button {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-font-size);
+  line-height: var(--arial-line-height);
+  color: white;
+  background-color: var(--primary-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin: var(--spacing-xs);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arial-variable-button:hover {
+  background-color: var(--primary-color);
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.arial-variable-button-success {
+  background-color: var(--success-color);
+}
+
+.arial-variable-button-warning {
+  background-color: var(--warning-color);
+}
+
+.arial-variable-button-error {
+  background-color: var(--error-color);
+}
+
+.arial-variable-alert {
+  font-family: var(--arial-font-family);
+  font-style: var(--arial-font-style);
+  font-variant: var(--arial-font-variant);
+  font-weight: var(--arial-font-weight);
+  font-size: var(--arial-font-size);
+  line-height: var(--arial-line-height);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+  background-color: #f8fafc;
+}
+
+.arial-variable-alert-success {
+  border-left-color: var(--success-color);
+  background-color: #f0fdf4;
+  color: #14532d;
+}
+
+.arial-variable-alert-warning {
+  border-left-color: var(--warning-color);
+  background-color: #fffbeb;
+  color: #92400e;
+}
+
+.arial-variable-alert-error {
+  border-left-color: var(--error-color);
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+/* Utility Classes with CSS Variables */
+.arial-variable-text-left {
+  text-align: var(--some-keyword);
+}
+
+.arial-variable-text-center {
+  text-align: center;
+}
+
+.arial-variable-text-right {
+  text-align: right;
+}
+
+.arial-variable-padded {
+  padding: var(--spacing-md);
+}
+
+.arial-variable-padded-sm {
+  padding: var(--spacing-sm);
+}
+
+.arial-variable-padded-lg {
+  padding: var(--spacing-lg);
+}
+
+.arial-variable-bordered {
+  border: var(--border-width) solid var(--border-color);
+}
+
+.arial-variable-rounded {
+  border-radius: var(--border-radius);
+}

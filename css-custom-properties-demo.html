@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO CSS Custom Properties Professional Implementation</title>
+    
+    <!-- CSS Custom Properties Styles -->
+    <link rel="stylesheet" href="css-custom-properties.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .specification-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">CSS Custom Properties Professional Implementation</h1>
+            <p class="demo-subtitle">Complete CSS custom properties implementation with Arial typography and professional styling</p>
+        </div>
+        
+        <!-- Exact Specifications -->
+        <div class="demo-section">
+            <h2 class="arial-variable-h2">Your Exact CSS Custom Properties Specifications</h2>
+            
+            <div class="specification-box">
+:root {
+  --some-keyword: left;
+  --some-color: #123456;
+  --some-complex-value: 3px 6px rgb(20 32 54);
+}
+            </div>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Some Keyword Variable</h3>
+                    <p>Using --some-keyword: left for text alignment</p>
+                    <div class="arial-some-keyword">
+                        <strong>Left Aligned Text</strong><br>
+                        This element demonstrates the --some-keyword variable set to 'left' for text alignment with Arial typography.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Some Color Variable</h3>
+                    <p>Using --some-color: #123456 for styling</p>
+                    <div class="arial-some-color">
+                        <strong>Custom Color Element</strong><br>
+                        This element demonstrates the --some-color variable set to #123456 with white text.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Some Complex Value</h3>
+                    <p>Using --some-complex-value: 3px 6px rgb(20 32 54)</p>
+                    <div class="arial-some-complex">
+                        <strong>Complex Value Element</strong><br>
+                        This element demonstrates the --some-complex-value variable with custom padding and border.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Typography with CSS Variables -->
+        <div class="demo-section">
+            <h2 class="arial-variable-h2">Arial Typography with CSS Variables</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Base Typography</h3>
+                    <p>Using CSS variables for Arial typography</p>
+                    <div class="arial-variable-base">
+                        <strong>Base Arial Typography</strong><br>
+                        This element uses CSS variables for all Arial font properties including font-family, font-style, font-variant, font-weight, font-size, line-height, and color.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Variable Headings</h3>
+                    <p>Heading sizes using CSS variables</p>
+                    <div style="font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; line-height: normal; color: #000000;">
+                        <h1 class="arial-variable-h1">Heading 1 - 32px</h1>
+                        <h2 class="arial-variable-h2">Heading 2 - 24px</h2>
+                        <h3 class="arial-variable-h3">Heading 3 - 20px</h3>
+                        <h4 class="arial-variable-h4">Heading 4 - 18px</h4>
+                        <h5 class="arial-variable-h5">Heading 5 - 16px</h5>
+                        <h6 class="arial-variable-h6">Heading 6 - 14px</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Professional Components -->
+        <div class="demo-section">
+            <h2 class="arial-variable-h2">Professional Components with CSS Variables</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Card Component</h3>
+                    <p>Professional card with CSS variables</p>
+                    <div class="arial-variable-card">
+                        <strong>Professional Card</strong><br>
+                        This card component uses CSS variables for spacing, colors, borders, shadows, and Arial typography.
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Alert Components</h3>
+                    <p>Alert messages with CSS variables</p>
+                    <div class="arial-variable-alert">
+                        <strong>Default Alert</strong><br>
+                        This is a default alert message using CSS variables.
+                    </div>
+                    <div class="arial-variable-alert-success">
+                        <strong>Success Alert</strong><br>
+                        This is a success alert message using CSS variables.
+                    </div>
+                    <div class="arial-variable-alert-warning">
+                        <strong>Warning Alert</strong><br>
+                        This is a warning alert message using CSS variables.
+                    </div>
+                    <div class="arial-variable-alert-error">
+                        <strong>Error Alert</strong><br>
+                        This is an error alert message using CSS variables.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Buttons with CSS Variables -->
+        <div class="demo-section">
+            <h2 class="arial-variable-h2">Interactive Buttons with CSS Variables</h2>
+            
+            <div class="button-group">
+                <button class="arial-variable-button">Primary Button</button>
+                <button class="arial-variable-button arial-variable-button-success">Success Button</button>
+                <button class="arial-variable-button arial-variable-button-warning">Warning Button</button>
+                <button class="arial-variable-button arial-variable-button-error">Error Button</button>
+            </div>
+            
+            <div class="demo-card" style="margin-top: 20px;">
+                <h3>Button Features</h3>
+                <p class="arial-text-body">All buttons use CSS variables for:</p>
+                <ul style="font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 16px; line-height: normal; color: #000000; padding-left: 20px;">
+                    <li>Arial typography with consistent font properties</li>
+                    <li>Professional color schemes using CSS variables</li>
+                    <li>Hover effects with smooth transitions</li>
+                    <li>Responsive sizing and spacing</li>
+                    <li>Accessibility compliance</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Tables with CSS Variables -->
+        <div class="demo-section">
+            <h2 class="arial-variable-h2">Tables with CSS Variables</h2>
+            
+            <div class="table-container">
+                <table class="arial-variable-table">
+                    <thead>
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                            <th>Header 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Data 1,1</td>
+                            <td>Data 1,2</td>
+                            <td>Data 1,3</td>
+                        </tr>
+                        <tr>
+                            <td>Data 2,1</td>
+                            <td>Data 2,2</td>
+                            <td>Data 2,3</td>
+                        </tr>
+                        <tr>
+                            <td>Data 3,1</td>
+                            <td>Data 3,2</td>
+                            <td>Data 3,3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- CSS Variables Features -->
+        <div class="demo-section">
+            <h2 class="arial-variable-h2">CSS Variables Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🎨 Dynamic Theming</h3>
+                    <p class="arial-text-body">CSS variables enable dynamic theming with real-time updates and consistent styling across all components.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p class="arial-text-body">Variables automatically adjust for different screen sizes with media queries and optimal typography.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>♿ Accessibility</h3>
+                    <p class="arial-text-body">WCAG 2.1 AA compliant with high contrast mode, reduced motion, and screen reader optimization.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🌙 Dark Mode</h3>
+                    <p class="arial-text-body">Automatic dark mode support with prefers-color-scheme and appropriate color adjustments.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Utility Classes -->
+        <div class="demo-section">
+            <h2 class="arial-variable-h2">Utility Classes with CSS Variables</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Text Alignment</h3>
+                    <div class="arial-variable-text-left" style="background: #f8fafc; padding: 10px; margin: 5px 0;">
+                        Left aligned text using --some-keyword
+                    </div>
+                    <div class="arial-variable-text-center" style="background: #f8fafc; padding: 10px; margin: 5px 0;">
+                        Center aligned text
+                    </div>
+                    <div class="arial-variable-text-right" style="background: #f8fafc; padding: 10px; margin: 5px 0;">
+                        Right aligned text
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Spacing Utilities</h3>
+                    <div class="arial-variable-padded-sm" style="background: #f0fdf4; border: 1px solid #22c55e; margin: 5px 0;">
+                        Small padding using CSS variables
+                    </div>
+                    <div class="arial-variable-padded" style="background: #f0f9ff; border: 1px solid #06b6d4; margin: 5px 0;">
+                        Medium padding using CSS variables
+                    </div>
+                    <div class="arial-variable-padded-lg" style="background: #fef3c7; border: 1px solid #f59e0b; margin: 5px 0;">
+                        Large padding using CSS variables
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - CSS Custom Properties Implementation</p>
+                <p class="arial-footer-main">Professional CSS variables with Arial typography and exact specifications</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.demo-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+        
+        // Demonstrate CSS variable manipulation
+        function demonstrateVariableChange() {
+            const root = document.documentElement;
+            
+            // Change primary color dynamically
+            setTimeout(() => {
+                root.style.setProperty('--primary-color', '#8b5cf6');
+                console.log('Primary color changed to purple');
+            }, 2000);
+            
+            // Change font size dynamically
+            setTimeout(() => {
+                root.style.setProperty('--arial-font-size', '20px');
+                console.log('Font size changed to 20px');
+            }, 4000);
+            
+            // Reset after demonstration
+            setTimeout(() => {
+                root.style.removeProperty('--primary-color');
+                root.style.removeProperty('--arial-font-size');
+                console.log('Variables reset to original values');
+            }, 6000);
+        }
+        
+        // Run demonstration after page load
+        setTimeout(demonstrateVariableChange, 1000);
+    </script>
+</body>
+</html>
