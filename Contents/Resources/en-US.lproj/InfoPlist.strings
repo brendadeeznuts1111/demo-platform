@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "@DEMO";
+CFBundleDisplayName = "@DEMO Enterprise Platform";
+CFBundleShortVersionString = "2.0.1";
+NSHumanReadableCopyright = "© 2024 @DEMO Platform. All rights reserved.";

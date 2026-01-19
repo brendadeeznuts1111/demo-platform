@@ -101,8 +101,8 @@ export class SecurityMiddleware {
     
     // CORS headers for non-preflight requests
     response.headers.set('Access-Control-Allow-Origin', this.cors.origin);
-    response.headers.set('Access-Control-Allow-Methods', this.cors.methods.join(', '));
-    response.headers.set('Access-Control-Allow-Headers', this.cors.headers.join(', '));
+    response.headers.set('Access-Control-Allow-Methods', this.cors.methods ? this.cors.methods.join(', ') : 'GET, POST, PUT, DELETE');
+    response.headers.set('Access-Control-Allow-Headers', this.cors.headers ? this.cors.headers.join(', ') : 'Content-Type, Authorization');
     
     return response;
   }

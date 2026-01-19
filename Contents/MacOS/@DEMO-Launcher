@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# @DEMO Quick Launcher
+# Simple launcher for the ultimate server
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+APP_DIR="$(dirname "$SCRIPT_DIR")"
+PROJECT_DIR="$(dirname "$APP_DIR")"
+
+cd "$PROJECT_DIR"
+
+# Colors
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${CYAN}🚀 @DEMO Enterprise Platform${NC}"
+echo -e "${BLUE}Starting Ultimate Server...${NC}"
+
+# Find available port
+for port in {3000..3010}; do
+    if ! lsof -i :$port &> /dev/null; then
+        echo -e "${GREEN}✅ Port found: $port${NC}"
+        echo -e "${CYAN}🌐 Opening http://localhost:$port${NC}"
+        
+        # Open browser
+        (sleep 2 && open "http://localhost:$port") &
+        
+        # Start server
+        BUN_PORT=$port bun server-ultimate.js
+        exit 0
+    fi
+done
+
+echo -e "${YELLOW}⚠️ No available ports found${NC}"
+osascript -e 'display dialog "No available ports found. Please close some applications." buttons {"OK"}'

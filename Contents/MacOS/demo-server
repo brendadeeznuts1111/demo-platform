@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# @DEMO Enterprise Platform - macOS Application
+# Launch script for the demo server
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+APP_DIR="$(dirname "$SCRIPT_DIR")"
+PROJECT_DIR="$(dirname "$APP_DIR")"
+
+# Change to project directory
+cd "$PROJECT_DIR"
+
+# Check if Bun is installed
+if ! command -v bun &> /dev/null; then
+    osascript -e 'display dialog "Bun is not installed. Please install Bun from https://bun.sh" buttons {"OK"} default button "OK"'
+    exit 1
+fi
+
+# Find an available port
+find_available_port() {
+    for port in {3000..3010}; do
+        if ! lsof -i :$port &> /dev/null; then
+            echo $port
+            return
+        fi
+    done
+    echo "No available port found" >&2
+    exit 1
+}
+
+# Get available port
+AVAILABLE_PORT=$(find_available_port)
+
+# Start the server
+echo "🚀 Starting @DEMO Enterprise Platform on port $AVAILABLE_PORT"
+echo "📊 Dashboard: http://localhost:$AVAILABLE_PORT"
+echo "🔌 WebSocket: ws://localhost:$AVAILABLE_PORT/ws"
+echo "📖 Documentation: http://localhost:$AVAILABLE_PORT/docs"
+
+# Open browser after a short delay
+(sleep 2 && open "http://localhost:$AVAILABLE_PORT") &
+
+# Run the server
+BUN_PORT=$AVAILABLE_PORT bun demo-server.js
+
+# If server exits, show message
+osascript -e 'display dialog "@DEMO Server has stopped" buttons {"OK"} default button "OK"'
