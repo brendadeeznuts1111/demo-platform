@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Enhanced Data Table with Add Column Feature Professional Implementation</title>
+    
+    <!-- Enhanced Data Table with Columns Styles -->
+    <link rel="stylesheet" href="enhanced-data-table-with-columns.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .table-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Enhanced Data Table with Add Column Feature</h1>
+            <p class="demo-subtitle">Professional enhanced data table with dynamic column management, multiple data types, and interactive features</p>
+        </div>
+        
+        <!-- Enhanced Data Table Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Enhanced Data Table with Add Column Overview</h2>
+            
+            <div class="table-data-box">
+Enhanced Data Table with Add Column Features Implemented:
+
+📊 Professional Table Styling
+• Enhanced container with Arial typography integration
+• Interactive headers and cells with hover effects
+• Smooth transitions and visual feedback
+• Professional color schemes and gradients
+
+➕ Add Column Button
+• Professional button with plus icon and hover effects
+• Modal interface for column configuration
+• Multiple column types and predefined templates
+• Real-time column preview and validation
+
+🏗️ Dynamic Column Management
+• Add columns with different data types (Text, Number, Date, Boolean, etc.)
+• Remove columns with confirmation dialog
+• Column preview with sample data
+• Column reordering with drag and drop support
+
+🎭 Column Type Support
+• Text: Standard text input with styling
+• Number: Numeric values with right alignment
+• Date: Date picker with calendar integration
+• Boolean: True/False values with visual indicators
+• Select: Dropdown selection with predefined options
+• Email: Email addresses with validation
+• URL: Web links with click functionality
+• Currency: Monetary values with formatting
+• Percentage: Percentage values with formatting
+
+🎬 Interactive Features
+• Click, hover, and active states on all elements
+• Modal interactions with smooth animations
+• Form validation with real-time feedback
+• Column templates for quick setup
+
+📱 Responsive Design
+• Mobile-optimized table display
+• Adaptive modal dialogs for all screen sizes
+• Touch-friendly controls and interactions
+• Consistent behavior across all breakpoints
+
+♿ Accessibility Features
+• High contrast mode support
+• Reduced motion considerations
+• Screen reader optimization with proper ARIA labels
+• Keyboard navigation support
+
+Browser Support:
+✅ Modern browsers with full CSS and JavaScript support
+✅ Mobile browsers with touch support
+✅ Accessibility tools compatibility
+✅ Progressive enhancement with fallbacks
+✅ Performance optimized rendering
+✅ Cross-browser consistency
+            </div>
+        </div>
+        
+        <!-- Enhanced Data Table with Add Column -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Enhanced Data Table with Add Column</h2>
+            
+            <div class="enhanced-data-table-container">
+                <div class="add-column-container">
+                    <div class="add-column-header">
+                        <h4 class="add-column-title">Enhanced Data Table</h4>
+                        <span class="enhanced-table-type">Dynamic Columns</span>
+                    </div>
+                    <button class="add-column-button" onclick="openAddColumnModal()">Add Column</button>
+                </div>
+                <div class="enhanced-data-table-content">
+                    <p>Professional enhanced data table with dynamic column management and multiple data types.</p>
+                    
+                    <!-- Search Bar -->
+                    <div class="enhanced-table-search">
+                        <input type="text" class="enhanced-table-search-input" placeholder="Search table..." id="tableSearch">
+                        <button class="enhanced-table-search-btn" onclick="searchTable()">Search</button>
+                    </div>
+                    
+                    <!-- Enhanced Data Table -->
+                    <div class="enhanced-table-scrollable">
+                        <table class="enhanced-data-table" id="mainTable">
+                            <thead>
+                                <tr id="tableHeader">
+                                    <th class="enhanced-table-col-id">
+                                        ID
+                                        <div class="column-header-actions">
+                                            <button class="column-action-btn delete" onclick="removeColumn(0)" title="Remove Column">×</button>
+                                        </div>
+                                    </th>
+                                    <th class="enhanced-table-col-name">
+                                        Name
+                                        <div class="column-header-actions">
+                                            <button class="column-action-btn delete" onclick="removeColumn(1)" title="Remove Column">×</button>
+                                        </div>
+                                    </th>
+                                    <th class="enhanced-table-col-type">
+                                        Type
+                                        <div class="column-header-actions">
+                                            <button class="column-action-btn delete" onclick="removeColumn(2)" title="Remove Column">×</button>
+                                        </div>
+                                    </th>
+                                    <th class="enhanced-table-col-value">
+                                        Value
+                                        <div class="column-header-actions">
+                                            <button class="column-action-btn delete" onclick="removeColumn(3)" title="Remove Column">×</button>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <tr>
+                                    <td class="enhanced-table-col-id">#001</td>
+                                    <td class="enhanced-table-col-name">Alpha Component</td>
+                                    <td class="enhanced-table-col-type">string</td>
+                                    <td class="enhanced-table-col-value">primary</td>
+                                </tr>
+                                <tr>
+                                    <td class="enhanced-table-col-id">#002</td>
+                                    <td class="enhanced-table-col-name">Beta Module</td>
+                                    <td class="enhanced-table-col-type">number</td>
+                                    <td class="enhanced-table-col-value">42</td>
+                                </tr>
+                                <tr>
+                                    <td class="enhanced-table-col-id">#003</td>
+                                    <td class="enhanced-table-col-name">Gamma Service</td>
+                                    <td class="enhanced-table-col-type">boolean</td>
+                                    <td class="enhanced-table-col-value">true</td>
+                                </tr>
+                                <tr>
+                                    <td class="enhanced-table-col-id">#004</td>
+                                    <td class="enhanced-table-col-name">Delta Widget</td>
+                                    <td class="enhanced-table-col-type">date</td>
+                                    <td class="enhanced-table-col-value">2024-01-15</td>
+                                </tr>
+                                <tr>
+                                    <td class="enhanced-table-col-id">#005</td>
+                                    <td class="enhanced-table-col-name">Epsilon Plugin</td>
+                                    <td class="enhanced-table-col-type">email</td>
+                                    <td class="enhanced-table-col-value">test@example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="enhanced-table-controls">
+                        <button class="enhanced-table-control" onclick="addRow()">Add Row</button>
+                        <button class="enhanced-table-control secondary" onclick="exportTable()">Export</button>
+                        <button class="enhanced-table-control accent" onclick="resetTable()">Reset Table</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Column Templates -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Column Templates</h2>
+            
+            <div class="enhanced-data-table-container">
+                <div class="add-column-container">
+                    <div class="add-column-header">
+                        <h4 class="add-column-title">Quick Column Templates</h4>
+                        <span class="enhanced-table-type">Predefined</span>
+                    </div>
+                </div>
+                
+                <div class="column-template-list">
+                    <div class="column-template-item" onclick="addTemplateColumn('contact')">
+                        <div class="column-template-name">📇 Contact Information</div>
+                        <div class="column-template-description">Add contact details columns (Name, Email, Phone, Address)</div>
+                        <div class="column-template-columns">Columns: Name, Email, Phone, Address</div>
+                    </div>
+                    
+                    <div class="column-template-item" onclick="addTemplateColumn('project')">
+                        <div class="column-template-name">📋 Project Management</div>
+                        <div class="column-template-description">Add project tracking columns (Status, Priority, Due Date, Assignee)</div>
+                        <div class="column-template-columns">Columns: Status, Priority, Due Date, Assignee</div>
+                    </div>
+                    
+                    <div class="column-template-item" onclick="addTemplateColumn('financial')">
+                        <div class="column-template-name">💰 Financial Data</div>
+                        <div class="column-template-description">Add financial columns (Amount, Currency, Date, Category)</div>
+                        <div class="column-template-columns">Columns: Amount, Currency, Date, Category</div>
+                    </div>
+                    
+                    <div class="column-template-item" onclick="addTemplateColumn('analytics')">
+                        <div class="column-template-name">📊 Analytics Metrics</div>
+                        <div class="column-template-description">Add analytics columns (Views, Clicks, Conversion, Revenue)</div>
+                        <div class="column-template-columns">Columns: Views, Clicks, Conversion, Revenue</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Column Types Showcase -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Supported Column Types</h2>
+            
+            <div class="enhanced-data-table-container">
+                <div class="add-column-container">
+                    <div class="add-column-header">
+                        <h4 class="add-column-title">Column Type Examples</h4>
+                        <span class="enhanced-table-type">9 Types</span>
+                    </div>
+                </div>
+                
+                <div class="enhanced-table-scrollable">
+                    <table class="enhanced-data-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Example</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="column-type-text">Text</td>
+                                <td class="column-type-text">Sample Text</td>
+                                <td>Standard text input with full styling</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-number">Number</td>
+                                <td class="column-type-number">1,234.56</td>
+                                <td>Numeric values with right alignment</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-date">Date</td>
+                                <td class="column-type-date">2024-01-15</td>
+                                <td>Date values with centered alignment</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-boolean true">Boolean</td>
+                                <td class="column-type-boolean true">true</td>
+                                <td>True/False values with color coding</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-select">Select</td>
+                                <td class="column-type-select">Option A</td>
+                                <td>Dropdown selection with styling</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-email">Email</td>
+                                <td class="column-type-email">user@example.com</td>
+                                <td>Email addresses with validation</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-url">URL</td>
+                                <td class="column-type-url">https://example.com</td>
+                                <td>Web links with click functionality</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-currency">Currency</td>
+                                <td class="column-type-currency">$1,234.56</td>
+                                <td>Monetary values with formatting</td>
+                            </tr>
+                            <tr>
+                                <td class="column-type-percentage">Percentage</td>
+                                <td class="column-type-percentage">75.5%</td>
+                                <td>Percentage values with formatting</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Enhanced Data Table with Add Column</p>
+                <p class="arial-footer-main">Professional enhanced data table with dynamic column management, multiple data types, and interactive features</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Column Modal -->
+    <div class="column-modal-overlay" id="addColumnModal">
+        <div class="column-modal">
+            <div class="column-modal-header">
+                <h3 class="column-modal-title">Add New Column</h3>
+                <button class="column-modal-close" onclick="closeAddColumnModal()">×</button>
+            </div>
+            
+            <form id="addColumnForm">
+                <div class="column-form-group">
+                    <label class="column-form-label" for="columnName">Column Name</label>
+                    <input type="text" class="column-form-input" id="columnName" placeholder="Enter column name" required>
+                </div>
+                
+                <div class="column-form-group">
+                    <label class="column-form-label">Column Type</label>
+                    <div class="column-type-options">
+                        <div class="column-type-option" data-type="text" onclick="selectColumnType('text')">
+                            <span class="column-type-label">Text</span>
+                            <span class="column-type-description">Standard text input</span>
+                        </div>
+                        <div class="column-type-option" data-type="number" onclick="selectColumnType('number')">
+                            <span class="column-type-label">Number</span>
+                            <span class="column-type-description">Numeric values</span>
+                        </div>
+                        <div class="column-type-option" data-type="date" onclick="selectColumnType('date')">
+                            <span class="column-type-label">Date</span>
+                            <span class="column-type-description">Date values</span>
+                        </div>
+                        <div class="column-type-option" data-type="boolean" onclick="selectColumnType('boolean')">
+                            <span class="column-type-label">Boolean</span>
+                            <span class="column-type-description">True/False values</span>
+                        </div>
+                        <div class="column-type-option" data-type="select" onclick="selectColumnType('select')">
+                            <span class="column-type-label">Select</span>
+                            <span class="column-type-description">Dropdown selection</span>
+                        </div>
+                        <div class="column-type-option" data-type="email" onclick="selectColumnType('email')">
+                            <span class="column-type-label">Email</span>
+                            <span class="column-type-description">Email addresses</span>
+                        </div>
+                        <div class="column-type-option" data-type="url" onclick="selectColumnType('url')">
+                            <span class="column-type-label">URL</span>
+                            <span class="column-type-description">Web links</span>
+                        </div>
+                        <div class="column-type-option" data-type="currency" onclick="selectColumnType('currency')">
+                            <span class="column-type-label">Currency</span>
+                            <span class="column-type-description">Monetary values</span>
+                        </div>
+                        <div class="column-type-option" data-type="percentage" onclick="selectColumnType('percentage')">
+                            <span class="column-type-label">Percentage</span>
+                            <span class="column-type-description">Percentage values</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column-form-group" id="selectOptionsGroup" style="display: none;">
+                    <label class="column-form-label" for="selectOptions">Select Options (comma-separated)</label>
+                    <input type="text" class="column-form-input" id="selectOptions" placeholder="Option 1, Option 2, Option 3">
+                </div>
+                
+                <div class="column-form-group">
+                    <label class="column-form-label" for="defaultValue">Default Value (optional)</label>
+                    <input type="text" class="column-form-input" id="defaultValue" placeholder="Enter default value">
+                </div>
+                
+                <div class="column-preview">
+                    <div class="column-preview-title">Column Preview</div>
+                    <div class="column-preview-content" id="columnPreview">
+                        Select a column type to see preview
+                    </div>
+                </div>
+                
+                <div class="column-modal-actions">
+                    <button type="button" class="column-modal-btn column-modal-btn-secondary" onclick="closeAddColumnModal()">Cancel</button>
+                    <button type="submit" class="column-modal-btn column-modal-btn-primary">Add Column</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Enhanced Data Table with Add Column JavaScript functions
+        let selectedColumnType = '';
+        let columnCount = 4; // Initial column count
+        
+        // Open Add Column Modal
+        function openAddColumnModal() {
+            const modal = document.getElementById('addColumnModal');
+            modal.classList.add('active');
+            document.getElementById('columnName').focus();
+        }
+        
+        // Close Add Column Modal
+        function closeAddColumnModal() {
+            const modal = document.getElementById('addColumnModal');
+            modal.classList.remove('active');
+            resetAddColumnForm();
+        }
+        
+        // Reset Add Column Form
+        function resetAddColumnForm() {
+            document.getElementById('addColumnForm').reset();
+            selectedColumnType = '';
+            document.querySelectorAll('.column-type-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.getElementById('selectOptionsGroup').style.display = 'none';
+            document.getElementById('columnPreview').textContent = 'Select a column type to see preview';
+        }
+        
+        // Select Column Type
+        function selectColumnType(type) {
+            selectedColumnType = type;
+            
+            // Update visual selection
+            document.querySelectorAll('.column-type-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.querySelector(`[data-type="${type}"]`).classList.add('selected');
+            
+            // Show/hide select options
+            const selectOptionsGroup = document.getElementById('selectOptionsGroup');
+            if (type === 'select') {
+                selectOptionsGroup.style.display = 'block';
+            } else {
+                selectOptionsGroup.style.display = 'none';
+            }
+            
+            // Update preview
+            updateColumnPreview(type);
+        }
+        
+        // Update Column Preview
+        function updateColumnPreview(type) {
+            const preview = document.getElementById('columnPreview');
+            const columnName = document.getElementById('columnName').value || 'New Column';
+            
+            const previews = {
+                text: `${columnName}\nSample text content`,
+                number: `${columnName}\n1,234.56`,
+                date: `${columnName}\n2024-01-15`,
+                boolean: `${columnName}\ntrue`,
+                select: `${columnName}\nOption A`,
+                email: `${columnName}\nuser@example.com`,
+                url: `${columnName}\nhttps://example.com`,
+                currency: `${columnName}\n$1,234.56`,
+                percentage: `${columnName}\n75.5%`
+            };
+            
+            preview.textContent = previews[type] || 'Select a column type to see preview';
+        }
+        
+        // Add Column to Table
+        function addColumn(columnName, columnType, defaultValue) {
+            const table = document.getElementById('mainTable');
+            const header = document.getElementById('tableHeader');
+            const tbody = document.getElementById('tableBody');
+            
+            // Add header
+            const th = document.createElement('th');
+            th.className = `dynamic-column column-type-${columnType}`;
+            th.innerHTML = `
+                ${columnName}
+                <div class="column-header-actions">
+                    <button class="column-action-btn delete" onclick="removeColumn(${columnCount})" title="Remove Column">×</button>
+                </div>
+            `;
+            header.appendChild(th);
+            
+            // Add cells to existing rows
+            const rows = tbody.querySelectorAll('tr');
+            rows.forEach(row => {
+                const td = document.createElement('td');
+                td.className = `dynamic-column column-type-${columnType}`;
+                td.textContent = generateSampleValue(columnType, defaultValue);
+                row.appendChild(td);
+            });
+            
+            columnCount++;
+        }
+        
+        // Generate Sample Value
+        function generateSampleValue(type, defaultValue) {
+            if (defaultValue) return defaultValue;
+            
+            const sampleValues = {
+                text: 'Sample text',
+                number: Math.floor(Math.random() * 1000),
+                date: '2024-01-15',
+                boolean: Math.random() > 0.5 ? 'true' : 'false',
+                select: 'Option A',
+                email: 'sample@example.com',
+                url: 'https://example.com',
+                currency: '$' + (Math.random() * 1000).toFixed(2),
+                percentage: (Math.random() * 100).toFixed(1) + '%'
+            };
+            
+            return sampleValues[type] || '';
+        }
+        
+        // Remove Column
+        function removeColumn(columnIndex) {
+            if (confirm('Are you sure you want to remove this column?')) {
+                const table = document.getElementById('mainTable');
+                const header = document.getElementById('tableHeader');
+                const tbody = document.getElementById('tableBody');
+                
+                // Remove header
+                if (header.children[columnIndex]) {
+                    header.children[columnIndex].remove();
+                }
+                
+                // Remove cells from all rows
+                const rows = tbody.querySelectorAll('tr');
+                rows.forEach(row => {
+                    if (row.children[columnIndex]) {
+                        row.children[columnIndex].remove();
+                    }
+                });
+                
+                columnCount--;
+            }
+        }
+        
+        // Add Template Columns
+        function addTemplateColumn(templateType) {
+            const templates = {
+                contact: [
+                    { name: 'Email', type: 'email', defaultValue: 'contact@example.com' },
+                    { name: 'Phone', type: 'text', defaultValue: '+1 (555) 123-4567' },
+                    { name: 'Address', type: 'text', defaultValue: '123 Main St, City, State' }
+                ],
+                project: [
+                    { name: 'Status', type: 'select', defaultValue: 'In Progress' },
+                    { name: 'Priority', type: 'select', defaultValue: 'Medium' },
+                    { name: 'Due Date', type: 'date', defaultValue: '2024-02-01' },
+                    { name: 'Assignee', type: 'text', defaultValue: 'John Doe' }
+                ],
+                financial: [
+                    { name: 'Amount', type: 'currency', defaultValue: '$1,000.00' },
+                    { name: 'Currency', type: 'select', defaultValue: 'USD' },
+                    { name: 'Date', type: 'date', defaultValue: '2024-01-15' },
+                    { name: 'Category', type: 'select', defaultValue: 'Sales' }
+                ],
+                analytics: [
+                    { name: 'Views', type: 'number', defaultValue: '1234' },
+                    { name: 'Clicks', type: 'number', defaultValue: '567' },
+                    { name: 'Conversion', type: 'percentage', defaultValue: '45.9%' },
+                    { name: 'Revenue', type: 'currency', defaultValue: '$2,345.67' }
+                ]
+            };
+            
+            const columns = templates[templateType];
+            if (columns) {
+                columns.forEach(column => {
+                    addColumn(column.name, column.type, column.defaultValue);
+                });
+            }
+        }
+        
+        // Search Table
+        function searchTable() {
+            const searchTerm = document.getElementById('tableSearch').value.toLowerCase();
+            const tbody = document.getElementById('tableBody');
+            const rows = tbody.querySelectorAll('tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+        
+        // Add Row
+        function addRow() {
+            const tbody = document.getElementById('tableBody');
+            const newRow = tbody.insertRow();
+            const newId = '#' + String(tbody.rows.length + 1).padStart(3, '0');
+            
+            // Add cells for each column
+            for (let i = 0; i < columnCount; i++) {
+                const td = document.createElement('td');
+                td.className = 'dynamic-column';
+                
+                // Generate appropriate content based on column position
+                if (i === 0) {
+                    td.textContent = newId;
+                    td.className = 'enhanced-table-col-id dynamic-column';
+                } else if (i === 1) {
+                    td.textContent = 'New Item';
+                    td.className = 'enhanced-table-col-name dynamic-column';
+                } else {
+                    td.textContent = 'Sample';
+                    td.className = 'dynamic-column';
+                }
+                
+                newRow.appendChild(td);
+            }
+            
+            newRow.classList.add('enhanced-table-animated-slide-in');
+        }
+        
+        // Export Table
+        function exportTable() {
+            const table = document.getElementById('mainTable');
+            const rows = table.querySelectorAll('tr');
+            let csv = [];
+            
+            rows.forEach(row => {
+                const rowData = [];
+                const cells = row.querySelectorAll('th, td');
+                cells.forEach(cell => {
+                    rowData.push(cell.textContent.trim());
+                });
+                csv.push(rowData.join(','));
+            });
+            
+            const csvContent = csv.join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'enhanced-table-data.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+        
+        // Reset Table
+        function resetTable() {
+            if (confirm('Are you sure you want to reset the table to its original state?')) {
+                location.reload();
+            }
+        }
+        
+        // Form submission
+        document.getElementById('addColumnForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const columnName = document.getElementById('columnName').value;
+            const defaultValue = document.getElementById('defaultValue').value;
+            
+            if (columnName && selectedColumnType) {
+                addColumn(columnName, selectedColumnType, defaultValue);
+                closeAddColumnModal();
+            }
+        });
+        
+        // Update preview on name change
+        document.getElementById('columnName').addEventListener('input', function() {
+            if (selectedColumnType) {
+                updateColumnPreview(selectedColumnType);
+            }
+        });
+        
+        // Initialize enhanced table on load
+        function initializeEnhancedDataTable() {
+            // Add entrance animations
+            const container = document.querySelector('.enhanced-data-table-container');
+            container.classList.add('enhanced-table-animated-slide-in');
+            
+            // Add real-time search
+            document.getElementById('tableSearch').addEventListener('input', searchTable);
+            
+            // Close modal on overlay click
+            document.getElementById('addColumnModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeAddColumnModal();
+                }
+            });
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeAddColumnModal();
+                }
+                if (e.ctrlKey && e.key === 'n') {
+                    e.preventDefault();
+                    openAddColumnModal();
+                }
+            });
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeEnhancedDataTable();
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
