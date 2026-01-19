@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO SVG Path Manipulation Professional Implementation</title>
+    
+    <!-- SVG Path Manipulation Styles -->
+    <link rel="stylesheet" href="svg-path-manipulation.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .path-data-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+            overflow-x: auto;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .demo-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">SVG Path Manipulation Professional Implementation</h1>
+            <p class="demo-subtitle">Complete SVG path system with segment manipulation, animations, and enhanced typography</p>
+        </div>
+        
+        <!-- SVG Path Data Overview -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">SVG Path Data Structure</h2>
+            
+            <div class="path-data-box">
+SVGPathSegList: SVGPathSegList
+
+0: SVGPathSegMovetoAbs {x: 5, y: 10, pathSegType: 2, pathSegTypeAsLetter: "M", PATHSEG_UNKNOWN: 0, …}
+
+1: SVGPathSegLinetoAbs {x: 9, y: 10, pathSegType: 4, pathSegTypeAsLetter: "L", PATHSEG_UNKNOWN: 0, …}
+
+length: 2
+
+numberOfItems: 2
+
+Key Properties:
+• pathSegType: Numeric type identifier
+• pathSegTypeAsLetter: Letter representation (M, L, C, Q, etc.)
+• x, y: Coordinate values
+• x1, y1, x2, y2: Control points for curves
+• transform: Transform matrix
+• style: CSS style properties
+• attributes: NamedNodeMap of all attributes
+• classList: DOMTokenList for CSS classes
+• dataset: DOMStringMap for data attributes
+            </div>
+        </div>
+        
+        <!-- Basic SVG Path -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Basic SVG Path Implementation</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Original Path</h3>
+                    <p>Basic SVG path with your exact data</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <path id="basicPath" class="svg-path-base" 
+                                  d="M5 10 L 9 10" 
+                                  stroke="currentColor" 
+                                  stroke-linecap="square">
+                            </path>
+                        </svg>
+                        <div class="svg-path-data-container">
+                            <div class="svg-path-data-title">Path Data</div>
+                            <div class="svg-path-data-content" id="basicPathData">M5 10 L 9 10</div>
+                        </div>
+                        <div class="svg-path-controls">
+                            <button class="svg-path-button" onclick="animatePath('basicPath')">Animate</button>
+                            <button class="svg-path-button svg-path-button-secondary" onclick="resetPath('basicPath')">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Enhanced Path</h3>
+                    <p>Enhanced styling with professional effects</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <path id="enhancedPath" class="svg-path-enhanced" 
+                                  d="M5 10 L 9 10" 
+                                  stroke="currentColor" 
+                                  stroke-linecap="square">
+                            </path>
+                        </svg>
+                        <div class="svg-path-data-container">
+                            <div class="svg-path-data-title">Path Data</div>
+                            <div class="svg-path-data-content" id="enhancedPathData">M5 10 L 9 10</div>
+                        </div>
+                        <div class="svg-path-controls">
+                            <button class="svg-path-button" onclick="enhancePath('enhancedPath')">Enhance</button>
+                            <button class="svg-path-button svg-path-button-secondary" onclick="resetPath('enhancedPath')">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Path Segments Visualization -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Path Segments Visualization</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Segment Breakdown</h3>
+                    <p>Individual path segments with interaction</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <!-- Segment 1: Moveto -->
+                            <circle cx="5" cy="10" r="2" fill="#ef4444" opacity="0.6"/>
+                            <text x="5" y="10" class="svg-path-label" font-size="8">M</text>
+                            
+                            <!-- Segment 2: Lineto -->
+                            <path class="svg-path-segment" 
+                                  d="M5 10 L 9 10" 
+                                  stroke="#ef4444" 
+                                  stroke-width="2" 
+                                  fill="none"
+                                  onclick="highlightSegment(this)"/>
+                            
+                            <circle cx="9" cy="10" r="2" fill="#ef4444" opacity="0.6"/>
+                            <text x="9" y="10" class="svg-path-label" font-size="8">L</text>
+                        </svg>
+                        <div class="svg-path-segment-list" id="segmentList">
+                            <div class="svg-path-segment-item">
+                                <span class="svg-path-segment-type">SVGPathSegMovetoAbs</span>
+                                <span class="svg-path-segment-coords">x: 5, y: 10</span>
+                            </div>
+                            <div class="svg-path-segment-item">
+                                <span class="svg-path-segment-type">SVGPathSegLinetoAbs</span>
+                                <span class="svg-path-segment-coords">x: 9, y: 10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Interactive Path</h3>
+                    <p>Click to interact with path segments</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <path id="interactivePath" class="svg-path-interactive" 
+                                  d="M5 10 L 9 10" 
+                                  stroke="currentColor" 
+                                  stroke-linecap="square"
+                                  onclick="manipulatePath('interactivePath')">
+                            </path>
+                            <text x="7" y="8" class="svg-path-annotation">Click to manipulate</text>
+                        </svg>
+                        <div class="svg-path-data-container">
+                            <div class="svg-path-data-title">Path Properties</div>
+                            <div class="svg-path-data-content" id="pathProperties">
+                                pathSegList.length: 2<br>
+                                numberOfItems: 2<br>
+                                getPointAtLength(0): (5, 10)<br>
+                                getPointAtLength(4): (9, 10)<br>
+                                getTotalLength(): 4
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Path Animations -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Path Animations</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Draw Animation</h3>
+                    <p>Path drawing animation with stroke-dasharray</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <path id="drawPath" class="svg-path-draw" 
+                                  d="M5 10 L 9 10" 
+                                  stroke="currentColor" 
+                                  stroke-linecap="square">
+                            </path>
+                        </svg>
+                        <div class="svg-path-controls">
+                            <button class="svg-path-button" onclick="redrawPath('drawPath')">Redraw</button>
+                            <button class="svg-path-button svg-path-button-secondary" onclick="pauseAnimation('drawPath')">Pause</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Pulse Animation</h3>
+                    <p>Continuous pulse animation effect</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <path id="pulsePath" class="svg-path-pulse" 
+                                  d="M5 10 L 9 10" 
+                                  stroke="currentColor" 
+                                  stroke-linecap="square">
+                            </path>
+                        </svg>
+                        <div class="svg-path-controls">
+                            <button class="svg-path-button" onclick="togglePulse('pulsePath')">Toggle</button>
+                            <button class="svg-path-button svg-path-button-secondary" onclick="changeSpeed('pulsePath')">Speed</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Morph Animation</h3>
+                    <p>Path morphing between different shapes</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <path id="morphPath" class="svg-path-morph" 
+                                  d="M5 10 L 9 10" 
+                                  stroke="currentColor" 
+                                  stroke-linecap="square">
+                            </path>
+                        </svg>
+                        <div class="svg-path-controls">
+                            <button class="svg-path-button" onclick="restartMorph('morphPath')">Restart</button>
+                            <button class="svg-path-button svg-path-button-secondary" onclick="changeMorphSpeed('morphPath')">Speed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Advanced Path Manipulation -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Advanced Path Manipulation</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Dynamic Path Creation</h3>
+                    <p>Create and manipulate paths programmatically</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="dynamicSvg">
+                            <!-- Dynamic paths will be added here -->
+                        </svg>
+                        <div class="svg-path-controls">
+                            <button class="svg-path-button" onclick="createLine()">Line</button>
+                            <button class="svg-path-button" onclick="createCurve()">Curve</button>
+                            <button class="svg-path-button svg-path-button-danger" onclick="clearPaths()">Clear</button>
+                        </div>
+                        <div class="svg-path-data-container">
+                            <div class="svg-path-data-title">Dynamic Path Data</div>
+                            <div class="svg-path-data-content" id="dynamicPathData">No paths created</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Path Analysis</h3>
+                    <p>Analyze path properties and segments</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="analysisSvg">
+                            <path id="analysisPath" class="svg-path-base" 
+                                  d="M5 10 Q 7 5 9 10" 
+                                  stroke="currentColor" 
+                                  stroke-linecap="square"
+                                  fill="none">
+                            </path>
+                        </svg>
+                        <div class="svg-path-controls">
+                            <button class="svg-path-button" onclick="analyzePath()">Analyze</button>
+                            <button class="svg-path-button svg-path-button-secondary" onclick="showSegments()">Segments</button>
+                        </div>
+                        <div class="svg-path-data-container">
+                            <div class="svg-path-data-title">Analysis Results</div>
+                            <div class="svg-path-data-content" id="analysisResults">
+                                Click "Analyze" to see path properties
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Typography Integration -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Typography Integration</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Path Labels</h3>
+                    <p>Typography integrated with SVG paths</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <path class="svg-path-enhanced" 
+                                  d="M5 10 L 9 10" 
+                                  stroke="currentColor" 
+                                  stroke-linecap="square">
+                            </path>
+                            <text x="7" y="7" class="svg-path-label">Path</text>
+                            <text x="5" y="13" class="svg-path-annotation">Start: (5, 10)</text>
+                            <text x="9" y="13" class="svg-path-annotation">End: (9, 10)</text>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>Enhanced Typography</h3>
+                    <p>Enhanced font features with SVG</p>
+                    <div class="svg-path-container">
+                        <svg class="svg-path-canvas" viewBox="0 0 20 20" id="root">
+                            <text x="10" y="10" class="arial-enhanced-small-caps" 
+                                  text-anchor="middle" dominant-baseline="middle" 
+                                  font-size="4" fill="#3b82f6">
+                                SVG Path
+                            </text>
+                            <path class="svg-path-base" 
+                                  d="M3 15 L 17 15" 
+                                  stroke="#3b82f6" 
+                                  stroke-width="0.5"
+                                  opacity="0.5">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-enhanced-h2">Professional Features</h2>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>🎨 Path Manipulation</h3>
+                    <p class="arial-text-body">Complete SVG path manipulation with segment access, coordinate modification, and dynamic path creation.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📊 Data Visualization</h3>
+                    <p class="arial-text-body">Real-time path data display with segment breakdown, coordinate tracking, and property analysis.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>🎬 Professional Animations</h3>
+                    <p class="arial-text-body">Advanced path animations including draw, pulse, and morph effects with smooth transitions.</p>
+                </div>
+                
+                <div class="demo-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p class="arial-text-body">Fully responsive SVG paths that adapt to mobile, tablet, and desktop screens.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - SVG Path Manipulation Implementation</p>
+                <p class="arial-footer-main">Professional SVG path system with segment manipulation and enhanced typography</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Path manipulation functions
+        function animatePath(pathId) {
+            const path = document.getElementById(pathId);
+            path.style.strokeDasharray = '1000';
+            path.style.strokeDashoffset = '1000';
+            path.style.animation = 'pathDraw 2s ease-in-out forwards';
+        }
+        
+        function resetPath(pathId) {
+            const path = document.getElementById(pathId);
+            path.style.animation = 'none';
+            path.style.strokeDasharray = '';
+            path.style.strokeDashoffset = '';
+        }
+        
+        function enhancePath(pathId) {
+            const path = document.getElementById(pathId);
+            path.classList.add('svg-path-animated');
+            setTimeout(() => {
+                path.classList.remove('svg-path-animated');
+            }, 2000);
+        }
+        
+        function highlightSegment(segment) {
+            segment.classList.toggle('svg-path-segment-active');
+        }
+        
+        function manipulatePath(pathId) {
+            const path = document.getElementById(pathId);
+            const currentD = path.getAttribute('d');
+            
+            // Cycle through different path shapes
+            const shapes = [
+                'M5 10 L 9 10',
+                'M5 10 Q 7 5 9 10',
+                'M5 10 C 6 5 8 5 9 10',
+                'M5 10 L 7 5 L 9 10'
+            ];
+            
+            const currentIndex = shapes.indexOf(currentD);
+            const nextIndex = (currentIndex + 1) % shapes.length;
+            
+            path.setAttribute('d', shapes[nextIndex]);
+            updatePathData(pathId, shapes[nextIndex]);
+        }
+        
+        function redrawPath(pathId) {
+            const path = document.getElementById(pathId);
+            path.style.animation = 'none';
+            setTimeout(() => {
+                path.style.animation = 'pathDraw 2s ease-in-out forwards';
+            }, 10);
+        }
+        
+        function pauseAnimation(pathId) {
+            const path = document.getElementById(pathId);
+            const computedStyle = window.getComputedStyle(path);
+            if (computedStyle.animationPlayState === 'paused') {
+                path.style.animationPlayState = 'running';
+            } else {
+                path.style.animationPlayState = 'paused';
+            }
+        }
+        
+        function togglePulse(pathId) {
+            const path = document.getElementById(pathId);
+            path.classList.toggle('svg-path-pulse');
+        }
+        
+        function changeSpeed(pathId) {
+            const path = document.getElementById(pathId);
+            const currentDuration = path.style.animationDuration || '2s';
+            const newDuration = currentDuration === '2s' ? '1s' : '2s';
+            path.style.animationDuration = newDuration;
+        }
+        
+        function restartMorph(pathId) {
+            const path = document.getElementById(pathId);
+            path.style.animation = 'none';
+            setTimeout(() => {
+                path.style.animation = 'pathMorph 4s ease-in-out infinite';
+            }, 10);
+        }
+        
+        function changeMorphSpeed(pathId) {
+            const path = document.getElementById(pathId);
+            const currentDuration = path.style.animationDuration || '4s';
+            const newDuration = currentDuration === '4s' ? '2s' : '4s';
+            path.style.animationDuration = newDuration;
+        }
+        
+        // Dynamic path creation
+        let pathCounter = 0;
+        
+        function createLine() {
+            const svg = document.getElementById('dynamicSvg');
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const x1 = Math.random() * 15 + 2.5;
+            const y1 = Math.random() * 15 + 2.5;
+            const x2 = Math.random() * 15 + 2.5;
+            const y2 = Math.random() * 15 + 2.5;
+            
+            path.setAttribute('d', `M${x1} ${y1} L${x2} ${y2}`);
+            path.setAttribute('stroke', '#3b82f6');
+            path.setAttribute('stroke-width', '1');
+            path.setAttribute('fill', 'none');
+            path.classList.add('svg-path-base');
+            
+            svg.appendChild(path);
+            pathCounter++;
+            updateDynamicPathData(`Line ${pathCounter}: M${x1.toFixed(1)} ${y1.toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)}`);
+        }
+        
+        function createCurve() {
+            const svg = document.getElementById('dynamicSvg');
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            const x1 = Math.random() * 10 + 5;
+            const y1 = Math.random() * 10 + 5;
+            const x2 = Math.random() * 10 + 5;
+            const y2 = Math.random() * 10 + 5;
+            const cx = Math.random() * 15 + 2.5;
+            const cy = Math.random() * 15 + 2.5;
+            
+            path.setAttribute('d', `M${x1} ${y1} Q${cx} ${cy} ${x2} ${y2}`);
+            path.setAttribute('stroke', '#22c55e');
+            path.setAttribute('stroke-width', '1');
+            path.setAttribute('fill', 'none');
+            path.classList.add('svg-path-base');
+            
+            svg.appendChild(path);
+            pathCounter++;
+            updateDynamicPathData(`Curve ${pathCounter}: M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`);
+        }
+        
+        function clearPaths() {
+            const svg = document.getElementById('dynamicSvg');
+            svg.innerHTML = '';
+            pathCounter = 0;
+            updateDynamicPathData('No paths created');
+        }
+        
+        function updateDynamicPathData(data) {
+            document.getElementById('dynamicPathData').textContent = data;
+        }
+        
+        function updatePathData(pathId, data) {
+            const element = document.getElementById(pathId + 'Data');
+            if (element) {
+                element.textContent = data;
+            }
+        }
+        
+        function analyzePath() {
+            const path = document.getElementById('analysisPath');
+            const pathLength = path.getTotalLength();
+            const startPoint = path.getPointAtLength(0);
+            const midPoint = path.getPointAtLength(pathLength / 2);
+            const endPoint = path.getPointAtLength(pathLength);
+            
+            const analysis = `Total Length: ${pathLength.toFixed(2)}px
+Start Point: (${startPoint.x.toFixed(1)}, ${startPoint.y.toFixed(1)})
+Mid Point: (${midPoint.x.toFixed(1)}, ${midPoint.y.toFixed(1)})
+End Point: (${endPoint.x.toFixed(1)}, ${endPoint.y.toFixed(1)})
+Path Data: ${path.getAttribute('d')}`;
+            
+            document.getElementById('analysisResults').innerHTML = analysis.replace(/\n/g, '<br>');
+        }
+        
+        function showSegments() {
+            const path = document.getElementById('analysisPath');
+            const pathSegList = path.pathSegList;
+            let segmentInfo = '';
+            
+            for (let i = 0; i < pathSegList.numberOfItems; i++) {
+                const segment = pathSegList.getItem(i);
+                segmentInfo += `${i}: ${segment.pathSegTypeAsLetter} - `;
+                
+                if (segment.x !== undefined) segmentInfo += `x:${segment.x.toFixed(1)} `;
+                if (segment.y !== undefined) segmentInfo += `y:${segment.y.toFixed(1)} `;
+                if (segment.x1 !== undefined) segmentInfo += `x1:${segment.x1.toFixed(1)} `;
+                if (segment.y1 !== undefined) segmentInfo += `y1:${segment.y1.toFixed(1)} `;
+                if (segment.x2 !== undefined) segmentInfo += `x2:${segment.x2.toFixed(1)} `;
+                if (segment.y2 !== undefined) segmentInfo += `y2:${segment.y2.toFixed(1)} `;
+                
+                segmentInfo += '<br>';
+            }
+            
+            document.getElementById('analysisResults').innerHTML = segmentInfo;
+        }
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial animations
+            setTimeout(() => {
+                animatePath('basicPath');
+            }, 500);
+            
+            // Add smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

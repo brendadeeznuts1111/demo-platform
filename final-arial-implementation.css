@@ -2032,3 +2032,426 @@ code, pre {
   background-color: #f8fafc;
   letter-spacing: var(--enhanced-letter-spacing);
 }
+
+/* ===== SVG PATH MANIPULATION UTILITIES ===== */
+
+/* Root Level SVG Path Variables */
+:root {
+  /* SVG Path Animation Variables */
+  --path-animation-duration: 0.6s;
+  --path-animation-easing: ease-in-out;
+  --path-stroke-width: 2px;
+  --path-stroke-color: #3b82f6;
+  --path-fill-color: transparent;
+  --path-hover-stroke-color: #2563eb;
+  --path-active-stroke-color: #1d4ed8;
+  
+  /* Path Segment Variables */
+  --path-segment-stroke: #ef4444;
+  --path-segment-fill: #fca5a5;
+  --path-segment-hover-stroke: #dc2626;
+  --path-segment-hover-fill: #f87171;
+  
+  /* Enhanced Typography for SVG */
+  --svg-font-family: Arial, Helvetica, sans-serif;
+  --svg-font-style: normal;
+  --svg-font-variant: normal;
+  --svg-font-weight: normal;
+  --svg-font-size: 14px;
+  --svg-line-height: normal;
+  --svg-color: #000000;
+}
+
+/* SVG Path Container */
+.svg-path-container {
+  font-family: var(--svg-font-family);
+  font-style: var(--svg-font-style);
+  font-variant: var(--svg-font-variant);
+  font-weight: var(--svg-font-weight);
+  font-size: var(--svg-font-size);
+  line-height: var(--svg-line-height);
+  color: var(--svg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* SVG Path Base Styles */
+.svg-path-base {
+  stroke: var(--path-stroke-color);
+  stroke-width: var(--path-stroke-width);
+  fill: var(--path-fill-color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all var(--path-animation-duration) var(--path-animation-easing);
+}
+
+.svg-path-enhanced {
+  stroke: var(--path-stroke-color);
+  stroke-width: var(--path-stroke-width);
+  fill: var(--path-fill-color);
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  transition: all var(--path-animation-duration) var(--path-animation-easing);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.svg-path-animated {
+  stroke: var(--path-stroke-color);
+  stroke-width: var(--path-stroke-width);
+  fill: var(--path-fill-color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: pathDraw 2s ease-in-out forwards;
+}
+
+@keyframes pathDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* SVG Path Segments */
+.svg-path-segment {
+  stroke: var(--path-segment-stroke);
+  stroke-width: 2px;
+  fill: var(--path-segment-fill);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.svg-path-segment:hover {
+  stroke: var(--path-segment-hover-stroke);
+  fill: var(--path-segment-hover-fill);
+  opacity: 1;
+  transform: scale(1.05);
+  transform-origin: center;
+}
+
+/* SVG Path Interactive */
+.svg-path-interactive {
+  stroke: var(--path-stroke-color);
+  stroke-width: var(--path-stroke-width);
+  fill: var(--path-fill-color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  cursor: pointer;
+  transition: all var(--path-animation-duration) var(--path-animation-easing);
+}
+
+.svg-path-interactive:hover {
+  stroke: var(--path-hover-stroke-color);
+  stroke-width: 3px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.svg-path-interactive:active {
+  stroke: var(--path-active-stroke-color);
+  stroke-width: 4px;
+  transform: scale(1.02);
+  transform-origin: center;
+}
+
+/* SVG Path Data Container */
+.svg-path-data-container {
+  font-family: var(--svg-font-family);
+  font-style: var(--svg-font-style);
+  font-variant: var(--svg-font-variant);
+  font-weight: var(--svg-font-weight);
+  font-size: var(--svg-font-size);
+  line-height: var(--svg-line-height);
+  color: var(--svg-color);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+.svg-path-data-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.svg-path-data-content {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #4b5563;
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  word-break: break-all;
+}
+
+/* SVG Path Controls */
+.svg-path-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.svg-path-button {
+  font-family: var(--svg-font-family);
+  font-style: var(--svg-font-style);
+  font-variant: var(--svg-font-variant);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: var(--svg-line-height);
+  color: white;
+  background-color: #3b82f6;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.svg-path-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* SVG Path Typography Integration */
+.svg-path-label {
+  font-family: var(--svg-font-family);
+  font-style: var(--svg-font-style);
+  font-variant: var(--svg-font-variant);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: var(--svg-line-height);
+  color: var(--svg-color);
+  fill: #1f2937;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+.svg-path-annotation {
+  font-family: var(--svg-font-family);
+  font-style: var(--svg-font-style);
+  font-variant: var(--svg-font-variant);
+  font-weight: normal;
+  font-size: 10px;
+  line-height: var(--svg-line-height);
+  color: #6b7280;
+  fill: #6b7280;
+  text-anchor: start;
+  dominant-baseline: hanging;
+}
+
+/* SVG Path Animations */
+.svg-path-pulse {
+  stroke: var(--path-stroke-color);
+  stroke-width: var(--path-stroke-width);
+  fill: var(--path-fill-color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: pathPulse 2s ease-in-out infinite;
+}
+
+@keyframes pathPulse {
+  0%, 100% {
+    stroke-width: var(--path-stroke-width);
+    opacity: 1;
+  }
+  50% {
+    stroke-width: 4px;
+    opacity: 0.7;
+  }
+}
+
+.svg-path-draw {
+  stroke: var(--path-stroke-color);
+  stroke-width: var(--path-stroke-width);
+  fill: var(--path-fill-color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: pathDrawSequential 3s ease-in-out forwards;
+}
+
+@keyframes pathDrawSequential {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* SVG Path Segment List */
+.svg-path-segment-list {
+  font-family: var(--svg-font-family);
+  font-style: var(--svg-font-style);
+  font-variant: var(--svg-font-variant);
+  font-weight: var(--svg-font-weight);
+  font-size: var(--svg-font-size);
+  line-height: var(--svg-line-height);
+  color: var(--svg-color);
+  width: 100%;
+  max-width: 400px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.svg-path-segment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin: 4px 0;
+  background: #f8fafc;
+  border-radius: 4px;
+  border-left: 3px solid #3b82f6;
+  transition: all 0.2s ease;
+}
+
+.svg-path-segment-item:hover {
+  background: #e0f2fe;
+  border-left-color: #0284c7;
+  transform: translateX(2px);
+}
+
+.svg-path-segment-type {
+  font-weight: 600;
+  color: #1f2937;
+  font-family: 'Courier New', monospace;
+}
+
+.svg-path-segment-coords {
+  color: #6b7280;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+}
+
+/* Responsive SVG Path Styles */
+@media (max-width: 768px) {
+  .svg-path-container {
+    padding: 16px;
+    margin: 16px 0;
+  }
+  
+  .svg-path-data-container,
+  .svg-path-segment-list {
+    max-width: 100%;
+  }
+  
+  .svg-path-controls {
+    gap: 8px;
+  }
+  
+  .svg-path-button {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .svg-path-container {
+    padding: 12px;
+    margin: 12px 0;
+  }
+  
+  .svg-path-data-title {
+    font-size: 14px;
+  }
+  
+  .svg-path-data-content {
+    font-size: 11px;
+  }
+  
+  .svg-path-button {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+/* Accessible SVG Path Styles */
+@media (prefers-contrast: high) {
+  .svg-path-base,
+  .svg-path-enhanced,
+  .svg-path-animated,
+  .svg-path-interactive {
+    stroke-width: 3px;
+    stroke: #000000;
+  }
+  
+  .svg-path-segment {
+    stroke-width: 2px;
+    stroke: #000000;
+    fill: #ffffff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svg-path-animated,
+  .svg-path-pulse,
+  .svg-path-draw {
+    animation: none;
+  }
+  
+  .svg-path-base,
+  .svg-path-enhanced,
+  .svg-path-interactive,
+  .svg-path-segment {
+    transition: none;
+  }
+}
+
+/* SVG Path Utility Classes */
+.svg-path-thin {
+  stroke-width: 1px;
+}
+
+.svg-path-medium {
+  stroke-width: 2px;
+}
+
+.svg-path-thick {
+  stroke-width: 3px;
+}
+
+.svg-path-solid {
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+
+.svg-path-round {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.svg-path-square {
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.svg-path-dashed {
+  stroke-dasharray: 5, 5;
+}
+
+.svg-path-dotted {
+  stroke-dasharray: 2, 2;
+}
