@@ -1,0 +1,268 @@
+/* @DEMO Professional Table Styles - Exact Specifications */
+
+/* ===== PROFESSIONAL TABLE BASE STYLES ===== */
+
+/* Base Table with Exact Specifications */
+.arial-table-professional {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+  background-color: white;
+}
+
+/* Table Cell Styling */
+.arial-table-professional td {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border: solid 1px black;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Table Header Styling */
+.arial-table-professional th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border: solid 1px black;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #f8f9fa;
+}
+
+/* ===== EXACT SPECIFICATION STYLES ===== */
+
+/* Row 1 - Light Blue */
+.arial-table-professional #r1 {
+  background-color: lightblue;
+}
+
+/* Cell 1,2 - Cyan */
+.arial-table-professional #c12 {
+  background-color: cyan;
+}
+
+/* Row 2 - Grey */
+.arial-table-professional #r2 {
+  background-color: grey;
+  color: white;
+}
+
+/* Row 3 - Olive */
+.arial-table-professional #r3 {
+  background-color: olive;
+  color: white;
+}
+
+/* ===== ENHANCED TABLE VARIATIONS ===== */
+
+/* Professional Table with Enhanced Features */
+.arial-table-enhanced {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.arial-table-enhanced td,
+.arial-table-enhanced th {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  color: #000000;
+  border: solid 1px black;
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.arial-table-enhanced th {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+}
+
+/* Striped Table Rows */
+.arial-table-striped tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Hover Effects */
+.arial-table-hover tbody tr:hover {
+  background-color: #e3f2fd;
+  transition: background-color 0.2s ease;
+}
+
+/* ===== RESPONSIVE TABLE STYLES ===== */
+
+/* Mobile Responsive Table */
+@media (max-width: 768px) {
+  .arial-table-professional {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+  }
+  
+  .arial-table-professional td,
+  .arial-table-professional th {
+    padding: 6px;
+    font-size: 14px;
+  }
+  
+  .arial-table-enhanced {
+    font-size: 14px;
+  }
+  
+  .arial-table-enhanced td,
+  .arial-table-enhanced th {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile Table */
+@media (max-width: 480px) {
+  .arial-table-professional {
+    font-size: 12px;
+  }
+  
+  .arial-table-professional td,
+  .arial-table-professional th {
+    padding: 4px;
+    font-size: 12px;
+  }
+  
+  .arial-table-enhanced {
+    font-size: 12px;
+  }
+  
+  .arial-table-enhanced td,
+  .arial-table-enhanced th {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+/* ===== ACCESSIBLE TABLE STYLES ===== */
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .arial-table-professional,
+  .arial-table-enhanced {
+    border: solid black 2px;
+  }
+  
+  .arial-table-professional td,
+  .arial-table-professional th,
+  .arial-table-enhanced td,
+  .arial-table-enhanced th {
+    border: solid black 2px;
+    font-weight: 600;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .arial-table-hover tbody tr:hover {
+    transition: none;
+  }
+}
+
+/* ===== UTILITY TABLE CLASSES ===== */
+
+/* Compact Table */
+.arial-table-compact td,
+.arial-table-compact th {
+  padding: 4px 8px;
+}
+
+/* Spacious Table */
+.arial-table-spacious td,
+.arial-table-spacious th {
+  padding: 16px 20px;
+}
+
+/* Centered Table */
+.arial-table-centered td,
+.arial-table-centered th {
+  text-align: center;
+}
+
+/* Right-aligned Table */
+.arial-table-right td,
+.arial-table-right th {
+  text-align: right;
+}
+
+/* Bordered Table */
+.arial-table-bordered {
+  border: solid black 2px;
+}
+
+.arial-table-bordered td,
+.arial-table-bordered th {
+  border: solid black 1px;
+}
+
+/* Borderless Table */
+.arial-table-borderless,
+.arial-table-borderless td,
+.arial-table-borderless th {
+  border: none;
+}
+
+/* ===== PRINT TABLE STYLES ===== */
+
+@media print {
+  .arial-table-professional,
+  .arial-table-enhanced {
+    border: solid black 1px;
+    color: black;
+    background: white;
+  }
+  
+  .arial-table-professional td,
+  .arial-table-professional th,
+  .arial-table-enhanced td,
+  .arial-table-enhanced th {
+    border: solid black 1px;
+    color: black;
+    background: white;
+  }
+  
+  .arial-table-hover tbody tr:hover {
+    background: transparent;
+  }
+}

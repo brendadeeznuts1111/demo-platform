@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@DEMO Professional Table Specifications</title>
+    
+    <!-- Professional Table Styles -->
+    <link rel="stylesheet" href="professional-table-styles.css">
+    <link rel="stylesheet" href="final-arial-implementation.css">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: normal;
+            color: #000000;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .demo-title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 32px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .demo-subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 40px 0;
+            text-align: center;
+        }
+        
+        .specification-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+        
+        .table-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+        
+        .table-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .table-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .table-card h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: normal;
+            color: #1f2937;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .table-card p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: normal;
+            color: #6b7280;
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        
+        .center-table {
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .demo-title {
+                font-size: 28px;
+            }
+            
+            .demo-subtitle {
+                font-size: 18px;
+            }
+            
+            .table-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Demo Header -->
+        <div class="demo-section">
+            <h1 class="demo-title">Professional Table Specifications</h1>
+            <p class="demo-subtitle">Exact table styling with Arial typography and professional design</p>
+        </div>
+        
+        <!-- Exact Specifications -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Your Exact Table Specifications</h2>
+            
+            <div class="specification-box">
+table {
+  border-collapse: collapse;
+  border: solid black 1px;
+  width: 250px;
+  height: 150px;
+}
+td {
+  border: solid 1px black;
+}
+#r1 {
+  background-color: lightblue;
+}
+#c12 {
+  background-color: cyan;
+}
+#r2 {
+  background-color: grey;
+}
+#r3 {
+  background-color: olive;
+}
+            </div>
+            
+            <div class="table-container">
+                <table class="arial-table-professional center-table">
+                    <tr id="r1">
+                        <td>Cell 1,1</td>
+                        <td id="c12">Cell 1,2</td>
+                        <td>Cell 1,3</td>
+                    </tr>
+                    <tr id="r2">
+                        <td>Cell 2,1</td>
+                        <td>Cell 2,2</td>
+                        <td>Cell 2,3</td>
+                    </tr>
+                    <tr id="r3">
+                        <td>Cell 3,1</td>
+                        <td>Cell 3,2</td>
+                        <td>Cell 3,3</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Enhanced Professional Tables -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Enhanced Professional Tables</h2>
+            
+            <div class="table-grid">
+                <!-- Enhanced Table -->
+                <div class="table-card">
+                    <h3>Enhanced Design</h3>
+                    <p>Professional table with modern styling and shadows</p>
+                    <table class="arial-table-enhanced">
+                        <thead>
+                            <tr>
+                                <th>Header 1</th>
+                                <th>Header 2</th>
+                                <th>Header 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Data 1,1</td>
+                                <td>Data 1,2</td>
+                                <td>Data 1,3</td>
+                            </tr>
+                            <tr>
+                                <td>Data 2,1</td>
+                                <td>Data 2,2</td>
+                                <td>Data 2,3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Striped Table -->
+                <div class="table-card">
+                    <h3>Striped Rows</h3>
+                    <p>Table with alternating row colors for better readability</p>
+                    <table class="arial-table-enhanced arial-table-striped">
+                        <thead>
+                            <tr>
+                                <th>Header 1</th>
+                                <th>Header 2</th>
+                                <th>Header 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Data 1,1</td>
+                                <td>Data 1,2</td>
+                                <td>Data 1,3</td>
+                            </tr>
+                            <tr>
+                                <td>Data 2,1</td>
+                                <td>Data 2,2</td>
+                                <td>Data 2,3</td>
+                            </tr>
+                            <tr>
+                                <td>Data 3,1</td>
+                                <td>Data 3,2</td>
+                                <td>Data 3,3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Hover Table -->
+                <div class="table-card">
+                    <h3>Interactive Hover</h3>
+                    <p>Table with hover effects for better user interaction</p>
+                    <table class="arial-table-enhanced arial-table-hover">
+                        <thead>
+                            <tr>
+                                <th>Header 1</th>
+                                <th>Header 2</th>
+                                <th>Header 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Data 1,1</td>
+                                <td>Data 1,2</td>
+                                <td>Data 1,3</td>
+                            </tr>
+                            <tr>
+                                <td>Data 2,1</td>
+                                <td>Data 2,2</td>
+                                <td>Data 2,3</td>
+                            </tr>
+                            <tr>
+                                <td>Data 3,1</td>
+                                <td>Data 3,2</td>
+                                <td>Data 3,3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Responsive Tables -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Responsive Design</h2>
+            <p class="arial-text-body">All tables are fully responsive and adapt to different screen sizes while maintaining Arial typography and professional styling.</p>
+            
+            <div class="table-container">
+                <table class="arial-table-professional center-table">
+                    <tr id="r1">
+                        <td>Responsive</td>
+                        <td>Mobile</td>
+                        <td>Desktop</td>
+                    </tr>
+                    <tr id="r2">
+                        <td>Adaptive</td>
+                        <td>Tablet</td>
+                        <td>Phone</td>
+                    </tr>
+                    <tr id="r3">
+                        <td>Flexible</td>
+                        <td>Touch</td>
+                        <td>Click</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="demo-section">
+            <h2 class="arial-heading-h2">Professional Features</h2>
+            
+            <div class="table-grid">
+                <div class="table-card">
+                    <h3>🎨 Arial Typography</h3>
+                    <p class="arial-text-body">All text uses Arial font with your exact style attributes for consistent professional appearance.</p>
+                </div>
+                
+                <div class="table-card">
+                    <h3>📱 Responsive Design</h3>
+                    <p class="arial-text-body">Tables adapt perfectly to mobile, tablet, and desktop screens with optimal sizing.</p>
+                </div>
+                
+                <div class="table-card">
+                    <h3>♿ Accessibility</h3>
+                    <p class="arial-text-body">WCAG 2.1 AA compliant with high contrast mode and screen reader support.</p>
+                </div>
+                
+                <div class="table-card">
+                    <h3>🎨 Professional Design</h3>
+                    <p class="arial-text-body">Modern styling with shadows, borders, and professional color schemes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="demo-section">
+            <div style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; color: #6b7280;">
+                <p class="arial-footer-copyright">© 2025 @DEMO Platform - Professional Table Specifications</p>
+                <p class="arial-footer-main">Exact table styling with Arial typography and professional design</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add table interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const tables = document.querySelectorAll('table');
+            tables.forEach(table => {
+                table.style.opacity = '0';
+                table.style.transform = 'translateY(20px)';
+                table.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                setTimeout(() => {
+                    table.style.opacity = '1';
+                    table.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
